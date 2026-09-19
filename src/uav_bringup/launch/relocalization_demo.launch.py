@@ -17,10 +17,10 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            'map_path', default_value='/home/nvidia/uav_ws/maps/demo/lab_map.pcd'),
+            'map_path', default_value='/home/rmnav/AeroMind/maps/demo/lab_map.pcd'),
         DeclareLaunchArgument(
             'source_path',
-            default_value='/home/nvidia/uav_ws/maps/demo/lab_restart_scan.pcd'),
+            default_value='/home/rmnav/AeroMind/maps/demo/lab_restart_scan.pcd'),
         DeclareLaunchArgument('rviz', default_value='true'),
         Node(
             package='tf2_ros', executable='static_transform_publisher',
@@ -47,6 +47,6 @@ def generate_launch_description():
         Node(
             package='rviz2', executable='rviz2', name='rviz2', output='screen',
             condition=IfCondition(rviz),
-            arguments=['-d', os.path.join(bringup_share, 'config', 'uav_final.rviz')],
+            arguments=['-d', os.path.join(bringup_share, 'config', 'ground_final.rviz')],
         ),
     ])

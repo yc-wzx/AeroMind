@@ -45,6 +45,7 @@ void GridMap::initMap(rclcpp::Node::SharedPtr node)
   node_->declare_parameter("grid_map/local_map_margin", 1);
   node_->declare_parameter("grid_map/ground_height", 1.0);
   node_->declare_parameter("grid_map/odom_depth_timeout", 1.0);
+  node_->declare_parameter("grid_map/planar_mode", false);
 
   node_->get_parameter("grid_map/resolution", mp_.resolution_);
   node_->get_parameter("grid_map/map_size_x", x_size);
@@ -82,6 +83,17 @@ void GridMap::initMap(rclcpp::Node::SharedPtr node)
   node_->get_parameter("grid_map/local_map_margin", mp_.local_map_margin_);
   node_->get_parameter("grid_map/ground_height", mp_.ground_height_);
   node_->get_parameter("grid_map/odom_depth_timeout", mp_.odom_depth_timeout_);
+  node_->get_parameter("grid_map/planar_mode", mp_.planar_mode_);
+
+  if (mp_.planar_mode_)
+  {
+    // Three storage layers keep legacy indexing valid. Navigation queries,
+    // obstacle insertion, inflation and search all use the middle z=0 plane.
+    z_size = 3.0 * mp_.resolution_;
+    mp_.ground_height_ = -1.5 * mp_.resolution_;
+    mp_.local_update_range_(2) = z_size;
+    mp_.virtual_ceil_height_ = -1.0;
+  }
 
   if (mp_.virtual_ceil_height_ - mp_.ground_height_ > z_size)
   {
@@ -798,7 +810,7 @@ void GridMap::odomCallback(const nav_msgs::msg::Odometry::SharedPtr odom)
 
   md_.camera_pos_(0) = odom->pose.pose.position.x;
   md_.camera_pos_(1) = odom->pose.pose.position.y;
-  md_.camera_pos_(2) = odom->pose.pose.position.z;
+  md_.camera_pos_(2) = mp_.planar_mode_ ? 0.0 : odom->pose.pose.position.z;
 
   md_.has_odom_ = true;
 }
@@ -845,26 +857,27 @@ void GridMap::cloudCallback(const sensor_msgs::msg::PointCloud2::ConstPtr &img)
   for (size_t i = 0; i < latest_cloud.points.size(); ++i)
   {
     pt = latest_cloud.points[i];
-    p3d(0) = pt.x, p3d(1) = pt.y, p3d(2) = pt.z;
+    p3d(0) = pt.x, p3d(1) = pt.y, p3d(2) = mp_.planar_mode_ ? 0.0 : pt.z;
 
     /* point inside update range */
     Eigen::Vector3d devi = p3d - md_.camera_pos_;
     Eigen::Vector3i inf_pt;
 
     if (fabs(devi(0)) < mp_.local_update_range_(0) && fabs(devi(1)) < mp_.local_update_range_(1) &&
-        fabs(devi(2)) < mp_.local_update_range_(2))
+        (mp_.planar_mode_ || fabs(devi(2)) < mp_.local_update_range_(2)))
     {
 
       /* inflate the point */
       // 点云膨胀
       for (int x = -inf_step; x <= inf_step; ++x)
         for (int y = -inf_step; y <= inf_step; ++y)
-          for (int z = -inf_step_z; z <= inf_step_z; ++z)
+          for (int z = mp_.planar_mode_ ? 0 : -inf_step_z;
+               z <= (mp_.planar_mode_ ? 0 : inf_step_z); ++z)
           {
 
             p3d_inf(0) = pt.x + x * mp_.resolution_;
             p3d_inf(1) = pt.y + y * mp_.resolution_;
-            p3d_inf(2) = pt.z + z * mp_.resolution_;
+            p3d_inf(2) = mp_.planar_mode_ ? 0.0 : pt.z + z * mp_.resolution_;
 
             max_x = max(max_x, p3d_inf(0));
             max_y = max(max_y, p3d_inf(1));
@@ -947,7 +960,7 @@ void GridMap::publishMap()
 
         pt.x = pos(0);
         pt.y = pos(1);
-        pt.z = pos(2);
+        pt.z = mp_.planar_mode_ ? 0.0 : pos(2);
         cloud.push_back(pt);
       }
 
@@ -997,7 +1010,7 @@ void GridMap::publishMapInflate(bool all_info)
 
         pt.x = pos(0);
         pt.y = pos(1);
-        pt.z = pos(2);
+        pt.z = mp_.planar_mode_ ? 0.0 : pos(2);
         cloud.push_back(pt);
       }
 

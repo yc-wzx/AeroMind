@@ -186,11 +186,13 @@ namespace ego_planner
   void EGOReplanFSM::planNextWaypoint(const Eigen::Vector3d next_wp)
   {
     bool success = false;
-    success = planner_manager_->planGlobalTraj(odom_pos_, odom_vel_, Eigen::Vector3d::Zero(), next_wp, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero());
+    Eigen::Vector3d planar_wp = next_wp;
+    planar_wp(2) = 0.0;
+    success = planner_manager_->planGlobalTraj(odom_pos_, odom_vel_, Eigen::Vector3d::Zero(), planar_wp, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero());
 
     if (success)
     {
-      end_pt_ = next_wp;
+      end_pt_ = planar_wp;
 
       constexpr double step_size_t = 0.1;
       int i_end = floor(planner_manager_->global_data_.global_duration_ / step_size_t);
@@ -234,15 +236,12 @@ namespace ego_planner
 
   void EGOReplanFSM::waypointCallback(const std::shared_ptr<const geometry_msgs::msg::PoseStamped> &msg)
   {
-    if (msg->pose.position.z < -0.1)
-      return;
-
     cout << "Triggered!" << endl;
 
     init_pt_ = odom_pos_;
 
     Eigen::Vector3d end_wp(
-        msg->pose.position.x, msg->pose.position.y, msg->pose.position.z);
+        msg->pose.position.x, msg->pose.position.y, 0.0);
 
     planNextWaypoint(end_wp);
   }
@@ -251,11 +250,11 @@ namespace ego_planner
   {
     odom_pos_(0) = msg->pose.pose.position.x;
     odom_pos_(1) = msg->pose.pose.position.y;
-    odom_pos_(2) = msg->pose.pose.position.z;
+    odom_pos_(2) = 0.0;
 
     odom_vel_(0) = msg->twist.twist.linear.x;
     odom_vel_(1) = msg->twist.twist.linear.y;
-    odom_vel_(2) = msg->twist.twist.linear.z;
+    odom_vel_(2) = 0.0;
 
     // odom_acc_ = estimateAcc( msg );
 
@@ -809,7 +808,7 @@ namespace ego_planner
         geometry_msgs::msg::Point pt;
         pt.x = pos_pts(0, i);
         pt.y = pos_pts(1, i);
-        pt.z = pos_pts(2, i);
+        pt.z = 0.0;  // Bspline message ABI compatibility; internal trajectory is planar.
         bspline.pos_pts.push_back(pt);
       }
 
@@ -850,7 +849,7 @@ namespace ego_planner
       geometry_msgs::msg::Point pt;
       pt.x = pos_pts(0, i);
       pt.y = pos_pts(1, i);
-      pt.z = pos_pts(2, i);
+      pt.z = 0.0;
       bspline.pos_pts.push_back(pt);
     }
 
@@ -905,7 +904,7 @@ namespace ego_planner
       geometry_msgs::msg::Point pt;
       pt.x = pos_pts(0, i);
       pt.y = pos_pts(1, i);
-      pt.z = pos_pts(2, i);
+      pt.z = 0.0;
       bspline.pos_pts.push_back(pt);
     }
 

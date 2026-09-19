@@ -10,13 +10,14 @@ from launch_ros.actions import Node
 def generate_launch_description():
     bringup_share = get_package_share_directory('uav_bringup')
     planning_share = get_package_share_directory('uav_planning')
-    fixed_altitude = LaunchConfiguration('fixed_altitude_m')
-
     return LaunchDescription([
-        DeclareLaunchArgument(
-            'fixed_altitude_m',
-            default_value='1.0',
-            description='Fixed odom-frame flight altitude used for every RViz 2D goal',
+        Node(
+            package='uav_planning',
+            executable='planar_cloud_projector',
+            name='planar_cloud_projector',
+            output='screen',
+            parameters=[os.path.join(
+                planning_share, 'config', 'planar_cloud_projector.yaml')],
         ),
         Node(
             package='uav_planning',
@@ -34,9 +35,9 @@ def generate_launch_description():
             parameters=[os.path.join(
                 bringup_share, 'config', 'ego_acl_offline.yaml')],
             remappings=[
-                ('odom_world', '/uav/planning/odometry'),
-                ('grid_map/odom', '/uav/planning/odometry'),
-                ('grid_map/cloud', '/cloud_registered'),
+                ('odom_world', '/ground/odometry'),
+                ('grid_map/odom', '/ground/odometry'),
+                ('grid_map/cloud', '/cloud_registered_2d'),
             ],
         ),
         Node(
@@ -45,7 +46,6 @@ def generate_launch_description():
             name='ego_goal_adapter',
             output='screen',
             parameters=[os.path.join(
-                planning_share, 'config', 'ego_goal_adapter.yaml'),
-                {'fixed_altitude_m': fixed_altitude}],
+                planning_share, 'config', 'ego_goal_adapter.yaml')],
         ),
     ])

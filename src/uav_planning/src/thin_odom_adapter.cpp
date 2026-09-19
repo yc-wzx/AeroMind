@@ -1,4 +1,4 @@
-// Copyright 2026 UAV Workspace Contributors
+// Copyright 2026 AeroMind Contributors
 
 #include <algorithm>
 #include <array>
@@ -28,9 +28,9 @@ public:
   {
     input_topic_ = declare_parameter<std::string>("input_topic", "/odometry");
     output_topic_ =
-      declare_parameter<std::string>("output_topic", "/uav/planning/odometry");
+      declare_parameter<std::string>("output_topic", "/ground/odometry");
     diagnostics_topic_ = declare_parameter<std::string>(
-      "diagnostics_topic", "/uav/planning/odometry_adapter/diagnostics");
+      "diagnostics_topic", "/ground/odometry_adapter/diagnostics");
     window_size_ = declare_parameter<int>("window_size", 20);
     ema_alpha_ = declare_parameter<double>("ema_alpha", 0.35);
     min_dt_sec_ = declare_parameter<double>("min_dt_sec", 0.04);
@@ -76,7 +76,8 @@ private:
   struct PositionSample
   {
     std::chrono::steady_clock::time_point time;
-    std::array<double, 3> position;
+    std::array<double, 2> position;
+    double yaw;
   };
 
   void validateParameters() const
@@ -95,11 +96,21 @@ private:
     }
   }
 
-  static bool finitePosition(const nav_msgs::msg::Odometry & msg)
+  static double yawFromQuaternion(const geometry_msgs::msg::Quaternion & q)
+  {
+    return std::atan2(
+      2.0 * (q.w * q.z + q.x * q.y),
+      1.0 - 2.0 * (q.y * q.y + q.z * q.z));
+  }
+
+  static bool finitePose(const nav_msgs::msg::Odometry & msg)
   {
     return std::isfinite(msg.pose.pose.position.x) &&
            std::isfinite(msg.pose.pose.position.y) &&
-           std::isfinite(msg.pose.pose.position.z);
+           std::isfinite(msg.pose.pose.orientation.x) &&
+           std::isfinite(msg.pose.pose.orientation.y) &&
+           std::isfinite(msg.pose.pose.orientation.z) &&
+           std::isfinite(msg.pose.pose.orientation.w);
   }
 
   void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
@@ -107,16 +118,25 @@ private:
     ++message_count_;
     trackSourceStamp(*msg);
 
-    nav_msgs::msg::Odometry output = *msg;
-    if (finitePosition(*msg)) {
-      updateVelocity(*msg);
-    } else {
+    if (!finitePose(*msg)) {
       ++invalid_pose_count_;
+      return;
     }
+    updateVelocity(*msg);
 
+    nav_msgs::msg::Odometry output = *msg;
+    const double yaw = yawFromQuaternion(msg->pose.pose.orientation);
+    output.pose.pose.position.z = 0.0;
+    output.pose.pose.orientation.x = 0.0;
+    output.pose.pose.orientation.y = 0.0;
+    output.pose.pose.orientation.z = std::sin(0.5 * yaw);
+    output.pose.pose.orientation.w = std::cos(0.5 * yaw);
     output.twist.twist.linear.x = filtered_velocity_[0];
     output.twist.twist.linear.y = filtered_velocity_[1];
-    output.twist.twist.linear.z = filtered_velocity_[2];
+    output.twist.twist.linear.z = 0.0;
+    output.twist.twist.angular.x = 0.0;
+    output.twist.twist.angular.y = 0.0;
+    output.twist.twist.angular.z = filtered_velocity_[2];
     odom_pub_->publish(output);
   }
 
@@ -134,9 +154,17 @@ private:
   void updateVelocity(const nav_msgs::msg::Odometry & msg)
   {
     const auto now = std::chrono::steady_clock::now();
-    PositionSample sample{
-      now,
-      {msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z}};
+    const double yaw = yawFromQuaternion(msg.pose.pose.orientation);
+    if (!have_yaw_) {
+      previous_yaw_ = yaw;
+      unwrapped_yaw_ = yaw;
+      have_yaw_ = true;
+    } else {
+      const double delta = std::atan2(std::sin(yaw - previous_yaw_), std::cos(yaw - previous_yaw_));
+      unwrapped_yaw_ += delta;
+      previous_yaw_ = yaw;
+    }
+    PositionSample sample{now, {msg.pose.pose.position.x, msg.pose.pose.position.y}, unwrapped_yaw_};
 
     if (!samples_.empty()) {
       const double newest_gap = std::chrono::duration<double>(now - samples_.back().time).count();
@@ -168,18 +196,21 @@ private:
 
     const auto origin = samples_.front().time;
     double mean_t = 0.0;
-    std::array<double, 3> mean_position{0.0, 0.0, 0.0};
+    std::array<double, 2> mean_position{0.0, 0.0};
+    double mean_yaw = 0.0;
     for (const auto & item : samples_) {
       mean_t += std::chrono::duration<double>(item.time - origin).count();
-      for (size_t axis = 0; axis < 3; ++axis) {
+      for (size_t axis = 0; axis < 2; ++axis) {
         mean_position[axis] += item.position[axis];
       }
+      mean_yaw += item.yaw;
     }
     const double count = static_cast<double>(samples_.size());
     mean_t /= count;
     for (double & value : mean_position) {
       value /= count;
     }
+    mean_yaw /= count;
 
     double denominator = 0.0;
     std::array<double, 3> numerator{0.0, 0.0, 0.0};
@@ -187,9 +218,10 @@ private:
       const double centered_t =
         std::chrono::duration<double>(item.time - origin).count() - mean_t;
       denominator += centered_t * centered_t;
-      for (size_t axis = 0; axis < 3; ++axis) {
+      for (size_t axis = 0; axis < 2; ++axis) {
         numerator[axis] += centered_t * (item.position[axis] - mean_position[axis]);
       }
+      numerator[2] += centered_t * (item.yaw - mean_yaw);
     }
     if (!(denominator > std::numeric_limits<double>::epsilon())) {
       ++invalid_dt_count_;
@@ -200,7 +232,9 @@ private:
     double squared_speed = 0.0;
     for (size_t axis = 0; axis < 3; ++axis) {
       candidate[axis] = numerator[axis] / denominator;
-      squared_speed += candidate[axis] * candidate[axis];
+      if (axis < 2) {
+        squared_speed += candidate[axis] * candidate[axis];
+      }
     }
     const double speed = std::sqrt(squared_speed);
     if (!std::isfinite(speed) || speed > max_reasonable_velocity_mps_) {
@@ -220,8 +254,7 @@ private:
 
     const double filtered_speed = std::sqrt(
       filtered_velocity_[0] * filtered_velocity_[0] +
-      filtered_velocity_[1] * filtered_velocity_[1] +
-      filtered_velocity_[2] * filtered_velocity_[2]);
+      filtered_velocity_[1] * filtered_velocity_[1]);
     min_speed_ = std::min(min_speed_, filtered_speed);
     max_speed_ = std::max(max_speed_, filtered_speed);
     speed_sum_ += filtered_speed;
@@ -294,6 +327,9 @@ private:
   std::deque<PositionSample> samples_;
   std::array<double, 3> filtered_velocity_{0.0, 0.0, 0.0};
   bool have_filtered_velocity_{false};
+  bool have_yaw_{false};
+  double previous_yaw_{0.0};
+  double unwrapped_yaw_{0.0};
   bool have_source_stamp_{false};
   int64_t previous_source_stamp_ns_{0};
   uint64_t message_count_{0};

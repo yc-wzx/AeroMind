@@ -17,7 +17,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            'map_path', default_value='/home/nvidia/uav_ws/maps/session_map.pcd'),
+            'map_path', default_value='/home/rmnav/AeroMind/maps/session_map.pcd'),
         DeclareLaunchArgument('rviz', default_value='true'),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(
@@ -35,6 +35,12 @@ def generate_launch_description():
             ],
         ),
         Node(
+            package='uav_planning', executable='planar_cloud_projector',
+            name='planar_cloud_projector', output='screen',
+            parameters=[os.path.join(
+                planning_share, 'config', 'planar_cloud_projector.yaml')],
+        ),
+        Node(
             package='uav_planning',
             executable='registered_cloud_map_saver',
             name='registered_cloud_map_saver',
@@ -47,6 +53,6 @@ def generate_launch_description():
         Node(
             package='rviz2', executable='rviz2', name='rviz2', output='screen',
             condition=IfCondition(rviz),
-            arguments=['-d', os.path.join(bringup_share, 'config', 'uav_final.rviz')],
+            arguments=['-d', os.path.join(bringup_share, 'config', 'ground_final.rviz')],
         ),
     ])

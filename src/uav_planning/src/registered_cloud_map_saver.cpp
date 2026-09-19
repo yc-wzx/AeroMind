@@ -20,7 +20,7 @@
 class RegisteredCloudMapSaver : public rclcpp::Node {
  public:
   RegisteredCloudMapSaver() : Node("registered_cloud_map_saver") {
-    input_topic_ = declare_parameter<std::string>("input_topic", "/cloud_registered");
+    input_topic_ = declare_parameter<std::string>("input_topic", "/cloud_registered_2d");
     output_path_ = declare_parameter<std::string>("output_path", "maps/session_map.pcd");
     map_frame_ = declare_parameter<std::string>("map_frame", "map");
     input_frame_ = declare_parameter<std::string>("input_frame", "odom");
@@ -60,6 +60,7 @@ class RegisteredCloudMapSaver : public rclcpp::Node {
           return !std::isfinite(point.x) || !std::isfinite(point.y) || !std::isfinite(point.z);
         }),
         cloud.points.end());
+    for (auto &point : cloud.points) point.z = 0.0F;
     cloud.width = static_cast<std::uint32_t>(cloud.points.size());
     cloud.height = 1;
     cloud.is_dense = true;

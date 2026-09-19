@@ -37,41 +37,20 @@ double AStar::getDiagHeu(GridNodePtr node1, GridNodePtr node2)
 {
     double dx = abs(node1->index(0) - node2->index(0));
     double dy = abs(node1->index(1) - node2->index(1));
-    double dz = abs(node1->index(2) - node2->index(2));
-
-    double h = 0.0;
-    int diag = min(min(dx, dy), dz);
-    dx -= diag;
-    dy -= diag;
-    dz -= diag;
-
-    if (dx == 0)
-    {
-        h = 1.0 * sqrt(3.0) * diag + sqrt(2.0) * min(dy, dz) + 1.0 * abs(dy - dz);
-    }
-    if (dy == 0)
-    {
-        h = 1.0 * sqrt(3.0) * diag + sqrt(2.0) * min(dx, dz) + 1.0 * abs(dx - dz);
-    }
-    if (dz == 0)
-    {
-        h = 1.0 * sqrt(3.0) * diag + sqrt(2.0) * min(dx, dy) + 1.0 * abs(dx - dy);
-    }
-    return h;
+    const double diag = min(dx, dy);
+    return sqrt(2.0) * diag + abs(dx - dy);
 }
 
 double AStar::getManhHeu(GridNodePtr node1, GridNodePtr node2)
 {
     double dx = abs(node1->index(0) - node2->index(0));
     double dy = abs(node1->index(1) - node2->index(1));
-    double dz = abs(node1->index(2) - node2->index(2));
-
-    return dx + dy + dz;
+    return dx + dy;
 }
 
 double AStar::getEuclHeu(GridNodePtr node1, GridNodePtr node2)
 {
-    return (node2->index - node1->index).norm();
+    return (node2->index.head<2>() - node1->index.head<2>()).norm();
 }
 
 vector<GridNodePtr> AStar::retrievePath(GridNodePtr current)
@@ -125,7 +104,11 @@ bool AStar::AstarSearch(const double step_size, Vector3d start_pt, Vector3d end_
 
     step_size_ = step_size;
     inv_step_size_ = 1 / step_size;
+    // The storage remains Vector3 for compatibility, but search state is XY.
+    start_pt(2) = 0.0;
+    end_pt(2) = 0.0;
     center_ = (start_pt + end_pt) / 2;
+    center_(2) = 0.0;
 
     Vector3i start_idx, end_idx;
     if (!ConvertToIndexAndAdjustStartEndPoints(start_pt, end_pt, start_idx, end_idx))
@@ -168,7 +151,7 @@ bool AStar::AstarSearch(const double step_size, Vector3d start_pt, Vector3d end_
         // if ( num_iter < 10000 )
         //     cout << "current=" << current->index.transpose() << endl;
 
-        if (current->index(0) == endPtr->index(0) && current->index(1) == endPtr->index(1) && current->index(2) == endPtr->index(2))
+        if (current->index(0) == endPtr->index(0) && current->index(1) == endPtr->index(1))
         {
             // ros::Time time_2 = ros::Time::now();
             // printf("\033[34mA star iter:%d, time:%.3f\033[0m\n",num_iter, (time_2 - time_1).toSec()*1000);
@@ -181,7 +164,7 @@ bool AStar::AstarSearch(const double step_size, Vector3d start_pt, Vector3d end_
 
         for (int dx = -1; dx <= 1; dx++)
             for (int dy = -1; dy <= 1; dy++)
-                for (int dz = -1; dz <= 1; dz++)
+                for (int dz = 0; dz <= 0; dz++)
                 {
                     if (dx == 0 && dy == 0 && dz == 0)
                         continue;
@@ -213,7 +196,7 @@ bool AStar::AstarSearch(const double step_size, Vector3d start_pt, Vector3d end_
                         continue;
                     }
 
-                    double static_cost = sqrt(dx * dx + dy * dy + dz * dz);
+                    double static_cost = sqrt(dx * dx + dy * dy);
                     tentative_gScore = current->gScore + static_cost;
 
                     if (!flag_explored)
@@ -254,7 +237,11 @@ vector<Vector3d> AStar::getPath()
     vector<Vector3d> path;
 
     for (auto ptr : gridPath_)
-        path.push_back(Index2Coord(ptr->index));
+    {
+        Eigen::Vector3d point = Index2Coord(ptr->index);
+        point(2) = 0.0;
+        path.push_back(point);
+    }
 
     reverse(path.begin(), path.end());
     return path;

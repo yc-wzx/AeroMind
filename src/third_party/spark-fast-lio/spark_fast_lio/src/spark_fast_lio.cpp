@@ -47,6 +47,8 @@ SPARKFastLIO2::SPARKFastLIO2(const rclcpp::NodeOptions &options)
   imu_frame_     = declare_parameter<std::string>("common.imu_frame", "imu");
   viz_frame_     = declare_parameter<std::string>("common.visualization_frame", "imu");
   time_sync_en_  = declare_parameter<bool>("common.time_sync_en", false);
+  planar_mode_   = declare_parameter<bool>("common.planar_mode", false);
+  planar_height_ = declare_parameter<double>("common.planar_height", 0.0);
 
   filter_size_map_min_ = declare_parameter<double>("filter_size_map", 0.5);
   cube_len_            = declare_parameter<double>("cube_side_length", 200.0);
@@ -488,6 +490,7 @@ void SPARKFastLIO2::integrateIMU(esekfom::esekf<state_ikfom, 12, input_ikfom> &s
 
   integrated_state.pos = R_gravity_aligned_ * integrated_state.pos;
   integrated_state.rot = R_gravity_aligned_ * integrated_state.rot;
+  projectStateToPlanar(integrated_state);
 
   publishOdometry(integrated_state, stamp);
 }
@@ -717,6 +720,15 @@ void SPARKFastLIO2::mapIncremental() {
 
   add_point_size_          = PointToAdd.size() + PointNoNeedDownsample.size();
   kdtree_incremental_time_ = omp_get_wtime() - st_time;
+}
+
+void SPARKFastLIO2::projectStateToPlanar(state_ikfom &state) const {
+  if (!planar_mode_) return;
+  const Eigen::Matrix3d rotation = state.rot.toRotationMatrix();
+  const double yaw = std::atan2(rotation(1, 0), rotation(0, 0));
+  state.pos(2) = planar_height_;
+  state.vel(2) = 0.0;
+  state.rot = Eigen::AngleAxisd(yaw, Eigen::Vector3d::UnitZ()).toRotationMatrix();
 }
 
 void SPARKFastLIO2::publishOdometry(const state_ikfom &state, const rclcpp::Time &stamp) {
@@ -1118,6 +1130,12 @@ void SPARKFastLIO2::processLidarAndImu(MeasureGroup &Measures) {
 
       is_gravity_aligned_ = true;
     }
+  }
+
+  if (planar_mode_) {
+    auto constrained_state = kf_.get_x();
+    projectStateToPlanar(constrained_state);
+    kf_.change_x(constrained_state);
   }
 
   latest_state_          = kf_.get_x();

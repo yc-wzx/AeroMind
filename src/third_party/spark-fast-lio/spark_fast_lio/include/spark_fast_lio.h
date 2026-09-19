@@ -94,6 +94,11 @@ class SPARKFastLIO2 : public rclcpp::Node {
 
   void publishOdometry(const state_ikfom &state, const rclcpp::Time &stamp);
 
+  // Keep 3D IMU propagation/deskew, then constrain the persistent navigation
+  // pose to SE(2). This projection is applied to the filter state after each
+  // LiDAR update rather than only changing the ROS message.
+  void projectStateToPlanar(state_ikfom &state) const;
+
   void publishPath(const state_ikfom &state);
 
   void publishFrameWorld(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubCloud);
@@ -287,6 +292,8 @@ class SPARKFastLIO2 : public rclcpp::Node {
   std::vector<double> extrinT_{0.0, 0.0, 0.0};
   std::vector<double> extrinR_{1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0};
   double extrinsics_timeout_s_ = 10.0;
+  bool planar_mode_ = false;
+  double planar_height_ = 0.0;
 
   std::deque<double> time_buffer_;
   std::deque<PointCloudXYZI::Ptr> lidar_buffer_;

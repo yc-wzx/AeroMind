@@ -58,6 +58,7 @@ struct MappingParameters
   double obstacles_inflation_;
   string frame_id_;
   int pose_type_;
+  bool planar_mode_;
 
   /* camera parameters */
   double cx_, cy_, fx_, fy_;

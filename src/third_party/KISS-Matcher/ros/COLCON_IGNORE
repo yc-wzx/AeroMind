@@ -1,0 +1,3 @@
+The upstream ROS package pulls build-time dependencies from the network and
+implements unconstrained SE(3). AeroMind's maintained relocalizer now uses the
+project-owned SE(2) solver in uav_planning while retaining the ROS interfaces.

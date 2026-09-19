@@ -1,15 +1,19 @@
 /**:
   ros__parameters:
-    cloud_topic: /cloud_registered
+    cloud_topic: /cloud_registered_2d
     map_topic: /prior_map
     aligned_cloud_topic: /relocalization/aligned_cloud
     map_frame: map
     odom_frame: odom
-    voxel_size_m: 0.30
-    min_inliers: 5
+    voxel_size_m: 0.15
+    obstacle_min_z: 0.10
+    obstacle_max_z: 1.20
+    max_correspondence_m: 1.0
+    max_rmse_m: 0.35
+    max_iterations: 40
+    min_inliers: 30
     tf_rate_hz: 20.0
     publish_identity_until_localized: true
     initial_x: 0.0
     initial_y: 0.0
-    initial_z: 0.0
     initial_yaw: 0.0

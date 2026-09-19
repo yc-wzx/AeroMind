@@ -47,6 +47,8 @@ namespace ego_planner
   void BsplineOptimizer::setControlPoints(const Eigen::MatrixXd &points)
   {
     cps_.points = points;
+    // Retain the 3-row ABI used by UniformBspline, but optimize only XY.
+    if (cps_.points.rows() >= 3) cps_.points.row(2).setZero();
   }
 
   void BsplineOptimizer::setBsplineInterval(const double &ts) { bspline_interval_ = ts; }
@@ -1113,7 +1115,7 @@ namespace ego_planner
     {
       Eigen::Vector3d vi = (q.col(i + 1) - q.col(i)) / ts;
 
-      for (int j = 0; j < 3; j++)
+      for (int j = 0; j < 2; j++)
       {
         if (vi(j) > max_vel_ + demarcation)
         {
@@ -1165,7 +1167,7 @@ namespace ego_planner
     {
       Eigen::Vector3d ai = (q.col(i + 2) - 2 * q.col(i + 1) + q.col(i)) * ts_inv2;
 
-      for (int j = 0; j < 3; j++)
+      for (int j = 0; j < 2; j++)
       {
         if (ai(j) > max_acc_ + demarcation)
         {
@@ -1231,7 +1233,7 @@ namespace ego_planner
       Eigen::Vector3d vi = (q.col(i + 1) - q.col(i)) / ts;
 
       // cout << "temp_v * vi=" ;
-      for (int j = 0; j < 3; j++)
+      for (int j = 0; j < 2; j++)
       {
         if (vi(j) > max_vel_)
         {
@@ -1262,7 +1264,7 @@ namespace ego_planner
       Eigen::Vector3d ai = (q.col(i + 2) - 2 * q.col(i + 1) + q.col(i)) * ts_inv2;
 
       // cout << "temp_a * ai=" ;
-      for (int j = 0; j < 3; j++)
+      for (int j = 0; j < 2; j++)
       {
         if (ai(j) > max_acc_)
         {
@@ -1805,6 +1807,7 @@ namespace ego_planner
     // cout << "sizeof(x[0])=" << sizeof(x[0]) << endl;
 
     memcpy(cps_.points.data() + 3 * order_, x, n * sizeof(x[0]));
+    cps_.points.row(2).setZero();
 
     /* ---------- evaluate cost and gradient ---------- */
     double f_smoothness, f_distance, f_feasibility /*, f_mov_objs*/, f_swarm, f_terminal;
@@ -1828,6 +1831,7 @@ namespace ego_planner
     // printf("origin %f %f %f %f\n", f_smoothness, f_distance, f_feasibility, f_combine);
 
     Eigen::MatrixXd grad_3D = lambda1_ * g_smoothness + new_lambda2_ * g_distance + lambda3_ * g_feasibility + new_lambda2_ * g_swarm + lambda2_ * g_terminal;
+    grad_3D.row(2).setZero();
     // Eigen::MatrixXd grad_3D = lambda1_ * g_smoothness + new_lambda2_ * g_distance + lambda3_ * g_feasibility + new_lambda2_ * g_mov_objs;
     memcpy(grad, grad_3D.data() + 3 * order_, n * sizeof(grad[0]));
   }
@@ -1837,6 +1841,7 @@ namespace ego_planner
   {
 
     memcpy(cps_.points.data() + 3 * order_, x, n * sizeof(x[0]));
+    cps_.points.row(2).setZero();
 
     /* ---------- evaluate cost and gradient ---------- */
     double f_smoothness, f_fitness, f_feasibility;
@@ -1856,6 +1861,7 @@ namespace ego_planner
     // printf("origin %f %f %f %f\n", f_smoothness, f_fitness, f_feasibility, f_combine);
 
     Eigen::MatrixXd grad_3D = lambda1_ * g_smoothness + lambda4_ * g_fitness + lambda3_ * g_feasibility;
+    grad_3D.row(2).setZero();
     memcpy(grad, grad_3D.data() + 3 * order_, n * sizeof(grad[0]));
   }
 

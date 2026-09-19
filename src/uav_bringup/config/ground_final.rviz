@@ -61,7 +61,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /cloud_registered
+        Value: /cloud_registered_2d
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -126,13 +126,13 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/odometry
+        Value: /ground/odometry
       Value: true
     - Angle Tolerance: 0.2
       Class: rviz_default_plugins/Odometry
       Enabled: true
       Keep: 30
-      Name: FC Feedback
+      Name: Ground Odometry
       Position Tolerance: 0.1
       Shape:
         Alpha: 0.8
@@ -145,7 +145,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /odom_global_001
+        Value: /ground/odometry
       Value: true
     - Alpha: 0.9
       Buffer Length: 1
@@ -171,7 +171,7 @@ Visualization Manager:
         Durability Policy: Transient Local
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/goal_marker
+        Value: /ground/planning/goal_marker
       Value: true
     - Class: rviz_default_plugins/Marker
       Enabled: true
@@ -181,7 +181,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/planned_trajectory
+        Value: /ground/planning/planned_trajectory
       Value: true
     - Alpha: 1
       Buffer Length: 1
@@ -197,7 +197,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/executed_trajectory
+        Value: /ground/planning/commanded_path
       Value: true
     - Class: rviz_default_plugins/Pose
       Enabled: true
@@ -210,7 +210,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/commanded_setpoint
+        Value: /ground/planning/commanded_setpoint
       Value: true
     - Class: rviz_default_plugins/Marker
       Enabled: true
@@ -220,17 +220,17 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/simulation_obstacle
+        Value: /ground/simulation/obstacle
       Value: true
     - Class: rviz_default_plugins/Marker
       Enabled: true
-      Name: UAV Marker
+      Name: Robot Marker
       Topic:
         Depth: 1
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/simulation_vehicle
+        Value: /ground/simulation/robot
       Value: true
     - Class: rviz_default_plugins/Marker
       Enabled: true
@@ -240,7 +240,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /uav/planning/simulation_evidence
+        Value: /ground/simulation/evidence
       Value: true
     - Class: rviz_default_plugins/Marker
       Enabled: true

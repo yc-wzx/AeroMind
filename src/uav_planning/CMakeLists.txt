@@ -8,9 +8,6 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(diagnostic_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(robin CONFIG REQUIRED)
-find_package(TBB REQUIRED)
-find_package(kiss_matcher CONFIG REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(PCL REQUIRED COMPONENTS common filters io)
 find_package(pcl_conversions REQUIRED)
@@ -33,18 +30,18 @@ ament_target_dependencies(registered_cloud_map_saver
   pcl_conversions rclcpp sensor_msgs std_srvs)
 target_link_libraries(registered_cloud_map_saver ${PCL_LIBRARIES})
 
+add_executable(planar_cloud_projector src/planar_cloud_projector.cpp)
+target_compile_features(planar_cloud_projector PUBLIC cxx_std_17)
+target_include_directories(planar_cloud_projector PRIVATE ${PCL_INCLUDE_DIRS})
+ament_target_dependencies(planar_cloud_projector pcl_conversions rclcpp sensor_msgs)
+target_link_libraries(planar_cloud_projector ${PCL_LIBRARIES})
+
 add_executable(kiss_relocalizer src/kiss_relocalizer.cpp)
 target_compile_features(kiss_relocalizer PUBLIC cxx_std_17)
 target_include_directories(kiss_relocalizer PRIVATE ${PCL_INCLUDE_DIRS})
 ament_target_dependencies(kiss_relocalizer
   geometry_msgs pcl_conversions rclcpp sensor_msgs std_msgs std_srvs tf2_ros)
-target_link_libraries(kiss_relocalizer kiss_matcher::kiss_matcher_core ${PCL_LIBRARIES})
-
-add_executable(kiss_offline_validator src/kiss_offline_validator.cpp)
-target_compile_features(kiss_offline_validator PUBLIC cxx_std_17)
-target_include_directories(kiss_offline_validator PRIVATE ${PCL_INCLUDE_DIRS})
-target_link_libraries(kiss_offline_validator
-  kiss_matcher::kiss_matcher_core ${PCL_LIBRARIES})
+target_link_libraries(kiss_relocalizer ${PCL_LIBRARIES})
 
 add_executable(relocalization_demo_source src/relocalization_demo_source.cpp)
 target_compile_features(relocalization_demo_source PUBLIC cxx_std_17)
@@ -57,12 +54,11 @@ target_link_libraries(relocalization_demo_source ${PCL_LIBRARIES})
 install(TARGETS
   thin_odom_adapter
   registered_cloud_map_saver
+  planar_cloud_projector
   kiss_relocalizer
-  kiss_offline_validator
   relocalization_demo_source
   DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS
-  scripts/final_navigation_simulation.py
   scripts/ego_goal_adapter.py
   scripts/ego_trajectory_executor.py
   DESTINATION lib/${PROJECT_NAME}

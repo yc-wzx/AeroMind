@@ -1,0 +1,8 @@
+/**:
+  ros__parameters:
+    input_topic: /cloud_registered
+    output_topic: /cloud_registered_2d
+    # Height is measured in the gravity-aligned odom frame. Tune to the chassis.
+    obstacle_min_z: 0.10
+    obstacle_max_z: 1.20
+    planar_voxel_size: 0.10

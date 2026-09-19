@@ -20,7 +20,7 @@ class RelocalizationDemoSource : public rclcpp::Node {
  public:
   RelocalizationDemoSource() : Node("relocalization_demo_source") {
     source_path_ = declare_parameter<std::string>("source_path", "");
-    cloud_topic_ = declare_parameter<std::string>("cloud_topic", "/cloud_registered");
+    cloud_topic_ = declare_parameter<std::string>("cloud_topic", "/cloud_registered_2d");
     odom_topic_ = declare_parameter<std::string>("odom_topic", "/odometry");
     odom_frame_ = declare_parameter<std::string>("odom_frame", "odom");
     base_frame_ = declare_parameter<std::string>("base_frame", "base_link");
@@ -88,7 +88,7 @@ class RelocalizationDemoSource : public rclcpp::Node {
     marker.id = 0;
     marker.type = visualization_msgs::msg::Marker::TEXT_VIEW_FACING;
     marker.action = visualization_msgs::msg::Marker::ADD;
-    marker.pose.position.z = 1.4;
+    marker.pose.position.z = 0.03;
     marker.pose.orientation.w = 1.0;
     marker.scale.z = 0.45;
     marker.color.r = status_.rfind("AFTER", 0) == 0 ? 0.1f : 1.0f;

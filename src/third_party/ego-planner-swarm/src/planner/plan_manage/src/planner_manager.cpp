@@ -40,7 +40,7 @@ namespace ego_planner
     bspline_optimizer_->setParam(node);
     bspline_optimizer_->setEnvironment(grid_map_, obj_predictor_);
     bspline_optimizer_->a_star_.reset(new AStar);
-    bspline_optimizer_->a_star_->initGridMap(grid_map_, Eigen::Vector3i(100, 100, 100));
+    bspline_optimizer_->a_star_->initGridMap(grid_map_, Eigen::Vector3i(100, 100, 3));
 
     visualization_ = vis;
   }
@@ -49,6 +49,11 @@ namespace ego_planner
                                         Eigen::Vector3d start_acc, Eigen::Vector3d local_target_pt,
                                         Eigen::Vector3d local_target_vel, bool flag_polyInit, bool flag_randomPolyTraj)
   {
+    start_pt(2) = 0.0;
+    start_vel(2) = 0.0;
+    start_acc(2) = 0.0;
+    local_target_pt(2) = 0.0;
+    local_target_vel(2) = 0.0;
     static int count = 0;
     printf("\033[47;30m\n[drone %d replan %d]==============================================\033[0m\n", pp_.drone_id, count++);
 
@@ -219,6 +224,7 @@ namespace ego_planner
     // 将轨迹变为B样条轨迹
     Eigen::MatrixXd ctrl_pts, ctrl_pts_temp;
     UniformBspline::parameterizeToBspline(ts, point_set, start_end_derivatives, ctrl_pts);
+    ctrl_pts.row(2).setZero();
 
     vector<std::pair<int, int>> segments;
     segments = bspline_optimizer_->initControlPoints(ctrl_pts, true);
@@ -289,6 +295,7 @@ namespace ego_planner
 
     t_start = rclcpp::Clock().now();
 
+    ctrl_pts.row(2).setZero();
     UniformBspline pos = UniformBspline(ctrl_pts, 3, ts);
     pos.setPhysicalLimits(pp_.max_vel_, pp_.max_acc_, pp_.feasibility_tolerance_);
 
@@ -306,7 +313,10 @@ namespace ego_planner
         Eigen::MatrixXd optimal_control_points;
         flag_step_2_success = refineTrajAlgo(pos, start_end_derivatives, ratio, ts, optimal_control_points);
         if (flag_step_2_success)
+        {
+          optimal_control_points.row(2).setZero();
           pos = UniformBspline(optimal_control_points, 3, ts);
+        }
       }
 
       if (!flag_step_2_success)

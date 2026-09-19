@@ -7,6 +7,8 @@
       base_frame: ""
       visualization_frame: imu
       time_sync_en: false
+      planar_mode: true
+      planar_height: 0.0
 
     preprocess:
       lidar_type: 5
