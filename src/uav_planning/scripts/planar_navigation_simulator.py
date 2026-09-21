@@ -238,7 +238,7 @@ class PlanarNavigationSimulator(Node):
         evidence.pose.position.y = self.y - 0.7
         evidence.pose.position.z = 0.05
         evidence.pose.orientation.w = 1.0
-        evidence.scale.z = 0.28
+        evidence.scale.z = 0.18
         evidence.color.r = 1.0
         evidence.color.g = 1.0
         evidence.color.b = 1.0
