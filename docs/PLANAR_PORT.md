@@ -90,6 +90,15 @@ Procrustes 每次迭代只求一个角度与二维平移，状态向量没有 tz
 
 ## 8. Build Result
 
+闭环软件仿真入口：
+
+```bash
+ros2 launch uav_bringup planar_simulation.launch.py
+```
+
+`planar_navigation_simulator.py` 根据体坐标 `/cmd_vel` 积分全向底盘状态，发布
+`/ground/odometry`、固定二维障碍物、TF 与实际运动路径。该入口不启动雷达驱动。
+
 已在 Ubuntu 22.04 / ROS 2 Humble x86_64 实际编译以下包：
 
 ```text

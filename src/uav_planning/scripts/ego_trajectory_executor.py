@@ -170,7 +170,7 @@ class EgoTrajectoryExecutor(Node):
             f'duration={self.duration:.3f}s, points={len(points)}')
 
     def publish_stop(self):
-        if self.enabled:
+        if self.enabled and rclpy.ok():
             self.cmd_pub.publish(Twist())
 
     def timer_callback(self):

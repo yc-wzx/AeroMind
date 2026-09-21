@@ -51,6 +51,15 @@ source install/setup.bash
 
 ## 启动
 
+无需雷达和底盘的二维闭环仿真：
+
+```bash
+ros2 launch uav_bringup planar_simulation.launch.py
+```
+
+仿真会自动发布一个被矩形障碍物阻挡的目标。机器人使用真实的 EGO 规划器和
+全向轨迹执行器绕障，之后也可以继续使用 RViz `2D Goal Pose` 设置目标。
+
 默认启动不会向底盘发送速度：
 
 ```bash
