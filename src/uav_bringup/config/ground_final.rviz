@@ -212,15 +212,15 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /ground/planning/commanded_setpoint
       Value: true
-    - Class: rviz_default_plugins/Marker
+    - Class: rviz_default_plugins/MarkerArray
       Enabled: true
-      Name: Demo Obstacle
+      Name: Competition Field
       Topic:
         Depth: 1
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /ground/simulation/obstacle
+        Value: /ground/simulation/field
       Value: true
     - Class: rviz_default_plugins/Marker
       Enabled: true
@@ -295,11 +295,11 @@ Visualization Manager:
       Class: rviz_default_plugins/TopDownOrtho
       Name: Current View
       Near Clip Distance: 0.01
-      Scale: 100
+      Scale: 68
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: -2.5
-      Y: 0
+      X: 4.7
+      Y: 5.0
     Saved: ~
 Window Geometry:
   Height: 900

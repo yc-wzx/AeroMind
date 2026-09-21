@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
-"""Lightweight closed-loop simulator for AeroMind's holonomic planar stack."""
+"""Closed-loop planar simulator with a figure-based competition field."""
 
+import json
 import math
 import struct
 import time
 
 import rclpy
-from geometry_msgs.msg import PoseStamped, TransformStamped, Twist
+from geometry_msgs.msg import Point, PoseStamped, TransformStamped, Twist
 from nav_msgs.msg import Odometry, Path
 from rclpy.node import Node
 from sensor_msgs.msg import PointCloud2, PointField
 from tf2_ros import TransformBroadcaster
-from visualization_msgs.msg import Marker
+from visualization_msgs.msg import Marker, MarkerArray
 
 
 def clamp(value, lower, upper):
@@ -30,13 +31,33 @@ def quaternion_from_yaw(yaw):
     return result
 
 
+def point(x, y, z=0.0):
+    result = Point()
+    result.x = float(x)
+    result.y = float(y)
+    result.z = float(z)
+    return result
+
+
 class PlanarNavigationSimulator(Node):
     def __init__(self):
         super().__init__('planar_navigation_simulator')
-        self.goal_x = float(self.declare_parameter('goal_x', 5.0).value)
-        self.goal_y = float(self.declare_parameter('goal_y', 0.0).value)
-        self.goal_yaw = float(self.declare_parameter('goal_yaw', 0.0).value)
-        self.goal_delay = float(self.declare_parameter('goal_delay_sec', 2.0).value)
+
+        field_config = self.declare_parameter('field_config', '').value
+        if not field_config:
+            raise RuntimeError('field_config parameter is required')
+        with open(field_config, 'r', encoding='utf-8') as stream:
+            self.field = json.load(stream)
+
+        start = self.field['start']
+        shooting_zone = self.field['shooting_zone']
+        self.goal_x = float(
+            self.declare_parameter('goal_x', shooting_zone['x']).value)
+        self.goal_y = float(
+            self.declare_parameter('goal_y', shooting_zone['y']).value)
+        self.goal_yaw = float(
+            self.declare_parameter('goal_yaw', shooting_zone['yaw']).value)
+        self.goal_delay = float(self.declare_parameter('goal_delay_sec', 3.0).value)
         self.max_acceleration = float(
             self.declare_parameter('max_acceleration_mps2', 2.5).value)
         self.max_yaw_acceleration = float(
@@ -44,9 +65,9 @@ class PlanarNavigationSimulator(Node):
         self.command_timeout = float(
             self.declare_parameter('command_timeout_sec', 0.5).value)
 
-        self.x = 0.0
-        self.y = 0.0
-        self.yaw = 0.0
+        self.x = float(self.declare_parameter('start_x', start['x']).value)
+        self.y = float(self.declare_parameter('start_y', start['y']).value)
+        self.yaw = float(self.declare_parameter('start_yaw', start['yaw']).value)
         self.vx_world = 0.0
         self.vy_world = 0.0
         self.yaw_rate = 0.0
@@ -59,13 +80,14 @@ class PlanarNavigationSimulator(Node):
         self.path.header.frame_id = 'odom'
         self.last_path_sample = 0.0
         self.tf_broadcaster = TransformBroadcaster(self)
+        self.field_points = self.make_field_points()
 
         self.odom_pub = self.create_publisher(Odometry, '/ground/odometry', 20)
         self.cloud_pub = self.create_publisher(PointCloud2, '/cloud_registered_2d', 5)
         self.goal_pub = self.create_publisher(PoseStamped, '/goal_pose', 5)
         self.path_pub = self.create_publisher(Path, '/path', 5)
-        self.obstacle_pub = self.create_publisher(
-            Marker, '/ground/simulation/obstacle', 1)
+        self.field_pub = self.create_publisher(
+            MarkerArray, '/ground/simulation/field', 5)
         self.robot_pub = self.create_publisher(Marker, '/ground/simulation/robot', 1)
         self.evidence_pub = self.create_publisher(
             Marker, '/ground/simulation/evidence', 1)
@@ -73,33 +95,31 @@ class PlanarNavigationSimulator(Node):
 
         self.create_timer(0.02, self.update)
         self.create_timer(0.10, self.publish_obstacles)
-        self.create_timer(0.10, self.publish_markers)
+        self.create_timer(0.25, self.publish_field_markers)
+        self.create_timer(0.10, self.publish_robot_markers)
         self.get_logger().info(
-            'Planar holonomic simulation ready: automatic goal '
-            f'({self.goal_x:.1f}, {self.goal_y:.1f}, yaw={self.goal_yaw:.2f}); '
-            'use RViz 2D Goal Pose for another target')
+            f"Loaded {self.field['name']}: start "
+            f"({self.x:.2f}, {self.y:.2f}), automatic goal "
+            f"({self.goal_x:.2f}, {self.goal_y:.2f})")
+
+    def make_field_points(self):
+        result = []
+        spacing = 0.05
+        for x1, y1, x2, y2 in self.field['collision_segments']:
+            length = math.hypot(x2 - x1, y2 - y1)
+            samples = max(1, int(math.ceil(length / spacing)))
+            for index in range(samples + 1):
+                ratio = index / samples
+                result.append((
+                    x1 + (x2 - x1) * ratio,
+                    y1 + (y2 - y1) * ratio,
+                    0.0,
+                ))
+        return result
 
     def command_callback(self, message):
         self.command = message
         self.last_command_time = time.monotonic()
-
-    @staticmethod
-    def obstacle_points():
-        # A solid rectangle blocks the straight path. The planner must pass above
-        # or below it in XY; there is no z direction available.
-        points = []
-        for x_index in range(7):
-            x = 2.2 + 0.1 * x_index
-            for y_index in range(17):
-                y = -0.8 + 0.1 * y_index
-                points.append((x, y, 0.0))
-
-        # Add landmarks away from the route so the occupancy view is easier to read.
-        for angle_index in range(48):
-            angle = 2.0 * math.pi * angle_index / 48.0
-            points.append((-2.5 + 0.45 * math.cos(angle),
-                           2.5 + 0.45 * math.sin(angle), 0.0))
-        return points
 
     def update(self):
         now_steady = time.monotonic()
@@ -133,7 +153,6 @@ class PlanarNavigationSimulator(Node):
         odometry.pose.pose.position.x = self.x
         odometry.pose.pose.position.y = self.y
         odometry.pose.pose.orientation = quaternion_from_yaw(self.yaw)
-        # EGO consumes map-frame planar velocities, matching thin_odom_adapter.
         odometry.twist.twist.linear.x = self.vx_world
         odometry.twist.twist.linear.y = self.vy_world
         odometry.twist.twist.angular.z = self.yaw_rate
@@ -167,15 +186,14 @@ class PlanarNavigationSimulator(Node):
             goal.pose.orientation = quaternion_from_yaw(self.goal_yaw)
             self.goal_pub.publish(goal)
             self.goal_sent = True
-            self.get_logger().info('Published automatic planar goal')
+            self.get_logger().info('Published competition shooting-zone goal')
 
     def publish_obstacles(self):
-        points = self.obstacle_points()
         message = PointCloud2()
         message.header.stamp = self.get_clock().now().to_msg()
         message.header.frame_id = 'odom'
         message.height = 1
-        message.width = len(points)
+        message.width = len(self.field_points)
         message.fields = [
             PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
             PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
@@ -184,67 +202,127 @@ class PlanarNavigationSimulator(Node):
         message.is_bigendian = False
         message.point_step = 12
         message.row_step = message.point_step * message.width
-        message.data = b''.join(struct.pack('<fff', *point) for point in points)
+        message.data = b''.join(
+            struct.pack('<fff', *field_point) for field_point in self.field_points)
         message.is_dense = True
         self.cloud_pub.publish(message)
 
-    def publish_markers(self):
-        stamp = self.get_clock().now().to_msg()
-        obstacle = Marker()
-        obstacle.header.stamp = stamp
-        obstacle.header.frame_id = 'odom'
-        obstacle.ns = 'planar_simulation_obstacle'
-        obstacle.id = 0
-        obstacle.type = Marker.CUBE
-        obstacle.action = Marker.ADD
-        obstacle.pose.position.x = 2.5
-        obstacle.pose.position.z = 0.04
-        obstacle.pose.orientation.w = 1.0
-        obstacle.scale.x = 0.7
-        obstacle.scale.y = 1.7
-        obstacle.scale.z = 0.08
-        obstacle.color.r = 0.95
-        obstacle.color.g = 0.18
-        obstacle.color.b = 0.08
-        obstacle.color.a = 0.75
-        self.obstacle_pub.publish(obstacle)
+    def base_marker(self, namespace, marker_id, marker_type):
+        marker = Marker()
+        marker.header.stamp = self.get_clock().now().to_msg()
+        marker.header.frame_id = 'odom'
+        marker.ns = namespace
+        marker.id = marker_id
+        marker.type = marker_type
+        marker.action = Marker.ADD
+        marker.pose.orientation.w = 1.0
+        return marker
 
-        robot = Marker()
-        robot.header = obstacle.header
-        robot.ns = 'planar_simulation_robot'
-        robot.id = 0
-        robot.type = Marker.CUBE
-        robot.action = Marker.ADD
+    def publish_rectangle(self, namespace, marker_id, rectangle, color, z, alpha):
+        marker = self.base_marker(namespace, marker_id, Marker.CUBE)
+        marker.pose.position.x = float(rectangle['x'])
+        marker.pose.position.y = float(rectangle['y'])
+        marker.pose.position.z = z
+        marker.scale.x = float(rectangle['width'])
+        marker.scale.y = float(rectangle['height'])
+        marker.scale.z = 0.025
+        marker.color.r, marker.color.g, marker.color.b = color
+        marker.color.a = alpha
+        return marker
+
+    def publish_field_markers(self):
+        markers = []
+        arena = self.field['arena']
+        floor = {
+            'x': arena['width'] / 2.0,
+            'y': arena['height'] / 2.0,
+            'width': arena['width'],
+            'height': arena['height'],
+        }
+        markers.append(self.publish_rectangle(
+            'competition_floor', 0, floor,
+            (0.20, 0.12, 0.28), -0.045, 0.88))
+
+        for marker_id, surface in enumerate(self.field['course_surfaces']):
+            markers.append(self.publish_rectangle(
+                'competition_course', marker_id, surface,
+                (0.48, 0.50, 0.54), -0.025, 0.82))
+
+        markers.append(self.publish_rectangle(
+            'competition_zones', 0, self.field['start'],
+            (0.90, 0.08, 0.08), -0.005, 0.92))
+        markers.append(self.publish_rectangle(
+            'competition_zones', 1, self.field['shooting_zone'],
+            (0.05, 0.30, 0.95), -0.005, 0.92))
+        markers.append(self.publish_rectangle(
+            'competition_zones', 2, self.field['target_zone'],
+            (0.05, 0.72, 0.24), -0.005, 0.72))
+
+        walls = self.base_marker('competition_collision_boundary', 0, Marker.LINE_LIST)
+        walls.scale.x = 0.045
+        walls.color.r = 0.93
+        walls.color.g = 0.93
+        walls.color.b = 0.95
+        walls.color.a = 0.95
+        for x1, y1, x2, y2 in self.field['collision_segments']:
+            walls.points.extend((point(x1, y1, 0.04), point(x2, y2, 0.04)))
+        markers.append(walls)
+
+        route = self.base_marker('competition_reference_route', 0, Marker.LINE_STRIP)
+        route.scale.x = 0.12
+        route.color.r = 0.10
+        route.color.g = 1.0
+        route.color.b = 0.22
+        route.color.a = 0.82
+        route.points = [point(x, y, 0.06) for x, y in self.field['reference_route']]
+        markers.append(route)
+
+        for marker_id, (label, zone) in enumerate((
+                ('START', self.field['start']),
+                ('SHOOTING', self.field['shooting_zone']),
+                ('TARGET ROBOT', self.field['target_zone']))):
+            text_marker = self.base_marker('competition_labels', marker_id,
+                                           Marker.TEXT_VIEW_FACING)
+            text_marker.pose.position.x = float(zone['x'])
+            text_marker.pose.position.y = float(zone['y'])
+            text_marker.pose.position.z = 0.10
+            text_marker.scale.z = 0.22
+            text_marker.color.r = 1.0
+            text_marker.color.g = 1.0
+            text_marker.color.b = 1.0
+            text_marker.color.a = 1.0
+            text_marker.text = label
+            markers.append(text_marker)
+
+        self.field_pub.publish(MarkerArray(markers=markers))
+
+    def publish_robot_markers(self):
+        robot = self.base_marker('planar_simulation_robot', 0, Marker.CUBE)
         robot.pose.position.x = self.x
         robot.pose.position.y = self.y
-        robot.pose.position.z = 0.08
+        robot.pose.position.z = 0.10
         robot.pose.orientation = quaternion_from_yaw(self.yaw)
-        robot.scale.x = 0.55
+        robot.scale.x = 0.52
         robot.scale.y = 0.42
-        robot.scale.z = 0.16
-        robot.color.r = 0.12
-        robot.color.g = 0.85
-        robot.color.b = 0.28
+        robot.scale.z = 0.18
+        robot.color.r = 1.0
+        robot.color.g = 0.58
+        robot.color.b = 0.04
         robot.color.a = 1.0
         self.robot_pub.publish(robot)
 
-        evidence = Marker()
-        evidence.header = obstacle.header
-        evidence.ns = 'planar_simulation_status'
-        evidence.id = 0
-        evidence.type = Marker.TEXT_VIEW_FACING
-        evidence.action = Marker.ADD
+        evidence = self.base_marker('planar_simulation_status', 0,
+                                    Marker.TEXT_VIEW_FACING)
         evidence.pose.position.x = self.x
-        evidence.pose.position.y = self.y - 0.7
-        evidence.pose.position.z = 0.05
-        evidence.pose.orientation.w = 1.0
+        evidence.pose.position.y = self.y - 0.55
+        evidence.pose.position.z = 0.12
         evidence.scale.z = 0.18
         evidence.color.r = 1.0
         evidence.color.g = 1.0
         evidence.color.b = 1.0
         evidence.color.a = 1.0
         evidence.text = (
-            f'holonomic sim  x={self.x:.2f}  y={self.y:.2f}  yaw={self.yaw:.2f}\n'
+            f'competition sim  x={self.x:.2f}  y={self.y:.2f}  yaw={self.yaw:.2f}\n'
             f'world velocity=({self.vx_world:.2f}, {self.vy_world:.2f})')
         self.evidence_pub.publish(evidence)
 
