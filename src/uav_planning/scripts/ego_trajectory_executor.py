@@ -94,8 +94,8 @@ class EgoTrajectoryExecutor(Node):
         self.position_spline = None
         self.velocity_spline = None
         self.acceleration_spline = None
-        self.received_steady = None
         self.elapsed_at_receive = 0.0
+        self.received_ros_ns = None
         self.duration = 0.0
         self.final_yaw = None
         self.odom = None
@@ -156,7 +156,7 @@ class EgoTrajectoryExecutor(Node):
         start_ns = message.start_time.sec * 1_000_000_000 + message.start_time.nanosec
         self.elapsed_at_receive = clamp((now_ns - start_ns) / 1e9, 0.0,
                                         spline.end - spline.start)
-        self.received_steady = time.monotonic()
+        self.received_ros_ns = now_ns
         self.position_spline, self.velocity_spline = spline, velocity
         self.acceleration_spline = acceleration
         self.duration = spline.end - spline.start
@@ -179,7 +179,8 @@ class EgoTrajectoryExecutor(Node):
         if self.odom is None or time.monotonic() - self.odom_received_steady > self.odom_timeout:
             self.publish_stop()
             return
-        elapsed = clamp(self.elapsed_at_receive + time.monotonic() - self.received_steady,
+        since_receive = (self.get_clock().now().nanoseconds - self.received_ros_ns) / 1e9
+        elapsed = clamp(self.elapsed_at_receive + since_receive,
                         0.0, self.duration)
         parameter = self.position_spline.start + elapsed
         position = self.position_spline.evaluate(parameter)

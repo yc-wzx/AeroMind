@@ -1,0 +1,202 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+- Class: rviz_common/Views
+  Name: Views
+Visualization Manager:
+  Class: ''
+  Displays:
+  - Alpha: 0.35
+    Cell Size: 1
+    Class: rviz_default_plugins/Grid
+    Color: 110; 110; 120
+    Enabled: true
+    Line Style:
+      Line Width: 0.03
+      Value: Lines
+    Name: Map Grid
+    Plane: XY
+    Plane Cell Count: 30
+    Reference Frame: <Fixed Frame>
+    Value: true
+  - Alpha: 0.9
+    Autocompute Intensity Bounds: true
+    Axis: Z
+    Channel Name: intensity
+    Class: rviz_default_plugins/PointCloud2
+    Color Transformer: AxisColor
+    Decay Time: 0.2
+    Enabled: true
+    Max Color: 255; 255; 255
+    Min Color: 0; 0; 0
+    Name: Gazebo Laser Returns
+    Position Transformer: XYZ
+    Selectable: false
+    Size (Pixels): 4
+    Style: Points
+    Topic:
+      Depth: 1
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /gazebo/registered_scan
+    Use Fixed Frame: true
+    Use rainbow: true
+    Value: true
+  - Alpha: 0.3
+    Autocompute Intensity Bounds: true
+    Axis: Z
+    Channel Name: intensity
+    Class: rviz_default_plugins/PointCloud2
+    Color: 255; 70; 20
+    Color Transformer: FlatColor
+    Decay Time: 1
+    Enabled: true
+    Name: EGO Inflated Obstacles
+    Position Transformer: XYZ
+    Selectable: false
+    Size (Pixels): 3
+    Style: Points
+    Topic:
+      Depth: 1
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /grid_map/occupancy_inflate
+    Use Fixed Frame: true
+    Value: true
+  - Alpha: 0.9
+    Buffer Length: 1
+    Class: rviz_default_plugins/Path
+    Color: 70; 200; 255
+    Enabled: true
+    Line Style: Lines
+    Line Width: 0.035
+    Name: Gazebo Actual Path
+    Pose Style: None
+    Topic:
+      Depth: 2
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /path
+    Value: true
+  - Class: rviz_default_plugins/Marker
+    Enabled: true
+    Name: Goal
+    Topic:
+      Depth: 1
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/planning/goal_marker
+    Value: true
+  - Class: rviz_default_plugins/Marker
+    Enabled: true
+    Name: EGO Planned Trajectory
+    Topic:
+      Depth: 2
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/planning/planned_trajectory
+    Value: true
+  - Alpha: 1
+    Buffer Length: 1
+    Class: rviz_default_plugins/Path
+    Color: 255; 220; 20
+    Enabled: true
+    Line Style: Lines
+    Line Width: 0.055
+    Name: Commanded Trajectory
+    Pose Style: None
+    Topic:
+      Depth: 2
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/planning/commanded_path
+    Value: true
+  - Class: rviz_default_plugins/Pose
+    Enabled: true
+    Name: Commanded Setpoint
+    Shape: Axes
+    Axes Length: 0.55
+    Axes Radius: 0.05
+    Topic:
+      Depth: 2
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/planning/commanded_setpoint
+    Value: true
+  - Class: rviz_default_plugins/MarkerArray
+    Enabled: true
+    Name: Competition Field
+    Topic:
+      Depth: 1
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/simulation/field
+    Value: true
+  - Class: rviz_default_plugins/Marker
+    Enabled: true
+    Name: Robot Marker
+    Topic:
+      Depth: 1
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/simulation/robot
+    Value: true
+  - Class: rviz_default_plugins/Marker
+    Enabled: true
+    Name: Gazebo Robot State
+    Topic:
+      Depth: 1
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /ground/simulation/evidence
+    Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 25; 28; 34
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+  - Class: rviz_default_plugins/Interact
+    Hide Inactive Objects: true
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/Select
+  - Class: rviz_default_plugins/FocusCamera
+  - Class: rviz_default_plugins/Measure
+    Line color: 128; 128; 0
+  - Class: rviz_default_plugins/SetGoal
+    Topic:
+      Depth: 1
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Reliability Policy: Reliable
+      Value: /goal_pose
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Angle: 0
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Current View
+      Near Clip Distance: 0.01
+      Scale: 58
+      Target Frame: <Fixed Frame>
+      Value: TopDownOrtho (rviz)
+      X: 4.7
+      Y: 5.0
+    Saved: null
+Window Geometry:
+  Width: 1050
+  Height: 800

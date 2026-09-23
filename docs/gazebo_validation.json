@@ -1,0 +1,29 @@
+{
+  "legs": [
+    {
+      "goal": "return_start",
+      "success": true,
+      "error_m": 0.08002435664248188,
+      "speed": 0.0,
+      "wall_seconds": 19.315880391000064,
+      "position": [
+        4.700862788195979,
+        0.41998029459831776
+      ]
+    },
+    {
+      "goal": "shooting_zone",
+      "success": true,
+      "error_m": 0.00705973585111681,
+      "speed": 0.0,
+      "wall_seconds": 18.98389868000004,
+      "position": [
+        8.69995230710236,
+        4.2429404252482845
+      ]
+    }
+  ],
+  "samples": 1967,
+  "overlap_samples": 0,
+  "min_body_clearance_m": 0.13248029459831215
+}

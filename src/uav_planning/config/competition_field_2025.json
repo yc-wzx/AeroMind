@@ -1,27 +1,176 @@
 {
   "name": "2025 Fujian University Student Robot Competition - Automatic Course",
   "source_note": "Planar approximation reconstructed from the previous competition rules figure; dimensions are metres.",
-  "arena": {"width": 9.4, "height": 10.0},
-  "start": {"x": 4.7, "y": 0.5, "yaw": 1.5707963268, "width": 0.8, "height": 1.0},
-  "shooting_zone": {"x": 8.7, "y": 4.25, "yaw": 1.5707963268, "width": 0.8, "height": 0.8},
-  "target_zone": {"x": 8.15, "y": 8.75, "width": 2.5, "height": 2.5},
-  "reference_route": [[4.7, 0.5], [4.7, 1.8], [8.7, 1.8], [8.7, 4.25]],
+  "arena": {
+    "width": 9.4,
+    "height": 10.0
+  },
+  "start": {
+    "x": 4.7,
+    "y": 0.5,
+    "yaw": 1.5707963268,
+    "width": 0.8,
+    "height": 1.0
+  },
+  "shooting_zone": {
+    "x": 8.7,
+    "y": 4.25,
+    "yaw": 1.5707963268,
+    "width": 0.8,
+    "height": 0.8
+  },
+  "target_zone": {
+    "x": 8.15,
+    "y": 8.75,
+    "width": 2.5,
+    "height": 2.5
+  },
+  "reference_route": [
+    [
+      4.7,
+      0.5
+    ],
+    [
+      4.7,
+      1.8
+    ],
+    [
+      8.7,
+      1.8
+    ],
+    [
+      8.7,
+      4.25
+    ]
+  ],
   "course_surfaces": [
-    {"x": 4.7, "y": 0.9, "width": 1.3, "height": 1.8},
-    {"x": 6.7, "y": 1.8, "width": 5.3, "height": 1.3},
-    {"x": 8.7, "y": 3.0, "width": 1.3, "height": 3.7},
-    {"x": 0.75, "y": 5.3, "width": 1.1, "height": 7.6},
-    {"x": 2.7, "y": 8.7, "width": 3.9, "height": 1.1},
-    {"x": 3.75, "y": 6.9, "width": 1.1, "height": 3.6},
-    {"x": 2.45, "y": 4.9, "width": 3.7, "height": 1.1},
-    {"x": 3.75, "y": 3.2, "width": 1.1, "height": 3.4},
-    {"x": 2.25, "y": 1.4, "width": 4.1, "height": 1.1}
+    {
+      "x": 4.7,
+      "y": 0.9,
+      "width": 1.3,
+      "height": 1.8
+    },
+    {
+      "x": 6.7,
+      "y": 1.8,
+      "width": 5.3,
+      "height": 1.3
+    },
+    {
+      "x": 8.7,
+      "y": 3.0,
+      "width": 1.3,
+      "height": 3.7
+    },
+    {
+      "x": 0.75,
+      "y": 5.3,
+      "width": 1.1,
+      "height": 7.6
+    },
+    {
+      "x": 2.7,
+      "y": 8.7,
+      "width": 3.9,
+      "height": 1.1
+    },
+    {
+      "x": 3.75,
+      "y": 6.9,
+      "width": 1.1,
+      "height": 3.6
+    },
+    {
+      "x": 2.45,
+      "y": 4.9,
+      "width": 3.7,
+      "height": 1.1
+    },
+    {
+      "x": 3.75,
+      "y": 3.2,
+      "width": 1.1,
+      "height": 3.4
+    },
+    {
+      "x": 2.25,
+      "y": 1.4,
+      "width": 4.1,
+      "height": 1.1
+    }
   ],
   "collision_segments": [
-    [0.0, 0.0, 9.4, 0.0], [9.4, 0.0, 9.4, 10.0],
-    [9.4, 10.0, 0.0, 10.0], [0.0, 10.0, 0.0, 0.0],
-    [4.05, 0.0, 4.05, 1.8], [5.35, 0.0, 5.35, 1.15],
-    [5.35, 1.15, 8.05, 1.15], [4.05, 2.45, 8.05, 2.45],
-    [8.05, 2.45, 8.05, 4.75], [9.35, 1.15, 9.35, 4.75]
-  ]
+    [
+      0.0,
+      0.0,
+      9.4,
+      0.0
+    ],
+    [
+      9.4,
+      0.0,
+      9.4,
+      10.0
+    ],
+    [
+      9.4,
+      10.0,
+      0.0,
+      10.0
+    ],
+    [
+      0.0,
+      10.0,
+      0.0,
+      0.0
+    ],
+    [
+      4.05,
+      0.0,
+      4.05,
+      2.45
+    ],
+    [
+      5.35,
+      0.0,
+      5.35,
+      1.15
+    ],
+    [
+      5.35,
+      1.15,
+      9.35,
+      1.15
+    ],
+    [
+      4.05,
+      2.45,
+      8.05,
+      2.45
+    ],
+    [
+      8.05,
+      2.45,
+      8.05,
+      4.75
+    ],
+    [
+      9.35,
+      1.15,
+      9.35,
+      4.75
+    ],
+    [
+      8.05,
+      4.75,
+      9.35,
+      4.75
+    ]
+  ],
+  "assumptions": {
+    "course_width_m": 1.3,
+    "course_width_basis": "training approximation, not a dimension confirmed by the PDF",
+    "boundary_type": "virtual navigation restrictions represented as walls for Gazebo lidar/collision testing",
+    "terrain": "flat; no ramps or bumps"
+  }
 }
