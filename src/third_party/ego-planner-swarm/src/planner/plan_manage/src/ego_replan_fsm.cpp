@@ -207,17 +207,13 @@ namespace ego_planner
       have_new_target_ = true;
 
       /*** FSM状态转换 ***/
-      if (exec_state_ == WAIT_TARGET)
-        changeFSMExecState(GEN_NEW_TRAJ, "TRIG");
-      else
-      {
-        while (exec_state_ != EXEC_TRAJ)
-        {
-          rclcpp::spin_some(node_);
-          std::this_thread::sleep_for(std::chrono::milliseconds(1));
-        }
+      // waypointCallback runs in the node's executor. Spinning the same node
+      // here throws when a new goal arrives during an emergency stop. Let the
+      // FSM timer handle the next transition after this callback returns.
+      if (exec_state_ == EXEC_TRAJ)
         changeFSMExecState(REPLAN_TRAJ, "TRIG");
-      }
+      else
+        changeFSMExecState(GEN_NEW_TRAJ, "TRIG");
 
       visualization_->displayGlobalPathList(gloabl_traj, 0.1, 0);
     }

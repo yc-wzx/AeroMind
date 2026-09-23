@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Adapt Gazebo truth odometry and lidar to AeroMind's planar ROS interfaces.
+"""Adapt Gazebo odometry and lidar to AeroMind's planar ROS interfaces.
 
 The inherited class only supplies field/robot markers and prior-map sampling.
 Motion is computed exclusively by Gazebo; update() never integrates a pose.
 """
 import copy
 import math
+import random
 import struct
 import time
 from collections import deque
@@ -16,7 +17,8 @@ from sensor_msgs.msg import LaserScan, PointCloud2, PointField
 from nav_msgs.msg import Odometry
 from rclpy.qos import qos_profile_sensor_data
 
-from planar_navigation_simulator import PlanarNavigationSimulator, quaternion_from_yaw
+from planar_navigation_simulator import PlanarNavigationSimulator, quaternion_from_yaw, wrap_angle
+from scan_matcher import WallScanMatcher
 
 
 def stamp_seconds(stamp):
@@ -38,6 +40,25 @@ class GazeboNavigationInterface(PlanarNavigationSimulator):
         self.last_odom_stamp = None
         self.last_odom_received = None
         self.scan_received_at = None
+        # Integrate noisy motion increments instead of publishing absolute truth.
+        # Gazebo truth remains available on /gazebo/odometry for evaluation only.
+        self.imperfect_sensors = bool(self.declare_parameter('imperfect_sensors', True).value)
+        self.odom_scale_x = float(self.declare_parameter('odom_scale_x', 1.005).value)
+        self.odom_scale_y = float(self.declare_parameter('odom_scale_y', 0.995).value)
+        self.odom_yaw_bias = float(self.declare_parameter('odom_yaw_bias_rad_s', 0.0005).value)
+        self.odom_walk = float(self.declare_parameter('odom_walk_m_sqrt_s', 0.002).value)
+        self.odom_yaw_walk = float(self.declare_parameter('odom_yaw_walk_rad_sqrt_s', 0.0003).value)
+        self.drive_scale = float(self.declare_parameter('drive_speed_scale', 0.97).value)
+        self.drive_tau = float(self.declare_parameter('drive_response_sec', 0.12).value)
+        self.random = random.Random(int(self.declare_parameter('noise_seed', 2025).value))
+        self.estimate = None
+        self.estimated_velocity = (0.0, 0.0, 0.0)
+        self.last_estimate_stamp = None
+        self.last_truth_pose = None
+        self.scan_matcher = WallScanMatcher(self.field['collision_segments'])
+        self.scan_match_count = 0
+        self.last_drive_clock = None
+        self.actuated = Twist()
         self.auto_goal = bool(self.declare_parameter('auto_goal', True).value)
         self.drive_pub = self.create_publisher(
             Twist, '/model/omni_robot/cmd_vel', 10)
@@ -48,7 +69,8 @@ class GazeboNavigationInterface(PlanarNavigationSimulator):
         self.create_subscription(
             LaserScan, '/scan', self.scan_callback, qos_profile_sensor_data)
         self.get_logger().info(
-            'Gazebo backend: real simulator pose + laser scan; '
+            f'Gazebo backend: noisy motion-increment odometry + lidar wall matching, '
+            f'imperfect_sensors={self.imperfect_sensors}; '
             'known field boundaries are used as the prior navigation map.')
 
     def route_projection(self, x, y):
@@ -122,11 +144,43 @@ class GazeboNavigationInterface(PlanarNavigationSimulator):
     def gazebo_odom(self, message):
         self.latest_odom = message
         self.last_odom_received = time.monotonic()
+        stamp = stamp_seconds(message.header.stamp)
         q = message.pose.pose.orientation
-        yaw = math.atan2(2*(q.w*q.z+q.x*q.y), 1-2*(q.y*q.y+q.z*q.z))
-        self.odom_history.append((
-            stamp_seconds(message.header.stamp),
-            message.pose.pose.position.x, message.pose.pose.position.y, yaw))
+        true_yaw = math.atan2(2*(q.w*q.z+q.x*q.y), 1-2*(q.y*q.y+q.z*q.z))
+        true_pose = (message.pose.pose.position.x,
+                     message.pose.pose.position.y, true_yaw)
+        vx, vy = message.twist.twist.linear.x, message.twist.twist.linear.y
+        wz = message.twist.twist.angular.z
+        if self.estimate is None or not self.imperfect_sensors:
+            self.estimate = true_pose
+            c, s = math.cos(true_yaw), math.sin(true_yaw)
+            self.estimated_velocity = (c*vx-s*vy, s*vx+c*vy, wz)
+        elif self.last_estimate_stamp is not None and self.last_truth_pose is not None:
+            dt = stamp - self.last_estimate_stamp
+            if 0.0 < dt < 0.5:
+                x, y, yaw = self.estimate
+                tx, ty, tyaw = self.last_truth_pose
+                # Position increments describe actual motion even after contact;
+                # Gazebo's instantaneous twist alone can report motion while
+                # the collision solver keeps the chassis stationary.
+                dx, dy = true_pose[0]-tx, true_pose[1]-ty
+                dc, ds = math.cos(tyaw), math.sin(tyaw)
+                body_dx, body_dy = dc*dx+ds*dy, -ds*dx+dc*dy
+                body_dx *= self.odom_scale_x
+                body_dy *= self.odom_scale_y
+                dyaw = wrap_angle(true_yaw-tyaw) + self.odom_yaw_bias*dt + self.random.gauss(
+                    0.0, self.odom_yaw_walk*math.sqrt(dt))
+                c, s = math.cos(yaw + dyaw/2), math.sin(yaw + dyaw/2)
+                world_dx, world_dy = c*body_dx-s*body_dy, s*body_dx+c*body_dy
+                walk = self.odom_walk*math.sqrt(dt)
+                self.estimate = (x + world_dx + self.random.gauss(0.0, walk),
+                                 y + world_dy + self.random.gauss(0.0, walk),
+                                 wrap_angle(yaw+dyaw))
+                self.estimated_velocity = (world_dx/dt, world_dy/dt,
+                                           dyaw/dt)
+        self.last_estimate_stamp = stamp
+        self.last_truth_pose = true_pose
+        self.odom_history.append((stamp, *self.estimate))
 
     def scan_callback(self, scan):
         if not self.odom_history:
@@ -135,6 +189,18 @@ class GazeboNavigationInterface(PlanarNavigationSimulator):
         t, x, y, yaw = min(self.odom_history, key=lambda p: abs(p[0]-stamp))
         if abs(t-stamp) > 0.1:
             return
+        if self.imperfect_sensors:
+            correction = self.scan_matcher.match((x, y, yaw), scan)
+            if correction is not None:
+                dx, dy, dyaw = (0.7*value for value in correction)
+                self.estimate = (self.estimate[0]+dx,
+                                 self.estimate[1]+dy,
+                                 wrap_angle(self.estimate[2]+dyaw))
+                self.odom_history = deque(((ts, px+dx, py+dy,
+                    wrap_angle(pyaw+dyaw)) for ts, px, py, pyaw in self.odom_history),
+                    maxlen=150)
+                x, y, yaw = x+dx, y+dy, wrap_angle(yaw+dyaw)
+                self.scan_match_count += 1
         points = []
         for index, distance in enumerate(scan.ranges):
             if math.isfinite(distance) and scan.range_min < distance < scan.range_max:
@@ -165,7 +231,22 @@ class GazeboNavigationInterface(PlanarNavigationSimulator):
                  now_steady-self.last_odom_received < 0.5 and
                  self.scan_received_at is not None and
                  now_steady-self.scan_received_at < 1.0)
-        self.drive_pub.publish(self.command if fresh else Twist())
+        if fresh:
+            sim_now = self.get_clock().now().nanoseconds
+            dt = 0.0 if self.last_drive_clock is None else max(
+                0.0, min(0.2, (sim_now-self.last_drive_clock)*1e-9))
+            self.last_drive_clock = sim_now
+            alpha = 1.0 if not self.imperfect_sensors or self.drive_tau <= 0 else (
+                1.0-math.exp(-dt/self.drive_tau))
+            scale = self.drive_scale if self.imperfect_sensors else 1.0
+            self.actuated.linear.x += alpha*(scale*self.command.linear.x-self.actuated.linear.x)
+            self.actuated.linear.y += alpha*(scale*self.command.linear.y-self.actuated.linear.y)
+            self.actuated.angular.z += alpha*(self.command.angular.z-self.actuated.angular.z)
+        else:
+            # Sensor/command watchdog is an immediate stop, not a delayed command.
+            self.actuated = Twist()
+            self.last_drive_clock = None
+        self.drive_pub.publish(self.actuated)
         if self.latest_odom is None:
             return
         source = self.latest_odom
@@ -175,19 +256,18 @@ class GazeboNavigationInterface(PlanarNavigationSimulator):
         message = copy.deepcopy(source)
         message.header.frame_id = 'odom'
         message.child_frame_id = 'base_link'
-        self.x = message.pose.pose.position.x
-        self.y = message.pose.pose.position.y
-        q = message.pose.pose.orientation
-        self.yaw = math.atan2(2*(q.w*q.z+q.x*q.y), 1-2*(q.y*q.y+q.z*q.z))
+        self.x, self.y, self.yaw = self.estimate
+        message.pose.pose.position.x = self.x
+        message.pose.pose.position.y = self.y
         message.pose.pose.position.z = 0.0
         message.pose.pose.orientation = quaternion_from_yaw(self.yaw)
-        # Gazebo twist is body-frame; EGO's existing adapter expects world velocity.
-        vx, vy = message.twist.twist.linear.x, message.twist.twist.linear.y
-        c, s = math.cos(self.yaw), math.sin(self.yaw)
-        self.vx_world, self.vy_world = c*vx-s*vy, s*vx+c*vy
-        self.yaw_rate = message.twist.twist.angular.z
+        self.vx_world, self.vy_world, self.yaw_rate = self.estimated_velocity
         message.twist.twist.linear.x = self.vx_world
         message.twist.twist.linear.y = self.vy_world
+        message.twist.twist.angular.z = self.yaw_rate
+        if self.imperfect_sensors:
+            message.pose.covariance[0] = message.pose.covariance[7] = 0.03**2
+            message.pose.covariance[35] = math.radians(1.0)**2
         self.odom_pub.publish(message)
         transform = TransformStamped()
         transform.header = message.header

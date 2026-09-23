@@ -1,0 +1,67 @@
+{
+  "legs": [
+    {
+      "goal": "middle",
+      "success": true,
+      "error_m": 0.00950680578892321,
+      "speed_mps": 0.0,
+      "wall_seconds": 12.848021633000144,
+      "true_position": [
+        6.709504388634672,
+        1.7997856335160838
+      ]
+    },
+    {
+      "goal": "start_1",
+      "success": true,
+      "error_m": 0.05198995183593732,
+      "speed_mps": 0.006598414986531041,
+      "wall_seconds": 9.919606784000052,
+      "true_position": [
+        4.705484837160735,
+        0.44830017743528217
+      ]
+    },
+    {
+      "goal": "shoot_1",
+      "success": true,
+      "error_m": 0.03456592323851217,
+      "speed_mps": 0.0,
+      "wall_seconds": 19.1798715729999,
+      "true_position": [
+        8.699748858419548,
+        4.215434989118513
+      ]
+    },
+    {
+      "goal": "start_2",
+      "success": true,
+      "error_m": 0.03729692861724547,
+      "speed_mps": 0.0,
+      "wall_seconds": 19.34003500300014,
+      "true_position": [
+        4.699408163450801,
+        0.46270776738007047
+      ]
+    },
+    {
+      "goal": "shoot_2",
+      "success": true,
+      "error_m": 0.00470056307157702,
+      "speed_mps": 0.0,
+      "wall_seconds": 19.179246843999863,
+      "true_position": [
+        8.699650830849581,
+        4.25468757656943
+      ]
+    }
+  ],
+  "samples": 4064,
+  "overlap_samples": 0,
+  "minimum_body_clearance_m": 0.142552708715419,
+  "localization_error_m": {
+    "median": 0.01102058947180755,
+    "p95": 0.03650437030891715,
+    "maximum": 0.051049320945069185
+  }
+}

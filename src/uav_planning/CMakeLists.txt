@@ -62,6 +62,7 @@ install(PROGRAMS
   scripts/ego_goal_adapter.py
   scripts/ego_trajectory_executor.py
   scripts/gazebo_navigation_interface.py
+  scripts/scan_matcher.py
   scripts/planar_navigation_simulator.py
   DESTINATION lib/${PROJECT_NAME}
 )
