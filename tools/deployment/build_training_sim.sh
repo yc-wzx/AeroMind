@@ -15,12 +15,18 @@ source /opt/ros/humble/setup.bash
 cd "$ROOT"
 export CMAKE_BUILD_PARALLEL_LEVEL="$JOBS"
 export MAKEFLAGS="-j$JOBS"
-# Explicit src discovery avoids duplicate package names in historical snapshots.
-# uav_bringup has a hardware Livox dependency; the simulation needs no SDK.
-colcon build --base-paths "$ROOT/src" --symlink-install \
-  --executor sequential --packages-select \
+# Resolve only the simulation packages, then constrain discovery to their paths.
+# --packages-select alone still treats a discovered local Livox driver as a
+# required installed dependency of bringup. Exclude it from discovery entirely.
+mapfile -t PACKAGE_PATHS < <(colcon list --base-paths "$ROOT/src" --packages-select \
   quadrotor_msgs traj_utils plan_env path_searching bspline_opt ego_planner \
-  spark_fast_lio uav_planning uav_bringup stage2_lio_sim \
+  spark_fast_lio uav_planning uav_bringup stage2_lio_sim --paths-only)
+if [[ "${#PACKAGE_PATHS[@]}" != 10 ]]; then
+  echo 'Expected exactly ten versioned simulation packages.' >&2
+  exit 2
+fi
+colcon build --paths "${PACKAGE_PATHS[@]}" --symlink-install \
+  --executor sequential \
   --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
 source "$ROOT/install/setup.bash"
 python3 -B "$ROOT/tools/deployment/install_training_profile.py" --jobs "$JOBS"

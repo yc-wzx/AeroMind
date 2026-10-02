@@ -1,5 +1,17 @@
 # AeroMind Planar
 
+## 当前省赛训练版（2026-10-02）
+
+下载到小电脑、安装依赖、重新编译和显示 Gazebo/RViz，请按
+[GitHub 迁移说明](docs/GITHUB_TRANSFER.md)操作。
+当前验证入口为 `provincial_stage2_lio_fine_map.launch.py`：使用模拟三维雷达、IMU、
+完整三维 LIO 与全向导航，LIO 体素为 0.05 m。
+验证报告见[Stage 2 第 4 项体素优化](docs/stage2_step4_lio_fine_map_optimization_20261002.md)。
+
+状态：`TRAINING-ONLY / PROVISIONAL`、`COMPETITION ARENA NOT VERIFIED`。
+真实传感器和实车验证仍待完成。下文保留最初的平面移植设计及硬件入口说明，
+其中 SE(2) LIO 投影描述不适用于当前已验证的模拟 LIO 启动入口。
+
 AeroMind Planar 是面向 ROS 2 Humble 全向轮底盘的激光自主导航系统。它由学长的
 AeroMind UAV 工程改造而来，使用 Livox Mid-360 与 IMU 作为三维感知输入，但导航
 状态、重定位、地图、规划和控制都限制在 SE(2)：
