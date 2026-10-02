@@ -86,6 +86,9 @@ class EgoTrajectoryExecutor(Node):
         self.kp_position = float(self.declare_parameter('position_kp', 1.2).value)
         self.kp_yaw = float(self.declare_parameter('yaw_kp', 2.0).value)
         self.odom_timeout = float(self.declare_parameter('odometry_timeout_sec', 0.3).value)
+        self.trajectory_start_clock = self.declare_parameter('trajectory_start_clock', 'ros').value
+        if self.trajectory_start_clock not in ('ros', 'system'):
+            raise ValueError('trajectory_start_clock must be ros or system')
         self.plan_step = float(self.declare_parameter('planned_path_sample_sec', 0.05).value)
         if min(self.rate, self.max_vx, self.max_vy, self.max_yaw_rate,
                self.kp_position, self.kp_yaw, self.odom_timeout, self.plan_step) <= 0.0:
@@ -154,7 +157,18 @@ class EgoTrajectoryExecutor(Node):
 
         now_ns = self.get_clock().now().nanoseconds
         start_ns = message.start_time.sec * 1_000_000_000 + message.start_time.nanosec
-        self.elapsed_at_receive = clamp((now_ns - start_ns) / 1e9, 0.0,
+        # This EGO port stamps Bspline.start_time with RCL_SYSTEM_TIME even
+        # when the node uses simulation time. Compare only the declared wire
+        # clock; never clamp an epoch/relative-clock mismatch into a new start.
+        comparison_ns = (time.time_ns() if self.trajectory_start_clock == 'system'
+                         else now_ns)
+        initial_age = (comparison_ns - start_ns) / 1e9
+        if initial_age >= spline.end - spline.start:
+            self.position_spline = None
+            self.get_logger().warn('rejecting trajectory already expired at reception')
+            self.publish_stop()
+            return
+        self.elapsed_at_receive = clamp(initial_age, 0.0,
                                         spline.end - spline.start)
         self.received_ros_ns = now_ns
         self.position_spline, self.velocity_spline = spline, velocity
@@ -186,6 +200,12 @@ class EgoTrajectoryExecutor(Node):
         position = self.position_spline.evaluate(parameter)
         velocity = self.velocity_spline.evaluate(parameter)
         acceleration = self.acceleration_spline.evaluate(parameter)
+        # Feed-forward ends with the trajectory. EGO may publish a spline whose
+        # endpoint derivative is nonzero; replaying that derivative forever
+        # makes the robot settle away from its waypoint.
+        if elapsed >= self.duration:
+            velocity = (0.0, 0.0)
+            acceleration = (0.0, 0.0)
         current_x = self.odom.pose.pose.position.x
         current_y = self.odom.pose.pose.position.y
         current_yaw = yaw_from_quaternion(self.odom.pose.pose.orientation)

@@ -59,10 +59,18 @@ install(TARGETS
   relocalization_demo_source
   DESTINATION lib/${PROJECT_NAME})
 install(PROGRAMS
+  scripts/stage2_scan_relay.py
+  scripts/stage2_wall_localization.py
+  scripts/stage2_localized_interface.py
+  scripts/stage2_odometry_model.py
+  scripts/stage2_simulated_odometry.py
+  scripts/stage2_navigation_interface.py
   scripts/ego_goal_adapter.py
   scripts/ego_trajectory_executor.py
   scripts/gazebo_navigation_interface.py
   scripts/scan_matcher.py
+  scripts/grid_route.py
+  scripts/provincial_safety_geometry.py
   scripts/planar_navigation_simulator.py
   DESTINATION lib/${PROJECT_NAME}
 )

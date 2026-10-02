@@ -47,6 +47,7 @@ def generate_launch_description():
         Node(package='uav_planning', executable='gazebo_navigation_interface.py',
              name='gazebo_navigation_interface', output='screen', parameters=[sim, {
                  'field_config': os.path.join(planning, 'config', 'competition_field_2025.json'),
+                 'imperfect_sensors': False,
                  'auto_goal': ParameterValue(LaunchConfiguration('auto_goal'), value_type=bool),
                  'goal_delay_sec': ParameterValue(LaunchConfiguration('goal_delay_sec'), value_type=float),
              }]),

@@ -22,7 +22,9 @@ def stop():
     pid = int(record["pid"])
     try:
         command = Path(f"/proc/{pid}/cmdline").read_bytes()
-        if b"competition_gazebo.launch.py" not in command or os.getpgid(pid) != pid:
+        if (not any(name in command for name in
+                    (b"competition_gazebo.launch.py", b"rmuc_gazebo.launch.py"))
+                or os.getpgid(pid) != pid):
             raise RuntimeError("PID no longer belongs to this simulation; refusing to stop it")
         os.killpg(pid, signal.SIGINT)
     except ProcessLookupError:
@@ -38,6 +40,7 @@ def stop():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--stop", action="store_true")
+    parser.add_argument("--world", choices=("competition", "rmuc"), default="competition")
     args, extra = parser.parse_known_args()
     if args.stop:
         stop()
@@ -52,7 +55,9 @@ def main():
         log_path = CACHE / "latest.log"
         with log_path.open("w") as log:
             child = subprocess.Popen(
-                ["ros2", "launch", "uav_bringup", "competition_gazebo.launch.py", *extra],
+                ["ros2", "launch", "uav_bringup",
+                 f"{args.world}_gazebo.launch.py" if args.world == "rmuc"
+                 else "competition_gazebo.launch.py", *extra],
                 cwd=root, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
             PID_FILE.write_text(json.dumps({"pid":child.pid}))
             def forward(signum, frame):

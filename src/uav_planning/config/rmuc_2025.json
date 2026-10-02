@@ -1,0 +1,12 @@
+{
+  "name": "RMUC 2025 arena with AeroMind navigation",
+  "arena": {"width": 29.15, "height": 16.2},
+  "start": {"x": 3.0, "y": 3.0, "yaw": 0.0, "width": 0.6, "height": 0.6},
+  "shooting_zone": {"x": 8.8, "y": 1.5, "yaw": 0.0, "width": 0.6, "height": 0.6},
+  "target_zone": {"x": 26.0, "y": 12.0, "width": 0.6, "height": 0.6},
+  "goal_label": "DEMO GOAL",
+  "target_label": "FAR TEST",
+  "reference_route": [],
+  "course_surfaces": [],
+  "collision_segments": []
+}

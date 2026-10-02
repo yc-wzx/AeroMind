@@ -1,0 +1,55 @@
+# Simulation-only: variance = declared Gaussian stddev squared; no injected bias walk.
+/**:
+  ros__parameters:
+    common:
+      map_frame: lio_odom
+      lidar_frame: lio_lidar
+      imu_frame: lio_imu
+      base_frame: ''
+      visualization_frame: imu
+      time_sync_en: false
+      planar_mode: false
+    preprocess:
+      lidar_type: 5
+      scan_line: 4
+      blind: 0.1
+      timestamp_unit: 3
+      scan_rate: 10
+    mapping:
+      acc_cov: 1.0e-06
+      gyr_cov: 1.0e-08
+      b_acc_cov: 0.0
+      b_gyr_cov: 0.0
+      fov_degree: 360.0
+      det_range: 16.0
+      extrinsic_est_en: false
+      extrinsic_T:
+      - 0.0
+      - 0.0
+      - 0.0
+      extrinsic_R:
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    gravity_alignment:
+      enable_gravity_alignment: false
+    filter_size_map: 0.1
+    point_filter_num: 1
+    point_filter_num_for_preprocessing: 1
+    publish:
+      path_en: true
+      scan_publish_en: true
+      dense_publish_en: true
+      scan_lidarframe_pub_en: false
+      scan_bodyframe_pub_en: false
+      scan_baseframe_pub_en: false
+    pcd_save:
+      pcd_save_en: false
+    verbose: false
+    pcl_verbose: false

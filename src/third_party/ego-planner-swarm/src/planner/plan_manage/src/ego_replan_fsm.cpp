@@ -22,6 +22,8 @@ namespace ego_planner
     node_->declare_parameter("fsm/emergency_time", 1.0);
     node_->declare_parameter("fsm/realworld_experiment", false);
     node_->declare_parameter("fsm/fail_safe", true);
+    node_->declare_parameter("fsm/replan_from_odom_if_diverged", false);
+    node_->declare_parameter("fsm/replan_odom_divergence_m", 0.12);
 
     node_->get_parameter("fsm/flight_type", target_type_);
     node_->get_parameter("fsm/thresh_replan_time", replan_thresh_);
@@ -31,6 +33,10 @@ namespace ego_planner
     node_->get_parameter("fsm/emergency_time", emergency_time_);
     node_->get_parameter("fsm/realworld_experiment", flag_realworld_experiment_);
     node_->get_parameter("fsm/fail_safe", enable_fail_safe_);
+    node_->get_parameter("fsm/replan_from_odom_if_diverged", replan_from_odom_if_diverged_);
+    node_->get_parameter("fsm/replan_odom_divergence_m", replan_odom_divergence_m_);
+    if (replan_odom_divergence_m_ <= 0.0)
+      throw std::invalid_argument("fsm/replan_odom_divergence_m must be positive");
 
     have_trigger_ = !flag_realworld_experiment_;
 
@@ -188,20 +194,47 @@ namespace ego_planner
     bool success = false;
     Eigen::Vector3d planar_wp = next_wp;
     planar_wp(2) = 0.0;
-    success = planner_manager_->planGlobalTraj(odom_pos_, odom_vel_, Eigen::Vector3d::Zero(), planar_wp, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero());
+    RCLCPP_INFO(node_->get_logger(),
+                "EGO global request: odom=(%.3f,%.3f) vel=(%.3f,%.3f) goal=(%.3f,%.3f) max_vel=%.3f",
+                odom_pos_.x(), odom_pos_.y(), odom_vel_.x(), odom_vel_.y(),
+                planar_wp.x(), planar_wp.y(), planner_manager_->pp_.max_vel_);
+    if (!odom_pos_.allFinite() || !odom_vel_.allFinite() ||
+        !planar_wp.allFinite() || !std::isfinite(planner_manager_->pp_.max_vel_) ||
+        planner_manager_->pp_.max_vel_ <= 0.0 ||
+        odom_vel_.head<2>().norm() >
+            std::max(1.0, 4.0 * planner_manager_->pp_.max_vel_))
+    {
+      RCLCPP_ERROR(node_->get_logger(), "Rejecting EGO global request with invalid state or speed");
+      return;
+    }
+    try
+    {
+      success = planner_manager_->planGlobalTraj(odom_pos_, odom_vel_, Eigen::Vector3d::Zero(), planar_wp, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero());
+    }
+    catch (const std::bad_alloc &)
+    {
+      RCLCPP_ERROR(node_->get_logger(), "EGO global trajectory allocation failed; retaining current state");
+      return;
+    }
 
     if (success)
     {
-      end_pt_ = planar_wp;
-
       constexpr double step_size_t = 0.1;
-      int i_end = floor(planner_manager_->global_data_.global_duration_ / step_size_t);
-      vector<Eigen::Vector3d> gloabl_traj(i_end);
-      for (int i = 0; i < i_end; i++)
+      const double duration = planner_manager_->global_data_.global_duration_;
+      RCLCPP_INFO(node_->get_logger(), "EGO global duration: %.3f s", duration);
+      if (!std::isfinite(duration) || duration < 0.0 || duration > 120.0)
+      {
+        RCLCPP_ERROR(node_->get_logger(), "Rejecting invalid EGO global duration %.3f s", duration);
+        return;
+      }
+      const size_t sample_count = static_cast<size_t>(std::floor(duration / step_size_t));
+      vector<Eigen::Vector3d> gloabl_traj(sample_count);
+      for (size_t i = 0; i < sample_count; i++)
       {
         gloabl_traj[i] = planner_manager_->global_data_.global_traj_.evaluate(i * step_size_t);
       }
 
+      end_pt_ = planar_wp;
       end_vel_.setZero();
       have_target_ = true;
       have_new_target_ = true;
@@ -210,7 +243,9 @@ namespace ego_planner
       // waypointCallback runs in the node's executor. Spinning the same node
       // here throws when a new goal arrives during an emergency stop. Let the
       // FSM timer handle the next transition after this callback returns.
-      if (exec_state_ == EXEC_TRAJ)
+      // A newly dispatched stage must start from measured odometry when the
+      // downstream actuator may have held or replaced the previous spline.
+      if (exec_state_ == EXEC_TRAJ && !replan_from_odom_if_diverged_)
         changeFSMExecState(REPLAN_TRAJ, "TRIG");
       else
         changeFSMExecState(GEN_NEW_TRAJ, "TRIG");
@@ -233,17 +268,54 @@ namespace ego_planner
   void EGOReplanFSM::waypointCallback(const std::shared_ptr<const geometry_msgs::msg::PoseStamped> &msg)
   {
     cout << "Triggered!" << endl;
-
-    init_pt_ = odom_pos_;
-
     Eigen::Vector3d end_wp(
         msg->pose.position.x, msg->pose.position.y, 0.0);
+
+    if (!end_wp.allFinite())
+    {
+      RCLCPP_ERROR(node_->get_logger(), "Rejecting non-finite EGO goal");
+      return;
+    }
+    if (!have_odom_)
+    {
+      // A goal may arrive before this node's first odometry callback, even
+      // when the upstream navigation node already has odometry. Planning from
+      // uninitialised Eigen vectors can request an enormous allocation.
+      pending_waypoint_ = end_wp;
+      pending_waypoint_valid_ = true;
+      RCLCPP_WARN(node_->get_logger(), "Deferring EGO goal until first odometry");
+      return;
+    }
+
+    init_pt_ = odom_pos_;
 
     planNextWaypoint(end_wp);
   }
 
   void EGOReplanFSM::odometryCallback(const std::shared_ptr<const nav_msgs::msg::Odometry> &msg)
   {
+    if (!std::isfinite(msg->pose.pose.position.x) ||
+        !std::isfinite(msg->pose.pose.position.y) ||
+        !std::isfinite(msg->twist.twist.linear.x) ||
+        !std::isfinite(msg->twist.twist.linear.y))
+    {
+      RCLCPP_WARN(node_->get_logger(), "Ignoring non-finite EGO odometry");
+      return;
+    }
+    const double input_speed = std::hypot(msg->twist.twist.linear.x,
+                                          msg->twist.twist.linear.y);
+    const double input_speed_limit = std::max(1.0, 4.0 * planner_manager_->pp_.max_vel_);
+    if (input_speed > input_speed_limit)
+    {
+      // The simulated odometry chain can emit a huge twist at world startup
+      // despite a valid pose. Feeding it into the polynomial seed can make the local
+      // planner request an enormous allocation. Wait for the next sane frame.
+      RCLCPP_WARN_THROTTLE(node_->get_logger(), *node_->get_clock(), 1000,
+                           "Ignoring implausible EGO odometry velocity (%.3f,%.3f) m/s; limit %.3f",
+                           msg->twist.twist.linear.x, msg->twist.twist.linear.y,
+                           input_speed_limit);
+      return;
+    }
     odom_pos_(0) = msg->pose.pose.position.x;
     odom_pos_(1) = msg->pose.pose.position.y;
     odom_pos_(2) = 0.0;
@@ -260,6 +332,12 @@ namespace ego_planner
     odom_orient_.z() = msg->pose.pose.orientation.z;
 
     have_odom_ = true;
+    if (pending_waypoint_valid_)
+    {
+      pending_waypoint_valid_ = false;
+      init_pt_ = odom_pos_;
+      planNextWaypoint(pending_waypoint_);
+    }
   }
 
   void EGOReplanFSM::BroadcastBsplineCallback(const std::shared_ptr<const traj_utils::msg::Bspline> &msg)
@@ -269,16 +347,16 @@ namespace ego_planner
       return;
 
     // if (abs((ros::Time::now() - msg->start_time).toSec()) > 0.25)
-    rclcpp::Clock clock(RCL_SYSTEM_TIME);  // 确保使用当前节点的时间源
-    auto msg_time = rclcpp::Time(msg->start_time, clock.get_clock_type());
-    // RCLCPP_INFO(node_->get_logger(), "Clock type: %d", rclcpp::Clock().now().get_clock_type());
+    auto clock = node_->get_clock();  // 确保使用当前节点的时间源
+    auto msg_time = rclcpp::Time(msg->start_time, clock->get_clock_type());
+    // RCLCPP_INFO(node_->get_logger(), "Clock type: %d", node_->now().get_clock_type());
     // RCLCPP_INFO(node_->get_logger(), "Start time clock type: %d", rclcpp::Time(msg->start_time).get_clock_type());
     // RCLCPP_INFO(node_->get_logger(), "msg_time: %d", msg_time.get_clock_type());
-    if (abs((rclcpp::Clock().now() - msg_time).seconds()) > 0.25)
+    if (abs((node_->now() - msg_time).seconds()) > 0.25)
     {
       // ROS_ERROR("Time difference is too large! Local - Remote Agent %d = %fs", msg->drone_id, (ros::Time::now() - msg->start_time).toSec());
       RCLCPP_ERROR(node_->get_logger(), "Time difference is too large! Local - Remote Agent %d = %fs",
-                   msg->drone_id, (rclcpp::Clock().now() - msg_time).seconds());
+                   msg->drone_id, (node_->now() - msg_time).seconds());
       return;
     }
 
@@ -561,7 +639,7 @@ namespace ego_planner
     {
       /* determine if need to replan */
       LocalTrajData *info = &planner_manager_->local_data_;
-      rclcpp::Time time_now = rclcpp::Clock().now();
+      rclcpp::Time time_now = node_->now();
       double t_cur = (time_now - info->start_time_).seconds();
       t_cur = std::min(info->duration_, t_cur);
 
@@ -622,7 +700,7 @@ namespace ego_planner
     }
     }
 
-    data_disp_.header.stamp = rclcpp::Clock().now();
+    data_disp_.header.stamp = node_->now();
     data_disp_pub_->publish(data_disp_);
 
   force_return:;
@@ -661,9 +739,27 @@ namespace ego_planner
 
     LocalTrajData *info = &planner_manager_->local_data_;
     // ros::Time time_now = ros::Time::now();
-    auto time_now = rclcpp::Clock().now();
+    auto time_now = node_->now();
     // double t_cur = (time_now - info->start_time_).toSec();
     double t_cur = (time_now - info->start_time_).seconds();
+
+    if (replan_from_odom_if_diverged_ && have_odom_)
+    {
+      const double sampled_t = std::max(0.0, std::min(info->duration_, t_cur));
+      const Eigen::Vector3d expected = info->position_traj_.evaluateDeBoorT(sampled_t);
+      const double divergence = (expected - odom_pos_).norm();
+      // The navigation interface may move ahead of the old spline during its
+      // low-speed final approach. Only reset when the spline runs ahead toward
+      // the active goal while the measured robot is left behind (safety hold).
+      const double progress_ahead = (expected - odom_pos_).dot(end_pt_ - odom_pos_);
+      if (divergence > replan_odom_divergence_m_ && progress_ahead > 0.0)
+      {
+        RCLCPP_WARN_THROTTLE(node_->get_logger(), *node_->get_clock(), 1000,
+                             "EGO odom divergence reset: expected=(%.3f,%.3f) odom=(%.3f,%.3f) gap=%.3f m",
+                             expected.x(), expected.y(), odom_pos_.x(), odom_pos_.y(), divergence);
+        return planFromGlobalTraj(trial_times);
+      }
+    }
 
     start_pt_ = info->position_traj_.evaluateDeBoorT(t_cur);
     start_vel_ = info->velocity_traj_.evaluateDeBoorT(t_cur);
@@ -713,12 +809,12 @@ namespace ego_planner
     /* ---------- check trajectory ---------- */
     constexpr double time_step = 0.01;
     // double t_cur = (ros::Time::now() - info->start_time_).toSec();
-    double t_cur = (rclcpp::Clock().now() - info->start_time_).seconds();
+    double t_cur = (node_->now() - info->start_time_).seconds();
 
     Eigen::Vector3d p_cur = info->position_traj_.evaluateDeBoorT(t_cur);
     const double CLEARANCE = 1.0 * planner_manager_->getSwarmClearance();
     // double t_cur_global = ros::Time::now().toSec();
-    double t_cur_global = rclcpp::Clock().now().seconds();
+    double t_cur_global = node_->now().seconds();
 
     double t_2_3 = info->duration_ * 2 / 3;
     for (double t = t_cur; t < info->duration_; t += time_step)

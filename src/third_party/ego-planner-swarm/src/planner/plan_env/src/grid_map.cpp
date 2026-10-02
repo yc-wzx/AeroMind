@@ -9,9 +9,12 @@ void GridMap::initMap(rclcpp::Node::SharedPtr node)
 
   /* get parameter */
   double x_size, y_size, z_size;
+  double map_center_x, map_center_y;
   node_->declare_parameter("grid_map/resolution", -1.0);
   node_->declare_parameter("grid_map/map_size_x", -1.0);
   node_->declare_parameter("grid_map/map_size_y", -1.0);
+  node_->declare_parameter("grid_map/map_center_x", 0.0);
+  node_->declare_parameter("grid_map/map_center_y", 0.0);
   node_->declare_parameter("grid_map/map_size_z", -1.0);
   node_->declare_parameter("grid_map/local_update_range_x", -1.0);
   node_->declare_parameter("grid_map/local_update_range_y", -1.0);
@@ -50,6 +53,8 @@ void GridMap::initMap(rclcpp::Node::SharedPtr node)
   node_->get_parameter("grid_map/resolution", mp_.resolution_);
   node_->get_parameter("grid_map/map_size_x", x_size);
   node_->get_parameter("grid_map/map_size_y", y_size);
+  node_->get_parameter("grid_map/map_center_x", map_center_x);
+  node_->get_parameter("grid_map/map_center_y", map_center_y);
   node_->get_parameter("grid_map/map_size_z", z_size);
   node_->get_parameter("grid_map/local_update_range_x", mp_.local_update_range_(0));
   node_->get_parameter("grid_map/local_update_range_y", mp_.local_update_range_(1));
@@ -101,7 +106,9 @@ void GridMap::initMap(rclcpp::Node::SharedPtr node)
   }
 
   mp_.resolution_inv_ = 1 / mp_.resolution_;
-  mp_.map_origin_ = Eigen::Vector3d(-x_size / 2.0, -y_size / 2.0, mp_.ground_height_);
+  mp_.map_origin_ = Eigen::Vector3d(map_center_x - x_size / 2.0,
+                                    map_center_y - y_size / 2.0,
+                                    mp_.ground_height_);
   mp_.map_size_ = Eigen::Vector3d(x_size, y_size, z_size);
 
   mp_.prob_hit_log_ = logit(mp_.p_hit_);
@@ -202,7 +209,7 @@ void GridMap::initMap(rclcpp::Node::SharedPtr node)
   md_.has_odom_ = false;
   md_.has_cloud_ = false;
   md_.image_cnt_ = 0;
-  md_.last_occ_update_time_ = rclcpp::Time(0, 0, RCL_SYSTEM_TIME);
+  md_.last_occ_update_time_ = rclcpp::Time(0, 0, node_->get_clock()->get_clock_type());
 
   md_.fuse_time_ = 0.0;
   md_.update_num_ = 0;

@@ -1,0 +1,142 @@
+{
+  "name": "PROVISIONAL PROVINCIAL ARENA",
+  "world_name": "provincial_2025_training",
+  "source_note": "The right blue shooting square is treated as the 800 mm square specified for shooting areas, and the vertical automatic passage is bounded by its collinear left/right edges. The horizontal leg is modeled at the same 800 mm width as a provisional corridor-continuity assumption, not as a separately labeled dimension.",
+  "arena": {
+    "width": 9.4,
+    "height": 10.0
+  },
+  "start": {
+    "x": 4.7,
+    "y": 0.5,
+    "yaw": 1.5707963268,
+    "width": 0.8,
+    "height": 1.0
+  },
+  "shooting_zone": {
+    "x": 8.7,
+    "y": 4.25,
+    "yaw": 1.5707963268,
+    "width": 0.8,
+    "height": 0.8
+  },
+  "target_zone": {
+    "x": 8.15,
+    "y": 8.75,
+    "width": 2.5,
+    "height": 2.5
+  },
+  "reference_route": [
+    [
+      4.7,
+      0.5
+    ],
+    [
+      4.7,
+      1.8
+    ],
+    [
+      8.7,
+      1.8
+    ],
+    [
+      8.7,
+      4.25
+    ]
+  ],
+  "course_surfaces": [
+    {
+      "x": 4.7,
+      "y": 1.1,
+      "width": 0.8,
+      "height": 2.2
+    },
+    {
+      "x": 6.7,
+      "y": 1.8,
+      "width": 4.8,
+      "height": 0.8
+    },
+    {
+      "x": 8.7,
+      "y": 3.025,
+      "width": 0.8,
+      "height": 3.25
+    }
+  ],
+  "collision_segments": [
+    [
+      -0.0275,
+      -0.0275,
+      9.4275,
+      -0.0275
+    ],
+    [
+      9.4275,
+      -0.0275,
+      9.4275,
+      10.0275
+    ],
+    [
+      9.4275,
+      10.0275,
+      -0.0275,
+      10.0275
+    ],
+    [
+      -0.0275,
+      10.0275,
+      -0.0275,
+      -0.0275
+    ],
+    [
+      4.2725,
+      0,
+      4.2725,
+      2.2
+    ],
+    [
+      5.1275,
+      0,
+      5.1275,
+      1.4
+    ],
+    [
+      5.1,
+      1.3725,
+      9.1,
+      1.3725
+    ],
+    [
+      4.3,
+      2.2275,
+      8.3,
+      2.2275
+    ],
+    [
+      8.2725,
+      2.2,
+      8.2725,
+      4.65
+    ],
+    [
+      9.1275,
+      1.4,
+      9.1275,
+      4.65
+    ],
+    [
+      8.3,
+      4.6775,
+      9.1,
+      4.6775
+    ]
+  ],
+  "assumptions": {
+    "course_width_m": 0.8,
+    "course_width_basis": "The right blue shooting square is treated as the 800 mm square specified for shooting areas, and the vertical automatic passage is bounded by its collinear left/right edges. The horizontal leg is modeled at the same 800 mm width as a provisional corridor-continuity assumption, not as a separately labeled dimension.",
+    "boundary_type": "The diagram is a plan view and does not fully specify which course borders are physical walls. Boundary walls in this model are virtual training restrictions.",
+    "terrain": "flat per current team confirmation",
+    "final_arena_verified": false
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "scope": "Copies of summaries/hash manifests only; original raw data remains local and is NOT uploaded. Full historical reaudit needs original tools/results and install binaries.",
+  "files": [
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/experiment_plan.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/experiment_plan.json",
+      "sha256": "4e6afea525db61bde0d03ea76e21d35764c7eb2ac7389bdb1526881ad481343d",
+      "bytes": 634
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/offline_candidate_gate.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/offline_candidate_gate.json",
+      "sha256": "525a79c38548f1732c47cca9f6d20622dc0dea5e97b25876742c5a9cdef0891e",
+      "bytes": 5103
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/optimization_completion_audit.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/optimization_completion_audit.json",
+      "sha256": "cac11533f194621c6089a6a64d18ddae1dd9dbf96557822f4f0a0e3f431f2947",
+      "bytes": 10860
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/final_evidence_seal.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/final_evidence_seal.json",
+      "sha256": "10c29d6420cdc44b4df27c5eddaa29c0aa0ac646507321fcc904fdd820187ccb",
+      "bytes": 653643
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/fine_map_full_geometry_review.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/fine_map_full_geometry_review.json",
+      "sha256": "9263d92f8db27ad9e0d43dd8cad4f08e1a718e250ba110c47290d58d8056b75b",
+      "bytes": 817
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/voxel_replay_comparison.png",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/voxel_replay_comparison.png",
+      "sha256": "15cdaab1923f29b23ddcc9160057d73670e961770bce416d29608ac22656bc1d",
+      "bytes": 105618
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/fine_map_full_verified.png",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/fine_map_full_verified.png",
+      "sha256": "5e2d1c726383ee1d48d9253419b2441ce5d2810566f06b8dc949594082a2ec9c",
+      "bytes": 183083
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/full_fine_map_01/independent_audit_v1.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/full_fine_map_01/independent_audit_v1.json",
+      "sha256": "e9f4db21e521f3ae44aca170f8d74caf49d2106c651a4d6c9a131dd5e06e4c42",
+      "bytes": 322608
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/full_fine_map_01/point_set_audit_v1.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/full_fine_map_01/point_set_audit_v1.json",
+      "sha256": "712ca0ab8114a2b00a4832715931a6a8fc8936de4bc0280ae9ce151c1cf840b1",
+      "bytes": 236718
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/full_fine_map_01/input_manifest.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/full_fine_map_01/input_manifest.json",
+      "sha256": "e8495123126825175e7e2c5774024545157e766a97d102e8b9ca714c5f32df3e",
+      "bytes": 126476
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/full_fine_map_01/raw_data_sha256.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/full_fine_map_01/raw_data_sha256.json",
+      "sha256": "fca2b66e5e2688a3879ff97613a60d19b8979316f8dda414e468abf383bd90ab",
+      "bytes": 3269
+    },
+    {
+      "local_original": "tools/results/stage2_step4_lio_voxel_review_20261002/full_fine_map_01/progress.json",
+      "uploaded_copy": "docs/evidence/training_baseline_20261002/full_fine_map_01/progress.json",
+      "sha256": "32e0cb03c34cb0e7951eb8bcb007eeb616d1656468cad6c1dfc1caf1c0b6867c",
+      "bytes": 155
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 #include "bspline_opt/bspline_optimizer.h"
 #include "bspline_opt/gradient_descent_optimizer.h"
+#include <atomic>
 // using namespace std;
 
 namespace ego_planner
@@ -8,6 +9,7 @@ namespace ego_planner
   void BsplineOptimizer::setParam(rclcpp::Node::SharedPtr node)
   {
 
+    trajectory_clock_ = node->get_clock();
     node->declare_parameter("optimization/lambda_smooth", -1.0);
     node->declare_parameter("optimization/lambda_collision", -1.0);
     node->declare_parameter("optimization/lambda_feasibility", -1.0);
@@ -878,7 +880,7 @@ namespace ego_planner
     cost = 0.0;
     int end_idx = q.cols() - order_ - (double)(q.cols() - 2 * order_) * 1.0 / 3.0; // Only check the first 2/3 points
     const double CLEARANCE = swarm_clearance_ * 2;
-    double t_now = rclcpp::Clock().now().seconds();
+    double t_now = trajectory_clock_->now().seconds();
     constexpr double a = 2.0, b = 1.0, inv_a2 = 1 / a / a, inv_b2 = 1 / b / b;
 
     for (int i = order_; i < end_idx; i++)
@@ -931,7 +933,7 @@ namespace ego_planner
     cost = 0.0;
     int end_idx = q.cols() - order_;
     constexpr double CLEARANCE = 1.5;
-    double t_now = rclcpp::Clock().now().seconds();
+    double t_now = trajectory_clock_->now().seconds();
 
     for (int i = order_; i < end_idx; i++)
     {
@@ -1358,6 +1360,25 @@ namespace ego_planner
         }
         if (j >= cps_.size) // fail to get the obs free point
         {
+          static std::atomic<unsigned int> diag_terminal_count{0};
+          const unsigned int diag_no = diag_terminal_count.fetch_add(1);
+          if (diag_no < 12 || diag_no % 100 == 0)
+          {
+            const Eigen::Vector3d diag_endpoint = cps_.points.col(cps_.size - 1);
+            const Eigen::Vector3d diag_start = cps_.points.col(0);
+            Eigen::Vector3i diag_voxel;
+            grid_map_->posToIndex(diag_endpoint, diag_voxel);
+            const int diag_occupied = grid_map_->getInflateOccupancy(diag_endpoint);
+            RCLCPP_WARN(rclcpp::get_logger("check_collision_and_rebound"),
+                        "[EGO_DIAG_ENDPOINT] frame=odom n=%u i=%d j=%d "
+                        "endpoint=(%.3f,%.3f,%.3f) voxel=(%d,%d,%d) "
+                        "occupied=%d resolution=%.3f start=(%.3f,%.3f,%.3f) "
+                        "local_target=(%.3f,%.3f,%.3f)",
+                        diag_no, i, j, diag_endpoint.x(), diag_endpoint.y(), diag_endpoint.z(),
+                        diag_voxel.x(), diag_voxel.y(), diag_voxel.z(), diag_occupied,
+                        grid_map_->getResolution(), diag_start.x(), diag_start.y(), diag_start.z(),
+                        local_target_pt_.x(), local_target_pt_.y(), local_target_pt_.z());
+          }
           RCLCPP_WARN(rclcpp::get_logger("check_collision_and_rebound"), 
                       "WARN! terminal point of the current trajectory is in obstacle, skip this planning.");
 
@@ -1630,6 +1651,25 @@ namespace ego_planner
               //      << cps_.points.col(2).transpose() << "\n"
               //      << cps_.points.col(3).transpose() << "\n"
               //      << cps_.points.col(4).transpose() << endl;
+              static std::atomic<unsigned int> diag_control_count{0};
+              const unsigned int diag_no = diag_control_count.fetch_add(1);
+              if (diag_no < 12 || diag_no % 100 == 0)
+              {
+                const Eigen::Vector3d diag_hit = traj.evaluateDeBoorT(t);
+                const Eigen::Vector3d diag_start = traj.evaluateDeBoorT(tm);
+                Eigen::Vector3i diag_voxel;
+                grid_map_->posToIndex(diag_hit, diag_voxel);
+                const int diag_occupied = grid_map_->getInflateOccupancy(diag_hit);
+                RCLCPP_WARN(rclcpp::get_logger("rebound_optimize"),
+                            "[EGO_DIAG_CONTROL] frame=odom n=%u t=%.3f "
+                            "hit=(%.3f,%.3f,%.3f) voxel=(%d,%d,%d) occupied=%d "
+                            "resolution=%.3f trajectory_start=(%.3f,%.3f,%.3f) "
+                            "local_target=(%.3f,%.3f,%.3f)",
+                            diag_no, t, diag_hit.x(), diag_hit.y(), diag_hit.z(),
+                            diag_voxel.x(), diag_voxel.y(), diag_voxel.z(), diag_occupied,
+                            grid_map_->getResolution(), diag_start.x(), diag_start.y(), diag_start.z(),
+                            local_target_pt_.x(), local_target_pt_.y(), local_target_pt_.z());
+              }
               RCLCPP_WARN(rclcpp::get_logger("rebound_optimize"), "First 3 control points in obstacles! return false, t=%f", t);
               return false;
             }

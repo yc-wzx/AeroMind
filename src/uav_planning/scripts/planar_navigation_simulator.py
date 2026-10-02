@@ -278,9 +278,9 @@ class PlanarNavigationSimulator(Node):
         markers.append(route)
 
         for marker_id, (label, zone) in enumerate((
-                ('START', self.field['start']),
-                ('SHOOTING', self.field['shooting_zone']),
-                ('TARGET ROBOT', self.field['target_zone']))):
+                (self.field.get('start_label', 'START'), self.field['start']),
+                (self.field.get('goal_label', 'SHOOTING'), self.field['shooting_zone']),
+                (self.field.get('target_label', 'TARGET ROBOT'), self.field['target_zone']))):
             text_marker = self.base_marker('competition_labels', marker_id,
                                            Marker.TEXT_VIEW_FACING)
             text_marker.pose.position.x = float(zone['x'])

@@ -1,0 +1,178 @@
+schema_version: 1
+stage: Stage 1.5
+status: STAGE 1.5 PROVISIONAL TRAINING VALIDATION COMPLETE
+classification: TRAINING-ONLY / PROVISIONAL
+competition_arena_verified: false
+stage2_entered: false
+profile:
+  imperfect_sensors: false
+  grid_route_clearance_m: 0.4
+  ego_inflation_m: 0.22
+  minimum_sampled_body_wall_gap_m: 0.08
+  body_length_m: 0.52
+  body_width_m: 0.42
+  max_planar_velocity_mps: 0.25
+  max_yaw_rate_rad_s: 0.3
+  planner_max_acc_mps2: 0.35
+  trajectory_start_clock: ros
+full:
+  start:
+  - 4.7
+  - 0.5
+  - 1.5707963267948966
+  goal:
+  - 8.7
+  - 4.25
+  - 1.5707963267948966
+  reference_waypoints:
+  - - 4.7
+    - 1.8
+  - - 8.7
+    - 1.8
+  - - 8.7
+    - 4.25
+  reference_length_m: 7.75
+  nominal_grid_astar_length_m: 7.509387027394119
+  external_goal_count: 1
+return:
+  start: previous Full actual terminal GT; no reset
+  goal:
+  - 4.7
+  - 0.5
+  - 1.5707963267948966
+  reference_waypoints:
+  - - 8.7
+    - 1.8
+  - - 4.7
+    - 1.8
+  - - 4.7
+    - 0.5
+  external_goal_count: 1
+terminal:
+  stable_stop_sim_s: 2.0
+  post_stop_observation_sim_s: 5.0
+  gt_and_final_planar_speed_mps: 0.02
+  gt_and_final_yaw_speed_rad_s: 0.03
+  goal_error_m: 0.1
+  drift_m: 0.03
+  completion_event_error_m: 0.05
+  gt_and_final_receive_gap_s: 0.2
+  odom_receive_gap_s: 0.5
+final_sessions:
+- round_trip_08
+- round_trip_09
+- round_trip_10
+result_directory: /home/rmnav/AeroMind/tools/results/provincial_stage15_completion_20261001
+independent_audit: /home/rmnav/AeroMind/tools/results/provincial_stage15_completion_20261001/provisional_stage15_completion_audit_v3.json
+runtime_input_sha256:
+  install/ego_planner/lib/ego_planner/ego_planner_node: c35a0ee70044c86bd4d10ed2c9c85db9c605489729f919e2d4e3bfc7a7cc4015
+  install/livox_ros_driver2/lib/liblivox_interfaces2__rosidl_generator_py.so: c054d2663d90dbcaeeacc477b3b48294cdddc4495c3212609f29d1ba3cd226de
+  install/livox_ros_driver2/lib/liblivox_ros_driver2.so: f69c828e6906a04e5c5df625af414978b800b23a7e57d3cc937b345ed50f484e
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_generator_c.so: 87efe2e6c782558e43cef075f26e6f3aaf032745549a0542a777559d866b7dd7
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_c.so: 51544390ab0f7b7e32326ed9676a6b87564974387922322fb0f82910b8310dde
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_cpp.so: 51d94f7cabbe697b85d908d131f045ff4705fe46e343e2fda57986924fb50837
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so: e31231bf862c7e0c1ffa5f963b9b65a63457ee417e21cd41023a1b97ab079535
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so: b3752b08b021146be28c55a6bce656b1ce25e5e24e6c04896004a80852a6ecfa
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_c.so: b776629b577997c11e639c27a754f46a25acca25c960eb86c43e4170b0ec7a36
+  install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so: 90b9fa8f39ef00e6a635d3142c1cfac6fd43e65b4dcb291efe82a592eb4af881
+  ? install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/liblivox_interfaces2__rosidl_generator_py.so
+  : 28b846824c65ee347adc4d56e5a1f5556fc0fbad705d6f5b3ade3865496d0579
+  ? install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+  : faf832658ea82ce50b8fcfcfc6780d080dbb5a573e9ea12b8799c4953379afe3
+  ? install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+  : 84ce2e52108428fc467dd064419e6d74007b03189eefee3ac33598dbc63bc49c
+  ? install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+  : 8ae37149ac3efdbb0254351de85bed43807d8dceb4a1b5291dc62e07bca2528e
+  install/path_searching/lib/libpath_searching.so: 4e8d64e78bb2cac54f7614c966a183deca4fa7ce61c83bb6590e7f51a0a96b94
+  install/plan_env/lib/libplan_env.so: 2d348e959b3fefe1bb057efbe787a04256f6bec139f17ffb68fdddac5f4add3d
+  install/quadrotor_msgs/lib/libdecode_msgs.so: b9aa1a53d02e79f8648917049afab5b8d3a3ef2382d098753e51d041af33ebe8
+  install/quadrotor_msgs/lib/libencode_msgs.so: 29a2759f45ba8d3999009dbabe651677ceefb8d25a8a7a47c080a196f76873f4
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_c.so: 3a5b4f5cf23834206a6a3a48cf0d85df2cd0cbd156332eb0a794581861086971
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_py.so: 93c6f9e0dd5d3543e14ab14ccc9ff7aa0c77a7a76b68c84be90e380ed16350c8
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_c.so: d7a413cf469c000e3573cbd58f3bafd7ae47d2cf9715871492509cc69eeca195
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_cpp.so: 497445772943eadfc94550669eb875ac3bf1ffd9b5d913b348e583d24a60107b
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_c.so: db15a0a43ffc1d06d617dec7d8d52e807a2db3aa8f6c91364b9c09e57b0fd5f6
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_cpp.so: 13d5cd425e6194cf66ea63576181f5f5b0133569cfb1ed17cca37f35ebc6fa2a
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_c.so: 6647f56a61999bc86c35b87e4b7649a6624b8765cb801cbf987b9aabc4ddaa66
+  install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_cpp.so: f3eb5077c1571119581617b0f60d8948a24a0b3eb1fcc4d02ac01e08906f4325
+  install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/libquadrotor_msgs__rosidl_generator_py.so: db688bce31442439711390cd08461ff5b0ac419081cd6e042ac9fd600280a07e
+  ? install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+  : de3d97e7cdef07b10a63d51ac70c5943962799d421571c7770a862f57e581bf9
+  ? install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+  : d3866fd0e2f524ee1febfe684a42df8d4f50624ea8a305ce2760848e57167c1e
+  ? install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+  : 31360fc18fff8e502d6d287c4e4aab1a260e9f34703444d790ecdeed16bc9a0f
+  install/spark_fast_lio/lib/libspark_lio_component.so: 46e0fe762b9379f5347e51f55144d706da4ee922fe6b14e5d0293d1e5febbdee
+  install/traj_utils/lib/libtraj_utils__rosidl_generator_c.so: c43ed7b1d8d28c97c8561406bef0abd953e64a14cba7c621c936c1597d981b54
+  install/traj_utils/lib/libtraj_utils__rosidl_generator_py.so: 6b48884c21b3e65efd9fb30a901f070312dd845977da22af678a4e745b37c480
+  install/traj_utils/lib/libtraj_utils__rosidl_typesupport_c.so: 82ffc804d4cbd67ad159528350996adeeb69b046082f8bb60178deaf600dfbcc
+  install/traj_utils/lib/libtraj_utils__rosidl_typesupport_cpp.so: 002d070dcf8f8c423e7481869ef4dbb523c2044311374847bdfac7509f05ab90
+  install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_c.so: fb4623514030ed40695df74ebbcb6705cb958683faa4a758b17fe5a60b142d7e
+  install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_cpp.so: e41a0a8dd63d721d0d787b40392594952fbc2088fa4f019177c08bdba4dee01e
+  install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_c.so: b0a15d6ebf4af4a1fd745b37ea563df945385adbec516a3b8274d72b6492b9ba
+  install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_cpp.so: 143082a1242284c3a295dcb0bbf6f5c1f6a6469db3b5b6bb5530020160dc8cb7
+  install/traj_utils/lib/libtraj_utils_lib.so: 19f53484a238d102b37856c86a6f0f85d55203351f62b2bf923a2f198161db1c
+  install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/libtraj_utils__rosidl_generator_py.so: 8a99efebe8daef569eb7817130481a0ad92a056e450c3b422c57d719fa166eec
+  ? install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+  : 3d27fb000734571359c89ebcefa48ce6dd4d7e23f0f823e25a44e011a4d06ba5
+  ? install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+  : e7ce49ab476b5c4f53a9988317c7bd13d764e438742bee0e6c0a188ccbbd7b1c
+  ? install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+  : 806af5f5a85370146806afec0489284c675adb2cbe9b28381e28d1b5580ec996
+  install/uav_bringup/share/uav_bringup/config/ego_provincial_2025_provisional.yaml: e2b960b98d011a7de64c4b47202fb89d515b0e8a44d016ce2e194b86e056c944
+  install/uav_bringup/share/uav_bringup/launch/provincial_2025_provisional.launch.py: e222ee3487ab42b92cc557683083752066decab1a4eef56009418d29f203f478
+  install/uav_bringup/share/uav_bringup/maps/provincial_2025_provisional.pgm: 57bde789a1e7723f8347c09ea9387ebd667aaec7bbb634ce7c72e71a1d53d50c
+  install/uav_bringup/share/uav_bringup/maps/provincial_2025_provisional.yaml: 7b7892bf1f824be5c8c969c475747a1fa80b683a93f92770c08096afd0f9905b
+  install/uav_bringup/share/uav_bringup/worlds/provincial_2025_training.sdf: 6e6423f4af2a5cc66cefc00ee28148fd7e1545f90589b8c809de142607e87c91
+  install/uav_planning/lib/uav_planning/ego_goal_adapter.py: 1dc610bf1396e69becd30acb11d0eff77c640792184f8a1df380e4537485825b
+  install/uav_planning/lib/uav_planning/ego_trajectory_executor.py: 8ef09f6ea5d69ce2c8404309cec3bb58f6528bf903a06581f121b13d9787f99f
+  install/uav_planning/lib/uav_planning/gazebo_navigation_interface.py: 20fd8adc6461735fb5ebd05f9c8103d8cae096e6143e624cd13846df05fcd543
+  install/uav_planning/lib/uav_planning/grid_route.py: cd403a76476b2ac194c411923624896e0f90abc542e2ebd28a717b4dbe36d14b
+  install/uav_planning/lib/uav_planning/planar_navigation_simulator.py: 07e13902bf0926ffff4cb8a8ea1bf8f3c7b32b8410bd3b26951a2dcf591b89ff
+  install/uav_planning/lib/uav_planning/provincial_safety_geometry.py: d51a052c396611dc81e08c2c4ebf58d094b13c66ef699cb3e71222ad4469faa7
+  install/uav_planning/lib/uav_planning/scan_matcher.py: 36401758c6edd7972c88cbb34d8df216729a0be14e0e6cd179f175368e65ba3e
+  install/uav_planning/share/uav_planning/config/ego_goal_adapter.yaml: 0b62a4eb612ecc3a13cafbddf2a043e8a6b947604c41b26d2733d647ae2469c1
+  install/uav_planning/share/uav_planning/config/ego_trajectory_executor.yaml: 350b3332ecf63383555bcc9af16f5e0a64ab20bb973278e8fe05cc6cb6dc0170
+  install/uav_planning/share/uav_planning/config/provincial_2025_provisional.json: 830c3648d353883606e397c380a4507b6ede8ef23630039ae5bc1ba865ced6da
+  src/third_party/ego-planner-swarm/src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h: 9104c5bb6099188ff48119cdb20130e0fc9f3a17e7fe404ddc684eaa40bcc68b
+  src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp: ed0fc6ca7fe40a38a3f0f139e5542cc22f540310d6110adbebacb0eddf47012d
+  src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp: 9c8886d313e3e774a909079aae2103fad9be2441055dfa4c06e70ccf0c9e3eab
+  src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h: 8669d4b1d9a93296be6e6425e2dc5742d8a220d1b80b6be028afddbf53a2c0df
+  src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp: e79e785dce8206a057923718d960bbba445cbc8c9ad04eb553a0399337608701
+  src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp: 1f304c6a8703e439285dd55691a299b0946ace023e016d6de9f5a46984791e42
+  src/uav_bringup/config/ego_provincial_2025_provisional.yaml: e2b960b98d011a7de64c4b47202fb89d515b0e8a44d016ce2e194b86e056c944
+  src/uav_bringup/launch/provincial_2025_provisional.launch.py: e222ee3487ab42b92cc557683083752066decab1a4eef56009418d29f203f478
+  src/uav_bringup/maps/provincial_2025_provisional.pgm: 57bde789a1e7723f8347c09ea9387ebd667aaec7bbb634ce7c72e71a1d53d50c
+  src/uav_bringup/maps/provincial_2025_provisional.yaml: 7b7892bf1f824be5c8c969c475747a1fa80b683a93f92770c08096afd0f9905b
+  src/uav_bringup/worlds/provincial_2025_training.sdf: 6e6423f4af2a5cc66cefc00ee28148fd7e1545f90589b8c809de142607e87c91
+  src/uav_planning/config/ego_goal_adapter.yaml: 0b62a4eb612ecc3a13cafbddf2a043e8a6b947604c41b26d2733d647ae2469c1
+  src/uav_planning/config/ego_trajectory_executor.yaml: 350b3332ecf63383555bcc9af16f5e0a64ab20bb973278e8fe05cc6cb6dc0170
+  src/uav_planning/config/provincial_2025_provisional.json: 830c3648d353883606e397c380a4507b6ede8ef23630039ae5bc1ba865ced6da
+  src/uav_planning/scripts/ego_goal_adapter.py: 1dc610bf1396e69becd30acb11d0eff77c640792184f8a1df380e4537485825b
+  src/uav_planning/scripts/ego_trajectory_executor.py: 8ef09f6ea5d69ce2c8404309cec3bb58f6528bf903a06581f121b13d9787f99f
+  src/uav_planning/scripts/gazebo_navigation_interface.py: 20fd8adc6461735fb5ebd05f9c8103d8cae096e6143e624cd13846df05fcd543
+  src/uav_planning/scripts/grid_route.py: cd403a76476b2ac194c411923624896e0f90abc542e2ebd28a717b4dbe36d14b
+  src/uav_planning/scripts/planar_navigation_simulator.py: 07e13902bf0926ffff4cb8a8ea1bf8f3c7b32b8410bd3b26951a2dcf591b89ff
+  src/uav_planning/scripts/provincial_safety_geometry.py: d51a052c396611dc81e08c2c4ebf58d094b13c66ef699cb3e71222ad4469faa7
+  src/uav_planning/scripts/scan_matcher.py: 36401758c6edd7972c88cbb34d8df216729a0be14e0e6cd179f175368e65ba3e
+  tools/analyze_provincial_forward_clearance.py: 4c7690fac5021f3d771c269fa64b04dc66048a7fa5678f7e3d54e40f3d6cd1b9
+  tools/provincial_native_trace.py: cdab921654ea9a7db496c33322d205254e53f7d66f1b3e85c30eae676326bf0d
+  tools/provincial_stage15_round_trip.py: 7c57b4a94c1205df7fbd2f904dd9fed47d34c613b1339377194f3aed218d5d75
+  tools/provincial_terminal_gate.py: c8fd49758a2f8bc478d971cc5f7689e69404b16a41fb94991c6c2886120a651a
+  tools/run_provincial_forward_integration.py: 7917c34b131ec0ee88e39fbdd0dcea638ce0b709aeecdb176c6771e7dd596694
+  tools/run_provincial_full_observed.py: 2976589bc6c20ed8e31f9a4aada4ed61c2d9076bc50b846c8cf960c0b9116a81
+  tools/run_provincial_low_speed_validation.py: 14f01331622f3d47556f35291ee13246e6057ab9336fbb038a31c81c14b55e1e
+  tools/run_provincial_safety_fix_matrix.py: 95bbafbb966d6dbd53f24e1f80134922b1d3156a22e44e87165924df2c0e1b8a
+  tools/summarize_provincial_forward_integration.py: 0d6847f8dabaf5ee564ad99982d01fc1ac5a3bfd149c563d65a839d4e04203fd
+  tools/summarize_provincial_full_observed.py: 3304b01bfbd5d3dedf491ed3d9a5934b0d1ca7a1abaf1ebd5b415f3f6cb83d07
+  tools/summarize_provincial_stage15_terminal_v2.py: a0f87bb1341649a7bdb9620155d1528fdf013a65531fe2ad9340ea458ce0a2c4
+  tools/summarize_provincial_stage15_terminal_v3.py: 6c314fe3435cd69856e91fbef759565d6740be7f9892208fd72d85c639d4e0b4
+hold_audit: /home/rmnav/AeroMind/tools/results/provincial_stage15_completion_20261001/hold_clock_recheck/independent_hold_audit_v3.json
+limitations:
+- Original-sample geometry only; continuous-time safety not proved.
+- Contact sensors unavailable.
+- Three final sessions do not establish statistical reliability.
+- Actual competition arena and human 30-minute modelling drill not verified.
+- Earlier independent A/B/C tests are retained historical evidence, not rerun on this
+  build.
+- System library contents and all reset/set_pose calls not independently captured.

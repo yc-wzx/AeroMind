@@ -1,0 +1,25 @@
+{
+  "minimum": {
+    "sim_s": 43.6,
+    "x": 4.890550072497365,
+    "y": 1.7879404086821566,
+    "yaw_rad": 1.5724458085700035,
+    "gap_m": 0.1282853646116077,
+    "nearest_wall": "boundary_6"
+  },
+  "raw_GT_active_samples": 3823,
+  "raw_GT_header_frequency_hz": 50.0,
+  "raw_GT_max_header_interval_s": 0.020000000000010232,
+  "raw_GT_max_monotonic_receive_interval_s": 0.024633271999988438,
+  "below_0_08m_sample_count": 0,
+  "LIO_raw_nearest_GT_max_xy_m": 0.02538417255730159,
+  "stationary_10_to_15": {
+    "pass": true,
+    "GT_samples": 251,
+    "LIO_samples": 1251,
+    "maximum_final_command": 0.0,
+    "max_LIO_xy_error_m": 0.00650246035944312
+  },
+  "plot_note": "Lines connect recorded samples for display only; no interpolated GT or continuous-time lower bound.",
+  "contact": "CONTACT DATA UNAVAILABLE"
+}

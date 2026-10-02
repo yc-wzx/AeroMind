@@ -16,6 +16,8 @@ __pycache__/
 /runtime_logs/
 /flight_logs/
 /telemetry/
+# Historical raw experiments stay local; curated summaries are in docs/evidence.
+/tools/results/
 tmp/
 /data/
 *.bag

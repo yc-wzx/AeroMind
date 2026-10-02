@@ -1,0 +1,191 @@
+schema_version: 1
+classification: TRAINING-ONLY / PROVISIONAL
+competition_arena_verified: false
+stage: Stage 1.5
+status: STAGE 1.5 PROVISIONAL FORWARD BASELINE AUDIT CLOSED
+scope: single forward Full only
+trial_id: trial_full_capture_01
+evidence_directory: /home/rmnav/AeroMind/tools/results/provincial_stage15_full_capture_20260929
+start:
+  xy_m:
+  - 4.7
+  - 0.5
+  yaw_deg: 90.0
+goal:
+  xy_m:
+  - 8.7
+  - 4.25
+  yaw_deg: 90.0
+external_goal_count: 1
+waypoints:
+- id: R0001:W00
+  xy_m:
+  - 4.7
+  - 1.8
+- id: R0001:W01
+  xy_m:
+  - 8.7
+  - 1.8
+- id: R0001:W02
+  xy_m:
+  - 8.7
+  - 4.25
+reference_path_length_m: 7.75
+fixed_parameters:
+  imperfect_sensors: false
+  grid_route_clearance_m: 0.4
+  ego_inflation_m: 0.22
+terminal_thresholds:
+  gt_speed_mps: 0.02
+  gt_yaw_speed_rad_s: 0.03
+  final_speed_mps: 0.02
+  final_yaw_speed_rad_s: 0.03
+  goal_error_m: 0.1
+  drift_m: 0.03
+  gt_receive_gap_s: 0.2
+  final_receive_gap_s: 0.2
+  odom_receive_age_s: 0.5
+  odom_sim_age_s: 0.2
+  completion_error_m: 0.05
+runtime_input_manifest:
+  path: /home/rmnav/AeroMind/tools/results/provincial_stage15_full_capture_20260929/input_manifest.json
+  sha256: 6e105217d6aa095459fadbe740e61189f61a0c5306390f6ebd98b23ae13d3da4
+  local_dependency_count: 42
+  git_head: 9c7566aca0355851c0456615cc38c985e2781349
+runtime_parameter_hash_manifest:
+  path: /home/rmnav/AeroMind/tools/results/provincial_stage15_full_capture_20260929/runtime_parameter_sha256.json
+  sha256: af629a7027493b41526a33383d326b692bb131c6a6935942c3a51c423b35fc71
+raw_data_hash_manifest:
+  path: /home/rmnav/AeroMind/tools/results/provincial_stage15_full_capture_20260929/raw_data_sha256.json
+  sha256: 226d1474def1ba6538fb63a7f361fb4513c944525965e25419640d65805118dd
+  files:
+    launch.log: 33982e0d9c7cd8be44563acfb45948b2895e39a2692050614a7818ba9574cf83
+    trial_full_capture_01.actuation.jsonl: a0f0d9ee734978a7e98a0c14743178319eb79812a40c5ba0303fdc422c7858af
+    trial_full_capture_01.csv: 4284b77cd8512341f5844cdeebcc9014ca971a52efb46babf02e7da3a0d1717d
+    trial_full_capture_01.events.jsonl: ecd381fa2ff8d41b37cb149e525be602d706b805b39559df10e6d8d3e016258b
+    trial_full_capture_01.native.health.json: 12b2cb98d24f487020c05cb3d7eec3ee42aba6d57e5068445ca0c986dbdd78c8
+    trial_full_capture_01.native.jsonl: fbc23323f87dd7f201ba2d179139d018937d0a7e26433034707f4d7cfcb5c2ba
+    trial_full_capture_01.native.timing.jsonl: 0b681c2144cf2d5c282fbe0dc8cd845bc5ad7cfbbd7efe66a2c12995823c2982
+    trial_full_capture_01.plans.jsonl: 69f32354a506e09c19564f803560fc9fac6ae4e466ec79218900a276799f45d3
+    trial_full_capture_01.published_commands.jsonl: 78f367beee37ecbfef9a573aa80c918136c56d239b09c59c0f460d0638e7327a
+    trial_full_capture_01.runner.log: b604aef382c996fd3355bd66c95dcea4b8edf16e4673628dfb0066097d473526
+    trial_full_capture_01.summary.json: b604aef382c996fd3355bd66c95dcea4b8edf16e4673628dfb0066097d473526
+independent_audit:
+  path: /home/rmnav/AeroMind/tools/results/provincial_stage15_full_capture_20260929/mission_verification_capture_v2.json
+  sha256: 79ef049c06c8c26bbd5124be81402328936aa33a646ec5951ff00a6071029b0b
+  all_pass: true
+  version: native_terminal_v2_20260930
+  command: python3 -B tools/summarize_provincial_full_observed.py --result-dir /home/rmnav/AeroMind/tools/results/provincial_stage15_full_capture_20260929
+    --output-name mission_verification_capture_v2.json
+  evaluator_sha256: cd303aa22be2efd317d434ac0520d444d5338ebef15716f9377c33ec6ed81c01
+  code_snapshot_manifest: /home/rmnav/AeroMind/tools/results/provincial_stage15_native_terminal_fix_20260930/evaluation_code_manifest.json
+  code_snapshot_manifest_sha256: 11f3dd8af8c255922ea37c37f6e44ee1b6793e83620584cded0d3e8f1d0b47d8
+  historical_runtime_input_replaced: false
+native_terminal:
+  first_2s:
+    pass: true
+    checks:
+      gt_coverage: true
+      final_command_coverage: true
+      gt_sim_and_receive_continuity: true
+      final_command_sim_and_receive_continuity: true
+      clock_association_and_freshness: true
+      odom_and_command_fresh_at_every_gt: true
+      gt_stopped: true
+      final_command_stopped: true
+      near_goal_no_drift: true
+    bounds:
+    - 76.28
+    - 78.28
+    gt_samples: 101
+    final_command_samples: 101
+    max_gt_speed_mps: 0.019072062266669257
+    max_gt_yaw_speed_rad_s: 0.0
+    max_final_speed_mps: 0.0
+    max_final_yaw_speed_rad_s: 0.0
+    max_goal_error_m: 0.01782609920709014
+    max_stop_drift_m: 7.596058012808408e-05
+    max_gt_receive_gap_s: 0.020849047999988102
+    max_command_receive_gap_s: 0.028620476000000394
+  last_5s:
+    pass: true
+    checks:
+      gt_coverage: true
+      final_command_coverage: true
+      gt_sim_and_receive_continuity: true
+      final_command_sim_and_receive_continuity: true
+      clock_association_and_freshness: true
+      odom_and_command_fresh_at_every_gt: true
+      gt_stopped: true
+      final_command_stopped: true
+      near_goal_no_drift: true
+    bounds:
+    - 78.28
+    - 83.28
+    gt_samples: 251
+    final_command_samples: 250
+    max_gt_speed_mps: 0.0
+    max_gt_yaw_speed_rad_s: 0.0
+    max_final_speed_mps: 0.0
+    max_final_yaw_speed_rad_s: 0.0
+    max_goal_error_m: 0.017750138626962057
+    max_stop_drift_m: 7.596058012808408e-05
+    max_gt_receive_gap_s: 0.02196598700001573
+    max_command_receive_gap_s: 0.029590214000009496
+  full_7s:
+    pass: true
+    checks:
+      gt_coverage: true
+      final_command_coverage: true
+      gt_sim_and_receive_continuity: true
+      final_command_sim_and_receive_continuity: true
+      clock_association_and_freshness: true
+      odom_and_command_fresh_at_every_gt: true
+      gt_stopped: true
+      final_command_stopped: true
+      near_goal_no_drift: true
+    bounds:
+    - 76.28
+    - 83.28
+    gt_samples: 351
+    final_command_samples: 350
+    max_gt_speed_mps: 0.019072062266669257
+    max_gt_yaw_speed_rad_s: 0.0
+    max_final_speed_mps: 0.0
+    max_final_yaw_speed_rad_s: 0.0
+    max_goal_error_m: 0.01782609920709014
+    max_stop_drift_m: 7.596058012808408e-05
+    max_gt_receive_gap_s: 0.02196598700001573
+    max_command_receive_gap_s: 0.029590214000009496
+final_errors:
+  gt_m: 0.017750138626962057
+  odom_m: 0.017750138626962057
+sampled_clearance:
+  sim_t: 28.24
+  x: 5.457560428406733
+  y: 1.8558563613883763
+  yaw_rad: 1.5707963268
+  gap_m: 0.08414363861055252
+  nearest_wall: boundary_7
+  line_number: 9771
+tests:
+  count: 69
+  log: /home/rmnav/AeroMind/tools/results/provincial_stage15_native_terminal_fix_20260930/tests_final.log
+  sha256: 5bc776843165b1ae70e655283421e79540adc393f76c7ad08fd03027a76cbc4c
+limitations:
+- Official current provincial arena dimensions and topology not verified.
+- 0.8 m training passage and virtual boundaries are provisional assumptions.
+- CONTACT DATA UNAVAILABLE
+- Sampled clearance is not continuous-time safety proof.
+- No statistical repeatability conclusion.
+- Return and complete competition mission are not accepted by this manifest.
+- System dependencies are version records, not a complete system image.
+- Old reception-stall unique cause remains unproved.
+resume_triggers:
+- Credible start area coordinates
+- Credible shooting area extent
+- Actual walls and boundary semantics
+- Turn and connecting passage widths
+- Fixed obstacles dimensions and positions
+next_action: Pause expansion of testing; update official geometry only when credible
+  arena information is available.

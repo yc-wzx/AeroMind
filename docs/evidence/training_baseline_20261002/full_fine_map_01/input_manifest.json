@@ -1,0 +1,1979 @@
+{
+  "classification": "TRAINING-ONLY / PROVISIONAL",
+  "competition_arena_verified": false,
+  "captured_before_goal": true,
+  "trial_id": "lio_full_01",
+  "local_python_import_closure_captured": true,
+  "local_linked_elf_closure_captured": true,
+  "all_local_installed_shared_libraries_snapshot": true,
+  "dynamic_dlopen_plugins_complete": false,
+  "system_dependency_content_snapshot_complete": false,
+  "git_head": "9c7566aca0355851c0456615cc38c985e2781349",
+  "launch_argv": [
+    "ros2",
+    "launch",
+    "uav_bringup",
+    "provincial_stage2_lio_fine_map.launch.py",
+    "gui:=false",
+    "rviz:=false",
+    "navigation:=true",
+    "auto_goal:=false"
+  ],
+  "runner_argv": [
+    "/usr/bin/python3",
+    "/home/rmnav/AeroMind/tools/run_provincial_low_speed_validation.py",
+    "--route",
+    "full",
+    "--name",
+    "lio_full_01",
+    "--yaw-mode",
+    "hold-start",
+    "--terminal-validation",
+    "--raw-every-message",
+    "--timeout",
+    "240",
+    "--output-dir",
+    "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_voxel_review_20261002/full_fine_map_01"
+  ],
+  "inputs": {
+    "install/ego_planner/lib/ego_planner/ego_planner_node": {
+      "path": "/home/rmnav/AeroMind/install/ego_planner/lib/ego_planner/ego_planner_node",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/ego_planner/ego_planner_node",
+      "sha256": "c35a0ee70044c86bd4d10ed2c9c85db9c605489729f919e2d4e3bfc7a7cc4015",
+      "size_bytes": 65271488
+    },
+    "install/livox_ros_driver2/lib/liblivox_interfaces2__rosidl_generator_py.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_interfaces2__rosidl_generator_py.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_interfaces2__rosidl_generator_py.so",
+      "sha256": "c054d2663d90dbcaeeacc477b3b48294cdddc4495c3212609f29d1ba3cd226de",
+      "size_bytes": 21112
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/livox_ros_driver2/liblivox_ros_driver2.so",
+      "sha256": "f69c828e6906a04e5c5df625af414978b800b23a7e57d3cc937b345ed50f484e",
+      "size_bytes": 610424
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_generator_c.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_generator_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_generator_c.so",
+      "sha256": "87efe2e6c782558e43cef075f26e6f3aaf032745549a0542a777559d866b7dd7",
+      "size_bytes": 25864
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_c.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_c.so",
+      "sha256": "51544390ab0f7b7e32326ed9676a6b87564974387922322fb0f82910b8310dde",
+      "size_bytes": 17008
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_cpp.so",
+      "sha256": "51d94f7cabbe697b85d908d131f045ff4705fe46e343e2fda57986924fb50837",
+      "size_bytes": 17584
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so",
+      "sha256": "e31231bf862c7e0c1ffa5f963b9b65a63457ee417e21cd41023a1b97ab079535",
+      "size_bytes": 23104
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "b3752b08b021146be28c55a6bce656b1ce25e5e24e6c04896004a80852a6ecfa",
+      "size_bytes": 25368
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_c.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_c.so",
+      "sha256": "b776629b577997c11e639c27a754f46a25acca25c960eb86c43e4170b0ec7a36",
+      "size_bytes": 24808
+    },
+    "install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "90b9fa8f39ef00e6a635d3142c1cfac6fd43e65b4dcb291efe82a592eb4af881",
+      "size_bytes": 25184
+    },
+    "install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/liblivox_interfaces2__rosidl_generator_py.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/liblivox_interfaces2__rosidl_generator_py.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/livox_ros_driver2/rosidl_generator_py/livox_ros_driver2/liblivox_interfaces2__rosidl_generator_py.so",
+      "sha256": "28b846824c65ee347adc4d56e5a1f5556fc0fbad705d6f5b3ade3865496d0579",
+      "size_bytes": 21112
+    },
+    "install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/livox_ros_driver2/rosidl_generator_py/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "faf832658ea82ce50b8fcfcfc6780d080dbb5a573e9ea12b8799c4953379afe3",
+      "size_bytes": 17168
+    },
+    "install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/livox_ros_driver2/rosidl_generator_py/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "84ce2e52108428fc467dd064419e6d74007b03189eefee3ac33598dbc63bc49c",
+      "size_bytes": 17192
+    },
+    "install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/livox_ros_driver2/rosidl_generator_py/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "8ae37149ac3efdbb0254351de85bed43807d8dceb4a1b5291dc62e07bca2528e",
+      "size_bytes": 17200
+    },
+    "install/path_searching/lib/libpath_searching.so": {
+      "path": "/home/rmnav/AeroMind/install/path_searching/lib/libpath_searching.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/path_searching/libpath_searching.so",
+      "sha256": "4e8d64e78bb2cac54f7614c966a183deca4fa7ce61c83bb6590e7f51a0a96b94",
+      "size_bytes": 4083024
+    },
+    "install/plan_env/lib/libplan_env.so": {
+      "path": "/home/rmnav/AeroMind/install/plan_env/lib/libplan_env.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/plan_env/libplan_env.so",
+      "sha256": "2d348e959b3fefe1bb057efbe787a04256f6bec139f17ffb68fdddac5f4add3d",
+      "size_bytes": 67159200
+    },
+    "install/quadrotor_msgs/lib/libdecode_msgs.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libdecode_msgs.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/quadrotor_msgs/libdecode_msgs.so",
+      "sha256": "b9aa1a53d02e79f8648917049afab5b8d3a3ef2382d098753e51d041af33ebe8",
+      "size_bytes": 15944
+    },
+    "install/quadrotor_msgs/lib/libencode_msgs.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libencode_msgs.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/quadrotor_msgs/libencode_msgs.so",
+      "sha256": "29a2759f45ba8d3999009dbabe651677ceefb8d25a8a7a47c080a196f76873f4",
+      "size_bytes": 16240
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_c.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_c.so",
+      "sha256": "3a5b4f5cf23834206a6a3a48cf0d85df2cd0cbd156332eb0a794581861086971",
+      "size_bytes": 83352
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_py.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_py.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_generator_py.so",
+      "sha256": "93c6f9e0dd5d3543e14ab14ccc9ff7aa0c77a7a76b68c84be90e380ed16350c8",
+      "size_bytes": 53096
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_c.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_c.so",
+      "sha256": "d7a413cf469c000e3573cbd58f3bafd7ae47d2cf9715871492509cc69eeca195",
+      "size_bytes": 33976
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_cpp.so",
+      "sha256": "497445772943eadfc94550669eb875ac3bf1ffd9b5d913b348e583d24a60107b",
+      "size_bytes": 40664
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_c.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_c.so",
+      "sha256": "db15a0a43ffc1d06d617dec7d8d52e807a2db3aa8f6c91364b9c09e57b0fd5f6",
+      "size_bytes": 63856
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "13d5cd425e6194cf66ea63576181f5f5b0133569cfb1ed17cca37f35ebc6fa2a",
+      "size_bytes": 86176
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_c.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_c.so",
+      "sha256": "6647f56a61999bc86c35b87e4b7649a6624b8765cb801cbf987b9aabc4ddaa66",
+      "size_bytes": 89728
+    },
+    "install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/quadrotor_msgs/lib/libquadrotor_msgs__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "f3eb5077c1571119581617b0f60d8948a24a0b3eb1fcc4d02ac01e08906f4325",
+      "size_bytes": 99920
+    },
+    "install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/libquadrotor_msgs__rosidl_generator_py.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/libquadrotor_msgs__rosidl_generator_py.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/quadrotor_msgs/rosidl_generator_py/quadrotor_msgs/libquadrotor_msgs__rosidl_generator_py.so",
+      "sha256": "db688bce31442439711390cd08461ff5b0ac419081cd6e042ac9fd600280a07e",
+      "size_bytes": 53096
+    },
+    "install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/quadrotor_msgs/rosidl_generator_py/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "de3d97e7cdef07b10a63d51ac70c5943962799d421571c7770a862f57e581bf9",
+      "size_bytes": 40560
+    },
+    "install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/quadrotor_msgs/rosidl_generator_py/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "d3866fd0e2f524ee1febfe684a42df8d4f50624ea8a305ce2760848e57167c1e",
+      "size_bytes": 40576
+    },
+    "install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/quadrotor_msgs/local/lib/python3.10/dist-packages/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/quadrotor_msgs/rosidl_generator_py/quadrotor_msgs/quadrotor_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "31360fc18fff8e502d6d287c4e4aab1a260e9f34703444d790ecdeed16bc9a0f",
+      "size_bytes": 40584
+    },
+    "install/spark_fast_lio/lib/libspark_lio_component.so": {
+      "path": "/home/rmnav/AeroMind/install/spark_fast_lio/lib/libspark_lio_component.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/spark_fast_lio/libspark_lio_component.so",
+      "sha256": "46e0fe762b9379f5347e51f55144d706da4ee922fe6b14e5d0293d1e5febbdee",
+      "size_bytes": 96322864
+    },
+    "install/spark_fast_lio/lib/spark_fast_lio/spark_lio_mapping": {
+      "path": "/home/rmnav/AeroMind/install/spark_fast_lio/lib/spark_fast_lio/spark_lio_mapping",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/spark_fast_lio/spark_lio_mapping",
+      "sha256": "dcacfcf6a4ed7d6a6d2ca4d954b8302695aa5990f8912e3c898dc7ce4d666517",
+      "size_bytes": 1159632
+    },
+    "install/stage2_lio_sim/lib/libstage2_kinematic_imu.so": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/libstage2_kinematic_imu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/stage2_lio_sim/libstage2_kinematic_imu.so",
+      "sha256": "f34a6facf27e467000923fb131083501364804d31747c6240cd219108b5c8187",
+      "size_bytes": 1382960
+    },
+    "install/stage2_lio_sim/lib/libstage2_position_imu.so": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/libstage2_position_imu.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/libstage2_position_imu.so",
+      "sha256": "ca5b00c09d2eff8d095920a10059d133c5dd5f317bb37ba140d379df61ca49a1",
+      "size_bytes": 1370304
+    },
+    "install/stage2_lio_sim/lib/lio_point_boundary/libspark_lio_component.so": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/lio_point_boundary/libspark_lio_component.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/lio_point_boundary/libspark_lio_component.so",
+      "sha256": "1489cdb0e10c9cc5f87cab9a5018cfa776ec977c91b1ecb7a2916b1a68b015ed",
+      "size_bytes": 96276096
+    },
+    "install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping",
+      "sha256": "a27dc5514e5656a8390213dce4ff4e74f4932532638197bfbcbcba5fe9097af9",
+      "size_bytes": 1163880
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_contract.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_contract.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_contract.py",
+      "sha256": "490cceda9dcba2ab7367d72f0dffa87f6f78e0c5a02a5045cd291a80c6135338",
+      "size_bytes": 4384
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_navigation_interface.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_navigation_interface.py",
+      "sha256": "8fa41a0f6a4efb09f534cac8dfa651e4696fb39024ea8576236efd5b7665f327",
+      "size_bytes": 2860
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_odometry_adapter.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_odometry_adapter.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_odometry_adapter.py",
+      "sha256": "f31f1852332b7a3c1f0dfa96e0a9f74bd2166b0ded2333a72ae33f336ec971b8",
+      "size_bytes": 4205
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_point_boundary_mapping.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_point_boundary_mapping.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_point_boundary_mapping.py",
+      "sha256": "f0007efbf10e7a866ef7e37c6bf5623256b09be552ee3fc31107198242893dc3",
+      "size_bytes": 756
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_safe_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_safe_navigation_interface.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_safe_navigation_interface.py",
+      "sha256": "86148a6d0904d5e8b46a40f13cc6f2960d06819018c19c81d89fe29b4f1681e5",
+      "size_bytes": 8645
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_safety_geometry.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_safety_geometry.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_safety_geometry.py",
+      "sha256": "f6616c49008b09f758cd627f9870d5f0396cd9e0d4c2ed6091729d89908f0481",
+      "size_bytes": 3725
+    },
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_sensor_adapter.py": {
+      "path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_sensor_adapter.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_sensor_adapter.py",
+      "sha256": "4825a03120631ecf6ea8c0dac7bd74e5e6ba63bd29cc112c52aff624eccdca70",
+      "size_bytes": 3229
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_generator_c.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_generator_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_generator_c.so",
+      "sha256": "c43ed7b1d8d28c97c8561406bef0abd953e64a14cba7c621c936c1597d981b54",
+      "size_bytes": 27416
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_generator_py.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_generator_py.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_generator_py.so",
+      "sha256": "6b48884c21b3e65efd9fb30a901f070312dd845977da22af678a4e745b37c480",
+      "size_bytes": 26176
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_typesupport_c.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_c.so",
+      "sha256": "82ffc804d4cbd67ad159528350996adeeb69b046082f8bb60178deaf600dfbcc",
+      "size_bytes": 17680
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_typesupport_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_cpp.so",
+      "sha256": "002d070dcf8f8c423e7481869ef4dbb523c2044311374847bdfac7509f05ab90",
+      "size_bytes": 59848
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_c.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_c.so",
+      "sha256": "fb4623514030ed40695df74ebbcb6705cb958683faa4a758b17fe5a60b142d7e",
+      "size_bytes": 235672
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_fastrtps_cpp.so",
+      "sha256": "e41a0a8dd63d721d0d787b40392594952fbc2088fa4f019177c08bdba4dee01e",
+      "size_bytes": 390080
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_c.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_c.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_c.so",
+      "sha256": "b0a15d6ebf4af4a1fd745b37ea563df945385adbec516a3b8274d72b6492b9ba",
+      "size_bytes": 32072
+    },
+    "install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_cpp.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_cpp.so",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils__rosidl_typesupport_introspection_cpp.so",
+      "sha256": "143082a1242284c3a295dcb0bbf6f5c1f6a6469db3b5b6bb5530020160dc8cb7",
+      "size_bytes": 322936
+    },
+    "install/traj_utils/lib/libtraj_utils_lib.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/lib/libtraj_utils_lib.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/traj_utils/libtraj_utils_lib.so",
+      "sha256": "19f53484a238d102b37856c86a6f0f85d55203351f62b2bf923a2f198161db1c",
+      "size_bytes": 28583688
+    },
+    "install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/libtraj_utils__rosidl_generator_py.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/libtraj_utils__rosidl_generator_py.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/traj_utils/rosidl_generator_py/traj_utils/libtraj_utils__rosidl_generator_py.so",
+      "sha256": "8a99efebe8daef569eb7817130481a0ad92a056e450c3b422c57d719fa166eec",
+      "size_bytes": 26176
+    },
+    "install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/traj_utils/rosidl_generator_py/traj_utils/traj_utils_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "3d27fb000734571359c89ebcefa48ce6dd4d7e23f0f823e25a44e011a4d06ba5",
+      "size_bytes": 17632
+    },
+    "install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/traj_utils/rosidl_generator_py/traj_utils/traj_utils_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "e7ce49ab476b5c4f53a9988317c7bd13d764e438742bee0e6c0a188ccbbd7b1c",
+      "size_bytes": 17648
+    },
+    "install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so": {
+      "path": "/home/rmnav/AeroMind/install/traj_utils/local/lib/python3.10/dist-packages/traj_utils/traj_utils_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/build/traj_utils/rosidl_generator_py/traj_utils/traj_utils_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so",
+      "sha256": "806af5f5a85370146806afec0489284c675adb2cbe9b28381e28d1b5580ec996",
+      "size_bytes": 17656
+    },
+    "install/uav_bringup/share/uav_bringup/config/ego_provincial_2025_provisional.yaml": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/config/ego_provincial_2025_provisional.yaml",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/config/ego_provincial_2025_provisional.yaml",
+      "sha256": "e2b960b98d011a7de64c4b47202fb89d515b0e8a44d016ce2e194b86e056c944",
+      "size_bytes": 2114
+    },
+    "install/uav_bringup/share/uav_bringup/config/spark_provincial_noise_model_sim.yaml": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/config/spark_provincial_noise_model_sim.yaml",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/config/spark_provincial_noise_model_sim.yaml",
+      "sha256": "3e98311bb967aa5991008d10a05d9146645f90730ae382dba79079e7c3dbd28a",
+      "size_bytes": 1210
+    },
+    "install/uav_bringup/share/uav_bringup/launch/provincial_2025_provisional.launch.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/launch/provincial_2025_provisional.launch.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_2025_provisional.launch.py",
+      "sha256": "e222ee3487ab42b92cc557683083752066decab1a4eef56009418d29f203f478",
+      "size_bytes": 6022
+    },
+    "install/uav_bringup/share/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py",
+      "sha256": "a7f54ce07e54a9560490f3494c766f13e5df9366096eceeb44bcffd50d55c5b0",
+      "size_bytes": 7504
+    },
+    "install/uav_bringup/share/uav_bringup/maps/provincial_2025_provisional.pgm": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/maps/provincial_2025_provisional.pgm",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/maps/provincial_2025_provisional.pgm",
+      "sha256": "57bde789a1e7723f8347c09ea9387ebd667aaec7bbb634ce7c72e71a1d53d50c",
+      "size_bytes": 37615
+    },
+    "install/uav_bringup/share/uav_bringup/maps/provincial_2025_provisional.yaml": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/maps/provincial_2025_provisional.yaml",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/maps/provincial_2025_provisional.yaml",
+      "sha256": "7b7892bf1f824be5c8c969c475747a1fa80b683a93f92770c08096afd0f9905b",
+      "size_bytes": 131
+    },
+    "install/uav_bringup/share/uav_bringup/worlds/provincial_2025_training.sdf": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/worlds/provincial_2025_training.sdf",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_2025_training.sdf",
+      "sha256": "6e6423f4af2a5cc66cefc00ee28148fd7e1545f90589b8c809de142607e87c91",
+      "size_bytes": 21782
+    },
+    "install/uav_bringup/share/uav_bringup/worlds/provincial_stage2_lio.sdf": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/worlds/provincial_stage2_lio.sdf",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_stage2_lio.sdf",
+      "sha256": "29f43820fbdb2f8afb19fc3a0d7a8afad8e54ac9fad1d7013c7f8fdce405e88e",
+      "size_bytes": 25961
+    },
+    "install/uav_bringup/share/uav_bringup/worlds/provincial_stage2_lio_position_imu.sdf": {
+      "path": "/home/rmnav/AeroMind/install/uav_bringup/share/uav_bringup/worlds/provincial_stage2_lio_position_imu.sdf",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_stage2_lio_position_imu.sdf",
+      "sha256": "ed524b892d909ac77a7d235a69876641edc961af0a66020f320b449f27638811",
+      "size_bytes": 25959
+    },
+    "install/uav_planning/lib/uav_planning/ego_goal_adapter.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/ego_goal_adapter.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/ego_goal_adapter.py",
+      "sha256": "1dc610bf1396e69becd30acb11d0eff77c640792184f8a1df380e4537485825b",
+      "size_bytes": 5579
+    },
+    "install/uav_planning/lib/uav_planning/ego_trajectory_executor.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/ego_trajectory_executor.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/ego_trajectory_executor.py",
+      "sha256": "8ef09f6ea5d69ce2c8404309cec3bb58f6528bf903a06581f121b13d9787f99f",
+      "size_bytes": 13651
+    },
+    "install/uav_planning/lib/uav_planning/gazebo_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/gazebo_navigation_interface.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/gazebo_navigation_interface.py",
+      "sha256": "20fd8adc6461735fb5ebd05f9c8103d8cae096e6143e624cd13846df05fcd543",
+      "size_bytes": 41361
+    },
+    "install/uav_planning/lib/uav_planning/grid_route.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/grid_route.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/grid_route.py",
+      "sha256": "cd403a76476b2ac194c411923624896e0f90abc542e2ebd28a717b4dbe36d14b",
+      "size_bytes": 8497
+    },
+    "install/uav_planning/lib/uav_planning/planar_navigation_simulator.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/planar_navigation_simulator.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/planar_navigation_simulator.py",
+      "sha256": "07e13902bf0926ffff4cb8a8ea1bf8f3c7b32b8410bd3b26951a2dcf591b89ff",
+      "size_bytes": 13766
+    },
+    "install/uav_planning/lib/uav_planning/provincial_safety_geometry.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/provincial_safety_geometry.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/provincial_safety_geometry.py",
+      "sha256": "d51a052c396611dc81e08c2c4ebf58d094b13c66ef699cb3e71222ad4469faa7",
+      "size_bytes": 5263
+    },
+    "install/uav_planning/lib/uav_planning/scan_matcher.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/scan_matcher.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/scan_matcher.py",
+      "sha256": "36401758c6edd7972c88cbb34d8df216729a0be14e0e6cd179f175368e65ba3e",
+      "size_bytes": 2685
+    },
+    "install/uav_planning/lib/uav_planning/stage2_localized_interface.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_localized_interface.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_localized_interface.py",
+      "sha256": "f0976d3a42548343423c25fe338719453f8a50ea8291cb49753b9e965ba9a630",
+      "size_bytes": 11830
+    },
+    "install/uav_planning/lib/uav_planning/stage2_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_navigation_interface.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_navigation_interface.py",
+      "sha256": "5a86c854c2ed25b74119433c18e9606b4150fec88b901d3e8cb808e0b0ae32e3",
+      "size_bytes": 2083
+    },
+    "install/uav_planning/lib/uav_planning/stage2_odometry_model.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_odometry_model.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_odometry_model.py",
+      "sha256": "db36affd2f78524fab1cbff214fc1d705b9f2c10c82304727037a6acc9fdf465",
+      "size_bytes": 3705
+    },
+    "install/uav_planning/lib/uav_planning/stage2_scan_relay.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_scan_relay.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_scan_relay.py",
+      "sha256": "a4adfd20acc01dbc6870c467b3bb06a0868227810580d47b2a6e5f981a36850d",
+      "size_bytes": 2330
+    },
+    "install/uav_planning/lib/uav_planning/stage2_simulated_odometry.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_simulated_odometry.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_simulated_odometry.py",
+      "sha256": "9ddb18506e3e1d08ef76ce3db35b2d68701a7ddad83807b584ba7cd0a1ef78f7",
+      "size_bytes": 4501
+    },
+    "install/uav_planning/lib/uav_planning/stage2_wall_localization.py": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_wall_localization.py",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_wall_localization.py",
+      "sha256": "914b17e4197c3dd14a3670265679bac1381fa6792ac04996fdc863067d576cb0",
+      "size_bytes": 9070
+    },
+    "install/uav_planning/share/uav_planning/config/ego_goal_adapter.yaml": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/share/uav_planning/config/ego_goal_adapter.yaml",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/config/ego_goal_adapter.yaml",
+      "sha256": "0b62a4eb612ecc3a13cafbddf2a043e8a6b947604c41b26d2733d647ae2469c1",
+      "size_bytes": 239
+    },
+    "install/uav_planning/share/uav_planning/config/ego_trajectory_executor.yaml": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/share/uav_planning/config/ego_trajectory_executor.yaml",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/config/ego_trajectory_executor.yaml",
+      "sha256": "350b3332ecf63383555bcc9af16f5e0a64ab20bb973278e8fe05cc6cb6dc0170",
+      "size_bytes": 417
+    },
+    "install/uav_planning/share/uav_planning/config/provincial_2025_provisional.json": {
+      "path": "/home/rmnav/AeroMind/install/uav_planning/share/uav_planning/config/provincial_2025_provisional.json",
+      "is_symlink": true,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/config/provincial_2025_provisional.json",
+      "sha256": "830c3648d353883606e397c380a4507b6ede8ef23630039ae5bc1ba865ced6da",
+      "size_bytes": 2656
+    },
+    "src/stage2_lio_sim/CMakeLists.txt": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/CMakeLists.txt",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/CMakeLists.txt",
+      "sha256": "4d3bea9a77dec1e89d546722d078067e094084c34e95318257f3b1ab7c6c7694",
+      "size_bytes": 811
+    },
+    "src/stage2_lio_sim/kinematic_imu.cpp": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/kinematic_imu.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/kinematic_imu.cpp",
+      "sha256": "86fb9409dd9285020c6ff889d7ba5fe9626f4a9ec114ec65563d86df2ce0fbcf",
+      "size_bytes": 4660
+    },
+    "src/stage2_lio_sim/package.xml": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/package.xml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/package.xml",
+      "sha256": "a95e6788564afc81e4dcba41e2d6858e815cbec3b16bec0fa385f81defaf52c2",
+      "size_bytes": 615
+    },
+    "src/stage2_lio_sim/scripts/lio_contract.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_contract.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_contract.py",
+      "sha256": "490cceda9dcba2ab7367d72f0dffa87f6f78e0c5a02a5045cd291a80c6135338",
+      "size_bytes": 4384
+    },
+    "src/stage2_lio_sim/scripts/lio_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_navigation_interface.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_navigation_interface.py",
+      "sha256": "8fa41a0f6a4efb09f534cac8dfa651e4696fb39024ea8576236efd5b7665f327",
+      "size_bytes": 2860
+    },
+    "src/stage2_lio_sim/scripts/lio_odometry_adapter.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_odometry_adapter.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_odometry_adapter.py",
+      "sha256": "f31f1852332b7a3c1f0dfa96e0a9f74bd2166b0ded2333a72ae33f336ec971b8",
+      "size_bytes": 4205
+    },
+    "src/stage2_lio_sim/scripts/lio_point_boundary_mapping.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_point_boundary_mapping.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_point_boundary_mapping.py",
+      "sha256": "f0007efbf10e7a866ef7e37c6bf5623256b09be552ee3fc31107198242893dc3",
+      "size_bytes": 756
+    },
+    "src/stage2_lio_sim/scripts/lio_safe_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_safe_navigation_interface.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_safe_navigation_interface.py",
+      "sha256": "86148a6d0904d5e8b46a40f13cc6f2960d06819018c19c81d89fe29b4f1681e5",
+      "size_bytes": 8645
+    },
+    "src/stage2_lio_sim/scripts/lio_safety_geometry.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_safety_geometry.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_safety_geometry.py",
+      "sha256": "f6616c49008b09f758cd627f9870d5f0396cd9e0d4c2ed6091729d89908f0481",
+      "size_bytes": 3725
+    },
+    "src/stage2_lio_sim/scripts/lio_sensor_adapter.py": {
+      "path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_sensor_adapter.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/scripts/lio_sensor_adapter.py",
+      "sha256": "4825a03120631ecf6ea8c0dac7bd74e5e6ba63bd29cc112c52aff624eccdca70",
+      "size_bytes": 3229
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/CMakeLists.txt": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/CMakeLists.txt",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/CMakeLists.txt",
+      "sha256": "29f26ce398b9c1551a11132c833ee850cc0b53e9766d6f06d7aeb895227bdc05",
+      "size_bytes": 3928
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/avia.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/avia.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/avia.yaml",
+      "sha256": "e540d3cabe333b008b721eaa4a39c3578619a4f806380bf0e1ba0f537d03ccec",
+      "size_bytes": 1184
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/dcist_rrg/rrghusky.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/dcist_rrg/rrghusky.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/dcist_rrg/rrghusky.yaml",
+      "sha256": "75263395ecca320b456801540eb994ebf1d505b8d01eebadbfdb48a38034cf19",
+      "size_bytes": 1923
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/horizon.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/horizon.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/horizon.yaml",
+      "sha256": "fa11a03ee59e542b5db13c6e8e338fa4d66614a0f497ea3d6baac56bdb22ae93",
+      "size_bytes": 1185
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/acl_jackal.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/acl_jackal.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/acl_jackal.yaml",
+      "sha256": "2c87e60537ed73f7a71ae6a2ed6a56044a04d0a6a1f06edde685a9eda69095e2",
+      "size_bytes": 1847
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml",
+      "sha256": "47c89642d052908d01d905f932f079e503e1fbf81e03299c96d1025bdd8ca813",
+      "size_bytes": 2018
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/apis.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/apis.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/apis.yaml",
+      "sha256": "234d16bea92fe120048ec176c8e3cdc40d565c82e8e343049cc68227c2b2adc9",
+      "size_bytes": 2410
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/hathor.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/hathor.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/hathor.yaml",
+      "sha256": "3a7225bb69633bf4eae1a4b46f5106ca95f8820319566cbf05f2e0993400f598",
+      "size_bytes": 2380
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sobek.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sobek.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sobek.yaml",
+      "sha256": "25b6f80616ccf471d4651f84a75a719381fe9c25abe1684f1db761bcaa7ba35e",
+      "size_bytes": 2102
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sparkal1.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sparkal1.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sparkal1.yaml",
+      "sha256": "b181499641792080325d91e7100b3a1d309df40df977b4e7591ec2579e74d7f9",
+      "size_bytes": 2346
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sparkal2.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sparkal2.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/sparkal2.yaml",
+      "sha256": "82fcc957548b603459831ce700222c25bf477ff47f0f0ebdbdd4a3c5a9bf579d",
+      "size_bytes": 2022
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/thoth.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/thoth.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/kimera_multi/thoth.yaml",
+      "sha256": "3472141231acdee3d69efbeeb370465ba52650cec2c3c102a6f0ff9e206e5bea",
+      "size_bytes": 2104
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/ouster.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/ouster.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/ouster.yaml",
+      "sha256": "39ae666ddb62b0fd9c32a2abc030f5eca17bba407286cdc503f9bb1ac615e02c",
+      "size_bytes": 1485
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/ouster_vbr.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/ouster_vbr.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/ouster_vbr.yaml",
+      "sha256": "4988e76acd6bee279072327e82ec0efcaf710b80bd5bd465988254d237b08c44",
+      "size_bytes": 2579
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/velodyne.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/velodyne.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/velodyne.yaml",
+      "sha256": "24e1a22ea6524c39fd8c177d737ea63ace3786cd0b8c64e4ad798d1950001d40",
+      "size_bytes": 1913
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/config/velodyne_mit.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/velodyne_mit.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/config/velodyne_mit.yaml",
+      "sha256": "d49cdec18aa48625429b8faf8765a3f2f71eb457e411d215f22d1529bccc1d8f",
+      "size_bytes": 2054
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/common/Exp_mat.h": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/Exp_mat.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/Exp_mat.h",
+      "sha256": "4abd729a892559dbdca2bdb9f7fbff8bc79b70c5350eff660228033da4a6efae",
+      "size_bytes": 2663
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/common/common_lib.h": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/common_lib.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/common_lib.h",
+      "sha256": "68180c0a697f3eeb4197ee8324c3a173367e72e56db0756a307a1d7ca8ed1306",
+      "size_bytes": 8232
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/common/so3_math.h": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/so3_math.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/so3_math.h",
+      "sha256": "0e16b6611ec73176e1d43549619fb248b6b5c557a89cd2a9bbec36558cf9a796",
+      "size_bytes": 2815
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/common/use-ikfom.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/use-ikfom.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/common/use-ikfom.hpp",
+      "sha256": "860cd08b30f9b69dad8f037725f6259acb7a174cd7bdd9f4ce8cc6d3de1f38bc",
+      "size_bytes": 4549
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/imu_processing.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/imu_processing.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/imu_processing.hpp",
+      "sha256": "6013985a7139816f8bbd17defabf79bad83a93d1a4315b55b4cf95be24d372da",
+      "size_bytes": 14903
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/preprocess.h": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/preprocess.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/preprocess.h",
+      "sha256": "dfc7c3d6c1e3b826e64ec62d17436041bad8bae7b945a5064de65a69679b878e",
+      "size_bytes": 5386
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/include/spark_fast_lio.h": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/spark_fast_lio.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/include/spark_fast_lio.h",
+      "sha256": "e3a6d63ee6de55ab6a3ca7b5c6829a20e262a228069fc2d705b63faaf14f7c34",
+      "size_bytes": 11328
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml",
+      "sha256": "92ed64fd7eb9492e928d32103b271183943bd90c581b0c9933e2a55d3be18841",
+      "size_bytes": 1550
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml",
+      "sha256": "18fa2c8ac839a5c610a2e4d777e7171335a29e49f9b8669a5627fb8b6036b09b",
+      "size_bytes": 2096
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_mit_campus.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_mit_campus.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_mit_campus.launch.yaml",
+      "sha256": "1feb867787c72e7dc368e96033c4714a69d16ccd64b12bec2859cf1bd768dc10",
+      "size_bytes": 2207
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml",
+      "sha256": "3ff2ce210272b4892fded673211ba7177babfc30c9bd1a967f74d372fa986a76",
+      "size_bytes": 1059
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/package.xml": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/package.xml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/package.xml",
+      "sha256": "894c059402f015a04a1925204521ff2a4dc6c5a3b6b9e75aad0e51664783284a",
+      "size_bytes": 840
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/src/preprocess.cpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/src/preprocess.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/src/preprocess.cpp",
+      "sha256": "fecdb453eeb5efc36a116473355f31cc56bf4ce9e30fd4c0e94b514ecec45bd1",
+      "size_bytes": 29654
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/src/spark_fast_lio.cpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/src/spark_fast_lio.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/src/spark_fast_lio.cpp",
+      "sha256": "53510556a495e0d7e57939f62331b0e010622387563ad328a568bacfbb11262e",
+      "size_bytes": 45303
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/esekfom.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/esekfom.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/esekfom.hpp",
+      "sha256": "f52eed547293533bdfa715adfb87648a6e9343c8ef3aff8e68d92acc028f53f9",
+      "size_bytes": 77681
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/util.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/util.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/util.hpp",
+      "sha256": "c98efdfbc2df982af4f889c1dc5dbe5fa6375813ed79c12a7ad4ee2f9f7fd2da",
+      "size_bytes": 2317
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/build_manifold.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/build_manifold.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/build_manifold.hpp",
+      "sha256": "6a08dc9daa0156acdbfc1ae4591215e1e69b91fc968d2a9d63f48272b22b6251",
+      "size_bytes": 12324
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp",
+      "sha256": "ea0aa07eb1e3001fb5e508f42a7fb130d7d1791bd368289d4f0404ccd0f27073",
+      "size_bytes": 4886
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp",
+      "sha256": "89f1d8f188fcd1aade798bd0f932c7f62349b6d44cb153902deba89395b5ac7d",
+      "size_bytes": 10425
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/vectview.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/vectview.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/vectview.hpp",
+      "sha256": "3d81ae12205ff9cc62f48dd2847060019669903f027311211d4610d23e102b33",
+      "size_bytes": 6750
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/startIdx.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/startIdx.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/startIdx.hpp",
+      "sha256": "1d8d16c3975a2418e08074bbcb7382cc8b7b7147205671c6815947ab6fc94df1",
+      "size_bytes": 13097
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/S2.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/S2.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/S2.hpp",
+      "sha256": "39466b17acdd86bed5578614fc7ce2c868ee631d407d4f606707ddd7acaec8e0",
+      "size_bytes": 10641
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/SOn.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/SOn.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/SOn.hpp",
+      "sha256": "34cc9bb2ac6c6b503802293726a1da08bf422c7b80e5102501fb3319adfa18b3",
+      "size_bytes": 10774
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/vect.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/vect.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/vect.hpp",
+      "sha256": "8ef8405a7021914553425177688545dca3666769b87ed58ebcbcb4a2cc584e4d",
+      "size_bytes": 14737
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp",
+      "sha256": "41b969b42f835f533adbae9bb97dda2d67d311abf14f3db3e25e150a0e0bbcd0",
+      "size_bytes": 3265
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.cpp": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.cpp",
+      "sha256": "5a33ff24aa340cf950b99f8f46a91ee293530903a90bb1edbe2bfea4ebe5142d",
+      "size_bytes": 63062
+    },
+    "src/third_party/spark-fast-lio/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.h": {
+      "path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/third_party/spark-fast-lio/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.h",
+      "sha256": "3e4c1d4c3f7fbc42a251cf8b343ec73fdd65904d07bd189eaf7dc0bbd3633a0a",
+      "size_bytes": 9316
+    },
+    "src/uav_bringup/config/ego_provincial_2025_provisional.yaml": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/config/ego_provincial_2025_provisional.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/config/ego_provincial_2025_provisional.yaml",
+      "sha256": "e2b960b98d011a7de64c4b47202fb89d515b0e8a44d016ce2e194b86e056c944",
+      "size_bytes": 2114
+    },
+    "src/uav_bringup/config/spark_provincial_noise_model_sim.yaml": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/config/spark_provincial_noise_model_sim.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/config/spark_provincial_noise_model_sim.yaml",
+      "sha256": "3e98311bb967aa5991008d10a05d9146645f90730ae382dba79079e7c3dbd28a",
+      "size_bytes": 1210
+    },
+    "src/uav_bringup/launch/provincial_2025_provisional.launch.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_2025_provisional.launch.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_2025_provisional.launch.py",
+      "sha256": "e222ee3487ab42b92cc557683083752066decab1a4eef56009418d29f203f478",
+      "size_bytes": 6022
+    },
+    "src/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py",
+      "sha256": "a7f54ce07e54a9560490f3494c766f13e5df9366096eceeb44bcffd50d55c5b0",
+      "size_bytes": 7504
+    },
+    "src/uav_bringup/launch/provincial_stage2_lio_point_boundary.launch.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_stage2_lio_point_boundary.launch.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/launch/provincial_stage2_lio_point_boundary.launch.py",
+      "sha256": "c5880ffa4a463d9feeaa6c6ea4c3039ba214f977dc3cfc009f9c3f3d910f6269",
+      "size_bytes": 7479
+    },
+    "src/uav_bringup/maps/provincial_2025_provisional.pgm": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/maps/provincial_2025_provisional.pgm",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/maps/provincial_2025_provisional.pgm",
+      "sha256": "57bde789a1e7723f8347c09ea9387ebd667aaec7bbb634ce7c72e71a1d53d50c",
+      "size_bytes": 37615
+    },
+    "src/uav_bringup/maps/provincial_2025_provisional.yaml": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/maps/provincial_2025_provisional.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/maps/provincial_2025_provisional.yaml",
+      "sha256": "7b7892bf1f824be5c8c969c475747a1fa80b683a93f92770c08096afd0f9905b",
+      "size_bytes": 131
+    },
+    "src/uav_bringup/worlds/provincial_2025_training.sdf": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_2025_training.sdf",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_2025_training.sdf",
+      "sha256": "6e6423f4af2a5cc66cefc00ee28148fd7e1545f90589b8c809de142607e87c91",
+      "size_bytes": 21782
+    },
+    "src/uav_bringup/worlds/provincial_stage2_lio.sdf": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_stage2_lio.sdf",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_stage2_lio.sdf",
+      "sha256": "29f43820fbdb2f8afb19fc3a0d7a8afad8e54ac9fad1d7013c7f8fdce405e88e",
+      "size_bytes": 25961
+    },
+    "src/uav_bringup/worlds/provincial_stage2_lio_position_imu.sdf": {
+      "path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_stage2_lio_position_imu.sdf",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_bringup/worlds/provincial_stage2_lio_position_imu.sdf",
+      "sha256": "ed524b892d909ac77a7d235a69876641edc961af0a66020f320b449f27638811",
+      "size_bytes": 25959
+    },
+    "src/uav_planning/config/ego_goal_adapter.yaml": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/config/ego_goal_adapter.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/config/ego_goal_adapter.yaml",
+      "sha256": "0b62a4eb612ecc3a13cafbddf2a043e8a6b947604c41b26d2733d647ae2469c1",
+      "size_bytes": 239
+    },
+    "src/uav_planning/config/ego_trajectory_executor.yaml": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/config/ego_trajectory_executor.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/config/ego_trajectory_executor.yaml",
+      "sha256": "350b3332ecf63383555bcc9af16f5e0a64ab20bb973278e8fe05cc6cb6dc0170",
+      "size_bytes": 417
+    },
+    "src/uav_planning/config/provincial_2025_provisional.json": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/config/provincial_2025_provisional.json",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/config/provincial_2025_provisional.json",
+      "sha256": "830c3648d353883606e397c380a4507b6ede8ef23630039ae5bc1ba865ced6da",
+      "size_bytes": 2656
+    },
+    "src/uav_planning/scripts/ego_goal_adapter.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/ego_goal_adapter.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/ego_goal_adapter.py",
+      "sha256": "1dc610bf1396e69becd30acb11d0eff77c640792184f8a1df380e4537485825b",
+      "size_bytes": 5579
+    },
+    "src/uav_planning/scripts/ego_trajectory_executor.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/ego_trajectory_executor.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/ego_trajectory_executor.py",
+      "sha256": "8ef09f6ea5d69ce2c8404309cec3bb58f6528bf903a06581f121b13d9787f99f",
+      "size_bytes": 13651
+    },
+    "src/uav_planning/scripts/gazebo_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/gazebo_navigation_interface.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/gazebo_navigation_interface.py",
+      "sha256": "20fd8adc6461735fb5ebd05f9c8103d8cae096e6143e624cd13846df05fcd543",
+      "size_bytes": 41361
+    },
+    "src/uav_planning/scripts/grid_route.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/grid_route.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/grid_route.py",
+      "sha256": "cd403a76476b2ac194c411923624896e0f90abc542e2ebd28a717b4dbe36d14b",
+      "size_bytes": 8497
+    },
+    "src/uav_planning/scripts/planar_navigation_simulator.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/planar_navigation_simulator.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/planar_navigation_simulator.py",
+      "sha256": "07e13902bf0926ffff4cb8a8ea1bf8f3c7b32b8410bd3b26951a2dcf591b89ff",
+      "size_bytes": 13766
+    },
+    "src/uav_planning/scripts/provincial_safety_geometry.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/provincial_safety_geometry.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/provincial_safety_geometry.py",
+      "sha256": "d51a052c396611dc81e08c2c4ebf58d094b13c66ef699cb3e71222ad4469faa7",
+      "size_bytes": 5263
+    },
+    "src/uav_planning/scripts/scan_matcher.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/scan_matcher.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/scan_matcher.py",
+      "sha256": "36401758c6edd7972c88cbb34d8df216729a0be14e0e6cd179f175368e65ba3e",
+      "size_bytes": 2685
+    },
+    "src/uav_planning/scripts/stage2_localized_interface.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_localized_interface.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_localized_interface.py",
+      "sha256": "f0976d3a42548343423c25fe338719453f8a50ea8291cb49753b9e965ba9a630",
+      "size_bytes": 11830
+    },
+    "src/uav_planning/scripts/stage2_navigation_interface.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_navigation_interface.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_navigation_interface.py",
+      "sha256": "5a86c854c2ed25b74119433c18e9606b4150fec88b901d3e8cb808e0b0ae32e3",
+      "size_bytes": 2083
+    },
+    "src/uav_planning/scripts/stage2_odometry_model.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_odometry_model.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_odometry_model.py",
+      "sha256": "db36affd2f78524fab1cbff214fc1d705b9f2c10c82304727037a6acc9fdf465",
+      "size_bytes": 3705
+    },
+    "src/uav_planning/scripts/stage2_simulated_odometry.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_simulated_odometry.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_simulated_odometry.py",
+      "sha256": "9ddb18506e3e1d08ef76ce3db35b2d68701a7ddad83807b584ba7cd0a1ef78f7",
+      "size_bytes": 4501
+    },
+    "src/uav_planning/scripts/stage2_wall_localization.py": {
+      "path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_wall_localization.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/src/uav_planning/scripts/stage2_wall_localization.py",
+      "sha256": "914b17e4197c3dd14a3670265679bac1381fa6792ac04996fdc863067d576cb0",
+      "size_bytes": 9070
+    },
+    "tools/analyze_provincial_forward_clearance.py": {
+      "path": "/home/rmnav/AeroMind/tools/analyze_provincial_forward_clearance.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/analyze_provincial_forward_clearance.py",
+      "sha256": "4c7690fac5021f3d771c269fa64b04dc66048a7fa5678f7e3d54e40f3d6cd1b9",
+      "size_bytes": 13646
+    },
+    "tools/provincial_native_trace.py": {
+      "path": "/home/rmnav/AeroMind/tools/provincial_native_trace.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/provincial_native_trace.py",
+      "sha256": "cdab921654ea9a7db496c33322d205254e53f7d66f1b3e85c30eae676326bf0d",
+      "size_bytes": 6720
+    },
+    "tools/provincial_terminal_gate.py": {
+      "path": "/home/rmnav/AeroMind/tools/provincial_terminal_gate.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/provincial_terminal_gate.py",
+      "sha256": "c8fd49758a2f8bc478d971cc5f7689e69404b16a41fb94991c6c2886120a651a",
+      "size_bytes": 4733
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/full_instant_cloud_01/runtime_parameters/lio_mapping.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/full_instant_cloud_01/runtime_parameters/lio_mapping.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/full_instant_cloud_01/runtime_parameters/lio_mapping.yaml",
+      "sha256": "d6bd03f14a478fcc58d3600fd977054c0900436f8ef0eda0950aa5d3cf6fd25c",
+      "size_bytes": 2411
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/CMakeLists.txt": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/CMakeLists.txt",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/CMakeLists.txt",
+      "sha256": "29f26ce398b9c1551a11132c833ee850cc0b53e9766d6f06d7aeb895227bdc05",
+      "size_bytes": 3928
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/avia.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/avia.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/avia.yaml",
+      "sha256": "e540d3cabe333b008b721eaa4a39c3578619a4f806380bf0e1ba0f537d03ccec",
+      "size_bytes": 1184
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/dcist_rrg/rrghusky.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/dcist_rrg/rrghusky.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/dcist_rrg/rrghusky.yaml",
+      "sha256": "75263395ecca320b456801540eb994ebf1d505b8d01eebadbfdb48a38034cf19",
+      "size_bytes": 1923
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/horizon.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/horizon.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/horizon.yaml",
+      "sha256": "fa11a03ee59e542b5db13c6e8e338fa4d66614a0f497ea3d6baac56bdb22ae93",
+      "size_bytes": 1185
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/acl_jackal.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/acl_jackal.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/acl_jackal.yaml",
+      "sha256": "2c87e60537ed73f7a71ae6a2ed6a56044a04d0a6a1f06edde685a9eda69095e2",
+      "size_bytes": 1847
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/acl_jackal2.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/acl_jackal2.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/acl_jackal2.yaml",
+      "sha256": "47c89642d052908d01d905f932f079e503e1fbf81e03299c96d1025bdd8ca813",
+      "size_bytes": 2018
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/apis.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/apis.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/apis.yaml",
+      "sha256": "234d16bea92fe120048ec176c8e3cdc40d565c82e8e343049cc68227c2b2adc9",
+      "size_bytes": 2410
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/hathor.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/hathor.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/hathor.yaml",
+      "sha256": "3a7225bb69633bf4eae1a4b46f5106ca95f8820319566cbf05f2e0993400f598",
+      "size_bytes": 2380
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sobek.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sobek.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sobek.yaml",
+      "sha256": "25b6f80616ccf471d4651f84a75a719381fe9c25abe1684f1db761bcaa7ba35e",
+      "size_bytes": 2102
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sparkal1.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sparkal1.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sparkal1.yaml",
+      "sha256": "b181499641792080325d91e7100b3a1d309df40df977b4e7591ec2579e74d7f9",
+      "size_bytes": 2346
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sparkal2.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sparkal2.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/sparkal2.yaml",
+      "sha256": "82fcc957548b603459831ce700222c25bf477ff47f0f0ebdbdd4a3c5a9bf579d",
+      "size_bytes": 2022
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/thoth.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/thoth.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/kimera_multi/thoth.yaml",
+      "sha256": "3472141231acdee3d69efbeeb370465ba52650cec2c3c102a6f0ff9e206e5bea",
+      "size_bytes": 2104
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/ouster.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/ouster.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/ouster.yaml",
+      "sha256": "39ae666ddb62b0fd9c32a2abc030f5eca17bba407286cdc503f9bb1ac615e02c",
+      "size_bytes": 1485
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/ouster_vbr.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/ouster_vbr.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/ouster_vbr.yaml",
+      "sha256": "4988e76acd6bee279072327e82ec0efcaf710b80bd5bd465988254d237b08c44",
+      "size_bytes": 2579
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/velodyne.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/velodyne.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/velodyne.yaml",
+      "sha256": "24e1a22ea6524c39fd8c177d737ea63ace3786cd0b8c64e4ad798d1950001d40",
+      "size_bytes": 1913
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/velodyne_mit.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/velodyne_mit.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/config/velodyne_mit.yaml",
+      "sha256": "d49cdec18aa48625429b8faf8765a3f2f71eb457e411d215f22d1529bccc1d8f",
+      "size_bytes": 2054
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/Exp_mat.h": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/Exp_mat.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/Exp_mat.h",
+      "sha256": "4abd729a892559dbdca2bdb9f7fbff8bc79b70c5350eff660228033da4a6efae",
+      "size_bytes": 2663
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/common_lib.h": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/common_lib.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/common_lib.h",
+      "sha256": "68180c0a697f3eeb4197ee8324c3a173367e72e56db0756a307a1d7ca8ed1306",
+      "size_bytes": 8232
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/so3_math.h": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/so3_math.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/so3_math.h",
+      "sha256": "0e16b6611ec73176e1d43549619fb248b6b5c557a89cd2a9bbec36558cf9a796",
+      "size_bytes": 2815
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/use-ikfom.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/use-ikfom.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/common/use-ikfom.hpp",
+      "sha256": "860cd08b30f9b69dad8f037725f6259acb7a174cd7bdd9f4ce8cc6d3de1f38bc",
+      "size_bytes": 4549
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/imu_processing.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/imu_processing.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/imu_processing.hpp",
+      "sha256": "c781bfd1626e603331ea35d31bb8957b4069d2da11be670375a9efffb75a39ab",
+      "size_bytes": 15351
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/preprocess.h": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/preprocess.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/preprocess.h",
+      "sha256": "dfc7c3d6c1e3b826e64ec62d17436041bad8bae7b945a5064de65a69679b878e",
+      "size_bytes": 5386
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/spark_fast_lio.h": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/spark_fast_lio.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/include/spark_fast_lio.h",
+      "sha256": "e3a6d63ee6de55ab6a3ca7b5c6829a20e262a228069fc2d705b63faaf14f7c34",
+      "size_bytes": 11328
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_dcist_rrg.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_dcist_rrg.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_dcist_rrg.launch.yaml",
+      "sha256": "92ed64fd7eb9492e928d32103b271183943bd90c581b0c9933e2a55d3be18841",
+      "size_bytes": 1550
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_kimera_multi.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_kimera_multi.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_kimera_multi.launch.yaml",
+      "sha256": "18fa2c8ac839a5c610a2e4d777e7171335a29e49f9b8669a5627fb8b6036b09b",
+      "size_bytes": 2096
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_mit_campus.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_mit_campus.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_mit_campus.launch.yaml",
+      "sha256": "1feb867787c72e7dc368e96033c4714a69d16ccd64b12bec2859cf1bd768dc10",
+      "size_bytes": 2207
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_vbr_colosseo.launch.yaml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_vbr_colosseo.launch.yaml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/launch/mapping_vbr_colosseo.launch.yaml",
+      "sha256": "3ff2ce210272b4892fded673211ba7177babfc30c9bd1a967f74d372fa986a76",
+      "size_bytes": 1059
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/package.xml": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/package.xml",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/package.xml",
+      "sha256": "894c059402f015a04a1925204521ff2a4dc6c5a3b6b9e75aad0e51664783284a",
+      "size_bytes": 840
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/production_manifest.json": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/production_manifest.json",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/production_manifest.json",
+      "sha256": "16cde7abc06fd52e8c9453c94de17b074f192c97787f0871f2f9dc3eaf48959e",
+      "size_bytes": 6600
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/src/preprocess.cpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/src/preprocess.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/src/preprocess.cpp",
+      "sha256": "fecdb453eeb5efc36a116473355f31cc56bf4ce9e30fd4c0e94b514ecec45bd1",
+      "size_bytes": 29654
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/src/spark_fast_lio.cpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/src/spark_fast_lio.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/src/spark_fast_lio.cpp",
+      "sha256": "53510556a495e0d7e57939f62331b0e010622387563ad328a568bacfbb11262e",
+      "size_bytes": 45303
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/esekfom/esekfom.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/esekfom/esekfom.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/esekfom/esekfom.hpp",
+      "sha256": "f52eed547293533bdfa715adfb87648a6e9343c8ef3aff8e68d92acc028f53f9",
+      "size_bytes": 77681
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/esekfom/util.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/esekfom/util.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/esekfom/util.hpp",
+      "sha256": "c98efdfbc2df982af4f889c1dc5dbe5fa6375813ed79c12a7ad4ee2f9f7fd2da",
+      "size_bytes": 2317
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/build_manifold.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/build_manifold.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/build_manifold.hpp",
+      "sha256": "6a08dc9daa0156acdbfc1ae4591215e1e69b91fc968d2a9d63f48272b22b6251",
+      "size_bytes": 12324
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp",
+      "sha256": "ea0aa07eb1e3001fb5e508f42a7fb130d7d1791bd368289d4f0404ccd0f27073",
+      "size_bytes": 4886
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp",
+      "sha256": "89f1d8f188fcd1aade798bd0f932c7f62349b6d44cb153902deba89395b5ac7d",
+      "size_bytes": 10425
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/vectview.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/vectview.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/src/vectview.hpp",
+      "sha256": "3d81ae12205ff9cc62f48dd2847060019669903f027311211d4610d23e102b33",
+      "size_bytes": 6750
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/startIdx.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/startIdx.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/startIdx.hpp",
+      "sha256": "1d8d16c3975a2418e08074bbcb7382cc8b7b7147205671c6815947ab6fc94df1",
+      "size_bytes": 13097
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/S2.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/S2.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/S2.hpp",
+      "sha256": "39466b17acdd86bed5578614fc7ce2c868ee631d407d4f606707ddd7acaec8e0",
+      "size_bytes": 10641
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/SOn.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/SOn.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/SOn.hpp",
+      "sha256": "34cc9bb2ac6c6b503802293726a1da08bf422c7b80e5102501fb3319adfa18b3",
+      "size_bytes": 10774
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/vect.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/vect.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/vect.hpp",
+      "sha256": "8ef8405a7021914553425177688545dca3666769b87ed58ebcbcb4a2cc584e4d",
+      "size_bytes": 14737
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp",
+      "sha256": "41b969b42f835f533adbae9bb97dda2d67d311abf14f3db3e25e150a0e0bbcd0",
+      "size_bytes": 3265
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/ikd-Tree/ikd_Tree.cpp": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/ikd-Tree/ikd_Tree.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/ikd-Tree/ikd_Tree.cpp",
+      "sha256": "5a33ff24aa340cf950b99f8f46a91ee293530903a90bb1edbe2bfea4ebe5142d",
+      "size_bytes": 63062
+    },
+    "tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/ikd-Tree/ikd_Tree.h": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/ikd-Tree/ikd_Tree.h",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_optimization_20261002/instant_cloud_source/third_party/ikd-Tree/ikd_Tree.h",
+      "sha256": "3e4c1d4c3f7fbc42a251cf8b343ec73fdd65904d07bd189eaf7dc0bbd3633a0a",
+      "size_bytes": 9316
+    },
+    "tools/results/stage2_step4_lio_voxel_review_20261002/experiment_plan.json": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_voxel_review_20261002/experiment_plan.json",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_voxel_review_20261002/experiment_plan.json",
+      "sha256": "4e6afea525db61bde0d03ea76e21d35764c7eb2ac7389bdb1526881ad481343d",
+      "size_bytes": 634
+    },
+    "tools/results/stage2_step4_lio_voxel_review_20261002/offline_candidate_gate.json": {
+      "path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_voxel_review_20261002/offline_candidate_gate.json",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/results/stage2_step4_lio_voxel_review_20261002/offline_candidate_gate.json",
+      "sha256": "525a79c38548f1732c47cca9f6d20622dc0dea5e97b25876742c5a9cdef0891e",
+      "size_bytes": 5103
+    },
+    "tools/run_provincial_forward_integration.py": {
+      "path": "/home/rmnav/AeroMind/tools/run_provincial_forward_integration.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/run_provincial_forward_integration.py",
+      "sha256": "7917c34b131ec0ee88e39fbdd0dcea638ce0b709aeecdb176c6771e7dd596694",
+      "size_bytes": 12976
+    },
+    "tools/run_provincial_full_observed.py": {
+      "path": "/home/rmnav/AeroMind/tools/run_provincial_full_observed.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/run_provincial_full_observed.py",
+      "sha256": "2976589bc6c20ed8e31f9a4aada4ed61c2d9076bc50b846c8cf960c0b9116a81",
+      "size_bytes": 16328
+    },
+    "tools/run_provincial_low_speed_validation.py": {
+      "path": "/home/rmnav/AeroMind/tools/run_provincial_low_speed_validation.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/run_provincial_low_speed_validation.py",
+      "sha256": "14f01331622f3d47556f35291ee13246e6057ab9336fbb038a31c81c14b55e1e",
+      "size_bytes": 43332
+    },
+    "tools/run_provincial_safety_fix_matrix.py": {
+      "path": "/home/rmnav/AeroMind/tools/run_provincial_safety_fix_matrix.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/run_provincial_safety_fix_matrix.py",
+      "sha256": "95bbafbb966d6dbd53f24e1f80134922b1d3156a22e44e87165924df2c0e1b8a",
+      "size_bytes": 7445
+    },
+    "tools/stage2/lio/audit_lio_source.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/audit_lio_source.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/audit_lio_source.py",
+      "sha256": "dece81ec59ed7487c8a5b0bcc7bb25dd9167ce54992db08b37607a0548ab0a22",
+      "size_bytes": 4816
+    },
+    "tools/stage2/lio/audit_navigation.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/audit_navigation.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/audit_navigation.py",
+      "sha256": "26cbc44642ec560328b7404ff4943ccdcfe941861f4cd7b28bd6d78086216bc2",
+      "size_bytes": 6697
+    },
+    "tools/stage2/lio/audit_sensors.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/audit_sensors.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/audit_sensors.py",
+      "sha256": "6cb68df36abf3cd2c59ac1617534db99edbc3fec3b3199c66f34153431c32f28",
+      "size_bytes": 6719
+    },
+    "tools/stage2/lio/dump_parameters.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/dump_parameters.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/dump_parameters.py",
+      "sha256": "38e998a701af811dd347f878facbba20256c2c4b3cbc88611bcf37c1b5f8b623",
+      "size_bytes": 1433
+    },
+    "tools/stage2/lio/finalize_evidence.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/finalize_evidence.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/finalize_evidence.py",
+      "sha256": "a6a36ae89596b03947c4340f5538152165b3ca0b6400383f16465ca4dd89be1b",
+      "size_bytes": 5584
+    },
+    "tools/stage2/lio/observe_stationary.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/observe_stationary.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/observe_stationary.py",
+      "sha256": "8c8349deac2272b4939f783c12a8dd61c769dfe05022defa315421315daaee18",
+      "size_bytes": 4078
+    },
+    "tools/stage2/lio/preflight_offline.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/preflight_offline.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/preflight_offline.py",
+      "sha256": "338c88bdc7c754cb6d246fe3ffd09caad41c04eec6d2db80e45b0e0bf409bb12",
+      "size_bytes": 1675
+    },
+    "tools/stage2/lio/review_evidence.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/review_evidence.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/review_evidence.py",
+      "sha256": "e315b29afff0ad2b45d1b8371bb4524822a74256ba51ea626cb02e8198050019",
+      "size_bytes": 8694
+    },
+    "tools/stage2/lio/run_experiment.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/run_experiment.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/run_experiment.py",
+      "sha256": "35847f4175141138299cfa6fac689b02c759fa853dbdf636b01a6829a36cc397",
+      "size_bytes": 7685
+    },
+    "tools/stage2/lio/run_navigation_trial.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/run_navigation_trial.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/run_navigation_trial.py",
+      "sha256": "0ee844c38269305689de415afa3d203e9c17a4c7d7a6a7f9623a4bbfebfca29c",
+      "size_bytes": 7124
+    },
+    "tools/stage2/lio/sensor_trace.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/sensor_trace.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/sensor_trace.py",
+      "sha256": "e0732c663579b885886e79b95ea6352badb058ffcc0713b3488fdba1f7d69ca6",
+      "size_bytes": 809
+    },
+    "tools/stage2/lio/test_contract.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/test_contract.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/test_contract.py",
+      "sha256": "ceb71cc87e8787cf68e431b4a75d6541f2eabf3b7b83638f342a6cd3c5d6ac92",
+      "size_bytes": 4264
+    },
+    "tools/stage2/lio/test_evidence.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/test_evidence.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/test_evidence.py",
+      "sha256": "194030469274893f60549236e51cd5324ccd0c5f54df400a019c8c2c1a20c910",
+      "size_bytes": 3213
+    },
+    "tools/stage2/lio/test_navigation_guard.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio/test_navigation_guard.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio/test_navigation_guard.py",
+      "sha256": "67ba7ec33fbe089620637b8ce3e2fb8e17fda5313ff4314a81b189a83bc087b8",
+      "size_bytes": 2471
+    },
+    "tools/stage2/lio_model_validation/audit_model_navigation.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/audit_model_navigation.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/audit_model_navigation.py",
+      "sha256": "0c284c2a27d3f0f51b8d58f4f686bb5c1c8287e29543ba4f599590831b7a3960",
+      "size_bytes": 1996
+    },
+    "tools/stage2/lio_model_validation/dump_parameters.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/dump_parameters.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/dump_parameters.py",
+      "sha256": "2c9efba536890e83e2149756d968f409c59df70072cfba8fb5dc0687e6fe2e5b",
+      "size_bytes": 290
+    },
+    "tools/stage2/lio_model_validation/run_model_experiment.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/run_model_experiment.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/run_model_experiment.py",
+      "sha256": "11f5f10450628403295da1f2589084705060d252fab299b19ccc59fb17669d71",
+      "size_bytes": 9181
+    },
+    "tools/stage2/lio_model_validation/run_navigation_trial.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/run_navigation_trial.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/run_navigation_trial.py",
+      "sha256": "f8d0009db68428d261723ceaa49ccc05dbdf27f6054c49e892d602158e7c1a2c",
+      "size_bytes": 195
+    },
+    "tools/stage2/lio_model_validation/test_parameter_entry.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/test_parameter_entry.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation/test_parameter_entry.py",
+      "sha256": "eed236599956e2758915c7d3c9524be5e0b76d4bf65da89d17cc8ee004c9c1e1",
+      "size_bytes": 3369
+    },
+    "tools/stage2/lio_model_validation_v2/audit_model_navigation.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/audit_model_navigation.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/audit_model_navigation.py",
+      "sha256": "00abb7d0d1a6a5b89299aa797133dc5fba133e2964d79aaef2c344b0ee718fd0",
+      "size_bytes": 2725
+    },
+    "tools/stage2/lio_model_validation_v2/dump_parameters.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/dump_parameters.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/dump_parameters.py",
+      "sha256": "c7c354f2368ed94217f6d066911912fe73672c6b738175d43dd14c932bf5b889",
+      "size_bytes": 3437
+    },
+    "tools/stage2/lio_model_validation_v2/run_model_experiment.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/run_model_experiment.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/run_model_experiment.py",
+      "sha256": "7428952f71110a0775e3a7d30bbab333705df9bd7ba131e44eb6148c881463a5",
+      "size_bytes": 9505
+    },
+    "tools/stage2/lio_model_validation_v2/run_navigation_trial.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/run_navigation_trial.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_model_validation_v2/run_navigation_trial.py",
+      "sha256": "f8d0009db68428d261723ceaa49ccc05dbdf27f6054c49e892d602158e7c1a2c",
+      "size_bytes": 195
+    },
+    "tools/stage2/lio_optimization/analyze_variance.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/analyze_variance.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/analyze_variance.py",
+      "sha256": "c2b243b7bda134c7d4c52bae3234c7a43d8dce3150af3110798b19b64747acd8",
+      "size_bytes": 6838
+    },
+    "tools/stage2/lio_optimization/audit_all_point_frames.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_all_point_frames.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_all_point_frames.py",
+      "sha256": "3598a41f4c823ab02cc0095f9c6eb9624d9156cfc7421e6ec9b71ae740992d07",
+      "size_bytes": 3775
+    },
+    "tools/stage2/lio_optimization/audit_instant_cloud_navigation.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_instant_cloud_navigation.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_instant_cloud_navigation.py",
+      "sha256": "509ceeaf89ff2265c3b39d1879ec5adc506168d1583e7595c6014053d9d2077a",
+      "size_bytes": 3480
+    },
+    "tools/stage2/lio_optimization/audit_instant_cloud_navigation_v2.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_instant_cloud_navigation_v2.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_instant_cloud_navigation_v2.py",
+      "sha256": "07a0388ae2bb1f7280cf5722a78ec26aca0d57aa3a973ab9f6041173130be6e2",
+      "size_bytes": 2542
+    },
+    "tools/stage2/lio_optimization/audit_stationary_gravity.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_stationary_gravity.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/audit_stationary_gravity.py",
+      "sha256": "7416be4c25622f4aa5eee8c74cab22ac7fb1a97ec94110ebd7a42784ecd86a2e",
+      "size_bytes": 4445
+    },
+    "tools/stage2/lio_optimization/finalize_optimization.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/finalize_optimization.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/finalize_optimization.py",
+      "sha256": "798643912a5fed4c916cc7d855bc83365475cfb87397ad550d5b81bf35f67f7d",
+      "size_bytes": 9174
+    },
+    "tools/stage2/lio_optimization/install_point_boundary_profile.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/install_point_boundary_profile.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/install_point_boundary_profile.py",
+      "sha256": "c65cc7a7afd54561231bf8014c47552d32c00f6c69059bc00f4286e5c1da9d96",
+      "size_bytes": 1923
+    },
+    "tools/stage2/lio_optimization/preflight.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/preflight.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/preflight.py",
+      "sha256": "23daceff3bae6ff9b5370bd0f84f15bd4fd6f44312e9c1cb2ab9b1c7395e8a09",
+      "size_bytes": 2000
+    },
+    "tools/stage2/lio_optimization/prepare_instantaneous_cloud.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/prepare_instantaneous_cloud.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/prepare_instantaneous_cloud.py",
+      "sha256": "4b300b6bb9a8c06c54ca43b7df00e6d879abb5501355b60eb7a1e5d261c0a519",
+      "size_bytes": 2544
+    },
+    "tools/stage2/lio_optimization/prepare_point_boundary.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/prepare_point_boundary.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/prepare_point_boundary.py",
+      "sha256": "a7e837974d12c0861186156d4ef4a056e31e1a061cd0dd050518807069bafd86",
+      "size_bytes": 2143
+    },
+    "tools/stage2/lio_optimization/prepare_variance_candidate.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/prepare_variance_candidate.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/prepare_variance_candidate.py",
+      "sha256": "5af620a132919d1464b09594dfa3e2f6f8acb12db3ece203ec472a60965647e3",
+      "size_bytes": 2687
+    },
+    "tools/stage2/lio_optimization/replay_variance.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/replay_variance.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/replay_variance.py",
+      "sha256": "309bb092db0b8fedd806ee6ebc2a7ca77447170e1a3c62e9ee09819d60b741b2",
+      "size_bytes": 11205
+    },
+    "tools/stage2/lio_optimization/review_instant_full.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/review_instant_full.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/review_instant_full.py",
+      "sha256": "3377631dbcee3b16c5ad0df45ad09d2c10f21f3dc2e604405e0fbbea3832f6fb",
+      "size_bytes": 6115
+    },
+    "tools/stage2/lio_optimization/run_instant_cloud_experiment.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/run_instant_cloud_experiment.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/run_instant_cloud_experiment.py",
+      "sha256": "ebf97e15f2f0f230d5179bc322eda3885225fa1cdcabe1eacdb939200fe37341",
+      "size_bytes": 12720
+    },
+    "tools/stage2/lio_optimization/test_point_set_evidence.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/test_point_set_evidence.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/test_point_set_evidence.py",
+      "sha256": "f3b984eb97b6a181b4fb375f71238440fe9d6e8e4a7e216ca6d0450cbfeda54e",
+      "size_bytes": 3217
+    },
+    "tools/stage2/lio_optimization/test_stationary_gravity.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/test_stationary_gravity.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/test_stationary_gravity.py",
+      "sha256": "7a1715bd15239fb6004d290b6cdaa5ae9885f0c5cd3f7da0975e65e9768365b2",
+      "size_bytes": 1889
+    },
+    "tools/stage2/lio_optimization/test_variance_parameter.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/test_variance_parameter.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_optimization/test_variance_parameter.py",
+      "sha256": "cc4fa48f1d6022f1212bffbc4ec24ea64770e69da143b1ad9f12fd5a90884a46",
+      "size_bytes": 2950
+    },
+    "tools/stage2/lio_safe_validation/dump_parameters.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/dump_parameters.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/dump_parameters.py",
+      "sha256": "c7c354f2368ed94217f6d066911912fe73672c6b738175d43dd14c932bf5b889",
+      "size_bytes": 3437
+    },
+    "tools/stage2/lio_safe_validation/imu_physics/CMakeLists.txt": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/imu_physics/CMakeLists.txt",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/imu_physics/CMakeLists.txt",
+      "sha256": "3dc6c8d10a61de51b670602c2510450be56c090df66d854e08c1ae8df9f2729a",
+      "size_bytes": 533
+    },
+    "tools/stage2/lio_safe_validation/imu_physics/position_imu.cpp": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/imu_physics/position_imu.cpp",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/imu_physics/position_imu.cpp",
+      "sha256": "e9d4fda5599c03465de760fed9e5716d4665674ceaa6ed0283d2c1e764e44c66",
+      "size_bytes": 5351
+    },
+    "tools/stage2/lio_safe_validation/install_profile.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/install_profile.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/install_profile.py",
+      "sha256": "aec6ffdd81a0397359b56d6386c68589cd113fa5bc0f5a87967c068f99f51f3a",
+      "size_bytes": 2830
+    },
+    "tools/stage2/lio_safe_validation/preflight.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/preflight.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/preflight.py",
+      "sha256": "da8286fdc9bafd9d0ec3d7675ef5917ec6e1bc831bf0aa17205674180e6fca40",
+      "size_bytes": 2000
+    },
+    "tools/stage2/lio_safe_validation/run_model_experiment.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/run_model_experiment.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/run_model_experiment.py",
+      "sha256": "9e411183a52dd3995f32161ff90d0fba4761ee8aeb14aa87106da5638adf9ace",
+      "size_bytes": 11068
+    },
+    "tools/stage2/lio_safe_validation/run_navigation_trial.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/run_navigation_trial.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/run_navigation_trial.py",
+      "sha256": "2dd3bfa32dd9bce5afb3c41fd4de4e820dc3d4987915f9b78835ed0db1dfffb3",
+      "size_bytes": 2828
+    },
+    "tools/stage2/lio_safe_validation/test_safe_profile.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/test_safe_profile.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_safe_validation/test_safe_profile.py",
+      "sha256": "daef2c1cabca143f4607a07355657e2f4ddfa4f83f4d3863fc5cc14812626f52",
+      "size_bytes": 5641
+    },
+    "tools/stage2/lio_source_guard_audit/assess_clearance_budget.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/assess_clearance_budget.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/assess_clearance_budget.py",
+      "sha256": "34358fd58664bbf0894467ad99cbd85b6a2d0c08674373fe4c57cb3de66edc31",
+      "size_bytes": 6228
+    },
+    "tools/stage2/lio_source_guard_audit/audit_input_history.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/audit_input_history.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/audit_input_history.py",
+      "sha256": "94435c71476ccaf912b836e41937f90d7242bd91b083932bbb0e7013eaf7a793",
+      "size_bytes": 7426
+    },
+    "tools/stage2/lio_source_guard_audit/finalize_source_guard_review.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/finalize_source_guard_review.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/finalize_source_guard_review.py",
+      "sha256": "21ff2c710e676cdecf25e77dc125a0d20c3308362229c4e1072781a78a3ee2d7",
+      "size_bytes": 11323
+    },
+    "tools/stage2/lio_source_guard_audit/reaudit_full.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/reaudit_full.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/reaudit_full.py",
+      "sha256": "23e2c3a6e082f7bd873703637bee48dbac2e8762fde91567a772c5aad84a2c99",
+      "size_bytes": 2103
+    },
+    "tools/stage2/lio_source_guard_audit/test_input_history.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/test_input_history.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_source_guard_audit/test_input_history.py",
+      "sha256": "9b2c72fd8e6ea86ab1eea3549574f204240b2f020c9f17c5ba3eec34f4f8f7a4",
+      "size_bytes": 2327
+    },
+    "tools/stage2/lio_voxel_review/analyze_voxel.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/analyze_voxel.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/analyze_voxel.py",
+      "sha256": "3165c44f47da75d81ee03da6bf23a09233fb320ef87752994fde2e383d1d95ee",
+      "size_bytes": 2864
+    },
+    "tools/stage2/lio_voxel_review/audit_fine_map_navigation.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/audit_fine_map_navigation.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/audit_fine_map_navigation.py",
+      "sha256": "17ce326aa660dfa8a91d20b1804b8059d326e27378c649ac03e8d5082494fbb6",
+      "size_bytes": 2445
+    },
+    "tools/stage2/lio_voxel_review/compare_and_gate.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/compare_and_gate.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/compare_and_gate.py",
+      "sha256": "b7de03849cba6bf81dfdc90d8de3d29dc4a64f9ae0b16c81254ac605939d603d",
+      "size_bytes": 3451
+    },
+    "tools/stage2/lio_voxel_review/prepare_profile.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/prepare_profile.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/prepare_profile.py",
+      "sha256": "a8ba68dd4f4071a70975da0e039577dd875de3017f4537b07f0b755c4173289e",
+      "size_bytes": 1388
+    },
+    "tools/stage2/lio_voxel_review/replay_voxel.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/replay_voxel.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/replay_voxel.py",
+      "sha256": "980d0c1c8e7f28a9141fab861e9d2a8d6517fda6fb654354d9acceecf94b1edb",
+      "size_bytes": 11575
+    },
+    "tools/stage2/lio_voxel_review/run_fine_map_experiment.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/run_fine_map_experiment.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/run_fine_map_experiment.py",
+      "sha256": "d5c73d66834dd793d24a96d79524610409e3de97258d9a66aebceebb2e34ea48",
+      "size_bytes": 13518
+    },
+    "tools/stage2/lio_voxel_review/test_comparison_gate.py": {
+      "path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/test_comparison_gate.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/stage2/lio_voxel_review/test_comparison_gate.py",
+      "sha256": "805596adfa6c3b4e616e6acaa855be90c6d59f530b5643d81efc16856a89c877",
+      "size_bytes": 1581
+    },
+    "tools/summarize_provincial_forward_integration.py": {
+      "path": "/home/rmnav/AeroMind/tools/summarize_provincial_forward_integration.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/summarize_provincial_forward_integration.py",
+      "sha256": "0d6847f8dabaf5ee564ad99982d01fc1ac5a3bfd149c563d65a839d4e04203fd",
+      "size_bytes": 17912
+    },
+    "tools/summarize_provincial_full_observed.py": {
+      "path": "/home/rmnav/AeroMind/tools/summarize_provincial_full_observed.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/summarize_provincial_full_observed.py",
+      "sha256": "3304b01bfbd5d3dedf491ed3d9a5934b0d1ca7a1abaf1ebd5b415f3f6cb83d07",
+      "size_bytes": 35155
+    },
+    "tools/summarize_provincial_stage15_terminal_v2.py": {
+      "path": "/home/rmnav/AeroMind/tools/summarize_provincial_stage15_terminal_v2.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/summarize_provincial_stage15_terminal_v2.py",
+      "sha256": "a0f87bb1341649a7bdb9620155d1528fdf013a65531fe2ad9340ea458ce0a2c4",
+      "size_bytes": 7771
+    },
+    "tools/summarize_provincial_stage15_terminal_v3.py": {
+      "path": "/home/rmnav/AeroMind/tools/summarize_provincial_stage15_terminal_v3.py",
+      "is_symlink": false,
+      "resolved_path": "/home/rmnav/AeroMind/tools/summarize_provincial_stage15_terminal_v3.py",
+      "sha256": "6c314fe3435cd69856e91fbef759565d6740be7f9892208fd72d85c639d4e0b4",
+      "size_bytes": 13285
+    }
+  }
+}

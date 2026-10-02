@@ -1,0 +1,28 @@
+name: PROVINCIAL_STAGE15_SAFETY_FIX_TRIALS
+classification: TRAINING-ONLY
+final_arena_verified: false
+arena_source: tools/config/provincial_2025_provisional_source.json
+speed_limits: {vx_mps: 0.25, vy_mps: 0.25, wz_rad_s: 0.30, planner_acc_mps2: 0.35}
+grid_route_clearance_m: 0.40
+ego_inflation_m: 0.22
+body: {length_m: 0.52, width_m: 0.42}
+trial_body_wall_gap_m: 0.08
+routes:
+  A:
+    start: [4.7, 0.5, 1.5707963268]
+    goal_xy: [4.7, 1.15]
+    yaw_mode: hold_start
+    final_yaw_required: false
+    note: Transitional position-only trial; legacy A with explicit yaw=0 remains archived separately.
+  B:
+    start: [4.7, 1.15, 0.0]
+    goal_xy: [5.8, 1.8]
+    yaw_mode: hold_start
+    final_yaw_required: false
+    note: Position-only turn trial; current start yaw is zero.
+  C:
+    start: [5.8, 1.8, 0.0]
+    goal_xy: [8.7, 4.25]
+    yaw_mode: hold_start
+    final_yaw_required: false
+    note: Position-only shooting-zone arrival; no official chassis shooting yaw is asserted.

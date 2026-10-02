@@ -17,8 +17,9 @@ building the physical course.
 The field geometry is stored in
 `src/uav_planning/config/competition_field_2025.json`. The gray
 `course_surfaces` are visual references. The `collision_segments` are the
-boundaries published to EGO-Planner as a point cloud. The rising sections shown
-in the rules are flattened in this 2D model.
+boundaries published to EGO-Planner as a point cloud. The user confirms the
+actual competition course has no undulating section; the 2025 tentative rule
+text is retained only as historical context. This is a flat training model.
 
 ## Run
 

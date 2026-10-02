@@ -1,0 +1,132 @@
+{
+  "offline_candidate_accepted": true,
+  "checks": {
+    "old": {
+      "evidence_complete": true,
+      "metrics_finite": true,
+      "max_error_improves_at_least_10_percent": true,
+      "RMS_not_worse": true,
+      "terminal_error_not_worse": true,
+      "identical_recorded_input_bytes": true,
+      "identical_compiled_LIO_component": true,
+      "all_recorded_point_sets_consistent": true,
+      "current_pose_evaluator": true
+    },
+    "new": {
+      "evidence_complete": true,
+      "metrics_finite": true,
+      "max_error_improves_at_least_10_percent": true,
+      "RMS_not_worse": true,
+      "terminal_error_not_worse": true,
+      "identical_recorded_input_bytes": true,
+      "identical_compiled_LIO_component": true,
+      "all_recorded_point_sets_consistent": true,
+      "current_pose_evaluator": true
+    }
+  },
+  "comparisons": {
+    "old": {
+      "baseline": {
+        "pairs": 19120,
+        "max_xy_error_m": 0.055855412523614846,
+        "RMS_xy_m": 0.027594513777679183,
+        "last": [
+          100.816,
+          0.050096666227512056,
+          0.0498800012577334,
+          -0.004654185389438403,
+          0.020718203453301415,
+          0.003564261440897054,
+          0.005937704406752554
+        ],
+        "max_flat_height_model_deviation_m": 0.049607548242975,
+        "max_pitch_deg": 0.30303233599284063,
+        "max_roll_deg": 0.3613427784771622
+      },
+      "candidate": {
+        "pairs": 19118,
+        "max_xy_error_m": 0.023914272048739492,
+        "RMS_xy_m": 0.004067805945736228,
+        "last": [
+          100.816,
+          0.005533153526001147,
+          0.0004821498426306192,
+          0.005512106627374891,
+          0.010120638090381884,
+          -0.0013511871993894253,
+          0.002355890148713268
+        ],
+        "max_flat_height_model_deviation_m": 0.010130001221115237,
+        "max_pitch_deg": 0.135571357799308,
+        "max_roll_deg": 0.14011659652391334
+      },
+      "report_sha256": {
+        "tools/results/stage2_step4_lio_voxel_review_20261002/old_full_voxel_010_analysis_v2.json": "d648465f65df119eb113b1ab8aeceed3aaf2e88b9d61980416029e0f76d2d831",
+        "tools/results/stage2_step4_lio_voxel_review_20261002/old_full_voxel_005_analysis.json": "12d8ad93671ca2abc4eb53f4c1df1e89a12d73686f627a68ec2d5873f0fba836",
+        "tools/results/stage2_step4_lio_voxel_review_20261002/old_full_voxel_010_points.json": "283b05d465684dc8bac7ce8932bd4617be309d2e2cca21d8e2951b1bfba5cadb",
+        "tools/results/stage2_step4_lio_voxel_review_20261002/old_full_voxel_005_points.json": "db37a00f6729f3bc10a5e7bb6cf28537e0d9a8c00a262f5f19bc7e261c1c60f1"
+      },
+      "point_frame_counts": [
+        1004,
+        1004
+      ]
+    },
+    "new": {
+      "baseline": {
+        "pairs": 21891,
+        "max_xy_error_m": 0.04748464264703862,
+        "RMS_xy_m": 0.0248870304864263,
+        "last": [
+          109.696,
+          0.047483991748701986,
+          0.047318912787773115,
+          -0.003956003662020535,
+          -0.021630037886944925,
+          0.008503062741614054,
+          0.003352984000555982
+        ],
+        "max_flat_height_model_deviation_m": 0.03812572983242335,
+        "max_pitch_deg": 0.5345556946833199,
+        "max_roll_deg": 0.20739655614130043
+      },
+      "candidate": {
+        "pairs": 21888,
+        "max_xy_error_m": 0.02970938374084019,
+        "RMS_xy_m": 0.0053957692434904655,
+        "last": [
+          109.696,
+          0.004965767962132165,
+          -0.00485726440847678,
+          0.0010323923284696335,
+          -0.014218055753194209,
+          -0.000250792771625985,
+          -0.00043077691285386217
+        ],
+        "max_flat_height_model_deviation_m": 0.014218055753194209,
+        "max_pitch_deg": 0.1036268048638073,
+        "max_roll_deg": 0.07888626957829993
+      },
+      "report_sha256": {
+        "tools/results/stage2_step4_lio_voxel_review_20261002/new_full_voxel_010_analysis.json": "a70557819716db6e13b740731c355f1c5f1eedab904815ce9d2ea92a9c04cb53",
+        "tools/results/stage2_step4_lio_voxel_review_20261002/new_full_voxel_005_analysis.json": "2963142234aaacafd4cbb75e80996594428b873d26f1fb3434ea2c82d0811c1f",
+        "tools/results/stage2_step4_lio_voxel_review_20261002/new_full_voxel_010_points.json": "7aef7cf01105aab60c225043e9db1550428cb20d1352e534d908f999cb84c139",
+        "tools/results/stage2_step4_lio_voxel_review_20261002/new_full_voxel_005_points.json": "5d74915adefe5b8f427f40ae3534349870f20dbffb05ee361f2fe0a670eb4f8c"
+      },
+      "point_frame_counts": [
+        1094,
+        1094
+      ]
+    }
+  },
+  "predeclared_plan_sha256": "4e6afea525db61bde0d03ea76e21d35764c7eb2ac7389bdb1526881ad481343d",
+  "evaluator_sha256": "b7de03849cba6bf81dfdc90d8de3d29dc4a64f9ae0b16c81254ac605939d603d",
+  "command": [
+    "tools/stage2/lio_voxel_review/compare_and_gate.py",
+    "--result-dir",
+    "tools/results/stage2_step4_lio_voxel_review_20261002",
+    "--output",
+    "tools/results/stage2_step4_lio_voxel_review_20261002/offline_candidate_gate.json"
+  ],
+  "not_closed_loop_navigation_acceptance": true,
+  "statistical_repeatability_proven": false
+}

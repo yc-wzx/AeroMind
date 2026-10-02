@@ -1,0 +1,62 @@
+name: PROVISIONAL_STAGE15_BENCHMARKS
+source: 2025 provisional provincial rules
+final_arena_verified: false
+arena: tools/config/provincial_2025_provisional_source.json
+ground_pgm: src/uav_bringup/maps/provincial_2025_provisional.pgm
+clearance_candidate_m: 0.4
+routes:
+  start:
+    start:
+    - 4.7
+    - 0.5
+    goal:
+    - 4.7
+    - 1.15
+    classification: TRAINING-ONLY BENCHMARK CANDIDATES
+    offline_reachable: true
+    raw_path_length_m: 0.65
+    maximum_reachable_clearance_m: 0.4
+  turn:
+    start:
+    - 4.7
+    - 1.15
+    goal:
+    - 5.8
+    - 1.8
+    classification: TRAINING-ONLY BENCHMARK CANDIDATES
+    offline_reachable: true
+    raw_path_length_m: 1.627
+    maximum_reachable_clearance_m: 0.4
+  shoot:
+    start:
+    - 5.8
+    - 1.8
+    goal:
+    - 8.7
+    - 4.25
+    classification: TRAINING-ONLY BENCHMARK CANDIDATES
+    offline_reachable: true
+    raw_path_length_m: 5.233
+    maximum_reachable_clearance_m: 0.4
+  full_auto:
+    start:
+    - 4.7
+    - 0.5
+    goal:
+    - 8.7
+    - 4.25
+    classification: TRAINING-ONLY BENCHMARK CANDIDATES
+    offline_reachable: true
+    raw_path_length_m: 7.509
+    maximum_reachable_clearance_m: 0.4
+  return:
+    start:
+    - 8.7
+    - 4.25
+    goal:
+    - 4.7
+    - 0.5
+    classification: TRAINING-ONLY BENCHMARK CANDIDATES
+    offline_reachable: true
+    raw_path_length_m: 7.509
+    maximum_reachable_clearance_m: 0.4

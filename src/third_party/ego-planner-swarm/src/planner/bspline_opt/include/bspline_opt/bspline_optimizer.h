@@ -86,6 +86,7 @@ namespace ego_planner
   {
 
   public:
+    rclcpp::Clock::SharedPtr trajectory_clock_;
     BsplineOptimizer() {}
     ~BsplineOptimizer() {}
 

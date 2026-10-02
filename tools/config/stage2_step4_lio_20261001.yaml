@@ -1,0 +1,30 @@
+stage: 2
+step: 4
+classification: TRAINING-ONLY / PROVISIONAL
+competition_arena_verified: false
+contact: CONTACT DATA UNAVAILABLE
+implementation_ready: true
+strict_step4_acceptance_complete: false
+status: LIO INTEGRATION READY / FULL ACCEPTANCE NOT PASSED
+launch: provincial_stage2_lio.launch.py
+package: uav_bringup
+imperfect_sensors: false
+grid_route_clearance_m: 0.40
+ego_inflation_m: 0.22
+sensor_model: generic instantaneous 360x16 lidar10Hz and physical kinematic IMU250Hz
+real_MID360_fidelity_verified: false
+LIO: existing spark_fast_lio
+GT_used_by_localization: false
+navigation_odom: /localization/lio_navigation_odometry
+static_validation: tools/results/stage2_step4_lio_20261001/short_review_v1/review.json
+short_audit: tools/results/stage2_step4_lio_20261001/short_05/independent_audit_v3.json
+full_audit: tools/results/stage2_step4_lio_20261001/full_01/independent_audit_v1.json
+full_strict_pass: false
+full_gt_completion_error_m: 0.057957297355118516
+completion_error_gate_m: 0.05
+full_native_sample_min_gap_m: 0.09593036352157913
+minimum_gap_gate_m: 0.08
+continuous_time_safety_proven: false
+statistical_reliability_proven: false
+step5_entered: false
+report: docs/stage2_step4_lio_simulation_20261001.md

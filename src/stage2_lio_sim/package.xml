@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>stage2_lio_sim</name><version>0.1.0</version>
+  <description>Opt-in provincial 3D sensor and LIO simulation adapters.</description>
+  <maintainer email="rmnav@example.invalid">rmnav</maintainer><license>MIT</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>rclpy</exec_depend><exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend><exec_depend>std_msgs</exec_depend>
+  <exec_depend>uav_planning</exec_depend><exec_depend>spark_fast_lio</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

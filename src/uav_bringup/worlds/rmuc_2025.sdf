@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.8">
+  <world name="rmuc_2025">
+    <physics name="navigation" type="ignored">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <gravity>0 0 -9.81</gravity>
+    <plugin filename="ignition-gazebo-physics-system" name="ignition::gazebo::systems::Physics" />
+    <plugin filename="ignition-gazebo-user-commands-system" name="ignition::gazebo::systems::UserCommands" />
+    <plugin filename="ignition-gazebo-scene-broadcaster-system" name="ignition::gazebo::systems::SceneBroadcaster" />
+    <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <scene>
+      <ambient>0.65 0.65 0.65 1</ambient>
+      <background>0.16 0.19 0.24 1</background>
+      <shadows>false</shadows>
+    </scene>
+    <light name="sun" type="directional">
+      <pose>0 0 12 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <direction>-0.4 0.2 -0.9</direction>
+      <cast_shadows>false</cast_shadows>
+    </light>
+    <model name="omni_robot">
+      <pose>3 3 0.15 0 0 0</pose>
+      <link name="base_link">
+        <gravity>false</gravity>
+        <inertial>
+          <mass>15</mass>
+          <inertia>
+            <ixx>0.27</ixx>
+            <iyy>0.38</iyy>
+            <izz>0.56</izz>
+          </inertia>
+        </inertial>
+        <collision name="body_collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.52 0.42 0.18</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.0</mu>
+                <mu2>0.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="body">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.52 0.42 0.18</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.52 0.03 1</ambient>
+            <diffuse>1 0.52 0.03 1</diffuse>
+          </material>
+        </visual>
+        <visual name="front">
+          <pose>0.22 0 0.105 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.07 0.28 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.95 0.98 1 1</ambient>
+            <diffuse>0.95 0.98 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="wheel_-0.17_-0.22">
+          <pose>-0.17 -0.22 -0.055 1.5707963 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.085</radius>
+              <length>0.045</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.05 0.06 0.07 1</ambient>
+            <diffuse>0.05 0.06 0.07 1</diffuse>
+          </material>
+        </visual>
+        <visual name="wheel_-0.17_0.22">
+          <pose>-0.17 0.22 -0.055 1.5707963 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.085</radius>
+              <length>0.045</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.05 0.06 0.07 1</ambient>
+            <diffuse>0.05 0.06 0.07 1</diffuse>
+          </material>
+        </visual>
+        <visual name="wheel_0.17_-0.22">
+          <pose>0.17 -0.22 -0.055 1.5707963 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.085</radius>
+              <length>0.045</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.05 0.06 0.07 1</ambient>
+            <diffuse>0.05 0.06 0.07 1</diffuse>
+          </material>
+        </visual>
+        <visual name="wheel_0.17_0.22">
+          <pose>0.17 0.22 -0.055 1.5707963 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.085</radius>
+              <length>0.045</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.05 0.06 0.07 1</ambient>
+            <diffuse>0.05 0.06 0.07 1</diffuse>
+          </material>
+        </visual>
+        <visual name="lidar_housing">
+          <pose>0 0 0.19 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.07 0.07 0.08</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.08 0.1 0.12 1</ambient>
+            <diffuse>0.08 0.1 0.12 1</diffuse>
+          </material>
+        </visual>
+        <sensor name="lidar" type="gpu_lidar">
+          <pose>0 0 0.25 0 0 0</pose>
+          <topic>/scan</topic>
+          <update_rate>10</update_rate>
+          <always_on>true</always_on>
+          <visualize>false</visualize>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.141592653589793</min_angle>
+                <max_angle>3.141592653589793</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.08</min>
+              <max>16</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </lidar>
+        </sensor>
+      </link>
+      <plugin filename="ignition-gazebo-velocity-control-system" name="ignition::gazebo::systems::VelocityControl">
+        <topic>/model/omni_robot/cmd_vel</topic>
+      </plugin>
+      <plugin filename="ignition-gazebo-odometry-publisher-system" name="ignition::gazebo::systems::OdometryPublisher">
+        <odom_frame>odom</odom_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <odom_topic>/gazebo/odometry</odom_topic>
+        <dimensions>2</dimensions>
+      </plugin>
+    </model>
+    <include>
+      <uri>model://rmuc_2025</uri>
+      <name>rmuc_2025_arena</name>
+    </include>
+  </world>
+</sdf>

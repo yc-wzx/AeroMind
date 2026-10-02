@@ -1,11 +1,16 @@
 from pathlib import Path
+import argparse
 import json, math
 import xml.etree.ElementTree as ET
 
 root = Path(__file__).resolve().parents[1]
-field = json.loads((root/"src/uav_planning/config/competition_field_2025.json").read_text())
+parser = argparse.ArgumentParser(description="Generate a Gazebo world from one field geometry JSON")
+parser.add_argument("--field", type=Path, default=root/"src/uav_planning/config/competition_field_2025.json")
+parser.add_argument("--world", type=Path, default=root/"src/uav_bringup/worlds/competition_2025.sdf")
+args = parser.parse_args()
+field = json.loads(args.field.read_text(encoding="utf-8"))
 sdf = ET.Element("sdf", version="1.8")
-world = ET.SubElement(sdf, "world", name="competition")
+world = ET.SubElement(sdf, "world", name=field.get("world_name", "competition"))
 def tag(parent, name, value, **attrs):
     e=ET.SubElement(parent,name,attrs); e.text=str(value); return e
 physics = ET.SubElement(world,"physics",name="navigation",type="ignored")
@@ -74,13 +79,13 @@ horizontal=ET.SubElement(scan,"horizontal")
 for n,v in [("samples",360),("resolution",1),("min_angle",-math.pi),("max_angle",math.pi)]: tag(horizontal,n,v)
 ran=ET.SubElement(lidar,"range")
 for n,v in [("min",0.08),("max",16),("resolution",0.01)]: tag(ran,n,v)
-noise=ET.SubElement(lidar,"noise",type="gaussian")
+noise=ET.SubElement(lidar,"noise")
+tag(noise,"type","gaussian")
 tag(noise,"mean",0); tag(noise,"stddev",0.01)
 p=ET.SubElement(m,"plugin",filename="ignition-gazebo-velocity-control-system",name="ignition::gazebo::systems::VelocityControl")
 tag(p,"topic","/model/omni_robot/cmd_vel")
 p=ET.SubElement(m,"plugin",filename="ignition-gazebo-odometry-publisher-system",name="ignition::gazebo::systems::OdometryPublisher")
 for n,v in [("odom_frame","odom"),("robot_base_frame","base_link"),("odom_publish_frequency",50),("odom_topic","/gazebo/odometry"),("dimensions",2)]: tag(p,n,v)
-path=root/"src/uav_bringup/worlds/competition_2025.sdf"
-path.parent.mkdir(exist_ok=True)
+args.world.parent.mkdir(parents=True, exist_ok=True)
 ET.indent(sdf)
-ET.ElementTree(sdf).write(path,encoding="unicode",xml_declaration=True)
+ET.ElementTree(sdf).write(args.world,encoding="unicode",xml_declaration=True)

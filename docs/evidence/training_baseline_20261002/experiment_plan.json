@@ -1,0 +1,16 @@
+{
+  "status": "PREDECLARED_OFFLINE_COMPARISON",
+  "maps_m": [
+    0.1,
+    0.05
+  ],
+  "binary": "install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping",
+  "datasets": [
+    "tools/results/stage2_step4_lio_safe_profile_20261002/full_reserved_map_01",
+    "tools/results/stage2_step4_lio_optimization_20261002/full_instant_cloud_01"
+  ],
+  "acceptance": "Both datasets: max XY improves >=10%; RMS and terminal XY do not worsen; all original stream/hash/isolation checks and point-set checks pass. No closed-loop launch unless these pass.",
+  "GT_feedback": false,
+  "planner_or_global_map_changed": false,
+  "stage5": false
+}

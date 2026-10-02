@@ -12,6 +12,7 @@ namespace ego_planner
 
   void EGOPlannerManager::initPlanModules(rclcpp::Node::SharedPtr &node, PlanningVisualization::Ptr vis)
   {
+    trajectory_clock_ = node->get_clock();
     node->declare_parameter("manager/max_vel", -1.0);
     node->declare_parameter("manager/max_acc", -1.0);
     node->declare_parameter("manager/max_jerk", -1.0);
@@ -146,7 +147,7 @@ namespace ego_planner
       {
 
         double t;
-        double t_cur = (rclcpp::Clock().now() - local_data_.start_time_).seconds();
+        double t_cur = (trajectory_clock_->now() - local_data_.start_time_).seconds();
 
         vector<double> pseudo_arc_length;
         vector<Eigen::Vector3d> segment_point;
@@ -340,7 +341,7 @@ namespace ego_planner
     t_refine = rclcpp::Clock().now() - t_start;
 
     // save planned results
-    updateTrajInfo(pos, rclcpp::Clock().now());
+    updateTrajInfo(pos, trajectory_clock_->now());
 
     static double sum_time = 0;
     static int count_success = 0;
@@ -365,7 +366,7 @@ namespace ego_planner
       control_points.col(i) = stop_pos;
     }
 
-    updateTrajInfo(UniformBspline(control_points, 3, 1.0), rclcpp::Clock().now());
+    updateTrajInfo(UniformBspline(control_points, 3, 1.0), trajectory_clock_->now());
 
     return true;
   }
@@ -463,7 +464,7 @@ namespace ego_planner
     else
       return false;
 
-    auto time_now = rclcpp::Clock().now();
+    auto time_now = trajectory_clock_->now();
 
     global_data_.setGlobalTraj(gl_traj, time_now);
 
@@ -530,7 +531,7 @@ namespace ego_planner
     else
       return false;
 
-    auto time_now = rclcpp::Clock().now();
+    auto time_now = trajectory_clock_->now();
 
     global_data_.setGlobalTraj(gl_traj, time_now);
 

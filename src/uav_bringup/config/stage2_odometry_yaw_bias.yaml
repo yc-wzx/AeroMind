@@ -1,0 +1,11 @@
+# SYNTHETIC TRAINING ASSUMPTION; NOT HARDWARE-CALIBRATED
+stage2_simulated_odometry:
+  ros__parameters:
+    scale_x: 1.0
+    scale_y: 1.0
+    yaw_bias_rad_s: 0.0005
+    position_walk_m_sqrt_s: 0.0
+    yaw_walk_rad_sqrt_s: 0.0
+    seed: 20261001
+    max_source_gap_s: 0.2
+    max_source_age_s: 0.2

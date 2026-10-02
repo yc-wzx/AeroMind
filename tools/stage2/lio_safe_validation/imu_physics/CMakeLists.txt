@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.8)
+project(stage2_position_imu)
+find_package(ignition-gazebo6 REQUIRED)
+find_package(ignition-plugin1 REQUIRED COMPONENTS register)
+find_package(ignition-sensors6 REQUIRED COMPONENTS imu)
+add_library(stage2_position_imu SHARED position_imu.cpp)
+target_compile_features(stage2_position_imu PUBLIC cxx_std_17)
+target_link_libraries(stage2_position_imu ignition-gazebo6::ignition-gazebo6
+ ignition-plugin1::register ignition-sensors6::imu)
+target_link_options(stage2_position_imu PRIVATE "-Wl,-z,defs")
