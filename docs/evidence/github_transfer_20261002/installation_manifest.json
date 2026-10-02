@@ -1,0 +1,15 @@
+{
+  "scope": "simulation-only, same validated source; rebuilt binary hashes are machine-specific",
+  "files": {
+    "install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping": "2d5e44bad15fe0c3d36962e48b13bed3be43b6540e0d189b8388834b4120c6ae",
+    "install/stage2_lio_sim/lib/lio_point_boundary/libspark_lio_component.so": "eb73402883491d25440412ed229eb87a0524815c31a74151bdb34921f024b492",
+    "install/stage2_lio_sim/lib/libstage2_position_imu.so": "ca5b00c09d2eff8d095920a10059d133c5dd5f317bb37ba140d379df61ca49a1",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_contract.py": "490cceda9dcba2ab7367d72f0dffa87f6f78e0c5a02a5045cd291a80c6135338",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_navigation_interface.py": "8fa41a0f6a4efb09f534cac8dfa651e4696fb39024ea8576236efd5b7665f327",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_odometry_adapter.py": "f31f1852332b7a3c1f0dfa96e0a9f74bd2166b0ded2333a72ae33f336ec971b8",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_point_boundary_mapping.py": "f0007efbf10e7a866ef7e37c6bf5623256b09be552ee3fc31107198242893dc3",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_safe_navigation_interface.py": "86148a6d0904d5e8b46a40f13cc6f2960d06819018c19c81d89fe29b4f1681e5",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_safety_geometry.py": "f6616c49008b09f758cd627f9870d5f0396cd9e0d4c2ed6091729d89908f0481",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_sensor_adapter.py": "4825a03120631ecf6ea8c0dac7bd74e5e6ba63bd29cc112c52aff624eccdca70"
+  }
+}

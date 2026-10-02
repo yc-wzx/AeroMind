@@ -1,0 +1,60 @@
+{
+  "pass": true,
+  "tested_code_commit": "3ef563d3207b135da2ace5348dd2449fdb73ca6c",
+  "clean_checkout_file_count": 1207,
+  "clean_checkout_bytes_match_committed_worktree": true,
+  "colcon_packages_passed": 10,
+  "clean_build_exit": 0,
+  "starting_state": "no original build/install/results artifacts in copy",
+  "system_dependency_scope": "existing WSL Ubuntu 22.04 / ROS Humble / Fortress system packages; not a fresh OS or small-computer test",
+  "cpu_arch": "x86_64",
+  "corrected_header_matches_accepted_source": true,
+  "new_navigation_trial": false,
+  "tools_results_versioned_files": 0,
+  "source_sha256": {
+    "tools/deployment/build_training_sim.sh": "01fe2d0c765ccfe3b10e6a28705fde18224ad2d5689a2d99352e333cba28bb0c",
+    "tools/deployment/install_training_profile.py": "57c7ca735f65ee47eac95393d69691cfdd887185a1f1bef5ba5bcc12eec3b4f8",
+    "tools/deployment/check_training_install.py": "70fd815aa5d2222d7e45166b3f86abd5e3e9dc887872c5fec9f70db5aa3a4000",
+    "src/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py": "a7f54ce07e54a9560490f3494c766f13e5df9366096eceeb44bcffd50d55c5b0",
+    "tools/stage2/lio_optimization/prepare_instantaneous_cloud.py": "4b300b6bb9a8c06c54ca43b7df00e6d879abb5501355b60eb7a1e5d261c0a519",
+    "tools/stage2/lio_safe_validation/imu_physics/position_imu.cpp": "e9d4fda5599c03465de760fed9e5716d4665674ceaa6ed0283d2c1e764e44c66"
+  },
+  "limitations": [
+    "GUI was not started in migration check",
+    "No hardware validation",
+    "Original historical raw data remains on original PC",
+    "First temporary build log unavailable; its failure recorded in initial_build_failure.json"
+  ],
+  "colcon_finished_packages": [
+    "plan_env",
+    "quadrotor_msgs",
+    "spark_fast_lio",
+    "traj_utils",
+    "path_searching",
+    "uav_planning",
+    "bspline_opt",
+    "stage2_lio_sim",
+    "ego_planner",
+    "uav_bringup"
+  ],
+  "reinstall_and_import_link_check_observed_process_exit": 0,
+  "historical_seal_preservation": {
+    "pass": true,
+    "source_files": 330,
+    "evidence_files": 2617,
+    "mismatches": [],
+    "changed_symlink_targets": []
+  },
+  "corrected_header_sha256": "c781bfd1626e603331ea35d31bb8957b4069d2da11be670375a9efffb75a39ab",
+  "installed_manifest_hashes_match_built_files": true,
+  "retained_gate_tests_passed": 8,
+  "navigation_output_changed_in_this_transfer": false,
+  "evidence_sha256": {
+    "clean_build_output.txt": "16a55598aab11762bad3356e53b9a43aa9963531d3d0ea00a31c439c2df3abda",
+    "historical_seal_preservation.json": "182a8b83e09d9b2cf087e3449eb5dc7d3081ca44eaa3b03104406785db4223d7",
+    "profile_reinstall_check.txt": "86d6d1e73cfee00fdd20f6351e02fb100fba591bbbea5e75f0883a725353490a",
+    "initial_build_failure.json": "c13e4a045b051194c3389dc49a98b4a3894094fc3a77f4c08c419453c88c57ec",
+    "installation_manifest.json": "3f9dfe4068d30036ea45ed5b53b9060b2202aef3b5920f1303f2e43a1d5b812f",
+    "retained_gate_tests.txt": "f8f7b0ac7f2b53ac4e96000f166430c488f2c37e059ad5502b09d60f29d363b8"
+  }
+}

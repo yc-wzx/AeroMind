@@ -1,0 +1,920 @@
+Starting >>> plan_env
+--- stderr: plan_env
+** WARNING ** io features related to pcap will be disabled
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:778:86: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  778 |                                 const geometry_msgs::msg::PoseStamped::ConstPtr &pose)
+      |                                                                                      ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:778:86: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  778 |                                 const geometry_msgs::msg::PoseStamped::ConstPtr &pose)
+      |                                                                                      ^
+In file included from /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/grid_map.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:825:79: warning: ‘sensor_msgs::msg::PointCloud2_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  825 | void GridMap::cloudCallback(const sensor_msgs::msg::PointCloud2::ConstPtr &img)
+      |                                                                               ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7,
+                 from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:59,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/grid_map.h:18,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:195:5: note: declared here
+  195 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1051:78: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+ 1051 | void GridMap::extrinsicCallback(const nav_msgs::msg::Odometry::ConstPtr &odom)
+      |                                                                              ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/grid_map.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1066:78: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+ 1066 |                                 const nav_msgs::msg::Odometry::ConstPtr &odom)
+      |                                                                              ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1066:78: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+ 1066 |                                 const nav_msgs::msg::Odometry::ConstPtr &odom)
+      |                                                                              ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/grid_map.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/grid_map.cpp:1:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp:45:85: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+   45 |   void ObjHistory::poseCallback(const geometry_msgs::msg::PoseStamped::ConstPtr &msg)
+      |                                                                                     ^
+In file included from /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/obj_predictor.h:29,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp:24:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp: In member function ‘void fast_planner::ObjHistory::poseCallback(const ConstPtr&)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp:58:25: warning: comparison of integer expressions of different signedness: ‘std::__cxx11::list<Eigen::Matrix<double, 4, 1> >::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+   58 |     if (history_.size() > queue_size_)
+      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp: At global scope:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp:203:89: warning: ‘visualization_msgs::msg::Marker_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  203 |   void ObjPredictor::markerCallback(const visualization_msgs::msg::Marker::ConstPtr &msg)
+      |                                                                                         ^
+In file included from /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/include/plan_env/obj_predictor.h:33,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_env/src/obj_predictor.cpp:24:
+/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__struct.hpp:365:5: note: declared here
+  365 |     ConstPtr;
+      |     ^~~~~~~~
+---
+Finished <<< plan_env [1min 21s]
+Starting >>> quadrotor_msgs
+Finished <<< quadrotor_msgs [38.0s]
+Starting >>> spark_fast_lio
+Finished <<< spark_fast_lio [2min 1s]
+Starting >>> traj_utils
+--- stderr: traj_utils
+** WARNING ** io features related to pcap will be disabled
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/traj_utils/src/planning_visualization.cpp: In member function ‘void ego_planner::PlanningVisualization::displayMarkerList(rclcpp::Publisher<visualization_msgs::msg::Marker_<std::allocator<void> > >::SharedPtr&, const std::vector<Eigen::Matrix<double, 3, 1> >&, double, Eigen::Vector4d, int, bool)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/traj_utils/src/planning_visualization.cpp:11:85: warning: unused parameter ‘show_sphere’ [-Wunused-parameter]
+   11 |                                                 Eigen::Vector4d color, int id, bool show_sphere /* = true */)
+      |                                                                                ~~~~~^~~~~~~~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/traj_utils/src/planning_visualization.cpp: In member function ‘void ego_planner::PlanningVisualization::displayMultiInitPathList(std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >, double)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/traj_utils/src/planning_visualization.cpp:177:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  177 |     for (int id = 0; id < init_trajs.size(); id++)
+      |                      ~~~^~~~~~~~~~~~~~~~~~~
+---
+Finished <<< traj_utils [1min 4s]
+Starting >>> path_searching
+--- stderr: path_searching
+** WARNING ** io features related to pcap will be disabled
+---
+Finished <<< path_searching [52.6s]
+Starting >>> uav_planning
+--- stderr: uav_planning
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+---
+Finished <<< uav_planning [54.7s]
+Starting >>> bspline_opt
+--- stderr: bspline_opt
+** WARNING ** io features related to pcap will be disabled
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp: In static member function ‘static int ego_planner::BsplineOptimizer::earlyExit(void*, const double*, const double*, double, double, double, double, int, int, int)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:66: warning: unused parameter ‘x’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                    ~~~~~~~~~~~~~~^
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:83: warning: unused parameter ‘g’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                     ~~~~~~~~~~~~~~^
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:99: warning: unused parameter ‘fx’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                      ~~~~~~~~~~~~~^~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:116: warning: unused parameter ‘xnorm’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                                       ~~~~~~~~~~~~~^~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:136: warning: unused parameter ‘gnorm’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                                                           ~~~~~~~~~~~~~^~~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:156: warning: unused parameter ‘step’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                                                                               ~~~~~~~~~~~~~^~~~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:166: warning: unused parameter ‘n’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                                                                                                  ~~~~^
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:173: warning: unused parameter ‘k’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                                                                                                         ~~~~^
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:845:180: warning: unused parameter ‘ls’ [-Wunused-parameter]
+  845 |   int BsplineOptimizer::earlyExit(void *func_data, const double *x, const double *g, const double fx, const double xnorm, const double gnorm, const double step, int n, int k, int ls)
+      |                                                                                                                                                                                ~~~~^~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp: In member function ‘bool ego_planner::BsplineOptimizer::rebound_optimize(double&)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:1590:14: warning: ISO C++ forbids variable length array ‘q’ [-Wvla]
+ 1590 |       double q[variable_num_];
+      |              ^
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp: In member function ‘bool ego_planner::BsplineOptimizer::refine_optimize()’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/bspline_opt/src/bspline_optimizer.cpp:1774:12: warning: ISO C++ forbids variable length array ‘q’ [-Wvla]
+ 1774 |     double q[variable_num_];
+      |            ^
+---
+Finished <<< bspline_opt [57.9s]
+Starting >>> stage2_lio_sim
+Finished <<< stage2_lio_sim [28.6s]
+Starting >>> ego_planner
+--- stderr: ego_planner
+** WARNING ** io features related to pcap will be disabled
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/traj_server.cpp:27:60: warning: ‘traj_utils::msg::Bspline_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+   27 | void bsplineCallback(traj_utils::msg::Bspline::ConstPtr msg)
+      |                                                            ^
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/traj_utils/include/traj_utils/traj_utils/msg/bspline.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/traj_server.cpp:3:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/traj_utils/include/traj_utils/traj_utils/msg/detail/bspline__struct.hpp:182:5: note: declared here
+  182 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:209:79: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  209 |                          const geometry_msgs::msg::PoseStamped::ConstPtr &pose);
+      |                                                                               ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:209:79: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  209 |                          const geometry_msgs::msg::PoseStamped::ConstPtr &pose);
+      |                                                                               ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp:23,
+                 from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:210:71: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  210 |   void extrinsicCallback(const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                       ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:211:117: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  211 |   void depthOdomCallback(const sensor_msgs::msg::Image::ConstPtr &img, const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                                                                     ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:211:117: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  211 |   void depthOdomCallback(const sensor_msgs::msg::Image::ConstPtr &img, const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                                                                     ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:212:72: warning: ‘sensor_msgs::msg::PointCloud2_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  212 |   void cloudCallback(const sensor_msgs::msg::PointCloud2::ConstPtr &img);
+      |                                                                        ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7,
+                 from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:59,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:18,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:195:5: note: declared here
+  195 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/obj_predictor.h:126:75: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  126 |     void poseCallback(const geometry_msgs::msg::PoseStamped::ConstPtr &msg);
+      |                                                                           ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp:23,
+                 from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/obj_predictor.h:163:77: warning: ‘visualization_msgs::msg::Marker_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  163 |     void markerCallback(const visualization_msgs::msg::Marker::ConstPtr &msg);
+      |                                                                             ^
+In file included from /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:2:
+/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__struct.hpp:365:5: note: declared here
+  365 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_planner_node.cpp:5:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/lbfgs.hpp: In function ‘int lbfgs::line_search_morethuente(int, double*, double*, double*, double*, double*, const double*, const double*, const double*, const double*, lbfgs::callback_data_t*, const lbfgs::lbfgs_parameter_t*)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/lbfgs.hpp:723:54: warning: unused parameter ‘gp’ [-Wunused-parameter]
+  723 |                                        const double *gp,
+      |                                        ~~~~~~~~~~~~~~^~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:209:79: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  209 |                          const geometry_msgs::msg::PoseStamped::ConstPtr &pose);
+      |                                                                               ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:209:79: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  209 |                          const geometry_msgs::msg::PoseStamped::ConstPtr &pose);
+      |                                                                               ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp:23,
+                 from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:210:71: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  210 |   void extrinsicCallback(const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                       ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:211:117: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  211 |   void depthOdomCallback(const sensor_msgs::msg::Image::ConstPtr &img, const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                                                                     ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:211:117: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  211 |   void depthOdomCallback(const sensor_msgs::msg::Image::ConstPtr &img, const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                                                                     ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:212:72: warning: ‘sensor_msgs::msg::PointCloud2_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  212 |   void cloudCallback(const sensor_msgs::msg::PointCloud2::ConstPtr &img);
+      |                                                                        ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7,
+                 from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:59,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:18,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:195:5: note: declared here
+  195 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/obj_predictor.h:126:75: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  126 |     void poseCallback(const geometry_msgs::msg::PoseStamped::ConstPtr &msg);
+      |                                                                           ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp:23,
+                 from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/obj_predictor.h:163:77: warning: ‘visualization_msgs::msg::Marker_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  163 |     void markerCallback(const visualization_msgs::msg::Marker::ConstPtr &msg);
+      |                                                                             ^
+In file included from /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:13,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__struct.hpp:365:5: note: declared here
+  365 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/ego_replan_fsm.h:15,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/lbfgs.hpp: In function ‘int lbfgs::line_search_morethuente(int, double*, double*, double*, double*, double*, const double*, const double*, const double*, const double*, lbfgs::callback_data_t*, const lbfgs::lbfgs_parameter_t*)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/lbfgs.hpp:723:54: warning: unused parameter ‘gp’ [-Wunused-parameter]
+  723 |                                        const double *gp,
+      |                                        ~~~~~~~~~~~~~~^~
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp: In member function ‘void ego_planner::EGOReplanFSM::triggerCallback(const std::shared_ptr<const geometry_msgs::msg::PoseStamped_<std::allocator<void> > >&)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp:261:100: warning: unused parameter ‘msg’ [-Wunused-parameter]
+  261 |   void EGOReplanFSM::triggerCallback(const std::shared_ptr<const geometry_msgs::msg::PoseStamped> &msg)
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:209:79: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  209 |                          const geometry_msgs::msg::PoseStamped::ConstPtr &pose);
+      |                                                                               ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:209:79: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  209 |                          const geometry_msgs::msg::PoseStamped::ConstPtr &pose);
+      |                                                                               ^
+In file included from /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:210:71: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  210 |   void extrinsicCallback(const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                       ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:211:117: warning: ‘sensor_msgs::msg::Image_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  211 |   void depthOdomCallback(const sensor_msgs::msg::Image::ConstPtr &img, const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                                                                     ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7,
+                 from /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:174:5: note: declared here
+  174 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:211:117: warning: ‘nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  211 |   void depthOdomCallback(const sensor_msgs::msg::Image::ConstPtr &img, const nav_msgs::msg::Odometry::ConstPtr &odom);
+      |                                                                                                                     ^
+In file included from /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:147:5: note: declared here
+  147 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:212:72: warning: ‘sensor_msgs::msg::PointCloud2_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  212 |   void cloudCallback(const sensor_msgs::msg::PointCloud2::ConstPtr &img);
+      |                                                                        ^
+In file included from /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7,
+                 from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:59,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:18,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:195:5: note: declared here
+  195 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/obj_predictor.h:126:75: warning: ‘geometry_msgs::msg::PoseStamped_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  126 |     void poseCallback(const geometry_msgs::msg::PoseStamped::ConstPtr &msg);
+      |                                                                           ^
+In file included from /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:116:5: note: declared here
+  116 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:8,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/obj_predictor.h:163:77: warning: ‘visualization_msgs::msg::Marker_<std::allocator<void> >::ConstPtr’ is deprecated [-Wdeprecated-declarations]
+  163 |     void markerCallback(const visualization_msgs::msg::Marker::ConstPtr &msg);
+      |                                                                             ^
+In file included from /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker.hpp:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/plan_env/include/plan_env/grid_map.h:14,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/path_searching/include/path_searching/dyn_a_star.h:7,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:5,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__struct.hpp:365:5: note: declared here
+  365 |     ConstPtr;
+      |     ^~~~~~~~
+In file included from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/bspline_optimizer.h:10,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/include/ego_planner/planner_manager.h:6,
+                 from /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp:2:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/lbfgs.hpp: In function ‘int lbfgs::line_search_morethuente(int, double*, double*, double*, double*, double*, const double*, const double*, const double*, const double*, lbfgs::callback_data_t*, const lbfgs::lbfgs_parameter_t*)’:
+/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/bspline_opt/include/bspline_opt/lbfgs.hpp:723:54: warning: unused parameter ‘gp’ [-Wunused-parameter]
+  723 |                                        const double *gp,
+      |                                        ~~~~~~~~~~~~~~^~
+---
+Finished <<< ego_planner [1min 23s]
+Starting >>> uav_bringup
+Finished <<< uav_bringup [5.07s]
+
+Summary: 10 packages finished [9min 46s]
+  6 packages had stderr output: bspline_opt ego_planner path_searching plan_env traj_utils uav_planning
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Current CPU archtecture: x86_64
+-- Processer number:  24
+-- core for MP: 3
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found nav_msgs: 4.9.2 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found rclcpp_components: 16.0.19 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.2 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found tf2_ros: 0.25.22 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found tf2_eigen: 0.25.22 (/opt/ros/humble/share/tf2_eigen/cmake)
+-- Found tf2_geometry_msgs: 0.25.22 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found tf2_sensor_msgs: 0.25.22 (/opt/ros/humble/share/tf2_sensor_msgs/cmake)
+-- Checking for module 'eigen3'
+--   Found eigen3, version 3.4.0
+-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- Checking for module 'flann'
+--   Found flann, version 1.9.1
+-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- Checking for module 'libusb-1.0'
+--   Found libusb-1.0, version 1.0.25
+-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+-- Found PCL_2D: /usr/include/pcl-1.12  
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+-- Found PCL_MODELER: /usr/include/pcl-1.12  
+-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Missing livox driver! AVIA Lidar will be disabled!
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/build/training_profile/lio
+[ 14%] Building CXX object CMakeFiles/ikd_tree.dir/third_party/ikd-Tree/ikd_Tree.cpp.o
+[ 28%] Building CXX object CMakeFiles/spark_lio_mapping.dir/rclcpp_components/node_main_spark_lio_mapping.cpp.o
+[ 42%] Linking CXX executable spark_lio_mapping
+[ 42%] Built target spark_lio_mapping
+[ 57%] Linking CXX static library libikd_tree.a
+[ 57%] Built target ikd_tree
+[ 71%] Building CXX object CMakeFiles/spark_lio_component.dir/src/spark_fast_lio.cpp.o
+[ 85%] Building CXX object CMakeFiles/spark_lio_component.dir/src/preprocess.cpp.o
+[100%] Linking CXX shared library libspark_lio_component.so
+[100%] Built target spark_lio_component
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for ignition-gazebo6 -- found version 6.18.0
+-- Searching for dependencies of ignition-gazebo6
+-- Looking for sdformat12 -- found version 12.9.0
+-- Searching for dependencies of sdformat12
+-- Checking for module 'tinyxml2'
+--   Found tinyxml2, version 9.0.0
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Searching for dependencies of ignition-math6
+-- Looking for ignition-utils1 -- found version 1.5.1
+-- Searching for dependencies of ignition-utils1
+-- Looking for ignition-plugin1 -- found version 1.4.0
+-- Searching for dependencies of ignition-plugin1
+-- Searching for <ignition-plugin1> component [loader]
+-- Looking for ignition-plugin1-loader -- found version 1.4.0
+-- Searching for dependencies of ignition-plugin1-loader
+-- Searching for <ignition-plugin1> component [register]
+-- Looking for ignition-plugin1-register -- found version 1.4.0
+-- Searching for dependencies of ignition-plugin1-register
+-- Looking for ignition-transport11 -- found version 11.4.2
+-- Searching for dependencies of ignition-transport11
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+-- Config-file not installed for ZeroMQ -- checking for pkg-config
+-- Checking for module 'libzmq >= 4'
+--   Found libzmq , version 4.3.4
+-- Found ZeroMQ: TRUE (Required is at least version "4") 
+-- Checking for module 'uuid'
+--   Found uuid, version 2.37.2
+-- Found UUID: TRUE  
+-- Looking for ignition-utils1 -- found version 1.5.1
+-- Searching for dependencies of ignition-utils1
+-- Searching for <ignition-utils1> component [cli]
+-- Looking for ignition-utils1-cli -- found version 1.5.1
+-- Searching for dependencies of ignition-utils1-cli
+-- Looking for ignition-msgs8 -- found version 8.7.1
+-- Searching for dependencies of ignition-msgs8
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Searching for <ignition-transport11> component [log]
+-- Looking for ignition-transport11-log -- found version 11.4.2
+-- Searching for dependencies of ignition-transport11-log
+-- Searching for <ignition-transport11> component [parameters]
+-- Looking for ignition-transport11-parameters -- found version 11.4.2
+-- Searching for dependencies of ignition-transport11-parameters
+-- Looking for ignition-msgs8 -- found version 8.7.1
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Searching for dependencies of ignition-common4
+-- Looking for dlfcn.h - found
+-- Looking for libdl - found
+-- Found DL: TRUE  
+-- Searching for <ignition-common4> component [profiler]
+-- Looking for ignition-common4-profiler -- found version 4.9.0
+-- Searching for dependencies of ignition-common4-profiler
+-- Searching for <ignition-common4> component [events]
+-- Looking for ignition-common4-events -- found version 4.9.0
+-- Searching for dependencies of ignition-common4-events
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Searching for <ignition-common4> component [av]
+-- Looking for ignition-common4-av -- found version 4.9.0
+-- Searching for dependencies of ignition-common4-av
+-- Checking for module 'libswscale'
+--   Found libswscale, version 5.9.100
+-- Found SWSCALE: TRUE  
+-- Checking for module 'libavdevice >= 56.4.100'
+--   Found libavdevice , version 58.13.100
+-- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+-- Checking for module 'libavformat'
+--   Found libavformat, version 58.76.100
+-- Found AVFORMAT: TRUE  
+-- Checking for module 'libavcodec'
+--   Found libavcodec, version 58.134.100
+-- Found AVCODEC: TRUE  
+-- Checking for module 'libavutil'
+--   Found libavutil, version 56.70.100
+-- Found AVUTIL: TRUE  
+-- Looking for ignition-fuel_tools7 -- found version 7.3.1
+-- Searching for dependencies of ignition-fuel_tools7
+-- Checking for modules 'libbrotlidec;libbrotlicommon'
+--   Found libbrotlidec, version 1.0.9
+--   Found libbrotlicommon, version 1.0.9
+-- Found Brotli (via pkg-config):  (found version "1.0.9")
+-- Checking for module 'libidn2'
+--   No package 'libidn2' found
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+-- Checking for module 'jsoncpp'
+--   Found jsoncpp, version 1.9.5
+-- Found JSONCPP: TRUE  
+-- Checking for module 'libzip'
+--   Found libzip, version 1.7.3
+-- Found ZIP: TRUE  
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Looking for ignition-msgs8 -- found version 8.7.1
+-- Looking for ignition-gui6 -- found version 6.9.0
+-- Searching for dependencies of ignition-gui6
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Looking for ignition-plugin1 -- found version 1.4.0
+-- Looking for ignition-transport11 -- found version 11.4.2
+-- Looking for ignition-rendering6 -- found version 6.6.4
+-- Searching for dependencies of ignition-rendering6
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Searching for dependencies of ignition-math6
+-- Searching for <ignition-math6> component [eigen3]
+-- Looking for ignition-math6-eigen3 -- found version 6.17.0
+-- Searching for dependencies of ignition-math6-eigen3
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Searching for dependencies of ignition-common4
+-- Looking for dlfcn.h - found
+-- Looking for libdl - found
+-- Searching for <ignition-common4> component [graphics]
+-- Looking for ignition-common4-graphics -- found version 4.9.0
+-- Searching for dependencies of ignition-common4-graphics
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Looking for ignition-utils1 -- found version 1.5.1
+-- Searching for <ignition-common4> component [events]
+-- Looking for ignition-plugin1 -- found version 1.4.0
+-- Searching for dependencies of ignition-plugin1
+-- Searching for <ignition-plugin1> component [all]
+-- Looking for all libraries of ignition-plugin1 -- found version 1.4.0
+-- Looking for ignition-plugin1 -- found version 1.4.0
+-- Looking for ignition-msgs8 -- found version 8.7.1
+-- Looking for ignition-physics5 -- found version 5.4.0
+-- Searching for dependencies of ignition-physics5
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Looking for ignition-plugin1 -- found version 1.4.0
+-- Looking for ignition-utils1 -- found version 1.5.1
+-- Searching for <ignition-physics5> component [heightmap]
+-- Looking for ignition-physics5-heightmap -- found version 5.4.0
+-- Searching for dependencies of ignition-physics5-heightmap
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Searching for <ignition-physics5> component [mesh]
+-- Looking for ignition-physics5-mesh -- found version 5.4.0
+-- Searching for dependencies of ignition-physics5-mesh
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Searching for <ignition-physics5> component [sdf]
+-- Looking for ignition-physics5-sdf -- found version 5.4.0
+-- Searching for dependencies of ignition-physics5-sdf
+-- Looking for sdformat12 -- found version 12.9.0
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Looking for ignition-common4 -- found version 4.9.0
+-- Looking for ignition-transport11 -- found version 11.4.2
+-- Looking for ignition-rendering6 -- found version 6.6.4
+-- Looking for ignition-msgs8 -- found version 8.7.1
+-- Looking for sdformat12 -- found version 12.9.0
+-- Searching for <ignition-sensors6> component [air_pressure]
+-- Looking for ignition-sensors6-air_pressure -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-air_pressure
+-- Searching for <ignition-sensors6> component [altimeter]
+-- Looking for ignition-sensors6-altimeter -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-altimeter
+-- Searching for <ignition-sensors6> component [imu]
+-- Looking for ignition-sensors6-imu -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-imu
+-- Searching for <ignition-sensors6> component [force_torque]
+-- Looking for ignition-sensors6-force_torque -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-force_torque
+-- Searching for <ignition-sensors6> component [logical_camera]
+-- Looking for ignition-sensors6-logical_camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-logical_camera
+-- Searching for <ignition-sensors6> component [magnetometer]
+-- Looking for ignition-sensors6-magnetometer -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-magnetometer
+-- Searching for <ignition-sensors6> component [navsat]
+-- Looking for ignition-sensors6-navsat -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-navsat
+-- Searching for <ignition-sensors6> component [rendering]
+-- Looking for ignition-sensors6-rendering -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-rendering
+-- Searching for <ignition-sensors6> component [lidar]
+-- Looking for ignition-sensors6-lidar -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-lidar
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Searching for <ignition-sensors6> component [gpu_lidar]
+-- Looking for ignition-sensors6-gpu_lidar -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-gpu_lidar
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Searching for <ignition-sensors6> component [camera]
+-- Looking for ignition-sensors6-camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-camera
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Searching for <ignition-sensors6> component [boundingbox_camera]
+-- Looking for ignition-sensors6-boundingbox_camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-boundingbox_camera
+-- Searching for <ignition-sensors6> component [segmentation_camera]
+-- Looking for ignition-sensors6-segmentation_camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-segmentation_camera
+-- Searching for <ignition-sensors6> component [depth_camera]
+-- Looking for ignition-sensors6-depth_camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-depth_camera
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Searching for <ignition-sensors6> component [rgbd_camera]
+-- Looking for ignition-sensors6-rgbd_camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-rgbd_camera
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Searching for <ignition-sensors6> component [thermal_camera]
+-- Looking for ignition-sensors6-thermal_camera -- found version 6.9.0
+-- Searching for dependencies of ignition-sensors6-thermal_camera
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Looking for ignition-rendering6 -- found version 6.6.4
+-- Looking for ignition-math6 -- found version 6.17.0
+-- Looking for ignition-utils1 -- found version 1.5.1
+-- Looking for ignition-plugin1 -- found version 1.4.0
+-- Looking for ignition-sensors6 -- found version 6.9.0
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/build/training_profile/position_imu
+[ 50%] Building CXX object CMakeFiles/stage2_position_imu.dir/position_imu.cpp.o
+[100%] Linking CXX shared library libstage2_position_imu.so
+[100%] Built target stage2_position_imu
+{
+  "original_source": "/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/src/third_party/spark-fast-lio/spark_fast_lio",
+  "source_changes": [
+    "include/imu_processing.hpp"
+  ],
+  "full_3D": true,
+  "observation_variance_changed": false,
+  "sensor_timestamps_changed": false,
+  "IMU_prediction_preserved": true,
+  "GT_input_added": false
+}
+{
+  "scope": "simulation-only, same validated source; rebuilt binary hashes are machine-specific",
+  "files": {
+    "install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping": "2d5e44bad15fe0c3d36962e48b13bed3be43b6540e0d189b8388834b4120c6ae",
+    "install/stage2_lio_sim/lib/lio_point_boundary/libspark_lio_component.so": "eb73402883491d25440412ed229eb87a0524815c31a74151bdb34921f024b492",
+    "install/stage2_lio_sim/lib/libstage2_position_imu.so": "ca5b00c09d2eff8d095920a10059d133c5dd5f317bb37ba140d379df61ca49a1",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_contract.py": "490cceda9dcba2ab7367d72f0dffa87f6f78e0c5a02a5045cd291a80c6135338",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_navigation_interface.py": "8fa41a0f6a4efb09f534cac8dfa651e4696fb39024ea8576236efd5b7665f327",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_odometry_adapter.py": "f31f1852332b7a3c1f0dfa96e0a9f74bd2166b0ded2333a72ae33f336ec971b8",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_point_boundary_mapping.py": "f0007efbf10e7a866ef7e37c6bf5623256b09be552ee3fc31107198242893dc3",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_safe_navigation_interface.py": "86148a6d0904d5e8b46a40f13cc6f2960d06819018c19c81d89fe29b4f1681e5",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_safety_geometry.py": "f6616c49008b09f758cd627f9870d5f0396cd9e0d4c2ed6091729d89908f0481",
+    "install/stage2_lio_sim/lib/stage2_lio_sim/lio_sensor_adapter.py": "4825a03120631ecf6ea8c0dac7bd74e5e6ba63bd29cc112c52aff624eccdca70"
+  }
+}
+{
+  "pass": true,
+  "launch": "/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/uav_bringup/share/uav_bringup/launch/provincial_stage2_lio_fine_map.launch.py",
+  "scope": "read-only launch/import/linker checks; no new navigation validation",
+  "libraries": {
+    "/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/stage2_lio_sim/lib/libstage2_position_imu.so": "ca5b00c09d2eff8d095920a10059d133c5dd5f317bb37ba140d379df61ca49a1",
+    "/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/stage2_lio_sim/lib/lio_point_boundary/libspark_lio_component.so": "eb73402883491d25440412ed229eb87a0524815c31a74151bdb34921f024b492",
+    "/home/rmnav/AeroMind/tools/results/github_transfer_20261002/clean_checkout/install/stage2_lio_sim/lib/lio_point_boundary/spark_lio_mapping": "2d5e44bad15fe0c3d36962e48b13bed3be43b6540e0d189b8388834b4120c6ae"
+  }
+}
+Build and install checks passed. Start command: see docs/GITHUB_TRANSFER.md.

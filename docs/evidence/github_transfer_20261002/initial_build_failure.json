@@ -1,0 +1,9 @@
+{
+  "observed_exit_code": 1,
+  "finished_packages": 9,
+  "failed_package": "uav_bringup",
+  "reason": "colcon requires package.sh for discovered but unbuilt livox_ros_driver2",
+  "initial_copy_path": "/tmp/aeromind_github_transfer_20261002_ojy73gv8",
+  "full_build_log_availability": "temporary checkout was not retained across WSL lifetime; error captured in tool output",
+  "fix": "constrain colcon --paths to the ten resolved simulation packages, not all src packages"
+}
