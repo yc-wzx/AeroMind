@@ -1,0 +1,11 @@
+{
+  "copied_inputs": 42,
+  "modified_module_paths": [
+    "src/provincial_rule900_scratch_sim/scripts/inverted_sim_format_adapter.py",
+    "src/provincial_rule900_scratch_sim/scripts/lio_navigation_interface.py",
+    "src/provincial_rule900_scratch_sim/scripts/runtime_support.py"
+  ],
+  "algorithm_ast_unchanged_for_path_cleanup": true,
+  "plugins_and_existing_planner_fixes_byte_identical": true,
+  "no_new_full_run": true
+}

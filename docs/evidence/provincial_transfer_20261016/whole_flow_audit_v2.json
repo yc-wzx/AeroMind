@@ -1,0 +1,163 @@
+{
+  "pass": true,
+  "scope": "One rule-dimension circular-body training fixture; physical middle bar and legacy room, virtual lane edges, real LIO/nav and synthetic shooting",
+  "mission_duration_sim_s": 260.74,
+  "legs": {
+    "outbound": {
+      "gt_error_m": 0.014761650967074652,
+      "odom_error_m": 0.008635770224744703,
+      "duration_sim_s": 115.53999999999999,
+      "all_waypoints_pass": true,
+      "two_plus_five_pass": true
+    },
+    "return": {
+      "gt_error_m": 0.013771965984852537,
+      "odom_error_m": 0.008075940685353875,
+      "duration_sim_s": 125.21999999999997,
+      "all_waypoints_pass": true,
+      "two_plus_five_pass": true
+    }
+  },
+  "one_start": true,
+  "two_automatic_external_goals": true,
+  "same_gazebo_launch_pid": 730,
+  "reset_observation_scope": "Supervisor/runner never requests reset/set_pose; isolated history-profile launch recorded; all external service callers not independently monitored",
+  "checkpoints": [
+    {
+      "id": "forward_entry",
+      "odom_stamp_s": 22.096,
+      "odom_xy": [
+        4.700313204012592,
+        1.300247591735356
+      ],
+      "wall_s": 1156.893947542
+    },
+    {
+      "id": "forward_detour",
+      "odom_stamp_s": 63.596000000000004,
+      "odom_xy": [
+        7.007181251794628,
+        2.8497804052361624
+      ],
+      "wall_s": 1198.39380012
+    },
+    {
+      "id": "forward_shooting_entry",
+      "odom_stamp_s": 116.012,
+      "odom_xy": [
+        8.70317348622026,
+        3.9137329703945585
+      ],
+      "wall_s": 1250.839335727
+    },
+    {
+      "id": "return_shooting_entry",
+      "odom_stamp_s": 149.588,
+      "odom_xy": [
+        8.699414948233274,
+        3.29200204433738
+      ],
+      "wall_s": 1284.409738483
+    },
+    {
+      "id": "return_detour",
+      "odom_stamp_s": 208.732,
+      "odom_xy": [
+        6.392318156503273,
+        2.8489280948389792
+      ],
+      "wall_s": 1343.533519131
+    },
+    {
+      "id": "return_entry",
+      "odom_stamp_s": 257.368,
+      "odom_xy": [
+        4.701223797819517,
+        0.6949066848239944
+      ],
+      "wall_s": 1392.207785067
+    }
+  ],
+  "simulated_rounds": 50,
+  "safe_off_raw_receipt_before_return": true,
+  "minimum_gap_sample": [
+    0.137198540341198,
+    101.52,
+    [
+      8.7128014596588,
+      2.380082660265569,
+      1.5707963268
+    ]
+  ],
+  "whole_mission_receive_continuity": {
+    "/gazebo/odometry": {
+      "pass": true,
+      "limit_s": 0.2,
+      "statistics": {
+        "count": 13040,
+        "received_rate_hz": 49.99917099004722,
+        "message_span_rate_hz": 49.99999999999999,
+        "max_message_interval_s": 0.020000000000038654,
+        "max_receive_interval_s": 0.04715413000008084,
+        "older_stamps": 0,
+        "duplicate_stamps": 0,
+        "receive_nonmonotonic": 0
+      },
+      "first_bracketing_rx": 1144.24959756,
+      "last_bracketing_rx": 1405.033921416
+    },
+    "/model/omni_robot/cmd_vel": {
+      "pass": true,
+      "limit_s": 0.2,
+      "statistics": {
+        "count": 28676,
+        "received_rate_hz": 109.962238365477,
+        "max_receive_interval_s": 0.06133804899991446,
+        "receive_nonmonotonic": 0,
+        "message_time_basis": "HEADERLESS TWIST; actual callback receipt only. Recorded sim_s is observed /clock, not a message-generation timestamp."
+      },
+      "first_bracketing_rx": 1144.253128493,
+      "last_bracketing_rx": 1405.024466238
+    },
+    "/localization/lio_navigation_odometry": {
+      "pass": true,
+      "limit_s": 0.5,
+      "statistics": {
+        "count": 65193,
+        "received_rate_hz": 249.96180448317145,
+        "message_span_rate_hz": 249.99999999999997,
+        "max_message_interval_s": 0.004000000000019099,
+        "max_receive_interval_s": 0.08675324699993325,
+        "older_stamps": 0,
+        "duplicate_stamps": 0,
+        "receive_nonmonotonic": 0
+      },
+      "first_bracketing_rx": 1144.228703133,
+      "last_bracketing_rx": 1405.036549895
+    }
+  },
+  "gt_statistics": {
+    "count": 13038,
+    "received_rate_hz": 49.99907557185889,
+    "message_span_rate_hz": 50.0,
+    "max_message_interval_s": 0.020000000000038654,
+    "max_receive_interval_s": 0.04715413000008084,
+    "older_stamps": 0,
+    "duplicate_stamps": 0,
+    "receive_nonmonotonic": 0
+  },
+  "contact": "CONTACT DATA UNAVAILABLE",
+  "official_2026_geometry_verified": false,
+  "middle_obstacle_detour_exercised": true,
+  "vision_targeting_verified": false,
+  "continuous_time_safety_proven": false,
+  "auditor_sha256": "9c6a1563a938a92efad0fda99064784a35ea197e82ac4eecd3cb8cd5a57f3c30",
+  "minimum_sampled_physical_wall_gap_m": 0.1425104126034869,
+  "minimum_sampled_body_permission_or_wall_gap_m": 0.137198540341198,
+  "unknown_official_inputs": [
+    "complete corner coordinates",
+    "obstacle height/base",
+    "official checklines"
+  ],
+  "body_shape": "circle radius .30 m; nominal user diameter about .58 m"
+}

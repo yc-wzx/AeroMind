@@ -657,6 +657,19 @@ namespace ego_planner
       {
         if (t_cur > info->duration_ - 1e-2)
         {
+          // The ground safety gate may hold motion while spline time advances.
+          // Reuse the existing opt-in odometry divergence policy at the end;
+          // trajectory expiry alone cannot retire a goal the robot missed.
+          if (replan_from_odom_if_diverged_ && have_odom_ &&
+              odom_pos_.allFinite() &&
+              (end_pt_ - odom_pos_).norm() > replan_odom_divergence_m_)
+          {
+            RCLCPP_WARN(node_->get_logger(),
+                        "EGO terminal recovery: trajectory expired, odom goal gap=%.3f m; retaining target",
+                        (end_pt_ - odom_pos_).norm());
+            changeFSMExecState(REPLAN_TRAJ, "TERMINAL_ODOM_GUARD");
+            goto force_return;
+          }
           have_target_ = false;
           have_trigger_ = false;
 

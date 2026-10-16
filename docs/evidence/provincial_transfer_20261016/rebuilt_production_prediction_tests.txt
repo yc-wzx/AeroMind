@@ -1,0 +1,51 @@
+[INFO] [1792142336.172649295] [spark_fast_lio_node]: SPARKFastLIO2 constructed
+[WARN] [1792142336.173680029] [spark_fast_lio_node]: Prediction replay unavailable: NO_ORIGINAL_IMU_HISTORY
+[WARN] [1792142336.173695216] [spark_fast_lio_node]: Prediction replay unavailable: CORRECTION_NOT_BRACKETED
+[WARN] [1792142336.173699713] [spark_fast_lio_node]: Prediction replay unavailable: CORRECTION_NOT_BRACKETED
+[WARN] [1792142336.173705674] [spark_fast_lio_node]: Prediction unavailable: DUPLICATE_OR_BACKWARD_IMU
+[WARN] [1792142336.173745099] [spark_fast_lio_node]: IMU loopback, clearing buffers (previous: 10008000000 vs. received: 10002000000 [ns]
+[WARN] [1792142336.173766895] [spark_fast_lio_node]: Prediction unavailable: IMU_GAP
+[WARN] [1792142336.173791833] [spark_fast_lio_node]: Prediction replay unavailable: REPLAY_MISSING_IMU_INTERVAL
+[WARN] [1792142336.173833119] [spark_fast_lio_node]: Invalid IMU rejected, high-rate prediction unavailable
+[WARN] [1792142336.175586333] [spark_fast_lio_node]: Prediction replay unavailable: CORRECTION_NOT_BRACKETED
+[WARN] [1792142336.175823153] [spark_fast_lio_node]: Prediction replay unavailable: NONFINITE_CORRECTED_STATE
+Multi thread started 
+{"test":"reset_lag_0","pass":true,"actual":0,"expected":0}
+{"test":"full_time_propagated_lag_0","pass":true,"actual":0.00020000000000000001,"expected":0.00020000000000000001}
+{"test":"main_KF_not_edited","pass":true,"actual":0,"expected":0}
+{"test":"reset_lag_2","pass":true,"actual":0,"expected":0}
+{"test":"full_time_propagated_lag_2","pass":true,"actual":0.00060000000000000006,"expected":0.00060000000000000006}
+{"test":"main_KF_not_edited","pass":true,"actual":0,"expected":0}
+{"test":"reset_lag_12","pass":true,"actual":0,"expected":0}
+{"test":"full_time_propagated_lag_12","pass":true,"actual":0.0026000000000000007,"expected":0.0026000000000000003}
+{"test":"main_KF_not_edited","pass":true,"actual":0,"expected":0}
+{"test":"reset_lag_16","pass":true,"actual":0,"expected":0}
+{"test":"full_time_propagated_lag_16","pass":true,"actual":0.0034000000000000011,"expected":0.0034000000000000002}
+{"test":"main_KF_not_edited","pass":true,"actual":0,"expected":0}
+{"test":"repeat_correction_does_not_double_integrate","pass":true,"actual":0.0026000000000000007,"expected":0.0026000000000000007}
+{"test":"later_correction_replays_only_remaining_interval","pass":true,"actual":0.0024000000000000007,"expected":0.0023999999999999998}
+{"test":"fractional_boundary_reset_ready","pass":true,"actual":0,"expected":0}
+{"test":"partial_pair_linear_acceleration","pass":true,"actual":0.00055000000000000003,"expected":0.00055000000000000003}
+{"test":"partial_pair_exact_duration","pass":true,"actual":0.002,"expected":0.002}
+{"test":"partial_pair_gyro_rotation","pass":true,"actual":0.00035000000000000005,"expected":0.00035}
+{"test":"no_history_cannot_reset","pass":true,"actual":0,"expected":0}
+{"test":"future_correction_no_extrapolation","pass":true,"actual":0,"expected":0}
+{"test":"old_correction_not_bracketed","pass":true,"actual":0,"expected":0}
+{"test":"duplicate_disables_prediction","pass":true,"actual":0,"expected":0}
+{"test":"valid_sample_alone_does_not_clear_fault","pass":true,"actual":0,"expected":0}
+{"test":"fresh_correction_restores_prediction","pass":true,"actual":0,"expected":0}
+{"test":"resume_state_time_current","pass":true,"actual":0,"expected":0}
+{"test":"backward_input_clears_old_history","pass":true,"actual":0,"expected":0}
+{"test":"backward_recovery_requires_new_correction","pass":true,"actual":0,"expected":0}
+{"test":"new_epoch_correction_can_resume","pass":true,"actual":0,"expected":0}
+{"test":"missing_IMU_interval_blocks_prediction","pass":true,"actual":0,"expected":0}
+{"test":"replay_across_missing_interval_refused","pass":true,"actual":0,"expected":0}
+{"test":"correction_at_fresh_anchor_can_resume","pass":true,"actual":0,"expected":0}
+{"test":"gap_recovery_no_old_interval_replayed","pass":true,"actual":0.00020000000000000001,"expected":0.00020000000000000001}
+{"test":"nonfinite_sensor_not_fed_into_main_KF","pass":true,"actual":0,"expected":0}
+{"test":"original_history_bounded","pass":true,"actual":0,"expected":0}
+{"test":"evicted_anchor_cannot_be_reconstructed","pass":true,"actual":0,"expected":0}
+{"test":"original_message_stamp_unchanged","pass":true,"actual":0,"expected":0}
+{"test":"nonfinite_corrected_state_refused","pass":true,"actual":0,"expected":0}
+Rebuild thread terminated normally
+{"checks":37,"failures":0}

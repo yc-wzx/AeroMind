@@ -1,0 +1,18 @@
+{
+  "this_iteration_complete": true,
+  "one_full_workflow_raw_evidence_pass": true,
+  "mission_duration_sim_s": 260.74,
+  "margin_to_300_sim_s": 39.25999999999999,
+  "single_trial_candidate_available": true,
+  "default_or_legacy_entry_replaced": false,
+  "latency_fully_eliminated": false,
+  "statistical_repeatability_proven": false,
+  "official_arena_verified": false,
+  "real_targeting_or_firing_verified": false,
+  "hardware_deployment_performed": false,
+  "prior_298s_single_pass_preserved": true,
+  "earlier_failed_trials_preserved": true,
+  "thresholds_relaxed": false,
+  "contact": "CONTACT DATA UNAVAILABLE",
+  "classification": "TRAINING-ONLY / PROVISIONAL"
+}

@@ -1,0 +1,1217 @@
+{
+  "name": "RULE-DIMENSION TRAINING FIXTURE / NOT OFFICIAL FIELD RECONSTRUCTION",
+  "world_name": "provincial_rule900_training",
+  "arena": {
+    "width": 9.4,
+    "height": 10.0
+  },
+  "start": {
+    "x": 4.7,
+    "y": 0.5,
+    "yaw": 1.5707963267948966,
+    "width": 0.8,
+    "height": 0.8
+  },
+  "shooting_zone": {
+    "x": 8.7,
+    "y": 4.25,
+    "yaw": 1.5707963267948966,
+    "width": 0.8,
+    "height": 0.8
+  },
+  "reference_route": [
+    [
+      4.7,
+      0.5
+    ],
+    [
+      4.7,
+      1.8
+    ],
+    [
+      6.24,
+      1.8
+    ],
+    [
+      6.24,
+      2.85
+    ],
+    [
+      7.16,
+      2.85
+    ],
+    [
+      7.16,
+      1.8
+    ],
+    [
+      8.7,
+      1.8
+    ],
+    [
+      8.7,
+      4.25
+    ]
+  ],
+  "course_surfaces": [
+    {
+      "x": 4.7,
+      "y": 1.15,
+      "width": 0.9000000000000004,
+      "height": 2.2
+    },
+    {
+      "x": 5.470000000000001,
+      "y": 1.8,
+      "width": 2.4400000000000004,
+      "height": 0.8999999999999999
+    },
+    {
+      "x": 6.24,
+      "y": 2.325,
+      "width": 0.9000000000000004,
+      "height": 1.9500000000000002
+    },
+    {
+      "x": 6.7,
+      "y": 2.85,
+      "width": 1.8200000000000003,
+      "height": 0.9000000000000004
+    },
+    {
+      "x": 7.16,
+      "y": 2.325,
+      "width": 0.9000000000000004,
+      "height": 1.9500000000000002
+    },
+    {
+      "x": 7.93,
+      "y": 1.8,
+      "width": 2.4399999999999986,
+      "height": 0.8999999999999999
+    },
+    {
+      "x": 8.7,
+      "y": 3.0250000000000004,
+      "width": 0.8999999999999986,
+      "height": 3.35
+    }
+  ],
+  "collision_segments": [
+    [
+      4.245,
+      0.04999999999999999,
+      4.245,
+      1.35
+    ],
+    [
+      4.245,
+      1.35,
+      4.245,
+      2.25
+    ],
+    [
+      5.155,
+      0.04999999999999999,
+      5.155,
+      1.35
+    ],
+    [
+      5.785,
+      2.25,
+      5.785,
+      2.4
+    ],
+    [
+      5.785,
+      2.4,
+      5.785,
+      3.3000000000000003
+    ],
+    [
+      6.695,
+      1.35,
+      6.695,
+      2.25
+    ],
+    [
+      6.695,
+      2.25,
+      6.695,
+      2.4
+    ],
+    [
+      6.705,
+      1.35,
+      6.705,
+      2.25
+    ],
+    [
+      6.705,
+      2.25,
+      6.705,
+      2.4
+    ],
+    [
+      7.615,
+      2.25,
+      7.615,
+      2.4
+    ],
+    [
+      7.615,
+      2.4,
+      7.615,
+      3.3000000000000003
+    ],
+    [
+      8.245,
+      2.25,
+      8.245,
+      2.4
+    ],
+    [
+      8.245,
+      2.4,
+      8.245,
+      3.3000000000000003
+    ],
+    [
+      8.245,
+      3.3000000000000003,
+      8.245,
+      4.7
+    ],
+    [
+      9.155,
+      1.35,
+      9.155,
+      2.25
+    ],
+    [
+      9.155,
+      2.25,
+      9.155,
+      2.4
+    ],
+    [
+      9.155,
+      2.4,
+      9.155,
+      3.3000000000000003
+    ],
+    [
+      9.155,
+      3.3000000000000003,
+      9.155,
+      4.7
+    ],
+    [
+      4.25,
+      0.04499999999999999,
+      5.15,
+      0.04499999999999999
+    ],
+    [
+      5.15,
+      1.3450000000000002,
+      5.79,
+      1.3450000000000002
+    ],
+    [
+      5.79,
+      1.3450000000000002,
+      6.69,
+      1.3450000000000002
+    ],
+    [
+      6.71,
+      1.3450000000000002,
+      7.61,
+      1.3450000000000002
+    ],
+    [
+      7.61,
+      1.3450000000000002,
+      8.25,
+      1.3450000000000002
+    ],
+    [
+      8.25,
+      1.3450000000000002,
+      9.149999999999999,
+      1.3450000000000002
+    ],
+    [
+      4.25,
+      2.255,
+      5.15,
+      2.255
+    ],
+    [
+      5.15,
+      2.255,
+      5.79,
+      2.255
+    ],
+    [
+      7.61,
+      2.255,
+      8.25,
+      2.255
+    ],
+    [
+      6.69,
+      2.395,
+      6.71,
+      2.395
+    ],
+    [
+      5.79,
+      3.305,
+      6.69,
+      3.305
+    ],
+    [
+      6.69,
+      3.305,
+      6.71,
+      3.305
+    ],
+    [
+      6.71,
+      3.305,
+      7.61,
+      3.305
+    ],
+    [
+      8.25,
+      4.705,
+      9.149999999999999,
+      4.705
+    ],
+    [
+      6.7,
+      1.2000000000000002,
+      6.7,
+      2.4
+    ],
+    [
+      -0.0275,
+      -0.0275,
+      9.4275,
+      -0.0275
+    ],
+    [
+      9.4275,
+      -0.0275,
+      9.4275,
+      10.0275
+    ],
+    [
+      9.4275,
+      10.0275,
+      -0.0275,
+      10.0275
+    ],
+    [
+      -0.0275,
+      10.0275,
+      -0.0275,
+      -0.0275
+    ]
+  ],
+  "collision_polygons": [
+    [
+      [
+        4.25,
+        0.04999999999999999
+      ],
+      [
+        4.25,
+        1.35
+      ],
+      [
+        4.24,
+        1.35
+      ],
+      [
+        4.24,
+        0.04999999999999999
+      ]
+    ],
+    [
+      [
+        4.25,
+        1.35
+      ],
+      [
+        4.25,
+        2.25
+      ],
+      [
+        4.24,
+        2.25
+      ],
+      [
+        4.24,
+        1.35
+      ]
+    ],
+    [
+      [
+        5.15,
+        0.04999999999999999
+      ],
+      [
+        5.15,
+        1.35
+      ],
+      [
+        5.16,
+        1.35
+      ],
+      [
+        5.16,
+        0.04999999999999999
+      ]
+    ],
+    [
+      [
+        5.79,
+        2.25
+      ],
+      [
+        5.79,
+        2.4
+      ],
+      [
+        5.78,
+        2.4
+      ],
+      [
+        5.78,
+        2.25
+      ]
+    ],
+    [
+      [
+        5.79,
+        2.4
+      ],
+      [
+        5.79,
+        3.3000000000000003
+      ],
+      [
+        5.78,
+        3.3000000000000003
+      ],
+      [
+        5.78,
+        2.4
+      ]
+    ],
+    [
+      [
+        6.69,
+        1.35
+      ],
+      [
+        6.69,
+        2.25
+      ],
+      [
+        6.7,
+        2.25
+      ],
+      [
+        6.7,
+        1.35
+      ]
+    ],
+    [
+      [
+        6.69,
+        2.25
+      ],
+      [
+        6.69,
+        2.4
+      ],
+      [
+        6.7,
+        2.4
+      ],
+      [
+        6.7,
+        2.25
+      ]
+    ],
+    [
+      [
+        6.71,
+        1.35
+      ],
+      [
+        6.71,
+        2.25
+      ],
+      [
+        6.7,
+        2.25
+      ],
+      [
+        6.7,
+        1.35
+      ]
+    ],
+    [
+      [
+        6.71,
+        2.25
+      ],
+      [
+        6.71,
+        2.4
+      ],
+      [
+        6.7,
+        2.4
+      ],
+      [
+        6.7,
+        2.25
+      ]
+    ],
+    [
+      [
+        7.61,
+        2.25
+      ],
+      [
+        7.61,
+        2.4
+      ],
+      [
+        7.62,
+        2.4
+      ],
+      [
+        7.62,
+        2.25
+      ]
+    ],
+    [
+      [
+        7.61,
+        2.4
+      ],
+      [
+        7.61,
+        3.3000000000000003
+      ],
+      [
+        7.62,
+        3.3000000000000003
+      ],
+      [
+        7.62,
+        2.4
+      ]
+    ],
+    [
+      [
+        8.25,
+        2.25
+      ],
+      [
+        8.25,
+        2.4
+      ],
+      [
+        8.24,
+        2.4
+      ],
+      [
+        8.24,
+        2.25
+      ]
+    ],
+    [
+      [
+        8.25,
+        2.4
+      ],
+      [
+        8.25,
+        3.3000000000000003
+      ],
+      [
+        8.24,
+        3.3000000000000003
+      ],
+      [
+        8.24,
+        2.4
+      ]
+    ],
+    [
+      [
+        8.25,
+        3.3000000000000003
+      ],
+      [
+        8.25,
+        4.7
+      ],
+      [
+        8.24,
+        4.7
+      ],
+      [
+        8.24,
+        3.3000000000000003
+      ]
+    ],
+    [
+      [
+        9.149999999999999,
+        1.35
+      ],
+      [
+        9.149999999999999,
+        2.25
+      ],
+      [
+        9.159999999999998,
+        2.25
+      ],
+      [
+        9.159999999999998,
+        1.35
+      ]
+    ],
+    [
+      [
+        9.149999999999999,
+        2.25
+      ],
+      [
+        9.149999999999999,
+        2.4
+      ],
+      [
+        9.159999999999998,
+        2.4
+      ],
+      [
+        9.159999999999998,
+        2.25
+      ]
+    ],
+    [
+      [
+        9.149999999999999,
+        2.4
+      ],
+      [
+        9.149999999999999,
+        3.3000000000000003
+      ],
+      [
+        9.159999999999998,
+        3.3000000000000003
+      ],
+      [
+        9.159999999999998,
+        2.4
+      ]
+    ],
+    [
+      [
+        9.149999999999999,
+        3.3000000000000003
+      ],
+      [
+        9.149999999999999,
+        4.7
+      ],
+      [
+        9.159999999999998,
+        4.7
+      ],
+      [
+        9.159999999999998,
+        3.3000000000000003
+      ]
+    ],
+    [
+      [
+        4.25,
+        0.04999999999999999
+      ],
+      [
+        5.15,
+        0.04999999999999999
+      ],
+      [
+        5.15,
+        0.03999999999999999
+      ],
+      [
+        4.25,
+        0.03999999999999999
+      ]
+    ],
+    [
+      [
+        5.15,
+        1.35
+      ],
+      [
+        5.79,
+        1.35
+      ],
+      [
+        5.79,
+        1.34
+      ],
+      [
+        5.15,
+        1.34
+      ]
+    ],
+    [
+      [
+        5.79,
+        1.35
+      ],
+      [
+        6.69,
+        1.35
+      ],
+      [
+        6.69,
+        1.34
+      ],
+      [
+        5.79,
+        1.34
+      ]
+    ],
+    [
+      [
+        6.71,
+        1.35
+      ],
+      [
+        7.61,
+        1.35
+      ],
+      [
+        7.61,
+        1.34
+      ],
+      [
+        6.71,
+        1.34
+      ]
+    ],
+    [
+      [
+        7.61,
+        1.35
+      ],
+      [
+        8.25,
+        1.35
+      ],
+      [
+        8.25,
+        1.34
+      ],
+      [
+        7.61,
+        1.34
+      ]
+    ],
+    [
+      [
+        8.25,
+        1.35
+      ],
+      [
+        9.149999999999999,
+        1.35
+      ],
+      [
+        9.149999999999999,
+        1.34
+      ],
+      [
+        8.25,
+        1.34
+      ]
+    ],
+    [
+      [
+        4.25,
+        2.25
+      ],
+      [
+        5.15,
+        2.25
+      ],
+      [
+        5.15,
+        2.26
+      ],
+      [
+        4.25,
+        2.26
+      ]
+    ],
+    [
+      [
+        5.15,
+        2.25
+      ],
+      [
+        5.79,
+        2.25
+      ],
+      [
+        5.79,
+        2.26
+      ],
+      [
+        5.15,
+        2.26
+      ]
+    ],
+    [
+      [
+        7.61,
+        2.25
+      ],
+      [
+        8.25,
+        2.25
+      ],
+      [
+        8.25,
+        2.26
+      ],
+      [
+        7.61,
+        2.26
+      ]
+    ],
+    [
+      [
+        6.69,
+        2.4
+      ],
+      [
+        6.71,
+        2.4
+      ],
+      [
+        6.71,
+        2.39
+      ],
+      [
+        6.69,
+        2.39
+      ]
+    ],
+    [
+      [
+        5.79,
+        3.3000000000000003
+      ],
+      [
+        6.69,
+        3.3000000000000003
+      ],
+      [
+        6.69,
+        3.31
+      ],
+      [
+        5.79,
+        3.31
+      ]
+    ],
+    [
+      [
+        6.69,
+        3.3000000000000003
+      ],
+      [
+        6.71,
+        3.3000000000000003
+      ],
+      [
+        6.71,
+        3.31
+      ],
+      [
+        6.69,
+        3.31
+      ]
+    ],
+    [
+      [
+        6.71,
+        3.3000000000000003
+      ],
+      [
+        7.61,
+        3.3000000000000003
+      ],
+      [
+        7.61,
+        3.31
+      ],
+      [
+        6.71,
+        3.31
+      ]
+    ],
+    [
+      [
+        8.25,
+        4.7
+      ],
+      [
+        9.149999999999999,
+        4.7
+      ],
+      [
+        9.149999999999999,
+        4.71
+      ],
+      [
+        8.25,
+        4.71
+      ]
+    ],
+    [
+      [
+        6.69,
+        1.2000000000000002
+      ],
+      [
+        6.71,
+        1.2000000000000002
+      ],
+      [
+        6.71,
+        2.4
+      ],
+      [
+        6.69,
+        2.4
+      ]
+    ],
+    [
+      [
+        -0.0275,
+        -0.055
+      ],
+      [
+        9.4275,
+        -0.055
+      ],
+      [
+        9.4275,
+        0.0
+      ],
+      [
+        -0.0275,
+        0.0
+      ]
+    ],
+    [
+      [
+        9.4,
+        -0.0275
+      ],
+      [
+        9.455,
+        -0.0275
+      ],
+      [
+        9.455,
+        10.0275
+      ],
+      [
+        9.4,
+        10.0275
+      ]
+    ],
+    [
+      [
+        -0.0275,
+        10.0
+      ],
+      [
+        9.4275,
+        10.0
+      ],
+      [
+        9.4275,
+        10.055
+      ],
+      [
+        -0.0275,
+        10.055
+      ]
+    ],
+    [
+      [
+        -0.055,
+        -0.0275
+      ],
+      [
+        0.0,
+        -0.0275
+      ],
+      [
+        0.0,
+        10.0275
+      ],
+      [
+        -0.055,
+        10.0275
+      ]
+    ]
+  ],
+  "boundary_classes": [
+    {
+      "id": "virtual_lane_0",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_1",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_2",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_3",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_4",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_5",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_6",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_7",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_8",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_9",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_10",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_11",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_12",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_13",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_14",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_15",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_16",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_17",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_18",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_19",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_20",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_21",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_22",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_23",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_24",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_25",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_26",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_27",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_28",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_29",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_30",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "virtual_lane_31",
+      "kind": "VIRTUAL_PERMISSION_BOUNDARY",
+      "physical": false
+    },
+    {
+      "id": "middle_obstacle",
+      "kind": "PHYSICAL_TRAINING_OBSTACLE",
+      "physical": true
+    },
+    {
+      "id": "boundary_0",
+      "kind": "LEGACY_SYNTHETIC_ROOM_WALL",
+      "physical": true
+    },
+    {
+      "id": "boundary_1",
+      "kind": "LEGACY_SYNTHETIC_ROOM_WALL",
+      "physical": true
+    },
+    {
+      "id": "boundary_2",
+      "kind": "LEGACY_SYNTHETIC_ROOM_WALL",
+      "physical": true
+    },
+    {
+      "id": "boundary_3",
+      "kind": "LEGACY_SYNTHETIC_ROOM_WALL",
+      "physical": true
+    }
+  ],
+  "middle_obstacle": {
+    "centre": [
+      6.7,
+      1.8
+    ],
+    "footprint_m": [
+      0.02,
+      1.2
+    ],
+    "bounds": [
+      6.69,
+      1.2000000000000002,
+      6.71,
+      2.4
+    ],
+    "height_m": 0.5,
+    "height_source": "RETAINED LEGACY TRAINING PROXY; PDF height/base unknown",
+    "official_height_verified": false
+  },
+  "assumptions": {
+    "course_width_m": 0.9,
+    "course_width_source": "Explicit 900 mm rule figure, not pixel estimate",
+    "obstacle_footprint_source": "Explicit 1200 x 20 mm rule text/figure",
+    "layout_source": "Retained training start/goal and straight midpoint; bypass is dimension-derived fixture, NOT official corner coordinates",
+    "synthetic_background": "Legacy 9.4 x 10 m room outer walls retained only as training LiDAR features",
+    "boundary_type": "Virtual navigation permission edges; no physical walls or LiDAR returns on lane markings",
+    "final_arena_verified": false,
+    "terrain": "flat training fixture"
+  },
+  "planning_proxy_note": "Existing planner uses 55 mm segment envelopes; exact 20 mm obstacle/permission polygons used for collision and final circular guards. No planner tuning.",
+  "source_dimension_manifest": "tools/config/provincial_2026_track4_dimension_sources.json",
+  "target_zone": {
+    "x": 8.15,
+    "y": 8.75,
+    "width": 2.5,
+    "height": 2.5,
+    "source": "Legacy training display-only marker; not official target position/size; no target model or collision"
+  }
+}

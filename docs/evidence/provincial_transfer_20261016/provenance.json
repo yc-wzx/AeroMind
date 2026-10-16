@@ -1,0 +1,263 @@
+{
+  "scope": "Original-machine evidence, NOT a mini-PC qualification; paths in historical reports are historical references",
+  "baseline_git_head": "4d79e266e8fb93ed0b14efb5a531f5b0f5b02027",
+  "baseline_manifest_count": 2110,
+  "baseline_manifest_sha256": "405aac5e1c1bd87f7bd4d077ee414d282a079d058fcbdeb2e003721d8ed5bb8d",
+  "copied_runtime_modules": [
+    {
+      "module": "circle_geometry",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/circle_geometry.py",
+      "original_sha256": "4c2ee5dad3aba76b9a84fde368c95371b28e50250f7bc298b11a5c52beac08d7",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/circle_geometry.py"
+    },
+    {
+      "module": "circle_navigation",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/circle_navigation.py",
+      "original_sha256": "2e67a4dfc5c428c76b01221f042e3b3d018b83c182c90099bf200f47aad35ef4",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/circle_navigation.py"
+    },
+    {
+      "module": "circle_route_gate",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/circle_route_gate.py",
+      "original_sha256": "8a2895f46bf98c67c5ab522cec7f307b36dc1a9fbc4b5df3e7138aef9d87ea16",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/circle_route_gate.py"
+    },
+    {
+      "module": "ego_goal_adapter",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/ego_goal_adapter.py",
+      "original_sha256": "1dc610bf1396e69becd30acb11d0eff77c640792184f8a1df380e4537485825b",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/ego_goal_adapter.py"
+    },
+    {
+      "module": "ego_trajectory_executor",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/ego_trajectory_executor.py",
+      "original_sha256": "8ef09f6ea5d69ce2c8404309cec3bb58f6528bf903a06581f121b13d9787f99f",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/ego_trajectory_executor.py"
+    },
+    {
+      "module": "gazebo_navigation_interface",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/gazebo_navigation_interface.py",
+      "original_sha256": "d06692d2e8b899cbfc7f99159903a1aa6a89d1193f31cdb54c6054c514555c47",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/gazebo_navigation_interface.py"
+    },
+    {
+      "module": "gimbal_command_governor",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/gimbal_command_governor.py",
+      "original_sha256": "72a0694cebb4c5fd376e384d9348ce80211dd0b12c4de332f027af3f361968c7",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/gimbal_command_governor.py"
+    },
+    {
+      "module": "gimbal_contract",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/gimbal_contract.py",
+      "original_sha256": "96e62108b716200f5814e130ba42d3d6dfa187292c00d4cd018b3b524820b308",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/gimbal_contract.py"
+    },
+    {
+      "module": "gimbal_navigation_interface",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/gimbal_navigation_interface.py",
+      "original_sha256": "40c33bbb7501bd31b419e1165fe8f5191137e2d93f00bfdc3e0a38543a90d496",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/gimbal_navigation_interface.py"
+    },
+    {
+      "module": "gimbal_static_ray",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/gimbal_static_ray.py",
+      "original_sha256": "72fdbb653ebf3fb561d418bae876d99814a614fa07e0749de01f28d5ecfc92b6",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/gimbal_static_ray.py"
+    },
+    {
+      "module": "grid_route",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/grid_route.py",
+      "original_sha256": "cd403a76476b2ac194c411923624896e0f90abc542e2ebd28a717b4dbe36d14b",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/grid_route.py"
+    },
+    {
+      "module": "input_first_executor",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/input_first_executor.py",
+      "original_sha256": "ad009d405e975673fd014e451a2a7572e37efb4bf9f7068937089e043edceb0f",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/input_first_executor.py"
+    },
+    {
+      "module": "internal_timing_trace",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/internal_timing_trace.py",
+      "original_sha256": "0572d49c3e87c24534ac4c972b6e4571eb27ebbb3337997ce82d80e995aa0ac6",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/internal_timing_trace.py"
+    },
+    {
+      "module": "inverted_mount_contract",
+      "original_path": "/home/rmnav/AeroMind/install_inverted_mount/radar_inverted_mount/lib/radar_inverted_mount/inverted_mount_contract.py",
+      "original_sha256": "c662ff66c9c55e6a858593337b5dc36356321ca4a8300cd2e29add68d8dd8feb",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/inverted_mount_contract.py"
+    },
+    {
+      "module": "inverted_sim_format_adapter",
+      "original_path": "/home/rmnav/AeroMind/install_inverted_sim/radar_inverted_sim/lib/radar_inverted_sim/inverted_sim_format_adapter.py",
+      "original_sha256": "4c61ad9e794614e67eeb75125dfd9c2e1e4712873449da93e473800c73c5a8ea",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/inverted_sim_format_adapter.py"
+    },
+    {
+      "module": "lio_contract",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_contract.py",
+      "original_sha256": "490cceda9dcba2ab7367d72f0dffa87f6f78e0c5a02a5045cd291a80c6135338",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/lio_contract.py"
+    },
+    {
+      "module": "lio_navigation_interface",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_navigation_interface.py",
+      "original_sha256": "8fa41a0f6a4efb09f534cac8dfa651e4696fb39024ea8576236efd5b7665f327",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/lio_navigation_interface.py"
+    },
+    {
+      "module": "lio_safe_navigation_interface",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/lio_safe_navigation_interface.py",
+      "original_sha256": "7261e1b82840085766a5002402303bbf0c407311e9eae59957b5b3abf2179f22",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/lio_safe_navigation_interface.py"
+    },
+    {
+      "module": "lio_safety_geometry",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_safety_geometry.py",
+      "original_sha256": "f6616c49008b09f758cd627f9870d5f0396cd9e0d4c2ed6091729d89908f0481",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/lio_safety_geometry.py"
+    },
+    {
+      "module": "lio_sensor_adapter",
+      "original_path": "/home/rmnav/AeroMind/install/stage2_lio_sim/lib/stage2_lio_sim/lio_sensor_adapter.py",
+      "original_sha256": "4825a03120631ecf6ea8c0dac7bd74e5e6ba63bd29cc112c52aff624eccdca70",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/lio_sensor_adapter.py"
+    },
+    {
+      "module": "planar_navigation_simulator",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/planar_navigation_simulator.py",
+      "original_sha256": "07e13902bf0926ffff4cb8a8ea1bf8f3c7b32b8410bd3b26951a2dcf591b89ff",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/planar_navigation_simulator.py"
+    },
+    {
+      "module": "provincial_safety_geometry",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/provincial_safety_geometry.py",
+      "original_sha256": "d51a052c396611dc81e08c2c4ebf58d094b13c66ef699cb3e71222ad4469faa7",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/provincial_safety_geometry.py"
+    },
+    {
+      "module": "radar_fixed_contract",
+      "original_path": "/home/rmnav/AeroMind/install/radar_frame_bridge/lib/radar_frame_bridge/radar_fixed_contract.py",
+      "original_sha256": "06ad724e3460b312cce6f6a2de2a5c4974d00a375cfd44e33cf3787d8f4ec9e0",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_fixed_contract.py"
+    },
+    {
+      "module": "radar_fixed_navigation",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/radar_fixed_navigation.py",
+      "original_sha256": "20a482c2b5b4b19d42582a82e4ed443f3d4487a30ca73c47a2e12cc3928787d1",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_fixed_navigation.py"
+    },
+    {
+      "module": "radar_fixed_odometry",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/radar_fixed_odometry.py",
+      "original_sha256": "9765814767aeb37a55e1b31b7f74933bad8cfcf9effbb00fcfa44e28a711fa0a",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_fixed_odometry.py"
+    },
+    {
+      "module": "radar_host_command",
+      "original_path": "/home/rmnav/AeroMind/install/radar_frame_bridge/lib/radar_frame_bridge/radar_host_command.py",
+      "original_sha256": "b13d5d2b158b6598e9bd513d59e54dcc5b267f40b59da3702b523ea5a82bf0e1",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_host_command.py"
+    },
+    {
+      "module": "radar_path_geometry",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/radar_path_geometry.py",
+      "original_sha256": "4efa50f3f5fe968a04c1324dc4ae918ac4f74e4747b34aed50afab393a7a522a",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_path_geometry.py"
+    },
+    {
+      "module": "radar_scan_batch",
+      "original_path": "/home/rmnav/AeroMind/install/radar_frame_bridge/lib/radar_frame_bridge/radar_scan_batch.py",
+      "original_sha256": "d374d17b1c75a668540f1b8449f68e1623acd31a88d5a4072157dd7b1886d13c",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_scan_batch.py"
+    },
+    {
+      "module": "radar_sim_electrical",
+      "original_path": "/home/rmnav/AeroMind/install/radar_frame_bridge/lib/radar_frame_bridge/radar_sim_electrical.py",
+      "original_sha256": "e20a6d3a619be3cf8ed5d9148993e28ac598263cf69ba7a67fcc79dd7d5e8fb9",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/radar_sim_electrical.py"
+    },
+    {
+      "module": "rmw_diagnostic_executor",
+      "original_path": "/home/rmnav/AeroMind/install/radar_frame_bridge/lib/radar_frame_bridge/rmw_diagnostic_executor.py",
+      "original_sha256": "e704e7443300513272db6e98a773086e26d72848426f6132eff2841ab7c8d8ed",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/rmw_diagnostic_executor.py"
+    },
+    {
+      "module": "runtime_support",
+      "original_path": "/home/rmnav/AeroMind/install/radar_frame_bridge/lib/radar_frame_bridge/runtime_support.py",
+      "original_sha256": "318b2611394dcbc6ae843ea1c286e485c8e9d5c2b4b984d7b9544f39a78524c1",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/runtime_support.py"
+    },
+    {
+      "module": "scan_matcher",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/scan_matcher.py",
+      "original_sha256": "36401758c6edd7972c88cbb34d8df216729a0be14e0e6cd179f175368e65ba3e",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/scan_matcher.py"
+    },
+    {
+      "module": "stage2_localized_interface",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_localized_interface.py",
+      "original_sha256": "f0976d3a42548343423c25fe338719453f8a50ea8291cb49753b9e965ba9a630",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/stage2_localized_interface.py"
+    },
+    {
+      "module": "stage2_navigation_interface",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_navigation_interface.py",
+      "original_sha256": "5a86c854c2ed25b74119433c18e9606b4150fec88b901d3e8cb808e0b0ae32e3",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/stage2_navigation_interface.py"
+    },
+    {
+      "module": "stage2_odometry_model",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_odometry_model.py",
+      "original_sha256": "db36affd2f78524fab1cbff214fc1d705b9f2c10c82304727037a6acc9fdf465",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/stage2_odometry_model.py"
+    },
+    {
+      "module": "stage2_simulated_odometry",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_simulated_odometry.py",
+      "original_sha256": "9ddb18506e3e1d08ef76ce3db35b2d68701a7ddad83807b584ba7cd0a1ef78f7",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/stage2_simulated_odometry.py"
+    },
+    {
+      "module": "stage2_wall_localization",
+      "original_path": "/home/rmnav/AeroMind/install/uav_planning/lib/uav_planning/stage2_wall_localization.py",
+      "original_sha256": "914b17e4197c3dd14a3670265679bac1381fa6792ac04996fdc863067d576cb0",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/stage2_wall_localization.py"
+    },
+    {
+      "module": "traced_rmw_executor",
+      "original_path": "/home/rmnav/AeroMind/src/provincial_rule900_scratch_sim/scripts/traced_rmw_executor.py",
+      "original_sha256": "539d73301eb44f03fd3ecfd47f73f06c7403384d936a1aee112af85dc563fe77",
+      "destination": "src/provincial_rule900_scratch_sim/scripts/traced_rmw_executor.py"
+    },
+    {
+      "original_path": "/home/rmnav/AeroMind/src/radar_inverted_sim/inverted_position_imu.cpp",
+      "original_sha256": "e69167138dc5b9de6f736061f3a8763949722068df3cb7140fd46d9c4dbbd2f9",
+      "destination": "src/provincial_rule900_scratch_sim/plugins/inverted_position_imu.cpp"
+    },
+    {
+      "original_path": "/home/rmnav/AeroMind/src/stage2_lio_sim/gimbal_joint.cpp",
+      "original_sha256": "dadd95ddaa4d37a8038f58044d5196b91f405084e7e4a09ccf703f517c77eab5",
+      "destination": "src/provincial_rule900_scratch_sim/plugins/gimbal_joint.cpp"
+    },
+    {
+      "original_path": "/home/rmnav/AeroMind/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp",
+      "original_sha256": "146a55ec8be073977e572d7808a8bfaffecf068f0db14972b532c34159fe7590",
+      "destination": "src/third_party/ego-planner-swarm/src/planner/plan_manage/src/ego_replan_fsm.cpp"
+    },
+    {
+      "original_path": "/home/rmnav/AeroMind/src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp",
+      "original_sha256": "06069f02110870c4ac7d35277f8303aefcdec011d71a5495c79b490162b18a74",
+      "destination": "src/third_party/ego-planner-swarm/src/planner/plan_manage/src/planner_manager.cpp"
+    }
+  ],
+  "portable_only_changes": [
+    "Private dependency resolution",
+    "Installed paths instead of original absolute paths",
+    "Rebuild LIO and simulator plugins",
+    "Direct planner execution without old absolute debugger wrapper"
+  ],
+  "original_inputs_preserved": true
+}

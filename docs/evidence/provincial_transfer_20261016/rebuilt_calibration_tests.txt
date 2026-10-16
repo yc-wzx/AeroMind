@@ -1,0 +1,24 @@
+[INFO] [1792142336.443384296] [spark_fast_lio_node]: SPARKFastLIO2 constructed
+[INFO] [1792142336.444358282] [imu_processing]: IMU Initial Done
+[WARN] [1792142336.444519209] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1792142336.478893971] [spark_fast_lio_node]: SPARKFastLIO2 constructed
+[INFO] [1792142336.479827840] [imu_processing]: IMU Initial Done
+Multi thread started 
+short_window_stays_initializing 1
+4_8_seconds_not_ready 1
+5_seconds_and1250_actual_samples_ready 1
+gravity_matches_normalization_constant 1
+stationary_acceleration_cache_no_artificial_001_residual 1
+gyro_prior_exact_sample_mean_variance 1
+accel_prior_declared_noise_sample_mean 1
+gravity_direction_prior_from_mean_uncertainty 1
+accelerometer_mean_not_forced 1
+positive_finite_covariance 1
+velocity_prior_not_zeroed 1
+Multi thread started 
+tilted_gravity_not_forced_vertical 1
+initialization_does_not_clamp_velocity 1
+original_stationary_assumption_retained 1
+Rebuild thread terminated normally
+Rebuild thread terminated normally
+checks=14 failures=0

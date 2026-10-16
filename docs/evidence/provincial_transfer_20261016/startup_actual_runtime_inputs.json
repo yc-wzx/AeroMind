@@ -1,0 +1,137 @@
+{
+  "parameters": {
+    "navigation": {
+      "use_sim_time": {
+        "type": 1,
+        "bool_value": true,
+        "double_value": 0.0,
+        "string_value": ""
+      },
+      "imperfect_sensors": {
+        "type": 1,
+        "bool_value": false,
+        "double_value": 0.0,
+        "string_value": ""
+      },
+      "grid_route_clearance": {
+        "type": 3,
+        "bool_value": false,
+        "double_value": 0.4,
+        "string_value": ""
+      },
+      "auto_goal": {
+        "type": 1,
+        "bool_value": false,
+        "double_value": 0.0,
+        "string_value": ""
+      }
+    },
+    "planner": {
+      "grid_map/obstacles_inflation": {
+        "type": 3,
+        "bool_value": false,
+        "double_value": 0.22,
+        "string_value": ""
+      }
+    }
+  },
+  "processes": [
+    {
+      "pid": 765,
+      "argv": [
+        "ign gazebo -s -r -v 2 /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/share/provincial_rule900_scratch_sim/worlds/provincial_rule900_training.sdf"
+      ],
+      "executable": "/usr/bin/ruby3.0",
+      "selected_library_maps": [
+        "7ac165654000-7ac165668000 r--p 00000000 08:30 390370                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libstage2_gimbal_joint.so",
+        "7ac165668000-7ac165684000 r-xp 00014000 08:30 390370                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libstage2_gimbal_joint.so",
+        "7ac165684000-7ac16568b000 r--p 00030000 08:30 390370                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libstage2_gimbal_joint.so",
+        "7ac16568b000-7ac16568c000 ---p 00037000 08:30 390370                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libstage2_gimbal_joint.so",
+        "7ac16568c000-7ac16568d000 r--p 00037000 08:30 390370                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libstage2_gimbal_joint.so",
+        "7ac16568d000-7ac16568e000 rw-p 00038000 08:30 390370                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libstage2_gimbal_joint.so",
+        "7ac1656b5000-7ac1656c5000 r--p 00000000 08:30 390369                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libinverted_position_imu.so",
+        "7ac1656c5000-7ac1656df000 r-xp 00010000 08:30 390369                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libinverted_position_imu.so",
+        "7ac1656df000-7ac1656e5000 r--p 0002a000 08:30 390369                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libinverted_position_imu.so",
+        "7ac1656e5000-7ac1656e6000 ---p 00030000 08:30 390369                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libinverted_position_imu.so",
+        "7ac1656e6000-7ac1656e7000 r--p 00030000 08:30 390369                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libinverted_position_imu.so",
+        "7ac1656e7000-7ac1656e8000 rw-p 00031000 08:30 390369                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/libinverted_position_imu.so"
+      ]
+    },
+    {
+      "pid": 777,
+      "argv": [
+        "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/spark_lio_mapping",
+        "--ros-args",
+        "-r",
+        "__node:=isolated_lio_mapping",
+        "--params-file",
+        "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/share/provincial_rule900_scratch_sim/lio/parameters.yaml",
+        "--params-file",
+        "/tmp/launch_params_x_bft6gh",
+        "-r",
+        "lidar:=/lio/lidar",
+        "-r",
+        "imu:=/lio/imu",
+        "-r",
+        "odometry:=/lio/odometry",
+        "-r",
+        "cloud_registered:=/lio/cloud_registered",
+        "-r",
+        "path:=/lio/path"
+      ],
+      "executable": "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/spark_lio_mapping",
+      "selected_library_maps": [
+        "75a252c09000-75a252cbf000 r--p 00000000 08:30 391009                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/libspark_lio_component.so",
+        "75a252cbf000-75a252daf000 r-xp 000b6000 08:30 391009                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/libspark_lio_component.so",
+        "75a252daf000-75a252df5000 r--p 001a6000 08:30 391009                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/libspark_lio_component.so",
+        "75a252df5000-75a252dfb000 r--p 001eb000 08:30 391009                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/libspark_lio_component.so",
+        "75a252dfb000-75a252dfe000 rw-p 001f1000 08:30 391009                     /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/lio/libspark_lio_component.so"
+      ]
+    },
+    {
+      "pid": 781,
+      "argv": [
+        "python3",
+        "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/circle_navigation.py",
+        "--ros-args",
+        "-r",
+        "__node:=gazebo_navigation_interface",
+        "--params-file",
+        "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/share/provincial_rule900_scratch_sim/config/radar_fixed_sim.yaml",
+        "--params-file",
+        "/tmp/launch_params_57pey8mf",
+        "--params-file",
+        "/tmp/launch_params_utpmq207",
+        "-r",
+        "/gazebo/odometry:=/localization/lio_navigation_odometry",
+        "-r",
+        "/model/omni_robot/cmd_vel:=/navigation/guarded_body_cmd_vel"
+      ],
+      "executable": "/usr/bin/python3.10",
+      "selected_library_maps": []
+    },
+    {
+      "pid": 785,
+      "argv": [
+        "/home/rmnav/aeromind-transfer-20261016/install/ego_planner/lib/ego_planner/ego_planner_node",
+        "--ros-args",
+        "-r",
+        "__node:=ego_planner_node",
+        "--params-file",
+        "/home/rmnav/aeromind-transfer-20261016/install/uav_bringup/share/uav_bringup/config/ego_provincial_2025_provisional.yaml",
+        "--params-file",
+        "/tmp/launch_params_91d4qfgc",
+        "--params-file",
+        "/tmp/launch_params_s5f0r9gq",
+        "-r",
+        "odom_world:=/ground/odometry",
+        "-r",
+        "grid_map/odom:=/ground/odometry",
+        "-r",
+        "grid_map/cloud:=/cloud_registered_2d"
+      ],
+      "executable": "/home/rmnav/aeromind-transfer-20261016/install/ego_planner/lib/ego_planner/ego_planner_node",
+      "selected_library_maps": []
+    }
+  ]
+}

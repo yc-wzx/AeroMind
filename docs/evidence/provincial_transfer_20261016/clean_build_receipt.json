@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "elapsed_wall_s": 496.61567114200005,
+  "checkout": "/home/rmnav/aeromind-transfer-20261016",
+  "log": "/home/rmnav/aeromind-transfer-20261016/tools/results/deployment_clean_build_20261016/build.log",
+  "fresh_build": true,
+  "hardware_used": false
+}

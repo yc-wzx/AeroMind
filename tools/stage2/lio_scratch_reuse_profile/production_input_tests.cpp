@@ -1,0 +1,29 @@
+#include "spark_fast_lio.h"
+#include "input_bundle_trace.hpp"
+#include <iostream>
+#include <iomanip>
+namespace aeromind_input { void process_fixture_bridge(ImuProcess&,const MeasureGroup&,esekfom::esekf<state_ikfom,12,input_ikfom>&,PointCloudXYZI::Ptr); }
+struct PredictionProbe {
+ using Node=spark_fast_lio::SPARKFastLIO2;
+ static int failures,checks;
+ static void check(const char*n,bool ok){checks++;if(!ok)failures++;std::cout<<"{\"test\":\""<<n<<"\",\"pass\":"<<(ok?"true":"false")<<"}\n";}
+ static auto imu(int64_t ns,bool alter=false){auto m=std::make_shared<sensor_msgs::msg::Imu>();m->header.stamp=rclcpp::Time(ns);m->header.frame_id="fixture_imu";m->linear_acceleration.z=G_m_s2;m->angular_velocity.x=alter?.1:.00001;m->angular_velocity.y=.00002;m->orientation.w=1;return m;}
+ static void lidar(Node&n,int64_t ns){pcl::PointCloud<livox_ros::Point>cloud;for(int i=0;i<20;i++){livox_ros::Point p{};p.x=2.f+i*.03f;p.y=.1f;p.z=.2f;p.intensity=1;p.line=0;p.tag=0;p.timestamp=double(ns);cloud.push_back(p);}sensor_msgs::msg::PointCloud2 msg;pcl::toROSMsg(cloud,msg);msg.header.stamp=rclcpp::Time(ns);msg.header.frame_id="fixture_lidar";n.standardLiDARCallback(msg);}
+ static void run(Node&n,std::string mode){
+ if(mode=="empty"){auto q=n.sub_imu_->get_actual_qos().get_rmw_qos_profile();std::cout<<"{\"local_actual_imu_qos\":{\"depth\":"<<q.depth<<",\"history\":"<<int(q.history)<<",\"reliability\":"<<int(q.reliability)<<",\"durability\":"<<int(q.durability)<<"}}\n";}
+ n.imu_buffer_.clear();n.lidar_buffer_.clear();n.time_buffer_.clear();n.last_imu_timestamp_=rclcpp::Time(0,0,RCL_ROS_TIME);
+ constexpr int64_t base=10000000000LL;
+ auto send=[&](int64_t dt){n.imuCallback(imu(base+dt,mode=="sample_changed"&&dt==24000000));};
+ lidar(n,base);send(-4000000);send(0);send(4000000);send(8000000);MeasureGroup first;check("actual_sync_first",n.syncPackages(first,false));check("latest_received_not_consumed_end",first.imu.size()==2&&rclcpp::Time(first.imu.back()->header.stamp).nanoseconds()==base&&n.last_imu_timestamp_.nanoseconds()==base+8000000);n.processLidarAndImu(first);check("actual_first_frame_skip",!n.flg_first_scan_&&n.imu_processor_->imu_need_init_);
+ lidar(n,base+12000000);send(12000000);send(16000000);MeasureGroup second;check("actual_sync_init",n.syncPackages(second,false));check("init_bundle_three_samples",second.imu.size()==3);auto output=std::make_shared<PointCloudXYZI>();aeromind_input::process_fixture_bridge(*n.imu_processor_,second,n.kf_,output);check("init_not_prematurely_complete",n.imu_processor_->init_iter_num==4&&n.imu_processor_->imu_need_init_);
+ lidar(n,base+40000000);for(int64_t dt=20000000;dt<=44000000;dt+=4000000)send(dt);MeasureGroup third;check("actual_sync_init_second",n.syncPackages(third,false));check("second_init_bundle_seven_samples",third.imu.size()==7);aeromind_input::process_fixture_bridge(*n.imu_processor_,third,n.kf_,output);check("actual_initialization_done",!n.imu_processor_->imu_need_init_&&n.imu_processor_->init_iter_num==11);check("actual_bias_matches_consumed_samples",std::abs(n.kf_.get_x().bg.x()-(mode=="sample_changed"?.010009:.00001))<1e-14);
+ check("production_anchor_valid_after_init",n.imu_processor_->propagation_anchor_valid_&&n.imu_processor_->last_lidar_end_time_==third.lidar_end_time);
+ lidar(n,base+52000000);send(48000000);send(52000000);send(56000000);if(mode=="latest_shift")send(60000000);MeasureGroup fourth;check("actual_sync_propagation",n.syncPackages(fourth,false));check("propagation_bundle_three_samples",fourth.imu.size()==3);aeromind_input::process_fixture_bridge(*n.imu_processor_,fourth,n.kf_,output);check("production_last_sample_reused",n.imu_processor_->last_imu_->header.stamp==fourth.imu.back()->header.stamp);check("production_last_lidar_end",n.imu_processor_->last_lidar_end_time_==fourth.lidar_end_time);check("instantaneous_cloud_retained",output->size()==20);
+ if(mode=="empty"){lidar(n,base+56000000);MeasureGroup empty;check("actual_sync_equal_boundary",n.syncPackages(empty,false));check("actual_sync_empty_IMU",empty.imu.empty());auto beforeP=n.kf_.get_P();auto beforeX=n.kf_.get_x();auto beforeSize=output->size();aeromind_input::process_fixture_bridge(*n.imu_processor_,empty,n.kf_,output);check("actual_empty_full_P_unchanged",(n.kf_.get_P()-beforeP).norm()==0.);check("actual_empty_pose_and_output_unchanged",(n.kf_.get_x().pos-beforeX.pos).norm()==0.&&output->size()==beforeSize);}
+ aeromind_input::Event result;aeromind_input::filter(result,n.kf_);result.kind="FINAL_FIXTURE_STATE";result.entry_ns=result.capture_done_ns=1;uint64_t invalid=0;std::cout<<aeromind_input::serialize(result,invalid);check("fixture_final_state_finite",invalid==0);
+ auto before=n.imu_buffer_.size();auto bad=imu(base+64000000);bad->linear_acceleration.x=std::numeric_limits<double>::quiet_NaN();if(mode=="invalid"){n.imuCallback(bad);check("invalid_not_buffered",n.imu_buffer_.size()==before);}
+ if(mode=="loopback"){send(2000000);check("loopback_actual_buffer_cleared",n.imu_buffer_.size()==1);}
+ }
+};
+int PredictionProbe::checks=0;int PredictionProbe::failures=0;
+int main(int argc,char**argv){std::string mode=argc>1?argv[1]:"normal";rclcpp::init(argc,argv);rclcpp::NodeOptions o;o.parameter_overrides({rclcpp::Parameter("preprocess.lidar_type",5),rclcpp::Parameter("preprocess.blind",.1),rclcpp::Parameter("point_filter_num_for_preprocessing",1),rclcpp::Parameter("gravity_alignment.enable_gravity_alignment",false),rclcpp::Parameter("pcl_verbose",false),rclcpp::Parameter("common.visualization_frame",std::string("imu"))});if(const char *depth=std::getenv("AEROMIND_QUEUE_TEST_DEPTH"))o.append_parameter_override("common.imu_queue_depth",std::stoi(depth));auto n=std::make_shared<spark_fast_lio::SPARKFastLIO2>(o);PredictionProbe::run(*n,mode);n.reset();rclcpp::shutdown();std::cout<<"{\"checks\":"<<PredictionProbe::checks<<",\"failures\":"<<PredictionProbe::failures<<"}\n";return PredictionProbe::failures?2:0;}

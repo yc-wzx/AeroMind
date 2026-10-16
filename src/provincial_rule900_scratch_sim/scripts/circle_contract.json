@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "shape": "circle",
+  "nominal_diameter_m": 0.58,
+  "user_declared_maximum_diameter_m": 0.6,
+  "conservative_diameter_m": 0.6,
+  "user_declared_all_protrusions_enclosed": true,
+  "dimension_source": "User declaration 2026-10-15; approx 0.58m and <=0.60m",
+  "physical_measurement_independently_verified": false,
+  "height_mass_inertia": "Retained legacy simulation assumptions; not real hardware measurement",
+  "fixed_settings": {
+    "imperfect_sensors": false,
+    "grid_route_clearance_m": 0.4,
+    "ego_inflation_m": 0.22,
+    "minimum_body_gap_m": 0.08,
+    "pose_safety_margin_m": 0.04
+  },
+  "training_only": true,
+  "competition_arena_verified": false
+}

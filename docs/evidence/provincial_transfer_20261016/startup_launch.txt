@@ -1,0 +1,446 @@
+{
+  "pass_": true,
+  "scope": "Read-only deployment/import/library/offline checks; no ROS motion target sent",
+  "modules": 39,
+  "sources": 692,
+  "installed_files": 80,
+  "routes": [
+    {
+      "length_m": 9.849999999999998,
+      "minimum_circle_gap_m": 0.1499999999999993
+    },
+    {
+      "length_m": 9.85,
+      "minimum_circle_gap_m": 0.1499999999999993
+    }
+  ],
+  "classification": "TRAINING-ONLY / PROVISIONAL"
+}
+[INFO] [launch]: All log files can be found below /home/rmnav/.ros/log/2026-10-16-17-21-00-362922-DESKTOP-5SJ6AH8-721
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ign-1]: process started with pid [765]
+[INFO] [radar_host_command.py-2]: process started with pid [767]
+[INFO] [radar_sim_electrical.py-3]: process started with pid [769]
+[INFO] [parameter_bridge-4]: process started with pid [771]
+[INFO] [static_transform_publisher-5]: process started with pid [773]
+[INFO] [inverted_sim_format_adapter.py-6]: process started with pid [775]
+[INFO] [gimbal_lio_mapping.py-7]: process started with pid [777]
+[INFO] [radar_fixed_odometry.py-8]: process started with pid [779]
+[INFO] [circle_navigation.py-9]: process started with pid [781]
+[INFO] [ego_planner_node-10]: process started with pid [785]
+[INFO] [ego_goal_adapter.py-11]: process started with pid [788]
+[INFO] [ego_trajectory_executor.py-12]: process started with pid [797]
+[static_transform_publisher-5] [INFO] [1792142460.595581578] [map_to_odom_identity]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-5] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-5] from 'map' to 'odom'
+[parameter_bridge-4] [INFO] [1792142460.656356407] [gazebo_bridge]: Creating GZ->ROS Bridge: [/clock (ignition.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.658824045] [gazebo_bridge]: Creating GZ->ROS Bridge: [/gazebo/odometry (ignition.msgs.Odometry) -> /gazebo/odometry (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.664543028] [gazebo_bridge]: Creating GZ->ROS Bridge: [/gimbal/joint_states (ignition.msgs.Model) -> /gimbal/joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.669439299] [gazebo_bridge]: Creating ROS->GZ Bridge: [/simulation/gimbal/feedback_enabled (std_msgs/msg/Bool) -> /simulation/gimbal/feedback_enabled (ignition.msgs.Boolean)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.671602244] [gazebo_bridge]: Creating ROS->GZ Bridge: [/gimbal/target (std_msgs/msg/Float64) -> /gimbal/target (ignition.msgs.Double)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.672759458] [gazebo_bridge]: Creating GZ->ROS Bridge: [/simulation/scan_inverted (ignition.msgs.LaserScan) -> /simulation/scan_inverted (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.674064111] [gazebo_bridge]: Creating GZ->ROS Bridge: [/simulation/lidar3d/points (ignition.msgs.PointCloudPacked) -> /simulation/lidar3d/points (sensor_msgs/msg/PointCloud2)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.675945616] [gazebo_bridge]: Creating GZ->ROS Bridge: [/simulation/imu3d (ignition.msgs.IMU) -> /simulation/imu3d (sensor_msgs/msg/Imu)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.677435535] [gazebo_bridge]: Creating GZ->ROS Bridge: [/simulation/imu_kinematics (ignition.msgs.StringMsg) -> /simulation/imu_kinematics (std_msgs/msg/String)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1792142460.678320707] [gazebo_bridge]: Creating ROS->GZ Bridge: [/model/omni_robot/cmd_vel (geometry_msgs/msg/Twist) -> /model/omni_robot/cmd_vel (ignition.msgs.Twist)] (Lazy 0)
+[ego_planner_node-10] [INFO] [1792142460.882655026] [ego_planner_node]: single drone:-1
+[ego_trajectory_executor.py-12] [INFO] [1792142461.024615172] [ego_trajectory_executor]: Holonomic executor: /planning/bspline -> /cmd_vel; control=(vx,vy,wz), enabled=True
+[ego_goal_adapter.py-11] [INFO] [1792142461.030556484] [ego_goal_adapter]: Planar goal adapter: /navigation/segment_goal -> /move_base_simple/goal; state=(x,y,yaw), frame=odom
+[gimbal_lio_mapping.py-7] [INFO] [1792142461.097752843] [isolated_lio_mapping]: SPARKFastLIO2 constructed
+[circle_navigation.py-9] [INFO] [1792142461.156562922] [gazebo_navigation_interface]: Loaded RULE-DIMENSION TRAINING FIXTURE / NOT OFFICIAL FIELD RECONSTRUCTION: start (4.70, 0.50), automatic goal (8.70, 4.25)
+[circle_navigation.py-9] [INFO] [1792142461.182853766] [gazebo_navigation_interface]: Gazebo backend: noisy motion-increment odometry, lidar matching=False, imperfect_sensors=False; known field boundaries are used as the prior navigation map.
+[circle_navigation.py-9] [INFO] [1792142461.184790030] [gazebo_navigation_interface]: STAGE2 LIO input only; no GT/no artificial odometry/no 2D pose correction
+[circle_navigation.py-9] [INFO] [1792142461.189655566] [gazebo_navigation_interface]: LIO safety: planning-only .075m wall envelope; .12m map rectangle reserve + explicit timing budget; raw-scan gap diagnostic only, scan validity remains a stop gate
+[circle_navigation.py-9] [INFO] [1792142461.202893580] [gazebo_navigation_interface]: CIRCLE ENVELOPE ACTIVE: radius=0.300m; .08m gap + .04m pose reserve + unchanged timing reserve; contract_sha256=bc8c070d9cc9276f5286f3828dd1c785b6a90f29aa139cd64c3cc12000963b31
+[ign-1] [1;31m[Err] [JointFeatures.cc:175] [0m[1;31mVelocity control does not respect positional limits of [0m[1;31mjoints if these joints do not have an effort limit. Please, [0m[1;31mset min and max effort for joint [[0m[1;31mgimbal_yaw[0m[1;31m] to values about -1e6 and 1e6 (or higher if working with [0m[1;31mheavy links).[0m[1;31m[0m
+[parameter_bridge-4] [INFO] [1792142463.446259211] [gazebo_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.449328069] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.555375230] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.555466388] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.661525549] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.661640660] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.762746950] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.762827243] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.857698826] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.857831603] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.955806274] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142463.955894360] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.056910714] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.056993622] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.155953647] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.156035588] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.256033521] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.256122332] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.357119839] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.357195853] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.453215235] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.453286491] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.556403072] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.556486513] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.657569461] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.657701872] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.759474203] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.759586738] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.860559393] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.860627241] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.954666386] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142464.954734332] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.055890631] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.055985281] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.156878123] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.156970452] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.258077933] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.258226243] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.357052902] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.357138515] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.457146876] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.457238668] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.557174677] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.557245323] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.659273859] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.659360221] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.761696157] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.761807045] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.861573357] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.861656502] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.958569287] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142465.958646155] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.056593669] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.056662632] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.158713676] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.158790458] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.258796145] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.258882774] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.357841484] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.357983086] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.456943597] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.457039003] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.558015069] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.558102190] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.656062635] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.656132238] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.754401571] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.754466014] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.853227667] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.853299010] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.955312182] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142466.955383943] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.055450198] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.055521006] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.153615030] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.153726940] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.254608949] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.254748226] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.354607910] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.354669389] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.456677392] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.456747853] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.555865596] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.555967200] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.657855952] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.657952574] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.757033571] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.757104759] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.856967024] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.857033172] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.956005300] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142467.956097243] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.054220214] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.054296441] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.154202293] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.154270218] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.256382807] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.256451081] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.361450269] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.361589443] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.458427895] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.458505231] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.555474772] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [INFO] [1792142468.555568610] [imu_processing]: IMU Initial Done
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.555613030] [isolated_lio_mapping]: No point, skip this scan!
+[gimbal_lio_mapping.py-7] 
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.657553822] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.755621474] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.862685868] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142468.962767511] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.060853277] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.162857267] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.256972607] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.358029114] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.460099685] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.557189629] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.660237502] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.760275865] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.863366444] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142469.963474539] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.063517058] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.163579822] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.260623833] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.361785758] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.461785375] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.560786129] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.661856606] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.756970525] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.857989337] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142470.961020526] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.060096595] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.165225822] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.263236293] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.361533532] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.457459528] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.555378854] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.659474270] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.756496871] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.862558795] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142471.962600740] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.056686743] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.156724029] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.261792960] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.356828836] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.456906764] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.566075969] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.660006478] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.758048432] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.858108943] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142472.957149122] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.058223648] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.157254939] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.257314212] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.357385327] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.457462520] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.560507963] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.660509516] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.766565801] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.859601291] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142473.958683766] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.059816750] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.157794105] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.259877065] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.357886726] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.458899271] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.559954075] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.658952682] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.760970688] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.855072326] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142474.957150705] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.061188517] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.158240689] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.258286195] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.357482359] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.457373972] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.556407380] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.660467884] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.761539575] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.856529371] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142475.961628266] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.057078973] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.156880291] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.266608456] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.360621123] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.457628110] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.556557059] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.657455733] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.759471515] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.855334946] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142476.958316590] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.057792146] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.157881320] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.261975451] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.357088107] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.458360509] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.559238302] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.658294971] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.758405992] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.859819377] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142477.959568292] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.060555610] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.158712323] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.258702415] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.359720928] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.457964676] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.558835180] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.658823792] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.759897637] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.858936683] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142478.957953377] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.057012430] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.159070140] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.258179393] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.359065151] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.458125175] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.557203461] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.656121747] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.758225608] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.857285484] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142479.959284284] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.057378164] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.157364813] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.258418167] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.357433568] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.457468632] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.556465749] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.657556387] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.758547989] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.857704100] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142480.956617855] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.057672825] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.157751745] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.260702226] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.358736356] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.457771626] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.558834059] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.657841489] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.758898241] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.857922201] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142481.959902728] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.059952769] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.158968053] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.260006939] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.359140324] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.463192579] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.561098169] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.659168283] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.757127220] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.857162729] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142482.957205212] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142483.057215070] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142483.159240393] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142483.256281074] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[gimbal_lio_mapping.py-7] [WARN] [1792142483.357372781] [isolated_lio_mapping]: meas.lidar->points.back().curvature (0.00) should be close to 100. Please check the `timestamp_unit` or values of `time` (or `t`) field of the point cloud input from your sensor.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[ego_planner_node-10] [INFO] [1792142483.456253028] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[static_transform_publisher-5] [INFO] [1792142483.456333492] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [ego_trajectory_executor.py-12]: sending signal 'SIGINT' to process[ego_trajectory_executor.py-12]
+[INFO] [ego_goal_adapter.py-11]: sending signal 'SIGINT' to process[ego_goal_adapter.py-11]
+[INFO] [ego_planner_node-10]: sending signal 'SIGINT' to process[ego_planner_node-10]
+[INFO] [circle_navigation.py-9]: sending signal 'SIGINT' to process[circle_navigation.py-9]
+[INFO] [radar_fixed_odometry.py-8]: sending signal 'SIGINT' to process[radar_fixed_odometry.py-8]
+[INFO] [gimbal_lio_mapping.py-7]: sending signal 'SIGINT' to process[gimbal_lio_mapping.py-7]
+[INFO] [inverted_sim_format_adapter.py-6]: sending signal 'SIGINT' to process[inverted_sim_format_adapter.py-6]
+[INFO] [static_transform_publisher-5]: sending signal 'SIGINT' to process[static_transform_publisher-5]
+[INFO] [parameter_bridge-4]: sending signal 'SIGINT' to process[parameter_bridge-4]
+[ERROR] [ego_planner_node-10]: process has died [pid 785, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/ego_planner/lib/ego_planner/ego_planner_node --ros-args -r __node:=ego_planner_node --params-file /home/rmnav/aeromind-transfer-20261016/install/uav_bringup/share/uav_bringup/config/ego_provincial_2025_provisional.yaml --params-file /tmp/launch_params_91d4qfgc --params-file /tmp/launch_params_s5f0r9gq -r odom_world:=/ground/odometry -r grid_map/odom:=/ground/odometry -r grid_map/cloud:=/cloud_registered_2d'].
+[INFO] [radar_sim_electrical.py-3]: sending signal 'SIGINT' to process[radar_sim_electrical.py-3]
+[ERROR] [static_transform_publisher-5]: process has died [pid 773, exit code -2, cmd '/opt/ros/humble/lib/tf2_ros/static_transform_publisher --frame-id map --child-frame-id odom --ros-args -r __node:=map_to_odom_identity --params-file /tmp/launch_params_nhatsr74'].
+[INFO] [radar_host_command.py-2]: sending signal 'SIGINT' to process[radar_host_command.py-2]
+[INFO] [ign-1]: sending signal 'SIGINT' to process[ign-1]
+[parameter_bridge-4] [INFO] [1792142483.456369772] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ERROR] [radar_sim_electrical.py-3]: process has died [pid 769, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/radar_sim_electrical.py --ros-args --params-file /tmp/launch_params_jd8om5v_'].
+[ego_trajectory_executor.py-12] Traceback (most recent call last):
+[ego_trajectory_executor.py-12]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_trajectory_executor.py", line 286, in <module>
+[ego_trajectory_executor.py-12]     main()
+[ego_trajectory_executor.py-12]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_trajectory_executor.py", line 280, in main
+[ego_trajectory_executor.py-12]     node.destroy_node()
+[ego_trajectory_executor.py-12]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_trajectory_executor.py", line 269, in destroy_node
+[ego_trajectory_executor.py-12]     super().destroy_node()
+[ego_trajectory_executor.py-12]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1687, in destroy_node
+[ego_trajectory_executor.py-12]     self.destroy_subscription(self._subscriptions[0])
+[ego_trajectory_executor.py-12]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1583, in destroy_subscription
+[ego_trajectory_executor.py-12]     subscription.destroy()
+[ego_trajectory_executor.py-12]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/subscription.py", line 80, in destroy
+[ego_trajectory_executor.py-12]     self.handle.destroy_when_not_in_use()
+[ego_trajectory_executor.py-12] KeyboardInterrupt
+[ego_goal_adapter.py-11] Traceback (most recent call last):
+[ego_goal_adapter.py-11]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_goal_adapter.py", line 133, in <module>
+[ego_goal_adapter.py-11]     main()
+[ego_goal_adapter.py-11]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_goal_adapter.py", line 127, in main
+[ego_goal_adapter.py-11]     node.destroy_node()
+[ego_goal_adapter.py-11]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1687, in destroy_node
+[ego_goal_adapter.py-11]     self.destroy_subscription(self._subscriptions[0])
+[ego_goal_adapter.py-11]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1583, in destroy_subscription
+[ego_goal_adapter.py-11]     subscription.destroy()
+[ego_goal_adapter.py-11]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/subscription.py", line 80, in destroy
+[ego_goal_adapter.py-11]     self.handle.destroy_when_not_in_use()
+[ego_goal_adapter.py-11] KeyboardInterrupt
+[circle_navigation.py-9] Traceback (most recent call last):
+[circle_navigation.py-9]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/circle_navigation.py", line 80, in <module>
+[circle_navigation.py-9]     if __name__=='__main__':main()
+[circle_navigation.py-9]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/circle_navigation.py", line 76, in main
+[circle_navigation.py-9]     executor.shutdown();node.destroy_node()
+[circle_navigation.py-9]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/gazebo_navigation_interface.py", line 788, in destroy_node
+[circle_navigation.py-9]     super().destroy_node()
+[circle_navigation.py-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1685, in destroy_node
+[ERROR] [radar_host_command.py-2]: process has died [pid 767, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/radar_host_command.py --ros-args --params-file /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/share/provincial_rule900_scratch_sim/config/radar_fixed_sim.yaml --params-file /tmp/launch_params_cc4e8svw'].
+[circle_navigation.py-9]     self.destroy_publisher(self._publishers[0])
+[circle_navigation.py-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1565, in destroy_publisher
+[circle_navigation.py-9]     publisher.destroy()
+[circle_navigation.py-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 99, in destroy
+[circle_navigation.py-9]     self.__publisher.destroy_when_not_in_use()
+[circle_navigation.py-9] KeyboardInterrupt
+[gimbal_lio_mapping.py-7] [INFO] [1792142483.471772403] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[radar_fixed_odometry.py-8] Traceback (most recent call last):
+[radar_fixed_odometry.py-8]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/radar_fixed_odometry.py", line 115, in <module>
+[radar_fixed_odometry.py-8]     if __name__=='__main__':main()
+[radar_fixed_odometry.py-8]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/radar_fixed_odometry.py", line 113, in main
+[radar_fixed_odometry.py-8]     executor.shutdown();node.destroy_node()
+[radar_fixed_odometry.py-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1696, in destroy_node
+[radar_fixed_odometry.py-8]     self.__node.destroy_when_not_in_use()
+[radar_fixed_odometry.py-8] KeyboardInterrupt
+[inverted_sim_format_adapter.py-6] Traceback (most recent call last):
+[inverted_sim_format_adapter.py-6]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/inverted_sim_format_adapter.py", line 148, in <module>
+[inverted_sim_format_adapter.py-6]     if __name__=='__main__':main()
+[inverted_sim_format_adapter.py-6]   File "/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/inverted_sim_format_adapter.py", line 145, in main
+[inverted_sim_format_adapter.py-6]     executor.shutdown();node.destroy_node()
+[inverted_sim_format_adapter.py-6]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1696, in destroy_node
+[inverted_sim_format_adapter.py-6]     self.__node.destroy_when_not_in_use()
+[inverted_sim_format_adapter.py-6] KeyboardInterrupt
+[parameter_bridge-4] [INFO] [1792142483.478754425] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ERROR] [ego_trajectory_executor.py-12]: process has died [pid 797, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_trajectory_executor.py --ros-args -r __node:=ego_trajectory_executor --params-file /home/rmnav/aeromind-transfer-20261016/install/uav_planning/share/uav_planning/config/ego_trajectory_executor.yaml --params-file /tmp/launch_params_igr30hpc --params-file /tmp/launch_params_ooliuwpl'].
+[ERROR] [inverted_sim_format_adapter.py-6]: process has died [pid 775, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/inverted_sim_format_adapter.py --ros-args --params-file /tmp/launch_params_spvuere0'].
+[ERROR] [radar_fixed_odometry.py-8]: process has died [pid 779, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/radar_fixed_odometry.py --ros-args --params-file /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/share/provincial_rule900_scratch_sim/config/radar_fixed_sim.yaml --params-file /tmp/launch_params_golf558d'].
+[ERROR] [ego_goal_adapter.py-11]: process has died [pid 788, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/ego_goal_adapter.py --ros-args -r __node:=ego_goal_adapter --params-file /home/rmnav/aeromind-transfer-20261016/install/uav_planning/share/uav_planning/config/ego_goal_adapter.yaml --params-file /tmp/launch_params_yem8dyho --params-file /tmp/launch_params_ih1g2v0r'].
+[INFO] [ign-1]: process has finished cleanly [pid 765]
+[ERROR] [circle_navigation.py-9]: process has died [pid 781, exit code -2, cmd '/home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/lib/provincial_rule900_scratch_sim/circle_navigation.py --ros-args -r __node:=gazebo_navigation_interface --params-file /home/rmnav/aeromind-transfer-20261016/install/provincial_rule900_scratch_sim/share/provincial_rule900_scratch_sim/config/radar_fixed_sim.yaml --params-file /tmp/launch_params_57pey8mf --params-file /tmp/launch_params_utpmq207 -r /gazebo/odometry:=/localization/lio_navigation_odometry -r /model/omni_robot/cmd_vel:=/navigation/guarded_body_cmd_vel'].
+[INFO] [parameter_bridge-4]: process has finished cleanly [pid 771]
+[INFO] [gimbal_lio_mapping.py-7]: process has finished cleanly [pid 777]

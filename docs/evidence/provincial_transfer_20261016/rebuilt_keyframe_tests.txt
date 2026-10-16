@@ -1,0 +1,17 @@
+[INFO] [1792142336.776383824] [spark_fast_lio_node]: SPARKFastLIO2 constructed
+[WARN] [1792142336.776685301] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1792142336.806794137] [spark_fast_lio_node]: SPARKFastLIO2 constructed
+Multi thread started 
+first_call_creates_anchor 1
+subvoxel_reobserve_skipped 1
+skip_does_not_clamp_estimated_position 1
+two_voxels_translation_inserts 1
+stationary_near_new_keyframe_skipped 1
+rotation_parallax_inserts 1
+rotation_does_not_clamp_velocity 1
+new_region_keeps_building_map 1
+Multi thread started 
+anchor_is_per_node_not_process_static 1
+Rebuild thread terminated normally
+Rebuild thread terminated normally
+checks=9 failures=0

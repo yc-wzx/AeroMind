@@ -1,6 +1,7 @@
 // #include <fstream>
 #include <ego_planner/planner_manager.h>
 #include <thread>
+#include <cmath>
 #include "visualization_msgs/msg/marker.hpp" // zx-todo
 
 namespace ego_planner
@@ -148,6 +149,14 @@ namespace ego_planner
 
         double t;
         double t_cur = (trajectory_clock_->now() - local_data_.start_time_).seconds();
+        // Reuse is valid only within a finite trajectory time interval.
+        if (!std::isfinite(t_cur) || !std::isfinite(local_data_.duration_) ||
+            local_data_.duration_ <= 0.0 || t_cur < 0.0 || t_cur > local_data_.duration_)
+        {
+          flag_force_polynomial = true;
+          flag_regenerate = true;
+          continue;
+        }
 
         vector<double> pseudo_arc_length;
         vector<Eigen::Vector3d> segment_point;
@@ -161,6 +170,18 @@ namespace ego_planner
           }
         }
         t -= ts;
+
+        // An expired or nearly exhausted previous trajectory may provide zero
+        // or one sample. Reuse requires at least two paired arc-length samples;
+        // otherwise the append and resampling branches index outside vectors.
+        // Restart using the existing polynomial initialization path.
+        if (segment_point.size() < 2 ||
+            pseudo_arc_length.size() != segment_point.size())
+        {
+          flag_force_polynomial = true;
+          flag_regenerate = true;
+          continue;
+        }
 
         double poly_time = (local_data_.position_traj_.evaluateDeBoorT(t) - local_target_pt).norm() / pp_.max_vel_ * 2;
         if (poly_time > ts)
@@ -186,6 +207,14 @@ namespace ego_planner
           }
         }
 
+        // A zero/nonfinite arc cannot be resampled into a usable seed.
+        if (!std::isfinite(pseudo_arc_length.back()) || pseudo_arc_length.back() <= 0.0)
+        {
+          flag_force_polynomial = true;
+          flag_regenerate = true;
+          continue;
+        }
+
         double sample_length = 0;
         double cps_dist = pp_.ctrl_pt_dist * 1.5; // cps_dist will be divided by 1.5 in the next
         size_t id = 0;
@@ -195,7 +224,7 @@ namespace ego_planner
           point_set.clear();
           sample_length = 0;
           id = 0;
-          while ((id <= pseudo_arc_length.size() - 2) && sample_length <= pseudo_arc_length.back())
+          while ((id + 1 < pseudo_arc_length.size()) && sample_length <= pseudo_arc_length.back())
           {
             if (sample_length >= pseudo_arc_length[id] && sample_length < pseudo_arc_length[id + 1])
             {

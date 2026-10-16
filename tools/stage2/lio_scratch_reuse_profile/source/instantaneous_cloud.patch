@@ -1,0 +1,25 @@
+--- include/imu_processing.hpp
++++ include/imu_processing.hpp
+@@ -328,6 +328,13 @@
+ 
+   /*** undistort each lidar point (backward propagation) ***/
+   if (pcl_out.points.begin() == pcl_out.points.end()) return;
++  // IMU propagation and last-lidar bookkeeping above still execute. A truly
++  // simultaneous point set needs no motion compensation at its own timestamp.
++  // Do not extrapolate rays through an IMU interval boundary. Real nonzero
++  // point-time scans continue through the original compensation algorithm.
++  if (std::all_of(pcl_out.points.begin(), pcl_out.points.end(),
++      [](const auto &point) { return point.curvature == 0.0f; })) return;
++
+   auto it_pcl = pcl_out.points.end() - 1;
+   for (auto it_kp = IMUpose.end() - 1; it_kp != IMUpose.begin(); it_kp--) {
+     auto head = it_kp - 1;
+@@ -362,7 +369,7 @@
+       it_pcl->y = P_compensate(1);
+       it_pcl->z = P_compensate(2);
+ 
+-      if (it_pcl == pcl_out.points.begin()) break;
++      if (it_pcl == pcl_out.points.begin()) return;
+     }
+   }
+ }

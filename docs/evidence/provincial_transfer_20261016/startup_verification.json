@@ -1,0 +1,19 @@
+{
+  "pass_": true,
+  "failure": null,
+  "scope": "Fresh rebuilt checkout startup/real process paths/synthetic sensors/LIO/idle stop; no navigation goal or real hardware",
+  "sim_end_s": 20.016,
+  "counts": {
+    "/clock": 5003,
+    "/simulation/imu3d": 5002,
+    "/simulation/lidar3d/points": 200,
+    "/model/omni_robot/cmd_vel": 2990,
+    "/gazebo/odometry": 1000,
+    "/lio/odometry": 3730,
+    "/localization/lio_navigation_odometry": 3655,
+    "/goal_pose": 0
+  },
+  "one_gazebo": true,
+  "launch_pid": 721,
+  "owned_launch_stopped": true
+}

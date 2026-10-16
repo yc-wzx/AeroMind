@@ -1,0 +1,8 @@
+/**:
+  ros__parameters:
+    fixed_chassis_heading_confirmed: true
+    # Training simulation declarations; not measured hardware calibration.
+    initial_base: [4.7, 0.5, 0.15, 1.5707963267948966]
+    initial_joint: 0.0
+    pivot: [0.06, 0.0, 0.25]
+    lever: [0.03, 0.0, 0.0]

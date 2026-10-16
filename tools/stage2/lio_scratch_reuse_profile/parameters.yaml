@@ -1,0 +1,93 @@
+/isolated_lio_mapping:
+  ros__parameters:
+    common:
+      base_frame: ''
+      imu_frame: lio_imu
+      imu_queue_depth: 32
+      lidar_frame: lio_lidar
+      map_frame: lio_odom
+      planar_height: 0.0
+      planar_mode: false
+      save_dir: ''
+      sequence_name: ''
+      time_sync_en: false
+      visualization_frame: imu
+    cube_side_length: 200.0
+    extrinsics_timeout_s: 10.0
+    filter_size_map: 0.05
+    gravity_alignment:
+      acc_diff_thr: 0.2
+      enable_gravity_alignment: false
+      g_base:
+      - 0.0
+      - 0.0
+      - -1.0
+      num_gravity_measurements_thr: 20
+      num_moving_frames_thr: 20
+    map_file_path: ''
+    mapping:
+      acc_cov: 1.0e-06
+      b_acc_cov: 0.0
+      b_gyr_cov: 0.0
+      det_range: 16.0
+      extrinsic_R:
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      extrinsic_T:
+      - 0.0
+      - 0.0
+      - 0.0
+      extrinsic_est_en: false
+      fov_degree: 360.0
+      gyr_cov: 1.0e-08
+    max_iteration: 4
+    pcd_save:
+      interval: -1
+      pcd_save_en: false
+    pcl_verbose: false
+    point_filter_num: 1
+    point_filter_num_for_preprocessing: 1
+    preprocess:
+      blind: 0.1
+      blind_for_human_pilots: 1.5
+      lidar_type: 5
+      scan_line: 4
+      scan_rate: 10
+      timestamp_unit: 3
+    publish:
+      dense_publish_en: true
+      path_en: true
+      scan_baseframe_pub_en: false
+      scan_bodyframe_pub_en: false
+      scan_lidarframe_pub_en: false
+      scan_publish_en: true
+    qos_overrides:
+      /clock:
+        subscription:
+          depth: 1
+          durability: volatile
+          history: keep_last
+          reliability: best_effort
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+      /tf:
+        publisher:
+          depth: 100
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+    runtime_pos_log_enable: false
+    use_sim_time: true
+    verbose: false
+

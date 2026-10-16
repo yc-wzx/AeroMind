@@ -1,5 +1,13 @@
 # 从 GitHub 迁移到小电脑
 
+## 2026-10-16 当前入口
+
+最新省赛赛道四训练仿真的下载、构建、显示命令见
+[PROVINCIAL_RULE900_DEPLOYMENT.md](PROVINCIAL_RULE900_DEPLOYMENT.md)。
+推荐新目录保留已有代码；源码重新构建，不复制旧二进制。
+原入口继续保留。下面为 2026-10-02 历史迁移说明。
+
+
 本次上传保存截至 2026-10-02 的省赛暂定训练场代码，推荐入口为
 `provincial_stage2_lio_fine_map.launch.py`。仿真传感器、三维 LIO、全向导航及
 等待停车逻辑均保留；LIO 的 `filter_size_map=0.05`，原有入口继续保留。
@@ -58,7 +66,7 @@ sudo apt update
 sudo apt install -y build-essential cmake git python3-colcon-common-extensions \
   python3-numpy python3-scipy python3-pil python3-yaml python3-matplotlib \
   libeigen3-dev libpcl-dev \
-  libignition-gazebo6-dev libignition-plugin1-dev libignition-sensors6-dev \
+  libignition-gazebo6-dev libignition-plugin-dev libignition-sensors6-dev \
   ros-humble-desktop ros-humble-ros-gz ros-humble-pcl-ros \
   ros-humble-pcl-conversions ros-humble-cv-bridge \
   ros-humble-tf2-eigen ros-humble-tf2-geometry-msgs ros-humble-tf2-sensor-msgs

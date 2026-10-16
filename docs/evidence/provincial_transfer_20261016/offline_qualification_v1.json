@@ -1,0 +1,211 @@
+{
+  "pass_": true,
+  "scope": "Exact whole callback replay ON/OFF on historical241scans/6013IMUs; not live performance/repeatability proof",
+  "results": {
+    "on": {
+      "original": {
+        "elapsed_s": 4.425873790000082,
+        "main_callback_ms": {
+          "n": 241,
+          "p50": 19.339549,
+          "p90": 20.860604,
+          "p99": 25.071881,
+          "max": 28.048416
+        },
+        "stages_ms": {
+          "propagation": {
+            "n": 188,
+            "p50": 0.247774,
+            "p90": 0.28012,
+            "p99": 0.321698,
+            "max": 0.422148
+          },
+          "laser_update": {
+            "n": 188,
+            "p50": 18.994566499999998,
+            "p90": 20.378967,
+            "p99": 24.591073,
+            "max": 27.180289
+          }
+        },
+        "main_post_count": 241,
+        "filter_state_count": 6877,
+        "writer_health": {
+          "format": 1,
+          "received": 20105,
+          "admitted": 20105,
+          "written": 20105,
+          "dropped": 0,
+          "errors": 0,
+          "capture_errors": 0,
+          "nonfinite_fields": 0,
+          "closed": true,
+          "queue_remaining": 0,
+          "peak_events": 2868,
+          "peak_bytes": 2951011,
+          "max_events": 32768,
+          "max_bytes": 67108864,
+          "serialize_ns": 423588019,
+          "write_ns": 30250692
+        }
+      },
+      "candidate": {
+        "elapsed_s": 3.957348588000059,
+        "main_callback_ms": {
+          "n": 241,
+          "p50": 16.827367,
+          "p90": 17.976416,
+          "p99": 22.163518,
+          "max": 23.936495
+        },
+        "stages_ms": {
+          "propagation": {
+            "n": 188,
+            "p50": 0.233202,
+            "p90": 0.273584,
+            "p99": 0.333675,
+            "max": 0.491794
+          },
+          "laser_update": {
+            "n": 188,
+            "p50": 16.395446,
+            "p90": 17.453261,
+            "p99": 21.777576,
+            "max": 23.114947
+          }
+        },
+        "main_post_count": 241,
+        "filter_state_count": 6877,
+        "writer_health": {
+          "format": 1,
+          "received": 20105,
+          "admitted": 20105,
+          "written": 20105,
+          "dropped": 0,
+          "errors": 0,
+          "capture_errors": 0,
+          "nonfinite_fields": 0,
+          "closed": true,
+          "queue_remaining": 0,
+          "peak_events": 2835,
+          "peak_bytes": 2857457,
+          "max_events": 32768,
+          "max_bytes": 67108864,
+          "serialize_ns": 411715032,
+          "write_ns": 21543329
+        }
+      },
+      "exact_main_state_and_covariance_count": 241,
+      "exact_filter_state_count": 6877,
+      "exact_input_process_events": 13610
+    },
+    "off": {
+      "original": {
+        "elapsed_s": 1.864031252000018,
+        "main_callback_ms": {
+          "n": 241,
+          "p50": 4.513446,
+          "p90": 5.085915,
+          "p99": 5.627421,
+          "max": 6.91478
+        },
+        "stages_ms": {
+          "propagation": {
+            "n": 238,
+            "p50": 0.2408455,
+            "p90": 0.268596,
+            "p99": 0.332033,
+            "max": 0.814391
+          },
+          "laser_update": {
+            "n": 238,
+            "p50": 3.2030649999999996,
+            "p90": 3.740894,
+            "p99": 4.237446,
+            "max": 4.982219
+          }
+        },
+        "main_post_count": 241,
+        "filter_state_count": 8486,
+        "writer_health": {
+          "format": 1,
+          "received": 19966,
+          "admitted": 19966,
+          "written": 19966,
+          "dropped": 0,
+          "errors": 0,
+          "capture_errors": 0,
+          "nonfinite_fields": 0,
+          "closed": true,
+          "queue_remaining": 0,
+          "peak_events": 83,
+          "peak_bytes": 100919,
+          "max_events": 32768,
+          "max_bytes": 67108864,
+          "serialize_ns": 450082844,
+          "write_ns": 29224090
+        }
+      },
+      "candidate": {
+        "elapsed_s": 1.8438102149999622,
+        "main_callback_ms": {
+          "n": 241,
+          "p50": 4.23771,
+          "p90": 4.639359,
+          "p99": 5.729612,
+          "max": 6.788438
+        },
+        "stages_ms": {
+          "propagation": {
+            "n": 238,
+            "p50": 0.22945300000000002,
+            "p90": 0.25822,
+            "p99": 0.289427,
+            "max": 0.351706
+          },
+          "laser_update": {
+            "n": 238,
+            "p50": 3.063122,
+            "p90": 3.484325,
+            "p99": 3.999965,
+            "max": 4.846381
+          }
+        },
+        "main_post_count": 241,
+        "filter_state_count": 8486,
+        "writer_health": {
+          "format": 1,
+          "received": 19966,
+          "admitted": 19966,
+          "written": 19966,
+          "dropped": 0,
+          "errors": 0,
+          "capture_errors": 0,
+          "nonfinite_fields": 0,
+          "closed": true,
+          "queue_remaining": 0,
+          "peak_events": 83,
+          "peak_bytes": 100919,
+          "max_events": 32768,
+          "max_bytes": 67108864,
+          "serialize_ns": 433086060,
+          "write_ns": 25911619
+        }
+      },
+      "exact_main_state_and_covariance_count": 241,
+      "exact_filter_state_count": 8486,
+      "exact_input_process_events": 13471
+    }
+  },
+  "tests": {
+    "production_prediction_tests": true,
+    "calibration_tests": true,
+    "keyframe_tests": true
+  },
+  "inputs_unchanged": true,
+  "original_profile_unchanged": true,
+  "binary_sha256": "84fac84931570898ef4e41f1842311db8e429c4b738893a8abaf0fc878fe5dcc",
+  "library_sha256": "f4ecd6a18e0ce9cc7ed4c4a16aaff464e21b8848db6d8878fd6c8b342b23a667",
+  "source_header_sha256": "a651606d7d47971ece006db892ffd286a6a68f295f4d06f482194f690fbb22c5",
+  "parameters_sha256": "6f4505ba825edd5a7fc0b9c1964ef85232a6dcb73461ae43593c622bfc3a7196"
+}
