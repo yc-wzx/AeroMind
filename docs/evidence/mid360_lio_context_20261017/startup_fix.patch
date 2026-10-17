@@ -1,0 +1,20 @@
+diff --git a/tools/hardware/mid360_lio/start.py b/tools/hardware/mid360_lio/start.py
+index 82e1bf4..588ab6d 100644
+--- a/tools/hardware/mid360_lio/start.py
++++ b/tools/hardware/mid360_lio/start.py
+@@ -14 +14 @@ from inspect_raw import inspect
+-def live_ready():
++def live_ready(timeout_s=8.):
+@@ -16,0 +17 @@ def live_ready():
++    from rclpy.executors import SingleThreadedExecutor
+@@ -21,0 +23,2 @@ def live_ready():
++    # A scoped Context requires its own executor; the global executor uses the default Context.
++    executor=SingleThreadedExecutor(context=context);executor.add_node(node)
+@@ -34 +37 @@ def live_ready():
+-        deadline=time.monotonic()+8.;endpoints={}
++        deadline=time.monotonic()+timeout_s;endpoints={}
+@@ -36 +39 @@ def live_ready():
+-            rclpy.spin_once(node,timeout_sec=.01)
++            executor.spin_once(timeout_sec=.01)
+@@ -49,0 +53 @@ def live_ready():
++        executor.remove_node(node);executor.shutdown()

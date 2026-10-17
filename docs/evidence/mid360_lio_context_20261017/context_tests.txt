@@ -1,0 +1,10 @@
+test_bad_imu_still_rejected (__main__.StartContextTests) ... ok
+test_duplicate_lio_publisher_still_rejected (__main__.StartContextTests) ... ok
+test_missing_inputs_fail_cleanly (__main__.StartContextTests) ... ok
+test_ready_uses_production_executor_with_default_context_uninitialized (__main__.StartContextTests) ... ok
+test_wrong_publisher_still_rejected (__main__.StartContextTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.513s
+
+OK

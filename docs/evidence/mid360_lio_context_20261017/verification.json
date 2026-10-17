@@ -1,0 +1,23 @@
+{
+  "before_production_exception_reproduced": true,
+  "ros_distro": "humble",
+  "synthetic_test_domain": 217,
+  "real_hardware_used": false,
+  "context_regression_tests": 5,
+  "existing_static_tests": 4,
+  "all_tests_pass": true,
+  "repeated_valid_ready_calls": 2,
+  "default_context_uninitialized": true,
+  "raw_manifest_preserved": {
+    "build_inputs": 399,
+    "build_check": true,
+    "real_hardware_tested": false
+  },
+  "source_sha256": {
+    "tools/hardware/mid360_lio/start.py": "e8ae0d1be418796d6255bb5a209f5db58cfc8149335223124f270ac4fb84fcd5",
+    "tools/hardware/mid360_lio/test_start_context.py": "a42197be27a99c52dad1fa52be908bba5a8dd3dbdd6061c4af873580d720fb86"
+  },
+  "user_stationary_lio_validation": "PENDING; last capture has zero messages",
+  "navigation_changed": false,
+  "motor_commands_sent": false
+}

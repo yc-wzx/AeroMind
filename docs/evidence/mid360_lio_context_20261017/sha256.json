@@ -1,0 +1,9 @@
+{
+  "before_reproduction.txt": "037031cadaf46c44cf6d0cf008fa22228f5f45a2e0fbb97215995a86bbdf7049",
+  "context_tests.txt": "9fb747b3323d418eda10499619c26a83aaf5a56dd2838a21a928a8e51b4249a4",
+  "raw_manifest_preserved.json": "ee0c25d1b7fdb3d524930d12ce4993228061b04843a3c6196cb08671c1d9dcd4",
+  "start_before.py": "03cea3553414aa57c16330332c04d7b11b4711b24d27150ad3d8a3d214cd7ccc",
+  "startup_fix.patch": "42fc0c803a70f03500f807b7ac1bf2215aa337445c7b1570e60e6faaf3aea28f",
+  "static_tests.txt": "f385b24c6cff0cc47550601615149df699684941394d2b7cd5031fcbbd042a0d",
+  "verification.json": "5af40c342fc69c2ab2712e5cca49c9955e44c1905e2f17e95e587a58854419a7"
+}

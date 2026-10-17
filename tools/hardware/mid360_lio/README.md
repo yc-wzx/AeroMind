@@ -16,3 +16,10 @@ After initialization, keep device/gimbal/chassis stationary and run the separate
 observe_static.sh --seconds 30 from another terminal. Evidence completeness and
 relative estimated drift are reported; no ground-truth or navigation acceptance.
 The raw sensor-local map is not yet a gravity-aligned/chassis-centred arena map.
+
+The startup precheck also owns a SingleThreadedExecutor bound to its scoped ROS
+Context. It does not use the uninitialized default/global executor. Startup
+readiness thresholds and the raw build manifest remain unchanged.
+The Context regression tests use synthetic sensor messages only in a separate
+local ROS domain; do not run them in the hardware domain:
+MID360_ROS_DOMAIN_ID=217 bash tools/hardware/mid360/env.sh python3 -B tools/hardware/mid360_lio/test_start_context.py

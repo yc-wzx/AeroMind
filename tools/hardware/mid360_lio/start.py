@@ -11,14 +11,17 @@ from core import POINTS,IMU_SI,ODOM,stamp_ns,inspect_cloud,imu_values,sha
 from preflight import MANIFEST,verify_build
 from inspect_raw import inspect
 
-def live_ready():
+def live_ready(timeout_s=8.):
     import rclpy
     from rclpy.context import Context
+    from rclpy.executors import SingleThreadedExecutor
     from rclpy.node import Node
     from rclpy.qos import qos_profile_sensor_data
     from sensor_msgs.msg import PointCloud2,Imu
     context=Context();rclpy.init(context=context)
     node=Node('mid360_lio_input_precheck',context=context);latest={};counts={POINTS:0,IMU_SI:0};errors=[]
+    # A scoped Context requires its own executor; the global executor uses the default Context.
+    executor=SingleThreadedExecutor(context=context);executor.add_node(node)
     def receive(topic,msg):
         try:
             stamp=stamp_ns(msg)
@@ -31,9 +34,9 @@ def live_ready():
     subs=[node.create_subscription(kind,topic,lambda msg,t=topic:receive(t,msg),qos_profile_sensor_data)
           for topic,kind in [(POINTS,PointCloud2),(IMU_SI,Imu)]]
     try:
-        deadline=time.monotonic()+8.;endpoints={}
+        deadline=time.monotonic()+timeout_s;endpoints={}
         while time.monotonic()<deadline:
-            rclpy.spin_once(node,timeout_sec=.01)
+            executor.spin_once(timeout_sec=.01)
             if node.get_publishers_info_by_topic(ODOM):raise RuntimeError('A LIO odometry publisher already exists; do not start a duplicate')
             now=time.monotonic()
             if counts[POINTS]>=5 and counts[IMU_SI]>=20:
@@ -47,6 +50,7 @@ def live_ready():
                                 timestamps_modified=False,pose_scope='sensor-local only; no navigation frames')
         raise RuntimeError('Live raw/SI inputs not ready: '+json.dumps(dict(counts=counts,errors=errors[-5:])))
     finally:
+        executor.remove_node(node);executor.shutdown()
         node.destroy_node();rclpy.shutdown(context=context)
 
 def main():
