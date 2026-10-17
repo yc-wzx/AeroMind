@@ -1,0 +1,142 @@
+{
+  "scope": "REAL SENSOR-LOCAL STATIC LIO DIAGNOSTIC; NOT NAVIGATION ACCEPTANCE",
+  "evidence_complete": false,
+  "stream": {
+    "pass_": false,
+    "count": 6301,
+    "valid_rows": 6301,
+    "errors": 0,
+    "observed_span_s": 30.001034516,
+    "receive_hz": 209.99275863771015,
+    "sensor_span_s": 30.000594351,
+    "max_receive_gap_s": 0.019189316,
+    "max_sensor_gap_s": 0.010102126000000001,
+    "duplicate_stamps": 0,
+    "regressed_stamps": 300
+  },
+  "drift": {
+    "samples": 6301,
+    "first_position_m": [
+      -0.07067624099318136,
+      0.013736851548836452,
+      -0.04872607871044308
+    ],
+    "last_position_m": [
+      -0.07219391278388605,
+      0.025569341848863038,
+      -0.043097153528745116
+    ],
+    "max_translation_from_first_m": 0.01909342107875704,
+    "end_translation_from_first_m": 0.013190752558731342,
+    "max_rotation_from_first_deg": 0.5626920134926516,
+    "end_rotation_from_first_deg": 0.09517551735165952,
+    "meaning": "Relative estimated sensor drift under operator-declared stationary condition; not true position error"
+  },
+  "health": {
+    "received": 6301,
+    "written": 6301,
+    "actual_lines": 6301,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers": [
+    {
+      "name": "mid360_real_lio",
+      "namespace": "/hardware/mid360/lio",
+      "type": "nav_msgs/msg/Odometry"
+    }
+  ],
+  "actual_parameters": {
+    "use_sim_time": {
+      "type": 1,
+      "string_value": "",
+      "bool_value": false,
+      "double_array_value": []
+    },
+    "common.visualization_frame": {
+      "type": 4,
+      "string_value": "imu",
+      "bool_value": false,
+      "double_array_value": []
+    },
+    "common.imu_frame": {
+      "type": 4,
+      "string_value": "mid360_imu",
+      "bool_value": false,
+      "double_array_value": []
+    },
+    "common.map_frame": {
+      "type": 4,
+      "string_value": "mid360_local_odom",
+      "bool_value": false,
+      "double_array_value": []
+    },
+    "common.base_frame": {
+      "type": 4,
+      "string_value": "",
+      "bool_value": false,
+      "double_array_value": []
+    },
+    "common.time_sync_en": {
+      "type": 1,
+      "string_value": "",
+      "bool_value": false,
+      "double_array_value": []
+    },
+    "mapping.extrinsic_T": {
+      "type": 8,
+      "string_value": "",
+      "bool_value": false,
+      "double_array_value": [
+        -0.011,
+        -0.02329,
+        0.04412
+      ]
+    },
+    "mapping.extrinsic_R": {
+      "type": 8,
+      "string_value": "",
+      "bool_value": false,
+      "double_array_value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "inputs_unchanged": true,
+  "raw_build_manifest_sha256": "2ae9f90c27ebc8f82457eec81427b7ff48b8f3727dc50d54e4496354cc895a9a",
+  "lio_stage_input_sha256": {
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/lio_mid360_static.yaml": "3e9189d347958b7abb1ad0dc15eb84924cee7ea379a7178ca242d9cb1e0f7292",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/tests.py": "50f4231beb574d3361e996af30ff7d4a83d7ca33803d79115dcf6cda918f676e",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/readonly_lio.launch.py": "e633e630cc4a568cac8f9509466510899be410e8d8d061ee98193495d28a925c",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/run.sh": "4e85cd6714ef6d7e11ce04682fa4fc6947d43832a378ebd7c4adc440929740ba",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/observe_static.sh": "c15a2adcf0b6bac9c11ca7b6318e0fc4fc99b9610bbba8185312e93045b2c9d0",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/inspect_raw.py": "5449dc355b57d48e54592a74eccb333c02779f6546a704085108b8309cb39f35",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/test_start_context.py": "a42197be27a99c52dad1fa52be908bba5a8dd3dbdd6061c4af873580d720fb86",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/README.md": "b87a88ef27bbdc25a5af233ecb5c1764577c4a1d2f715919a4b7bd100d8de8ab",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/static_check.py": "e0ddcfbb54ad20c05ce2153b6c12e32c47747295352f4db383b3179cacc06269",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/start.py": "e8ae0d1be418796d6255bb5a209f5db58cfc8149335223124f270ac4fb84fcd5",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/probe/main.cpp": "d9befeeaf560347949217b393736f92ac3aaad2276d276e21882de8497e9d1c1",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/probe/CMakeLists.txt": "d5e9b5256e69536912a7f5b467a7d578f33e70c64e9601a6602fab144a9b4aec"
+  },
+  "interrupted": false,
+  "receive_wall_minus_device_s_median": 0.000694747,
+  "data_sha256": {
+    "odometry.jsonl": "e64f758090f6689cc6734682ebb91460a42bf4ee2e04edf5a119fd84386348bb"
+  },
+  "limits": [
+    "Operator must keep sensor/gimbal/chassis stationary",
+    "No ground truth",
+    "No chassis centre or gravity-aligned map qualification",
+    "No drift acceptance threshold invented",
+    "No motor commands or navigation feedback"
+  ]
+}

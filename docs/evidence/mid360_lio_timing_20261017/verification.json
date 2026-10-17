@@ -1,0 +1,17 @@
+{
+  "provenance": "User-pasted mini-PC summary; native remote JSONL not independently available on development machine",
+  "source_attachment_sha256": "ae28615f5fab298df0ec240dac8af83bbafc3b48753c07ad55ce9ae69574f720",
+  "original_capture": "/home/rm/AeroMind_mid360_lio_checks/static_20261017_221527",
+  "original_evidence_complete": false,
+  "native_remote_audit": "PENDING",
+  "all_new_tests_pass": true,
+  "new_tests": 7,
+  "raw_build_preflight": {
+    "build_inputs": 399,
+    "build_check": true,
+    "real_hardware_tested": false
+  },
+  "navigation_changed": false,
+  "lio_estimation_changed": false,
+  "motor_commands_sent": false
+}

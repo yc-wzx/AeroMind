@@ -1,0 +1,12 @@
+test_duplicates_remain_invalid (__main__.TimingTests) ... ok
+test_hash_tampering_rejected (__main__.TimingTests) ... ok
+test_inconsistent_summary_and_writer_rejected (__main__.TimingTests) ... ok
+test_inspection_preserves_original_verdict_and_files (__main__.TimingTests) ... ok
+test_missing_nonfinite_and_receive_regressions_rejected (__main__.TimingTests) ... ok
+test_mixed_phases_remain_nonmonotonic (__main__.TimingTests) ... ok
+test_zero_twist_does_not_become_acceptance (__main__.TimingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.004s
+
+OK

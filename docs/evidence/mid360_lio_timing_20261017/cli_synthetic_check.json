@@ -1,0 +1,8 @@
+{
+  "scope": "Synthetic CLI/file-preservation test only; no hardware",
+  "returncode": 0,
+  "original_files_unchanged": true,
+  "original_verdict_preserved": true,
+  "output_status": "TIMESTAMP ORDERING BLOCKED",
+  "regression_count": 1
+}
