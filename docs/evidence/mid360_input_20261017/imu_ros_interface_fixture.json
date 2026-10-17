@@ -1,0 +1,7 @@
+{
+  "pass_": true,
+  "scope": "Production ROS adapter / synthetic fixture in isolated ROS domain214; no hardware or navigation",
+  "raw_acc_g": -1.0,
+  "converted_acc_mps2": -9.80665,
+  "nan_not_published": true
+}

@@ -1,0 +1,7 @@
+{
+  "lio_missing_evidence_rejected": true,
+  "launch_args_parsed": true,
+  "actual_missing_input_cli_cannot_pass": true,
+  "synthetic_tool_tests_only": true,
+  "real_hardware_tested": false
+}

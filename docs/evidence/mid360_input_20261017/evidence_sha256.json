@@ -1,0 +1,14 @@
+{
+  "lio_gate_no_evidence.txt": "9846a3a687a5ccc62536da47d390a9fa8a3c8d46eb1740cb80c5e9a9bd3b2ff7",
+  "gates_verification.json": "36ec7900344ba73bd057b9952b9abc0540acfc790aa137c881214a674e87bfea",
+  "final_build.txt": "54311b24b4508be021c0048bba5eba2b2086491d128b387bde20b3f08592e67e",
+  "missing_input_cli.txt": "26760ecd6ee49e898e654b138bfb1ae70ec0fc392ceaeb1b5e74beac09ba40e6",
+  "build.txt": "d9a83ab1406035ae3dcd707a2be782693e0e7e6c52931782e14c1a8e01a7fc48",
+  "verification.json": "443fbe0b7793bca5b9251c5081d90394f45ad8425e15ee58b315d470725f8e58",
+  "simulation_preservation_check.txt": "2bb40f80624ec9aecabd062cdc83b4d8b43483a199f221849b74bfa0dbe14f62",
+  "launch_arguments.txt": "756917510f978f09eebf94bc50d9293b675f8a64728ddf0f1c1d257fe91f8371",
+  "missing_input_expected_rejection.json": "f588de7d608168b2f50bd5edf9fd7f056e3a7b27fcc81dd5c7d77dd5ba4dfc2b",
+  "final_build_v2.txt": "aac418889a8f9c32e301bb5813710f30e95414f7b6eddc0b5d3fa937cda5080d",
+  "README.md": "722631bb3532276540cc65ae0da24c5c47fe0a24595f666cf91c1c84e2f5e869",
+  "imu_ros_interface_fixture.json": "9a1e5902b3e64f983e75da80f5b877528c47baf7e8c88f3516d3f5a6d2fee6d8"
+}

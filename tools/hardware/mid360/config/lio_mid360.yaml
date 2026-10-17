@@ -1,0 +1,44 @@
+# Read-only real MID-360 LIO candidate. No navigation frame / body extrinsic.
+# PointCloud2 MID360 enum=5 is specific to this SPARK source, not FAST-LIO enum=1.
+# Internal factory extrinsic from upstream hku-mars/FAST_LIO config/mid360.yaml.
+/**:
+  ros__parameters:
+    use_sim_time: false
+    common:
+      map_frame: mid360_local_odom
+      lidar_frame: livox_frame
+      imu_frame: mid360_imu
+      visualization_frame: mid360_imu
+      base_frame: ''
+      time_sync_en: false
+      planar_mode: false
+    preprocess:
+      lidar_type: 5
+      scan_line: 4
+      timestamp_unit: 3
+      scan_rate: 10
+      blind: 0.5
+    point_filter_num_for_preprocessing: 1
+    max_iteration: 3
+    filter_size_map: 0.5
+    cube_side_length: 1000.0
+    mapping:
+      acc_cov: 0.1
+      gyr_cov: 0.1
+      b_acc_cov: 0.0001
+      b_gyr_cov: 0.0001
+      fov_degree: 360.0
+      det_range: 100.0
+      extrinsic_est_en: false
+      extrinsic_T: [-0.011, -0.02329, 0.04412]
+      extrinsic_R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+    gravity_alignment:
+      enable_gravity_alignment: false
+    publish:
+      path_en: true
+      scan_publish_en: true
+      dense_publish_en: true
+      scan_bodyframe_pub_en: true
+    pcd_save:
+      pcd_save_en: false
+    runtime_pos_log_enable: false

@@ -1,0 +1,49 @@
+Starting >>> livox_ros_driver2
+--- stderr: livox_ros_driver2
+/usr/include/apr-1.0
+apr-1
+---
+Finished <<< livox_ros_driver2 [18.2s]
+Starting >>> spark_fast_lio
+--- stderr: spark_fast_lio
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    DISTRO_ROS
+    ROS_EDITION
+
+
+---
+Finished <<< spark_fast_lio [1min 20s]
+
+Summary: 2 packages finished [1min 39s]
+  2 packages had stderr output: livox_ros_driver2 spark_fast_lio
+{
+  "build_inputs": 396,
+  "build_check": true,
+  "real_hardware_tested": false
+}
+test_async_bag_preserves_every_message_and_detects_health_error (__main__.InputTests) ... [INFO] [1792242446.700094166] [rosbag2_storage]: Opened database '/tmp/tmpannqpt10/raw_bag/raw_bag_0.db3' for READ_WRITE.
+[INFO] [1792242446.745959764] [rosbag2_storage]: Opened database '/tmp/tmpannqpt10/raw_bag/raw_bag_0.db3' for READ_ONLY.
+[INFO] [1792242446.747039711] [rosbag2_storage]: Opened database '/tmp/tmpannqpt10/raw_bag/raw_bag_0.db3' for READ_ONLY.
+ok
+test_bad_byte_count (__main__.InputTests) ... ok
+test_bad_field_type (__main__.InputTests) ... ok
+test_bad_line (__main__.InputTests) ... ok
+test_duplicate_field (__main__.InputTests) ... ok
+test_empty_cloud (__main__.InputTests) ... ok
+test_imu_timestamp_missing (__main__.InputTests) ... ok
+test_instantaneous_sim_cloud_rejected (__main__.InputTests) ... ok
+test_missing_timestamp (__main__.InputTests) ... ok
+test_nan_imu_rejected (__main__.InputTests) ... ok
+test_native_point_timing_and_endian (__main__.InputTests) ... ok
+test_nonfinite_points_and_time (__main__.InputTests) ... ok
+test_real_imu_unit_conversion_no_flip (__main__.InputTests) ... ok
+test_row_padding (__main__.InputTests) ... ok
+test_stream_finite_continuity (__main__.InputTests) ... ok
+test_wrong_time_unit (__main__.InputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.093s
+
+OK

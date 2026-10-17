@@ -1,0 +1,18 @@
+{
+  "pass_": true,
+  "scope": "Read-only deployment/import/library/offline checks; no ROS motion target sent",
+  "modules": 39,
+  "sources": 693,
+  "installed_files": 80,
+  "routes": [
+    {
+      "length_m": 9.849999999999998,
+      "minimum_circle_gap_m": 0.1499999999999993
+    },
+    {
+      "length_m": 9.85,
+      "minimum_circle_gap_m": 0.1499999999999993
+    }
+  ],
+  "classification": "TRAINING-ONLY / PROVISIONAL"
+}

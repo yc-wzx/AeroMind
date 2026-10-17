@@ -1,0 +1,22 @@
+{
+  "scope": "REAL SENSOR INPUT TOOLS READY; REAL HARDWARE CAPTURE PENDING ON MINI-PC",
+  "hardware_used": false,
+  "source_algorithms_modified": false,
+  "motor_commands_published": false,
+  "actual_cpp_preprocess_probe_pass": true,
+  "synthetic_ros_and_bag_tests": 16,
+  "synthetic_ros_imu_adapter_pass": true,
+  "missing_input_cli_rejected": true,
+  "lio_without_evidence_rejected": true,
+  "old_simulation_check_pass": true,
+  "original_frozen_inputs_unchanged": 2110,
+  "original_dirty_diff_unchanged": true,
+  "remaining": [
+    "Mini-PC real pointcloud/IMU capture",
+    "Device stamp epoch review",
+    "Static real LIO drift",
+    "Inverted installation/gravity/control transform",
+    "Gimbal lever arm/chassis centre alignment",
+    "Electrical serial integration"
+  ]
+}

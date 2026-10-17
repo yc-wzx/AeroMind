@@ -1,0 +1,63 @@
+Starting >>> livox_ros_driver2
+Finished <<< livox_ros_driver2 [0.43s]
+Starting >>> spark_fast_lio
+Finished <<< spark_fast_lio [0.12s]
+
+Summary: 2 packages finished [0.85s]
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rmnav/aeromind-transfer-20261016/build_mid360/production_preprocess_probe
+Consolidate compiler generated dependencies of target mid360_preprocess_probe
+[100%] Built target mid360_preprocess_probe
+PASS: actual SPARK Preprocess::process MID360 enum5; 3 raw XYZ preserved; per-point offsets 0/50/99ms; no instantaneous simulation override
+{
+  "build_inputs": 399,
+  "build_check": true,
+  "real_hardware_tested": false
+}
+test_async_bag_preserves_every_message_and_detects_health_error (__main__.InputTests) ... [INFO] [1792242631.161242158] [rosbag2_storage]: Opened database '/tmp/tmpc70s8kyq/raw_bag/raw_bag_0.db3' for READ_WRITE.
+[INFO] [1792242631.263235312] [rosbag2_storage]: Opened database '/tmp/tmpc70s8kyq/raw_bag/raw_bag_0.db3' for READ_ONLY.
+[INFO] [1792242631.264383326] [rosbag2_storage]: Opened database '/tmp/tmpc70s8kyq/raw_bag/raw_bag_0.db3' for READ_ONLY.
+[INFO] [1792242631.265573803] [rosbag2_storage]: Opened database '/tmp/tmpc70s8kyq/raw_bag/raw_bag_0.db3' for READ_ONLY.
+ok
+test_bad_byte_count (__main__.InputTests) ... ok
+test_bad_field_type (__main__.InputTests) ... ok
+test_bad_line (__main__.InputTests) ... ok
+test_duplicate_field (__main__.InputTests) ... ok
+test_empty_cloud (__main__.InputTests) ... ok
+test_imu_timestamp_missing (__main__.InputTests) ... ok
+test_instantaneous_sim_cloud_rejected (__main__.InputTests) ... ok
+test_missing_timestamp (__main__.InputTests) ... ok
+test_nan_imu_rejected (__main__.InputTests) ... ok
+test_native_point_timing_and_endian (__main__.InputTests) ... ok
+test_nonfinite_points_and_time (__main__.InputTests) ... ok
+test_real_imu_unit_conversion_no_flip (__main__.InputTests) ... ok
+test_row_padding (__main__.InputTests) ... ok
+test_stream_finite_continuity (__main__.InputTests) ... ok
+test_wrong_time_unit (__main__.InputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.187s
+
+OK

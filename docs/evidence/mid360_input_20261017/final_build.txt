@@ -1,0 +1,125 @@
+Starting >>> livox_ros_driver2
+Finished <<< livox_ros_driver2 [0.43s]
+Starting >>> spark_fast_lio
+Finished <<< spark_fast_lio [0.13s]
+
+Summary: 2 packages finished [0.86s]
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Checking for module 'eigen3'
+--   Found eigen3, version 3.4.0
+-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- Checking for module 'flann'
+--   Found flann, version 1.9.1
+-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- Checking for module 'libusb-1.0'
+--   Found libusb-1.0, version 1.0.25
+-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+-- Found PCL_2D: /usr/include/pcl-1.12  
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+-- Found PCL_MODELER: /usr/include/pcl-1.12  
+-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rmnav/aeromind-transfer-20261016/build_mid360/production_preprocess_probe
+[ 50%] Building CXX object CMakeFiles/mid360_preprocess_probe.dir/main.cpp.o
+[100%] Linking CXX executable mid360_preprocess_probe
+[100%] Built target mid360_preprocess_probe
+PASS: actual SPARK Preprocess::process MID360 enum5; 3 raw XYZ preserved; per-point offsets 0/50/99ms; no instantaneous simulation override
+{
+  "build_inputs": 399,
+  "build_check": true,
+  "real_hardware_tested": false
+}
+test_async_bag_preserves_every_message_and_detects_health_error (__main__.InputTests) ... [INFO] [1792242586.848093844] [rosbag2_storage]: Opened database '/tmp/tmpzyj6dd9v/raw_bag/raw_bag_0.db3' for READ_WRITE.
+[INFO] [1792242586.933432021] [rosbag2_storage]: Opened database '/tmp/tmpzyj6dd9v/raw_bag/raw_bag_0.db3' for READ_ONLY.
+[INFO] [1792242586.934448405] [rosbag2_storage]: Opened database '/tmp/tmpzyj6dd9v/raw_bag/raw_bag_0.db3' for READ_ONLY.
+FAIL
+test_bad_byte_count (__main__.InputTests) ... ok
+test_bad_field_type (__main__.InputTests) ... ok
+test_bad_line (__main__.InputTests) ... ok
+test_duplicate_field (__main__.InputTests) ... ok
+test_empty_cloud (__main__.InputTests) ... ok
+test_imu_timestamp_missing (__main__.InputTests) ... ok
+test_instantaneous_sim_cloud_rejected (__main__.InputTests) ... ok
+test_missing_timestamp (__main__.InputTests) ... ok
+test_nan_imu_rejected (__main__.InputTests) ... ok
+test_native_point_timing_and_endian (__main__.InputTests) ... ok
+test_nonfinite_points_and_time (__main__.InputTests) ... ok
+test_real_imu_unit_conversion_no_flip (__main__.InputTests) ... ok
+test_row_padding (__main__.InputTests) ... ok
+test_stream_finite_continuity (__main__.InputTests) ... ok
+test_wrong_time_unit (__main__.InputTests) ... ok
+
+======================================================================
+FAIL: test_async_bag_preserves_every_message_and_detects_health_error (__main__.InputTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360/tests.py", line 103, in test_async_bag_preserves_every_message_and_detects_health_error
+    topic,data,_=reader.read_next();self.assertEqual(data,expected.pop(topic))
+AssertionError: b'\x0[137 chars]x\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00\[699 chars]\x00' != b'\x0[137 chars]x\x00_m\x00\x00\x00\x00\x07/sp\x01\x00\x00\x00[624 chars]\x00'
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.168s
+
+FAILED (failures=1)

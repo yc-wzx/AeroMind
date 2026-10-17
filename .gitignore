@@ -54,3 +54,9 @@ cmake_install.cmake
 .idea/
 .DS_Store
 Thumbs.db
+
+/build_mid360/
+
+/install_mid360/
+
+/log_mid360/

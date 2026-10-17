@@ -1,0 +1,13 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'rviz':
+        no description given
+        (default: 'true')
+
+    'lio':
+        no description given
+        (default: 'false')
+
+    'capture_summary':
+        no description given
+        (default: '')

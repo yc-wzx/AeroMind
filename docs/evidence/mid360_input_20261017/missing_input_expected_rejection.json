@@ -1,0 +1,77 @@
+{
+  "scope": "REAL MID360 RAW INPUT PRECHECK",
+  "pass_raw": false,
+  "streams": {
+    "/hardware/mid360/points": {
+      "pass_": false,
+      "count": 0,
+      "problem": "missing/insufficient messages",
+      "precheck_receive_gap_limit_s": 0.3,
+      "precheck_rate_range_hz": [
+        8.0,
+        12.0
+      ]
+    },
+    "/hardware/mid360/imu_raw": {
+      "pass_": false,
+      "count": 0,
+      "problem": "missing/insufficient messages",
+      "precheck_receive_gap_limit_s": 0.1,
+      "precheck_rate_range_hz": [
+        150.0,
+        250.0
+      ]
+    },
+    "/hardware/mid360/imu_si": {
+      "pass_": false,
+      "count": 0,
+      "problem": "missing/insufficient messages",
+      "precheck_receive_gap_limit_s": 0.1,
+      "precheck_rate_range_hz": [
+        150.0,
+        250.0
+      ]
+    }
+  },
+  "raw_acceleration_unit": "g (pinned unmodified Livox driver2)",
+  "si_acceleration_unit": "m/s^2; raw unchanged; separate conversion topic",
+  "raw_mean_acc_g": null,
+  "raw_unit_check": false,
+  "si_unit_check": false,
+  "imu_conversion_matched_pairs": 0,
+  "imu_conversion_coverage": 0.0,
+  "imu_conversion_check": false,
+  "sensor_timestamp_overlap_s": 0.0,
+  "imu_sensor_span_s": 0.0,
+  "health": {
+    "received": {},
+    "written": {},
+    "queue_overflow": 0,
+    "writer_error": null,
+    "thread_closed": true
+  },
+  "bag_message_counts": {},
+  "bag_counts_verified": true,
+  "timestamp_note": "Original device stamps preserved; wall/device epoch difference reported, not silently corrected",
+  "reset_observation": "No reset/set_pose services monitored; capture tool publishes no commands",
+  "limitations": [
+    "No real position truth",
+    "No navigation or motor integration",
+    "No body/gimbal lever-arm calibration",
+    "No statistical reliability or IMU noise calibration"
+  ],
+  "publishers": {
+    "/hardware/mid360/points": [],
+    "/hardware/mid360/imu_raw": [],
+    "/hardware/mid360/imu_si": []
+  },
+  "publisher_identity_check": false,
+  "interrupted": false,
+  "build_manifest_sha256": "cb4601a5dd8b0c79edc83497b016f2d6be6041df7e23b0452fcbdb927b2ca346",
+  "output_dir": "/home/rmnav/aeromind-transfer-20261016/tools/results/mid360_input_20261017/missing_input_capture",
+  "data_sha256": {
+    "receipts.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw_bag/raw_bag_0.db3": "02ac887968640efaa3afcba19b843fbdb9fd3ce4755175090eb195894ea5fa16",
+    "raw_bag/metadata.yaml": "cbe82580446f459f30d2d2c6108f43fe7c8e2ae006c7c91d0d3c289b95540765"
+  }
+}
