@@ -1,0 +1,8 @@
+--- /home/rmnav/aeromind-transfer-20261016/src/third_party/spark-fast-lio/spark_fast_lio/include/spark_fast_lio.h	2026-10-16 16:49:39.115523825 +0800
++++ /home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/spark_fast_lio.h	2026-10-17 22:29:07.045744211 +0800
+@@ -95 +95 @@
+-  void publishOdometry(const state_ikfom &state, const rclcpp::Time &stamp);
++  void publishOdometry(const state_ikfom &state, const rclcpp::Time &stamp, bool imu_prediction = false);
+@@ -169,0 +170,2 @@
++  rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pub_odom_prediction_;
++  rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pub_odom_mixed_;

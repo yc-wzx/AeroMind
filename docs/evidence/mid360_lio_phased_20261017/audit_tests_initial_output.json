@@ -1,0 +1,17 @@
+{
+  "original_log_sha256": "c67b519075f0f4fbaafe2e4121941801b5ec236d9cdfa77b56477c404c8db24d",
+  "lines": [
+    "test_bad_cdr_fails (__main__.AuditTests) ... ok\n",
+    "test_changed_payload_not_hidden_by_timestamp (__main__.AuditTests) ... ok\n",
+    "test_missing_internal_mixed_sample_fails (__main__.AuditTests) ... ok\n",
+    "test_missing_phase_fails (__main__.AuditTests) ... ok\n",
+    "test_receive_order_rejected (__main__.AuditTests) ... ok\n",
+    "test_split_monotonic_mixed_regressions_preserved (__main__.AuditTests) ... ok\n",
+    "test_tf_mismatch_fails (__main__.AuditTests) ... ok\n",
+    "\n",
+    "----------------------------------------------------------------------\n",
+    "Ran 7 tests in 0.088s\n",
+    "\n",
+    "OK\n"
+  ]
+}

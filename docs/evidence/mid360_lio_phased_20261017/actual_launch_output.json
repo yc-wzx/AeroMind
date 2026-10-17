@@ -1,0 +1,16 @@
+{
+  "original_log_sha256": "d559e62721ec06ac6d127fb7964a312802510f91ee31d6e263d84ef1abbf1731",
+  "lines": [
+    "[INFO] [launch]: All log files can be found below /home/rmnav/.ros/log/2026-10-17-22-36-20-524969-DESKTOP-5SJ6AH8-707\n",
+    "[INFO] [launch]: Default logging verbosity is set to INFO\n",
+    "[INFO] [spark_lio_mapping-1]: process started with pid [754]\n",
+    "[spark_lio_mapping-1] [INFO] [1792247780.773982992] [hardware.mid360.lio.mid360_real_lio]: SPARKFastLIO2 constructed\n",
+    "[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)\n",
+    "[spark_lio_mapping-1] [INFO] [1792247781.052016694] [rclcpp]: signal_handler(SIGINT/SIGTERM)\n",
+    "[INFO] [spark_lio_mapping-1]: sending signal 'SIGINT' to process[spark_lio_mapping-1]\n",
+    "[spark_lio_mapping-1] [INFO] [1792247781.053495567] [rclcpp]: signal_handler(SIGINT/SIGTERM)\n",
+    "[spark_lio_mapping-1] Multi thread started \n",
+    "[spark_lio_mapping-1] Rebuild thread terminated normally\n",
+    "[INFO] [spark_lio_mapping-1]: process has finished cleanly [pid 754]\n"
+  ]
+}

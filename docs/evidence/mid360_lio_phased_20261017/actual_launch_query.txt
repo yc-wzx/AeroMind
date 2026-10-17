@@ -1,0 +1,1 @@
+{"actual_contract": "scan_corrected_primary_v1", "use_sim_time": false, "visualization_mode": "imu", "scope": "Actual candidate launch / namespace / parameter service without sensor data; no navigation acceptance"}

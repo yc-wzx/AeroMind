@@ -1,0 +1,70 @@
+{
+  "scope": "Synthetic Python publisher / native recorder / independent audit integration only; not physical LIO estimation",
+  "isolated_domain": 218,
+  "evidence_complete": true,
+  "audit_repeat_identical": true,
+  "capture": "/home/rmnav/AeroMind_mid360_lio_checks/static_phased_20261017_223423/summary.json",
+  "streams": {
+    "corrected": {
+      "count": 151,
+      "receive_hz": 10.054700435287272,
+      "regressed_stamps": 0,
+      "max_receive_gap_s": 0.101143124
+    },
+    "predicted": {
+      "count": 3020,
+      "receive_hz": 201.22611329975186,
+      "regressed_stamps": 0,
+      "max_receive_gap_s": 0.007106685000000001
+    },
+    "mixed": {
+      "count": 3170,
+      "receive_hz": 211.28859273188613,
+      "regressed_stamps": 151,
+      "max_receive_gap_s": 0.0072058600000000006
+    },
+    "tf": {
+      "count": 151,
+      "receive_hz": 10.05454243731133,
+      "regressed_stamps": 0,
+      "max_receive_gap_s": 0.100876041
+    }
+  },
+  "phase_identity": {
+    "pass_": true,
+    "common_sensor_start_ns": 1792247663556902778,
+    "common_sensor_end_ns": 1792247678556957784,
+    "common_sensor_span_s": 15.000055006,
+    "interior_counts": {
+      "corrected": 151,
+      "predicted": 3000,
+      "mixed": 3151,
+      "tf": 151
+    },
+    "boundary_records_retained_but_excluded_from_identity_comparison": {
+      "corrected": 0,
+      "predicted": 20,
+      "mixed": 19,
+      "tf": 0
+    },
+    "missing_from_mixed": 0,
+    "missing_from_split": 0,
+    "tf_matches_corrected_pose": true,
+    "rule": "Exact decoded message identity multisets within common device-time coverage; all boundary messages remain recorded"
+  },
+  "health": {
+    "received": 6492,
+    "written": 6492,
+    "actual_lines": 6492,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "gates": {
+    "writer_health": true,
+    "source_identity": true,
+    "parameters": true,
+    "inputs_unchanged": true,
+    "not_interrupted": true
+  }
+}

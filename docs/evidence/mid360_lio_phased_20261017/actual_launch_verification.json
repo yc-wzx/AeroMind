@@ -1,0 +1,14 @@
+{
+  "actual_contract": "scan_corrected_primary_v1",
+  "use_sim_time": false,
+  "visualization_mode": "imu",
+  "scope": "Actual candidate launch / namespace / parameter service without sensor data; no navigation acceptance",
+  "actual_process_maps": [
+    {
+      "pid": 754,
+      "component_paths": [
+        "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/lib/libspark_lio_component.so"
+      ]
+    }
+  ]
+}

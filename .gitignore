@@ -60,3 +60,7 @@ Thumbs.db
 /install_mid360/
 
 /log_mid360/
+
+/build_mid360_lio_phased/
+/install_mid360_lio_phased/
+/log_mid360_lio_phased/

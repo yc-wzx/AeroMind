@@ -1,0 +1,21 @@
+{
+  "scope": "Output-only phase correction locally verified; physical MID360 recapture PENDING",
+  "production_cpp_output_test_pass": true,
+  "targeted_audit_tests": 9,
+  "native_synthetic_capture_and_independent_repeat_pass": true,
+  "actual_launch_overlay_verified": true,
+  "original_raw_manifest_preserved": {
+    "build_inputs": 399,
+    "build_check": true,
+    "real_hardware_tested": false
+  },
+  "variant_local_inputs": 148,
+  "original_physical_capture_verdict": "TIMESTAMP ORDERING BLOCKED; preserved",
+  "navigation_or_motor_commands_sent": false,
+  "limitations": [
+    "No new physical MID360 capture performed on the development machine",
+    "C++ probe exercises actual output API; native capture test uses clearly labelled synthetic Python source",
+    "Local manifests do not seal an entire OS/system dependency image"
+  ],
+  "estimation_algorithms_or_tuning_changed": false
+}

@@ -1,0 +1,147 @@
+{
+  "scope": "READ-ONLY NATIVE LIO TIMESTAMP DIAGNOSIS; NOT ACCEPTANCE",
+  "source_summary": "/home/rm/AeroMind_mid360_lio_checks/static_20261017_221527/summary.json",
+  "source_summary_sha256": "805b8a019c132420b0076acfc468b8dbbb731cff129f70025f149fc16cab41be",
+  "raw_sha256": "e64f758090f6689cc6734682ebb91460a42bf4ee2e04edf5a119fd84386348bb",
+  "original_hashes_verified": true,
+  "original_evidence_complete": false,
+  "original_verdict_unchanged": true,
+  "timing": {
+    "count": 6301,
+    "receive_span_s": 30.001034516,
+    "receive_hz": 209.99275863771015,
+    "max_receive_gap_s": 0.019189316,
+    "max_positive_sensor_gap_s": 0.010102126000000001,
+    "duplicate_stamps": 0,
+    "adjacent_regressed_stamps": 300,
+    "stamps_below_previous_high_watermark": 300,
+    "regressions_per_receive_s": 9.999655173224294,
+    "backward_jump_s": {
+      "count": 300,
+      "min": 7.988e-06,
+      "median": 0.004523442000000001,
+      "max": 0.00592086
+    },
+    "regression_receive_spacing_s": {
+      "count": 299,
+      "min": 0.094121098,
+      "median": 0.099988951,
+      "max": 0.105419303
+    },
+    "regression_position_step_m": {
+      "count": 300,
+      "min": 0.0008951076875394833,
+      "median": 0.005052511436983436,
+      "max": 0.012575986203350306
+    },
+    "regression_rotation_step_deg": {
+      "count": 300,
+      "min": 0.04877159604541688,
+      "median": 0.26008808439075815,
+      "max": 0.7473711278541204
+    },
+    "timestamp_strictly_increasing": false,
+    "original_receipt_order_preserved": true,
+    "all_recorded_twist_components_zero": true,
+    "drift": {
+      "max_translation_from_first_m": 0.01909342107875704,
+      "end_translation_from_first_m": 0.013190752558731342,
+      "max_rotation_from_first_deg": 0.5626920134926516,
+      "end_rotation_from_first_deg": 0.09517551735165952,
+      "meaning": "Estimated sensor motion under operator-declared stationary condition; no truth"
+    },
+    "regression_examples": [
+      {
+        "sequence": 6,
+        "previous_stamp_ns": 1792246527428227877,
+        "stamp_ns": 1792246527423857664,
+        "previous_receive_monotonic_ns": 6956371788861,
+        "receive_monotonic_ns": 6956375108173,
+        "backward_jump_s": 0.004370213,
+        "receive_gap_s": 0.003319312,
+        "following_sensor_step_s": 0.008883669,
+        "position_step_m": 0.0036147291146625344,
+        "rotation_step_deg": 0.27579911903328425
+      },
+      {
+        "sequence": 27,
+        "previous_stamp_ns": 1792246527528277959,
+        "stamp_ns": 1792246527523759360,
+        "previous_receive_monotonic_ns": 6956471487300,
+        "receive_monotonic_ns": 6956473916452,
+        "backward_jump_s": 0.004518599,
+        "receive_gap_s": 0.002429152,
+        "following_sensor_step_s": 0.008484838,
+        "position_step_m": 0.003929779360161653,
+        "rotation_step_deg": 0.3084200853973736
+      },
+      {
+        "sequence": 47,
+        "previous_stamp_ns": 1792246527622302759,
+        "stamp_ns": 1792246527621501952,
+        "previous_receive_monotonic_ns": 6956565858397,
+        "receive_monotonic_ns": 6956570698278,
+        "backward_jump_s": 0.0008008070000000001,
+        "receive_gap_s": 0.004839881,
+        "following_sensor_step_s": 0.006760806,
+        "position_step_m": 0.006440794575635545,
+        "rotation_step_deg": 0.46793153939416743
+      },
+      {
+        "sequence": 69,
+        "previous_stamp_ns": 1792246527728253164,
+        "stamp_ns": 1792246527723704064,
+        "previous_receive_monotonic_ns": 6956671633343,
+        "receive_monotonic_ns": 6956674452475,
+        "backward_jump_s": 0.0045491,
+        "receive_gap_s": 0.0028191320000000002,
+        "following_sensor_step_s": 0.008999641000000001,
+        "position_step_m": 0.0076549485419801465,
+        "rotation_step_deg": 0.6598075270318063
+      },
+      {
+        "sequence": 90,
+        "previous_stamp_ns": 1792246527828401782,
+        "stamp_ns": 1792246527823829248,
+        "previous_receive_monotonic_ns": 6956772194604,
+        "receive_monotonic_ns": 6956774489263,
+        "backward_jump_s": 0.0045725340000000005,
+        "receive_gap_s": 0.002294659,
+        "following_sensor_step_s": 0.008749786,
+        "position_step_m": 0.0016255749892294888,
+        "rotation_step_deg": 0.5431137932113713
+      }
+    ]
+  },
+  "producer_source": {
+    "available": true,
+    "captured_manifest_hash_matches": true,
+    "source_hash_matches_captured_manifest": true,
+    "source_path": "/home/rm/AeroMind_20261016/src/third_party/spark-fast-lio/spark_fast_lio/src/spark_fast_lio.cpp",
+    "source_sha256": "53510556a495e0d7e57939f62331b0e010622387563ad328a568bacfbb11262e",
+    "output_callsite_lines": {
+      "imu_prediction": [
+        495
+      ],
+      "lidar_correction": [
+        1155
+      ]
+    },
+    "dual_phase_publication_in_verified_source": true,
+    "limitation": "Odometry records carry no callsite/phase ID; source mechanism does not independently identify each received message",
+    "twist_limitation": "Current publishOdometry does not fill twist; recorded zero Twist cannot prove physical stationarity"
+  },
+  "status": "TIMESTAMP ORDERING BLOCKED",
+  "limitations": [
+    "No sorting, dropping, retimestamping, interpolation or timestamp gate relaxation",
+    "No navigation output or motor command",
+    "Physical stationarity is operator-declared; no ground truth",
+    "Mixed callsites are a source mechanism, not per-message provenance"
+  ],
+  "tool_sha256": "c92e99bab30e5d97978da0d34a2ab0551e08767e1281fc6a2fafe9677595a5bf",
+  "command": [
+    "/usr/bin/python3",
+    "/home/rm/AeroMind_20261016/tools/hardware/mid360_lio/inspect_timing.py",
+    "/home/rm/AeroMind_mid360_lio_checks/static_20261017_221527/summary.json"
+  ]
+}

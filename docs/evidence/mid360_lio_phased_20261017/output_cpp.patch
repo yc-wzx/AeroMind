@@ -1,0 +1,69 @@
+--- /home/rmnav/aeromind-transfer-20261016/src/third_party/spark-fast-lio/spark_fast_lio/src/spark_fast_lio.cpp	2026-10-16 16:49:39.117257931 +0800
++++ /home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/src/spark_fast_lio.cpp	2026-10-17 22:29:07.045053138 +0800
+@@ -114,0 +115,5 @@
++  pub_odom_prediction_ = create_publisher<nav_msgs::msg::Odometry>("odometry_predicted", qos);
++  pub_odom_mixed_ = create_publisher<nav_msgs::msg::Odometry>("odometry_mixed_legacy", qos);
++  auto contract = declare_parameter<std::string>("common.odometry_output_contract",
++      "scan_corrected_primary_v1", rcl_interfaces::msg::ParameterDescriptor().set__read_only(true));
++  if (contract != "scan_corrected_primary_v1") throw std::invalid_argument("Output contract override rejected");
+@@ -495 +500 @@
+-  publishOdometry(integrated_state, stamp);
++  publishOdometry(integrated_state, stamp, true);
+@@ -734,3 +739,5 @@
+-void SPARKFastLIO2::publishOdometry(const state_ikfom &state, const rclcpp::Time &stamp) {
+-  odomAftMapped_.header.frame_id = map_frame_;
+-  odomAftMapped_.header.stamp    = stamp;
++void SPARKFastLIO2::publishOdometry(const state_ikfom &state, const rclcpp::Time &stamp, bool imu_prediction) {
++  // Local output message: prediction/correction calls cannot overwrite each other.
++  nav_msgs::msg::Odometry output;
++  output.header.frame_id = map_frame_;
++  output.header.stamp    = stamp;
+@@ -738 +745 @@
+-  setPoseStamp(state, odomAftMapped_.pose, viz_frame_);  // our template function
++  setPoseStamp(state, output.pose, viz_frame_);  // our template function
+@@ -741 +748 @@
+-    odomAftMapped_.child_frame_id = lidar_frame_;
++    output.child_frame_id = lidar_frame_;
+@@ -743 +750 @@
+-    odomAftMapped_.child_frame_id = base_frame_;
++    output.child_frame_id = base_frame_;
+@@ -745 +752 @@
+-    odomAftMapped_.child_frame_id = imu_frame_;
++    output.child_frame_id = imu_frame_;
+@@ -754,6 +761,6 @@
+-    odomAftMapped_.pose.covariance[i * 6 + 0] = P(k, 3);
+-    odomAftMapped_.pose.covariance[i * 6 + 1] = P(k, 4);
+-    odomAftMapped_.pose.covariance[i * 6 + 2] = P(k, 5);
+-    odomAftMapped_.pose.covariance[i * 6 + 3] = P(k, 0);
+-    odomAftMapped_.pose.covariance[i * 6 + 4] = P(k, 1);
+-    odomAftMapped_.pose.covariance[i * 6 + 5] = P(k, 2);
++    output.pose.covariance[i * 6 + 0] = P(k, 3);
++    output.pose.covariance[i * 6 + 1] = P(k, 4);
++    output.pose.covariance[i * 6 + 2] = P(k, 5);
++    output.pose.covariance[i * 6 + 3] = P(k, 0);
++    output.pose.covariance[i * 6 + 4] = P(k, 1);
++    output.pose.covariance[i * 6 + 5] = P(k, 2);
+@@ -763 +770,7 @@
+-  pub_odom_->publish(odomAftMapped_);
++  // Preserve EVERY original output and original timestamp for diagnosis.
++  pub_odom_mixed_->publish(output);
++  if (imu_prediction) {
++    pub_odom_prediction_->publish(output);
++    return;  // A predicted state never broadcasts the corrected-frame TF.
++  }
++  pub_odom_->publish(output);
+@@ -766 +779 @@
+-  transform_stamped.header.stamp    = odomAftMapped_.header.stamp;
++  transform_stamped.header.stamp    = output.header.stamp;
+@@ -768 +781 @@
+-  transform_stamped.child_frame_id  = odomAftMapped_.child_frame_id;
++  transform_stamped.child_frame_id  = output.child_frame_id;
+@@ -770,4 +783,4 @@
+-  transform_stamped.transform.translation.x = odomAftMapped_.pose.pose.position.x;
+-  transform_stamped.transform.translation.y = odomAftMapped_.pose.pose.position.y;
+-  transform_stamped.transform.translation.z = odomAftMapped_.pose.pose.position.z;
+-  transform_stamped.transform.rotation      = odomAftMapped_.pose.pose.orientation;
++  transform_stamped.transform.translation.x = output.pose.pose.position.x;
++  transform_stamped.transform.translation.y = output.pose.pose.position.y;
++  transform_stamped.transform.translation.z = output.pose.pose.position.z;
++  transform_stamped.transform.rotation      = output.pose.pose.orientation;

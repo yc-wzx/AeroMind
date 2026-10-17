@@ -1,0 +1,600 @@
+{
+  "contract": "scan_corrected_primary_v1",
+  "root": "/home/rmnav/aeromind-transfer-20261016",
+  "original_raw_manifest_sha256": "cb4601a5dd8b0c79edc83497b016f2d6be6041df7e23b0452fcbdb927b2ca346",
+  "inputs": {
+    "build_mid360_lio_phased/src/spark_fast_lio/CMakeLists.txt": {
+      "sha256": "29f26ce398b9c1551a11132c833ee850cc0b53e9766d6f06d7aeb895227bdc05",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/CMakeLists.txt"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/LICENSE": {
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/LICENSE"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/avia.yaml": {
+      "sha256": "e540d3cabe333b008b721eaa4a39c3578619a4f806380bf0e1ba0f537d03ccec",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/avia.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/dcist_rrg/rrghusky.yaml": {
+      "sha256": "75263395ecca320b456801540eb994ebf1d505b8d01eebadbfdb48a38034cf19",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/dcist_rrg/rrghusky.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/horizon.yaml": {
+      "sha256": "fa11a03ee59e542b5db13c6e8e338fa4d66614a0f497ea3d6baac56bdb22ae93",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/horizon.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/acl_jackal.yaml": {
+      "sha256": "2c87e60537ed73f7a71ae6a2ed6a56044a04d0a6a1f06edde685a9eda69095e2",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/acl_jackal.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml": {
+      "sha256": "47c89642d052908d01d905f932f079e503e1fbf81e03299c96d1025bdd8ca813",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/apis.yaml": {
+      "sha256": "234d16bea92fe120048ec176c8e3cdc40d565c82e8e343049cc68227c2b2adc9",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/apis.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/hathor.yaml": {
+      "sha256": "3a7225bb69633bf4eae1a4b46f5106ca95f8820319566cbf05f2e0993400f598",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/hathor.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/sobek.yaml": {
+      "sha256": "25b6f80616ccf471d4651f84a75a719381fe9c25abe1684f1db761bcaa7ba35e",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/sobek.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/sparkal1.yaml": {
+      "sha256": "b181499641792080325d91e7100b3a1d309df40df977b4e7591ec2579e74d7f9",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/sparkal1.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/sparkal2.yaml": {
+      "sha256": "82fcc957548b603459831ce700222c25bf477ff47f0f0ebdbdd4a3c5a9bf579d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/sparkal2.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/thoth.yaml": {
+      "sha256": "3472141231acdee3d69efbeeb370465ba52650cec2c3c102a6f0ff9e206e5bea",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/kimera_multi/thoth.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/ouster.yaml": {
+      "sha256": "39ae666ddb62b0fd9c32a2abc030f5eca17bba407286cdc503f9bb1ac615e02c",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/ouster.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/ouster_vbr.yaml": {
+      "sha256": "4988e76acd6bee279072327e82ec0efcaf710b80bd5bd465988254d237b08c44",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/ouster_vbr.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/velodyne.yaml": {
+      "sha256": "24e1a22ea6524c39fd8c177d737ea63ace3786cd0b8c64e4ad798d1950001d40",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/velodyne.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/config/velodyne_mit.yaml": {
+      "sha256": "d49cdec18aa48625429b8faf8765a3f2f71eb457e411d215f22d1529bccc1d8f",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/config/velodyne_mit.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/common/Exp_mat.h": {
+      "sha256": "4abd729a892559dbdca2bdb9f7fbff8bc79b70c5350eff660228033da4a6efae",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/common/Exp_mat.h"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/common/common_lib.h": {
+      "sha256": "68180c0a697f3eeb4197ee8324c3a173367e72e56db0756a307a1d7ca8ed1306",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/common/common_lib.h"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/common/so3_math.h": {
+      "sha256": "0e16b6611ec73176e1d43549619fb248b6b5c557a89cd2a9bbec36558cf9a796",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/common/so3_math.h"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/common/use-ikfom.hpp": {
+      "sha256": "860cd08b30f9b69dad8f037725f6259acb7a174cd7bdd9f4ce8cc6d3de1f38bc",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/common/use-ikfom.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/imu_processing.hpp": {
+      "sha256": "6013985a7139816f8bbd17defabf79bad83a93d1a4315b55b4cf95be24d372da",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/imu_processing.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/preprocess.h": {
+      "sha256": "dfc7c3d6c1e3b826e64ec62d17436041bad8bae7b945a5064de65a69679b878e",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/preprocess.h"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/include/spark_fast_lio.h": {
+      "sha256": "7e96a6bed6e96db67f0cc7d33d05d5aa4e694bc246321697aecb377a69a5257b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/include/spark_fast_lio.h"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/launch/README.md": {
+      "sha256": "c51c832c066f10bba06a93f84d242960d4a5a688bcc5daf046027bf3494d320d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/launch/README.md"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/launch/dcist/mapping_hamilton.launch": {
+      "sha256": "42cbfbce841eb74a4a1d9bbe6abd880b57859f549bca850c272f7bc3dc4244aa",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/launch/dcist/mapping_hamilton.launch"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml": {
+      "sha256": "92ed64fd7eb9492e928d32103b271183943bd90c581b0c9933e2a55d3be18841",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml": {
+      "sha256": "18fa2c8ac839a5c610a2e4d777e7171335a29e49f9b8669a5627fb8b6036b09b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_mit_campus.launch.yaml": {
+      "sha256": "1feb867787c72e7dc368e96033c4714a69d16ccd64b12bec2859cf1bd768dc10",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_mit_campus.launch.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml": {
+      "sha256": "3ff2ce210272b4892fded673211ba7177babfc30c9bd1a967f74d372fa986a76",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/package.xml": {
+      "sha256": "894c059402f015a04a1925204521ff2a4dc6c5a3b6b9e75aad0e51664783284a",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/package.xml"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/dcist_rrg/rrghusky.rviz": {
+      "sha256": "c881ec481e476fea41c6ebffad3d61fe6a8a1a5085906b661a946acac5855798",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/dcist_rrg/rrghusky.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/acl_jackal.rviz": {
+      "sha256": "78d7a116e4e1357f1310740bc66875434902c06ce48bb49bd9e303041d5c1127",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/acl_jackal.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/acl_jackal2.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/acl_jackal2.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/apis.rviz": {
+      "sha256": "dfa61d02466ceded3483c60cbec66e91a81457f7d0e3f8e0a3468f6f71027135",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/apis.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/hathor.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/hathor.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/sobek.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/sobek.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/sparkal1.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/sparkal1.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/sparkal2.rviz": {
+      "sha256": "af6ed681e6e218701df7944367018a2ae82b672d1db1ccfbe1422b156b864793",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/sparkal2.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/thoth.rviz": {
+      "sha256": "1e94bdaa1ab86501f5c4ad0c7df8fa771bc2646b0697f4f9534271662807e919",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/kimera_multi/thoth.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/ouster_vbr.rviz": {
+      "sha256": "053c037c50b177103fd95de5c11e9f8102aa9cd5a9cf4a2e94c41b83c0f8b306",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/ouster_vbr.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/rviz/velodyne_mit.rviz": {
+      "sha256": "eca1337479be5e7f8bdda32039a7faaf8e972542e63546728a02279b42fa512a",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/rviz/velodyne_mit.rviz"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/src/preprocess.cpp": {
+      "sha256": "fecdb453eeb5efc36a116473355f31cc56bf4ce9e30fd4c0e94b514ecec45bd1",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/src/preprocess.cpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/src/spark_fast_lio.cpp": {
+      "sha256": "21a9e9ccbc0ebef2831cb4bd53e39fb6ad865f766f7be40ff6dd84ad8feb80a7",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/src/spark_fast_lio.cpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/esekfom.hpp": {
+      "sha256": "f52eed547293533bdfa715adfb87648a6e9343c8ef3aff8e68d92acc028f53f9",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/esekfom.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/util.hpp": {
+      "sha256": "c98efdfbc2df982af4f889c1dc5dbe5fa6375813ed79c12a7ad4ee2f9f7fd2da",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/esekfom/util.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/build_manifold.hpp": {
+      "sha256": "6a08dc9daa0156acdbfc1ae4591215e1e69b91fc968d2a9d63f48272b22b6251",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/build_manifold.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp": {
+      "sha256": "ea0aa07eb1e3001fb5e508f42a7fb130d7d1791bd368289d4f0404ccd0f27073",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/SubManifold.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp": {
+      "sha256": "89f1d8f188fcd1aade798bd0f932c7f62349b6d44cb153902deba89395b5ac7d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/mtkmath.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/vectview.hpp": {
+      "sha256": "3d81ae12205ff9cc62f48dd2847060019669903f027311211d4610d23e102b33",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/src/vectview.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/startIdx.hpp": {
+      "sha256": "1d8d16c3975a2418e08074bbcb7382cc8b7b7147205671c6815947ab6fc94df1",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/startIdx.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/S2.hpp": {
+      "sha256": "39466b17acdd86bed5578614fc7ce2c868ee631d407d4f606707ddd7acaec8e0",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/S2.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/SOn.hpp": {
+      "sha256": "34cc9bb2ac6c6b503802293726a1da08bf422c7b80e5102501fb3319adfa18b3",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/SOn.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/vect.hpp": {
+      "sha256": "8ef8405a7021914553425177688545dca3666769b87ed58ebcbcb4a2cc584e4d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/vect.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp": {
+      "sha256": "41b969b42f835f533adbae9bb97dda2d67d311abf14f3db3e25e150a0e0bbcd0",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/IKFoM_toolkit/mtk/types/wrapped_cv_mat.hpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/ikd-Tree/README.md": {
+      "sha256": "54705506bc793c5ce96689b7fa686f312358709c125b6a22d451226210e0cd4d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/ikd-Tree/README.md"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.cpp": {
+      "sha256": "5a33ff24aa340cf950b99f8f46a91ee293530903a90bb1edbe2bfea4ebe5142d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.cpp"
+    },
+    "build_mid360_lio_phased/src/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.h": {
+      "sha256": "3e4c1d4c3f7fbc42a251cf8b343ec73fdd65904d07bd189eaf7dc0bbd3633a0a",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio/third_party/ikd-Tree/ikd_Tree.h"
+    },
+    "install_mid360_lio_phased/.colcon_install_layout": {
+      "sha256": "9b8d77949b6e468746790cc1ada9432ca9984c51533a086544c8d0c01f18cc66",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/.colcon_install_layout"
+    },
+    "install_mid360_lio_phased/COLCON_IGNORE": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/COLCON_IGNORE"
+    },
+    "install_mid360_lio_phased/_local_setup_util_ps1.py": {
+      "sha256": "6bd62f5634832008b01eb0ccf38600512b7ee47c735ca53af22f92319f7e5a60",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/_local_setup_util_ps1.py"
+    },
+    "install_mid360_lio_phased/_local_setup_util_sh.py": {
+      "sha256": "3f6e8b7fae1039cdc824678256f56160cb425ac6fd4e17e441b98d5cefab9f57",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/_local_setup_util_sh.py"
+    },
+    "install_mid360_lio_phased/local_setup.bash": {
+      "sha256": "0e10d666bbf43cf559467b11b75cf6d26cf8d210e7f94e79dfe5a7dddb2fe91c",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/local_setup.bash"
+    },
+    "install_mid360_lio_phased/local_setup.ps1": {
+      "sha256": "79cfdc40aa006498cb2a008f05efe6563f311dcc1ab5b1c385c9c84f128feacb",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/local_setup.ps1"
+    },
+    "install_mid360_lio_phased/local_setup.sh": {
+      "sha256": "726d85f32250be2b7276e971f9a66cbd1a657cd50d90c18dcc6512f21c155e98",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/local_setup.sh"
+    },
+    "install_mid360_lio_phased/local_setup.zsh": {
+      "sha256": "5fc7b5cfa0b484f14c21854fdcbb31653d831dc235e214b8ed88a63f6d2c4c02",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/local_setup.zsh"
+    },
+    "install_mid360_lio_phased/setup.bash": {
+      "sha256": "320e1c74ec4984b0460efdf14b7bf00b479d5eb2d0773c984a37c2edb262e191",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/setup.bash"
+    },
+    "install_mid360_lio_phased/setup.ps1": {
+      "sha256": "bd37d066df1f45a6f36ce5b67716a972f1ebd90cf56e4421f271dbca7b418792",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/setup.ps1"
+    },
+    "install_mid360_lio_phased/setup.sh": {
+      "sha256": "32923b2bf03daea8c814def1bafac71827e3e7105443d5d07ff24457e17dae1b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/setup.sh"
+    },
+    "install_mid360_lio_phased/setup.zsh": {
+      "sha256": "710a4b5835c97ff8a79319e42adba2f7a1a87011529a6c573ab792207f65acb5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/setup.zsh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/lib/libspark_lio_component.so": {
+      "sha256": "e793c0ca99343fc5c530f52f57d36a3c6b3e21decfe84fc0644e64a6c0ab8995",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/lib/libspark_lio_component.so"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/lib/spark_fast_lio/spark_lio_mapping": {
+      "sha256": "4f7a704b17105b11bf6a666f5cc7e7493abc020ccc51645f5f83dfd437771ed7",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/lib/spark_fast_lio/spark_lio_mapping"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/package_run_dependencies/spark_fast_lio": {
+      "sha256": "0b40e780ad72064b16a94c8062a7040f0856d5a153762027acf6cb5ee48b680f",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/package_run_dependencies/spark_fast_lio"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/packages/spark_fast_lio": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/packages/spark_fast_lio"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/parent_prefix_path/spark_fast_lio": {
+      "sha256": "5dd626886acca896cf49da79352beb3cb9d56eeb593d70b75415f2251cf15723",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/parent_prefix_path/spark_fast_lio"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/rclcpp_components/spark_fast_lio": {
+      "sha256": "978a8c913ff26a75bf04ce2804a01689e6bedf2104936ddeb0f08b39593cc9ef",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/ament_index/resource_index/rclcpp_components/spark_fast_lio"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/colcon-core/packages/spark_fast_lio": {
+      "sha256": "876f002c0d83d061629f536cc43b13e90eea8ba1a8d929a6db88d2759fac47b8",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/colcon-core/packages/spark_fast_lio"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/cmake/spark_fast_lioConfig-version.cmake": {
+      "sha256": "1a056d80bda48cd54cf8af2013b223bfedc1cb17655e3a97b3aeae2c09a37c4c",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/cmake/spark_fast_lioConfig-version.cmake"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/cmake/spark_fast_lioConfig.cmake": {
+      "sha256": "72daa3a5afd9f065e5548c522c14366d4a166a06847da0663e9154132e0695fe",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/cmake/spark_fast_lioConfig.cmake"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/avia.yaml": {
+      "sha256": "e540d3cabe333b008b721eaa4a39c3578619a4f806380bf0e1ba0f537d03ccec",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/avia.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/dcist_rrg/rrghusky.yaml": {
+      "sha256": "75263395ecca320b456801540eb994ebf1d505b8d01eebadbfdb48a38034cf19",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/dcist_rrg/rrghusky.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/horizon.yaml": {
+      "sha256": "fa11a03ee59e542b5db13c6e8e338fa4d66614a0f497ea3d6baac56bdb22ae93",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/horizon.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/acl_jackal.yaml": {
+      "sha256": "2c87e60537ed73f7a71ae6a2ed6a56044a04d0a6a1f06edde685a9eda69095e2",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/acl_jackal.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml": {
+      "sha256": "47c89642d052908d01d905f932f079e503e1fbf81e03299c96d1025bdd8ca813",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/acl_jackal2.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/apis.yaml": {
+      "sha256": "234d16bea92fe120048ec176c8e3cdc40d565c82e8e343049cc68227c2b2adc9",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/apis.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/hathor.yaml": {
+      "sha256": "3a7225bb69633bf4eae1a4b46f5106ca95f8820319566cbf05f2e0993400f598",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/hathor.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/sobek.yaml": {
+      "sha256": "25b6f80616ccf471d4651f84a75a719381fe9c25abe1684f1db761bcaa7ba35e",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/sobek.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/sparkal1.yaml": {
+      "sha256": "b181499641792080325d91e7100b3a1d309df40df977b4e7591ec2579e74d7f9",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/sparkal1.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/sparkal2.yaml": {
+      "sha256": "82fcc957548b603459831ce700222c25bf477ff47f0f0ebdbdd4a3c5a9bf579d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/sparkal2.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/thoth.yaml": {
+      "sha256": "3472141231acdee3d69efbeeb370465ba52650cec2c3c102a6f0ff9e206e5bea",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/kimera_multi/thoth.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/ouster.yaml": {
+      "sha256": "39ae666ddb62b0fd9c32a2abc030f5eca17bba407286cdc503f9bb1ac615e02c",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/ouster.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/ouster_vbr.yaml": {
+      "sha256": "4988e76acd6bee279072327e82ec0efcaf710b80bd5bd465988254d237b08c44",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/ouster_vbr.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/velodyne.yaml": {
+      "sha256": "24e1a22ea6524c39fd8c177d737ea63ace3786cd0b8c64e4ad798d1950001d40",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/velodyne.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/velodyne_mit.yaml": {
+      "sha256": "d49cdec18aa48625429b8faf8765a3f2f71eb457e411d215f22d1529bccc1d8f",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/config/velodyne_mit.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/ament_prefix_path.dsv": {
+      "sha256": "c4797d0a0670c70b4d3bcb5b7d47563635c7950595603f3af66f70af546ad57e",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/ament_prefix_path.dsv"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/ament_prefix_path.sh": {
+      "sha256": "6658f14efe913e291c0bf2c74059a9e14fb8abdb5a31628bef61d3b41e206679",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/ament_prefix_path.sh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/path.dsv": {
+      "sha256": "3f2cdf6234ea2525c1670c140b6a03700d98a2408e7a232107791fa96c08b58b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/path.dsv"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/path.sh": {
+      "sha256": "abe10a0452bc4b93f665fc343a7e6d32fe3f3a2b6beb90d338044a71d2583f18",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/environment/path.sh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/cmake_prefix_path.dsv": {
+      "sha256": "7ab2eb0a25c282f9a5bf62596b4c098865cd3a8aa5740601a9efa8620acd69d3",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/cmake_prefix_path.dsv"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/cmake_prefix_path.ps1": {
+      "sha256": "0c7394c1d89765deec81cb10e59a36d0d98867690b4b8781d5bc9186fc67885a",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/cmake_prefix_path.ps1"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/cmake_prefix_path.sh": {
+      "sha256": "ee9849def404b669097010f38735aa521e0731366a319b6e1abe996c793494b2",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/cmake_prefix_path.sh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/ld_library_path_lib.dsv": {
+      "sha256": "038195297fbe5e22d78680bf0f2b1b182fea46aaececf77d84daadad1fdfa665",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/ld_library_path_lib.dsv"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/ld_library_path_lib.ps1": {
+      "sha256": "c6e5dc5fc7ca92a59dec3b4107c761602c03e4ca0b4211ec2634efc3b43ef84e",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/ld_library_path_lib.ps1"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/ld_library_path_lib.sh": {
+      "sha256": "535fe00314bc8acdb36d1057e32d60c215005141a8c30a99bf665a29fed4e222",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/hook/ld_library_path_lib.sh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/README.md": {
+      "sha256": "c51c832c066f10bba06a93f84d242960d4a5a688bcc5daf046027bf3494d320d",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/README.md"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/dcist/mapping_hamilton.launch": {
+      "sha256": "42cbfbce841eb74a4a1d9bbe6abd880b57859f549bca850c272f7bc3dc4244aa",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/dcist/mapping_hamilton.launch"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml": {
+      "sha256": "92ed64fd7eb9492e928d32103b271183943bd90c581b0c9933e2a55d3be18841",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_dcist_rrg.launch.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml": {
+      "sha256": "18fa2c8ac839a5c610a2e4d777e7171335a29e49f9b8669a5627fb8b6036b09b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_kimera_multi.launch.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_mit_campus.launch.yaml": {
+      "sha256": "1feb867787c72e7dc368e96033c4714a69d16ccd64b12bec2859cf1bd768dc10",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_mit_campus.launch.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml": {
+      "sha256": "3ff2ce210272b4892fded673211ba7177babfc30c9bd1a967f74d372fa986a76",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/launch/mapping_vbr_colosseo.launch.yaml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.bash": {
+      "sha256": "41b30b6c107da94a2478e43953b8cbd0d920f5e8fc1ea847c61a213623d623b0",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.bash"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.dsv": {
+      "sha256": "7122a20c2a1f83a3a6f1f4c74096bff00a37637bcee4a2069b3724c18f4461d7",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.dsv"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.sh": {
+      "sha256": "f676d6a7f14c74fc07c70901d71b8f67f7b508ef91d9a28fd4a812b508d78251",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.sh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.zsh": {
+      "sha256": "56942873096201f4e7fe5e7b9bd87e56cc42ced33fadb53fbc25766fd9149c81",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/local_setup.zsh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.bash": {
+      "sha256": "5da0082ea0ba76092cc2b2cb10c933a8a34b726dc247c00135e1dacbe72a68e6",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.bash"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.dsv": {
+      "sha256": "82df95e84d68644e4f01b0915d3497f82ddb197dc487e5149fa97e7ecbf090be",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.dsv"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.ps1": {
+      "sha256": "de3b6f7ef2e7f83cbb0609f1fdde93406224a99db9cc8304f0ac5f546e678109",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.ps1"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.sh": {
+      "sha256": "81ed63804528499c5933aae10805b1b9fe78e6faf71173928c2cdd5a835bc2dd",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.sh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.xml": {
+      "sha256": "894c059402f015a04a1925204521ff2a4dc6c5a3b6b9e75aad0e51664783284a",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.xml"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.zsh": {
+      "sha256": "628a50009788dbb0ae5a0aa1bb1adbe25b5fa94906e4643598af1f4c10c5ada5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/package.zsh"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/dcist_rrg/rrghusky.rviz": {
+      "sha256": "c881ec481e476fea41c6ebffad3d61fe6a8a1a5085906b661a946acac5855798",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/dcist_rrg/rrghusky.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/acl_jackal.rviz": {
+      "sha256": "78d7a116e4e1357f1310740bc66875434902c06ce48bb49bd9e303041d5c1127",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/acl_jackal.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/acl_jackal2.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/acl_jackal2.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/apis.rviz": {
+      "sha256": "dfa61d02466ceded3483c60cbec66e91a81457f7d0e3f8e0a3468f6f71027135",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/apis.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/hathor.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/hathor.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/sobek.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/sobek.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/sparkal1.rviz": {
+      "sha256": "5ae0dc5d3c75cbb01251dc2b0a66e699291d44ec427dd4f189c0fd2ce2eac5e5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/sparkal1.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/sparkal2.rviz": {
+      "sha256": "af6ed681e6e218701df7944367018a2ae82b672d1db1ccfbe1422b156b864793",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/sparkal2.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/thoth.rviz": {
+      "sha256": "1e94bdaa1ab86501f5c4ad0c7df8fa771bc2646b0697f4f9534271662807e919",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/kimera_multi/thoth.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/ouster_vbr.rviz": {
+      "sha256": "053c037c50b177103fd95de5c11e9f8102aa9cd5a9cf4a2e94c41b83c0f8b306",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/ouster_vbr.rviz"
+    },
+    "install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/velodyne_mit.rviz": {
+      "sha256": "eca1337479be5e7f8bdda32039a7faaf8e972542e63546728a02279b42fa512a",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/spark_fast_lio/share/spark_fast_lio/rviz/velodyne_mit.rviz"
+    },
+    "tools/hardware/mid360_lio/inspect_raw.py": {
+      "sha256": "5449dc355b57d48e54592a74eccb333c02779f6546a704085108b8309cb39f35",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/inspect_raw.py"
+    },
+    "tools/hardware/mid360_lio/lio_mid360_static.yaml": {
+      "sha256": "3e9189d347958b7abb1ad0dc15eb84924cee7ea379a7178ca242d9cb1e0f7292",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/lio_mid360_static.yaml"
+    },
+    "tools/hardware/mid360_lio/start.py": {
+      "sha256": "e8ae0d1be418796d6255bb5a209f5db58cfc8149335223124f270ac4fb84fcd5",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/start.py"
+    },
+    "tools/hardware/mid360_lio/static_check.py": {
+      "sha256": "e0ddcfbb54ad20c05ce2153b6c12e32c47747295352f4db383b3179cacc06269",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/static_check.py"
+    },
+    "tools/hardware/mid360_lio_phased/README.md": {
+      "sha256": "fc1e026ab524c84c2da85edb4b5f6cce8e41ee26063791dedc1b15309cb8435f",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/README.md"
+    },
+    "tools/hardware/mid360_lio_phased/audit.py": {
+      "sha256": "b9b3fee0d6b3a936bf9fd5f1e3fe78d5f24af8cab8f035dce3faa9066e35f02b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/audit.py"
+    },
+    "tools/hardware/mid360_lio_phased/build.sh": {
+      "sha256": "81a6c75ec2787dd49faf5d87a93ef923dcd460baa7b86c9339ee890515ed472b",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/build.sh"
+    },
+    "tools/hardware/mid360_lio_phased/env.sh": {
+      "sha256": "93aa15355de25c618d66790a8267ef642594d20c9f67a7f2397f09f984a42d44",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/env.sh"
+    },
+    "tools/hardware/mid360_lio_phased/observe.py": {
+      "sha256": "4a24012d85613f17e565f00876e3c32b6c23bfb3c013ff3a3254d7e410558559",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/observe.py"
+    },
+    "tools/hardware/mid360_lio_phased/observe_static.sh": {
+      "sha256": "06bed7e90a57125c623195d1a7f0370e8d75bd552ed280d8a505a465eba7c5df",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/observe_static.sh"
+    },
+    "tools/hardware/mid360_lio_phased/probe/CMakeLists.txt": {
+      "sha256": "a5c8714367ac1f1c832a19e21f25ebdc6be60c4e49b5a9cabfede4bcedac1eb0",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/probe/CMakeLists.txt"
+    },
+    "tools/hardware/mid360_lio_phased/probe/main.cpp": {
+      "sha256": "4a094145a527eda4f86e54a206aee57c5e4935ce916adefb6971b1cc20ae849f",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/probe/main.cpp"
+    },
+    "tools/hardware/mid360_lio_phased/readonly_lio.launch.py": {
+      "sha256": "b4c1b90a82caeff477465bf3a3eefa69a4e70464f61a2fbc73587706d08753c0",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/readonly_lio.launch.py"
+    },
+    "tools/hardware/mid360_lio_phased/run.sh": {
+      "sha256": "4b298501c5143cf93684eed4c7be1c0f6283464a15ae05d7b8d01ea146ba4146",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/run.sh"
+    },
+    "tools/hardware/mid360_lio_phased/start.py": {
+      "sha256": "4a5d7a673b41be8e5e96811efa9671102a9f7533dd8085de094141311f823ad0",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/start.py"
+    },
+    "tools/hardware/mid360_lio_phased/test_audit.py": {
+      "sha256": "8d4646d4543670cd05e6495b31b4d779f942532952d1b0b64dcd76940d18f683",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/test_audit.py"
+    },
+    "tools/hardware/mid360_lio_phased/variant.py": {
+      "sha256": "064a08ee886461d18a8d4407035f19b9a61c6db972e5019cc5e038ca8d8c45d3",
+      "resolved": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio_phased/variant.py"
+    }
+  },
+  "scope": "Output-only sensor-local variant; no estimation changes or navigation integration"
+}

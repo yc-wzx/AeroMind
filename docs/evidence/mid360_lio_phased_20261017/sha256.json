@@ -1,0 +1,18 @@
+{
+  "actual_launch_output.json": "e7bfe957c1c9ef33eb63043089e5637fabd51cf9afa1609b2dad17d9cbf79cc4",
+  "actual_launch_query.txt": "cc3a87297842bcee61e258d013c077973f71f02df44824dfda5e9dccf7f9adc0",
+  "actual_launch_runner.py": "7d16d73a3caae42fa49a7ca42d5686b66fd19b42fba77a6e4b970d9762af643b",
+  "actual_launch_verification.json": "df3c325c4a7358bb6271d6813c1f29a90e1395601c476c238ce77e38fdefc5ae",
+  "audit_tests_initial_output.json": "7b40c7f9526ca23d3265b899a2694b22d344878089dc0c1658952248b9cf37cd",
+  "build_final_output.json": "41aaa8e0814c94f832eae0ef1b5040c74b5435e1616da4a812710648346975e6",
+  "build_initial_output.json": "41a3a36c0819acd658fe4a7cc7d3d25d37057512292f16797ddab8e134db3784",
+  "local_variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+  "original_raw_manifest_preserved.json": "ee0c25d1b7fdb3d524930d12ce4993228061b04843a3c6196cb08671c1d9dcd4",
+  "output_cpp.patch": "a18c01a8cee5c1175d46d0a7b1973fbe53c15c97227f7b299b4f77110bb18aa7",
+  "output_header.patch": "063adb0bfaeabe90b3ec3717003a67e452d3987caa0e5b95a4bffbd279c1104b",
+  "synthetic_capture_runner.py": "cf6e18b3f99df7fc144892add6f10f56b998b09bd30a55f98adb33719f346fb3",
+  "synthetic_e2e.json": "762c185cfe285d4b1c05dd513f392601a1003fde93cd76c1e4b340fac2e7db89",
+  "synthetic_source_fixture.py": "c4190ce7b9a323883d5fffd67d9a1d6238128669dd6b944fc449f3a3bdefca2e",
+  "user_reported_native_timing_review.json": "6842aa59e55660e3ff2b4db42c5dbe8a7489825da0c0bfe36d9bebf3f8eb201e",
+  "verification.json": "44b40cfa36575483e75e4acca12b998117f80322191547510cdd8fcc6cf0dc6f"
+}
