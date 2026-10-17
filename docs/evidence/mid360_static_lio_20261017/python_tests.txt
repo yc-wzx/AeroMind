@@ -1,0 +1,12 @@
+test_drift_rotation_sign_and_translation (__main__.Tests) ... ok
+test_pose_frames_and_nonfinite (__main__.Tests) ... ok
+test_raw_unmatched_boundary_and_inside_classification (__main__.Tests) ... ok
+test_writer_counts_and_raw_fields_preserved (__main__.Tests) ... /home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/static_check.py:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpu9ygt610/odom.jsonl' mode='r' encoding='UTF-8'>
+  lines=sum(1 for _ in self.path.open()) if self.path.exists() else 0
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.065s
+
+OK

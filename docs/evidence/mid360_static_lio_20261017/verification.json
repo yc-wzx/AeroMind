@@ -1,0 +1,14 @@
+{
+  "scope": "LIO CONFIGURATION FIX / READ-ONLY STATIC EVIDENCE TOOLS READY",
+  "old_bad_mode_reproduced_in_actual_production_class": true,
+  "correct_mode_actual_output_test": true,
+  "correct_mode": "imu",
+  "physical_frame": "mid360_imu",
+  "original_raw_inputs_and_manifest_unchanged": true,
+  "old_raw_evidence_reusable_without_rebuild": true,
+  "python_tests": 4,
+  "actual_missing_lio_cli_cannot_pass": true,
+  "no_new_real_lio_data": true,
+  "no_hardware_navigation_or_motor_commands": true,
+  "original_preserved_inputs": 2110
+}

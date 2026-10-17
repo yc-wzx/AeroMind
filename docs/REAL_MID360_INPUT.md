@@ -68,16 +68,17 @@ bash tools/hardware/mid360/env.sh ros2 topic hz /hardware/mid360/imu_raw
 
 ## 只读 LIO 候选（先等本机原始采集审核）
 
-原始采集通过且时间基准、静止IMU方向已审核后，结束上一驱动，才可选择
+原始采集通过且时间基准、静止IMU方向已审核后，保持当前驱动继续运行，选择
 显式提供该次summary的只读LIO入口：
 
 ```bash
-bash tools/hardware/mid360/env.sh ros2 launch \
-  tools/hardware/mid360/real_mid360.launch.py \
-  lio:=true rviz:=true capture_summary:=/实际采集目录/summary.json
+bash tools/hardware/mid360_lio/run.sh /实际采集目录/summary.json
 ```
 
 缺少通过的采集报告、输入构建不一致或数据哈希改变会拒绝启用LIO。
+2026-10-17 修正：旧候选YAML将visualization_frame模式填成了坐标名；新入口使用独立
+修正版配置（mode=imu，imu_frame=mid360_imu），不改旧输入及采集哈希，不需重采。
+旧的 lio:=true 入口不再推荐使用。
 本机目前没有接真实雷达，不能将本地工具测试或人工合成消息宣称硬件通过。
 目前应执行前面的 sensors-only 和15秒采集；本轮不授权真实车体运动。
 

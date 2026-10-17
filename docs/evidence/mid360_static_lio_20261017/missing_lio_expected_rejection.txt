@@ -1,0 +1,52 @@
+{
+  "scope": "REAL SENSOR-LOCAL STATIC LIO DIAGNOSTIC; NOT NAVIGATION ACCEPTANCE",
+  "evidence_complete": false,
+  "stream": {
+    "pass_": false,
+    "count": 0,
+    "problem": "missing/insufficient messages"
+  },
+  "drift": {
+    "samples": 0
+  },
+  "health": {
+    "received": 0,
+    "written": 0,
+    "actual_lines": 0,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers": [],
+  "actual_parameters": {
+    "error": "parameter service unavailable"
+  },
+  "inputs_unchanged": true,
+  "raw_build_manifest_sha256": "cb4601a5dd8b0c79edc83497b016f2d6be6041df7e23b0452fcbdb927b2ca346",
+  "lio_stage_input_sha256": {
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/observe_static.sh": "c15a2adcf0b6bac9c11ca7b6318e0fc4fc99b9610bbba8185312e93045b2c9d0",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/start.py": "03cea3553414aa57c16330332c04d7b11b4711b24d27150ad3d8a3d214cd7ccc",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/inspect_raw.py": "5449dc355b57d48e54592a74eccb333c02779f6546a704085108b8309cb39f35",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/static_check.py": "e0ddcfbb54ad20c05ce2153b6c12e32c47747295352f4db383b3179cacc06269",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/lio_mid360_static.yaml": "3e9189d347958b7abb1ad0dc15eb84924cee7ea379a7178ca242d9cb1e0f7292",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/README.md": "83ece468dc1106b844b303e84150d8454921efa92c3141d30fc1208b02804723",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/run.sh": "4e85cd6714ef6d7e11ce04682fa4fc6947d43832a378ebd7c4adc440929740ba",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/readonly_lio.launch.py": "e633e630cc4a568cac8f9509466510899be410e8d8d061ee98193495d28a925c",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/tests.py": "50f4231beb574d3361e996af30ff7d4a83d7ca33803d79115dcf6cda918f676e",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/probe/main.cpp": "d9befeeaf560347949217b393736f92ac3aaad2276d276e21882de8497e9d1c1",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/probe/CMakeLists.txt": "d5e9b5256e69536912a7f5b467a7d578f33e70c64e9601a6602fab144a9b4aec"
+  },
+  "interrupted": false,
+  "receive_wall_minus_device_s_median": null,
+  "data_sha256": {
+    "odometry.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limits": [
+    "Operator must keep sensor/gimbal/chassis stationary",
+    "No ground truth",
+    "No chassis centre or gravity-aligned map qualification",
+    "No drift acceptance threshold invented",
+    "No motor commands or navigation feedback"
+  ]
+}
+SUMMARY: /home/rmnav/AeroMind_mid360_lio_checks/static_20261017_215840/summary.json

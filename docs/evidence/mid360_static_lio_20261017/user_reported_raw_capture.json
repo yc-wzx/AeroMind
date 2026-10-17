@@ -1,0 +1,24 @@
+{
+  "provenance": "User-pasted summary; original remote files not accessible on development machine",
+  "summary": "/home/rm/AeroMind_mid360_captures/20261017_214624/summary.json",
+  "pass_raw_reported": true,
+  "counts": {
+    "points": 151,
+    "imu_raw": 3001,
+    "imu_si": 2999
+  },
+  "receive_hz": {
+    "points": 10.001969451130734,
+    "imu_raw": 200.0312213797787,
+    "imu_si": 200.00647731450772
+  },
+  "mean_acc_g": [
+    0.018110326159855934,
+    0.0003241190055343492,
+    -0.9937795051849909
+  ],
+  "raw_build_manifest_sha256": "2ae9f90c27ebc8f82457eec81427b7ff48b8f3727dc50d54e4496354cc895a9a",
+  "original_receipts_sha256": "e63abf0f358048676793083b023e651a6d208e7539eb45225b81896cd9d78ba5",
+  "bag_sha256": "a6fb10bcbb2826dcb7b948de193faa053df1467a97509354952bbac9b29f9050",
+  "note": "Two unmatched raw samples not classified until actual receipts inspected; no zero-loss claim"
+}

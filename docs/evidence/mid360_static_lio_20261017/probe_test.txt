@@ -1,0 +1,4 @@
+[INFO] [1792245449.841796169] [spark_fast_lio_node]: SPARKFastLIO2 constructed
+Multi thread started 
+PASS: old visualization mode mid360_imu throws; corrected imu mode and actual publishOdometry preserve pose / correct frames; synthetic isolated test only
+Rebuild thread terminated normally
