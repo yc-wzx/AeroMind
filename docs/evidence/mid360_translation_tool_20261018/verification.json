@@ -1,0 +1,13 @@
+{
+  "tool_tests": 16,
+  "all_pass": true,
+  "synthetic_complete_translation_and_raw_reaudit_pass": true,
+  "synthetic_imu_loss_refused_before_outward": true,
+  "observed_receiver_transmit_payload_bytes": 0,
+  "old_hardware_and_navigation_files_changed": false,
+  "real_translation_trial_complete": false,
+  "measured_distance_required_no_default": true,
+  "production_files_match_synthetic_capture": true,
+  "accuracy_accepted": false,
+  "navigation_ready": false
+}

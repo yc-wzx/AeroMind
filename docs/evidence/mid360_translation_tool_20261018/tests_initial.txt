@@ -1,0 +1,21 @@
+test_actual_independent_review_and_repeated_output (__main__.EvidenceTests) ... ok
+test_capture_failure_not_passed (__main__.EvidenceTests) ... ok
+test_full_native_audit (__main__.EvidenceTests) ... ok
+test_missing_measurement_hash_or_imu_rejected (__main__.EvidenceTests) ... ok
+test_raw_tampering_rejected (__main__.EvidenceTests) ... ok
+test_bad_pose_and_encoder_gap_rejected (__main__.MathTests) ... ok
+test_body_yaw_not_hidden (__main__.MathTests) ... ok
+test_inverted_mount_and_arbitrary_lio_gauge_keep_positive_forward (__main__.MathTests) ... ok
+test_joint_turn_recorded_and_compensated_not_forced_zero (__main__.MathTests) ... ok
+test_missing_and_short_markers_rejected (__main__.MathTests) ... ok
+test_missing_measurement_or_provenance_rejected (__main__.MathTests) ... ok
+test_reverse_direction_stays_negative (__main__.MathTests) ... ok
+test_sideways_is_not_fitted_to_forward (__main__.MathTests) ... ok
+test_wrong_scale_is_reported_without_correction (__main__.MathTests) ... ok
+test_actual_readonly_uart_and_no_tx (__main__.SerialTests) ... ok
+test_existing_owner_refused (__main__.SerialTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 12.590s
+
+OK

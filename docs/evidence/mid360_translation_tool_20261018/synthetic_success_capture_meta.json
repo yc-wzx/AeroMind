@@ -1,0 +1,204 @@
+{
+  "health": {
+    "received": 14842,
+    "written": 14842,
+    "actual_lines": 14842,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers_before": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "publishers_after": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "parameters_before": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "parameters_after": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "inputs_unchanged": true,
+  "sealed_inputs_before": true,
+  "sealed_inputs_after": true,
+  "failure": null,
+  "interrupted": false,
+  "data_sha256": {
+    "native.jsonl": "1867e954e1159bc72610e1b6cfa641555b3bfc10f0c4592c89b0437e27f149b4",
+    "events.jsonl": "ae3aa5cf3c07531324cd468161482312362fefd6bca1d743152d4a23ebf504ca",
+    "reference.json": "b3a059dc1693a4dc11aca74b157d17c3052a15e2bf5e16bf25d3078744857be5",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "local_inputs.json": "51f68e2604a6d40314fcec0885ec59d10e1742c66623e8c5bd38b748326272e2",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "encoder/raw.bin": "0de23f1d7531892b24f25696b92b74331de996f3348e18e18137f11871b4709d",
+    "encoder/reads.jsonl": "f73b074763560a3fe3c04e207a41146e07dc204492c60e32f6c53ccd953b75cf",
+    "encoder/capture_meta.json": "e2ef3ad66ad6841440da02ce2c03468a26844dfebd063b8518510b862dc9b08f"
+  },
+  "ros_domain_id": "93",
+  "operator_declaration": "Same fixed chassis mark at measured A/B; straight ground push and return without chassis/gimbal yaw change",
+  "service_scope": "Only GetParameters requested; no reset/set_pose calls monitored",
+  "dependency_scope": "Local tools snapshot plus sealed build verification, not an OS image"
+}

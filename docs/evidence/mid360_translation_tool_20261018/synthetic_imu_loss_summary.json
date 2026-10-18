@@ -1,0 +1,142 @@
+{
+  "scope": "REAL SENSOR / ENCODER MANUAL REFERENCE TRANSLATION; DIAGNOSTIC ONLY",
+  "evidence_complete": false,
+  "diagnostic_complete": false,
+  "accuracy_accepted": false,
+  "navigation_ready": false,
+  "published_ros_data": false,
+  "gates": {
+    "writer_health": true,
+    "sources": false,
+    "parameters": false,
+    "sealed_inputs_verified": true,
+    "inputs_unchanged": true,
+    "capture_finished_without_error": false
+  },
+  "capture_failure": "LIO/IMU/\u7535\u63a7\u8f93\u5165\u8fc7\u671f\u6216\u65e0\u6548\uff1b\u8bf7\u505c\u6b62\u624b\u63a8",
+  "health": {
+    "received": 1531,
+    "written": 1531,
+    "actual_lines": 1531,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "original_data_sha256": {
+    "native.jsonl": "deddf78816082843b2553cd4068653e612dd35ce79f62c429778b95e0c2e7f42",
+    "events.jsonl": "4d1c0f8b5526d421fe5e9386d130a6adc12548c17d88c0c7005394ac05d9ae85",
+    "reference.json": "b3a059dc1693a4dc11aca74b157d17c3052a15e2bf5e16bf25d3078744857be5",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "local_inputs.json": "51f68e2604a6d40314fcec0885ec59d10e1742c66623e8c5bd38b748326272e2",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "encoder/raw.bin": "8ba94c38d6ff6f49bd2ea1fcd9e39a24495b26f53a6b55a8752dd2ca5248b28e",
+    "encoder/reads.jsonl": "0a9d62170aef0ceedff06712092ba71a3be1594a3e1d16cf57980ca7fb641aff",
+    "encoder/capture_meta.json": "9d7458fe5139bd483dd28fe6474c5fa07ad241bad182631bffe43096a00d7273"
+  },
+  "capture_meta_sha256": "6ad2cbd339ac2ccabfce5f42d30d95d1693aef0d8593b05cc2801f048d8a533c",
+  "reviewer_sha256": "cda8cb0f056731950531d465acebcff2ed52a1bbc2d1e4c6db0f727998e33465",
+  "math_sha256": "2ec9e624b26458feef283cd8d6f962df94dcaef82305739e41c4feafc6cc1d88",
+  "limitations": [
+    "Ground distance and same chassis mark alignment are operator reports, without independent endpoint tracking or certified uncertainty",
+    "Initial chassis axes use declared mechanical forward and nominal inverted mount; not official map/gravity alignment",
+    "No dimensions or scale fitted; encoder and LIO paired by host receipt only, not device sampling time",
+    "Rough mount and long vertical lever can couple orientation error into position",
+    "No motor/navigation/TF publication, no reset/set_pose service monitoring, no invented accuracy acceptance threshold"
+  ],
+  "encoder": {
+    "scope": "RECEIVE-ONLY NAVIGATION FEEDBACK INSPECTION; NOT NAVIGATION ACCEPTANCE",
+    "raw_bytes": 21021,
+    "read_chunks": 487,
+    "header_candidates": 539,
+    "candidate_reports": [
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "modbus_a001_ffff",
+        "crc_valid_frames": 0,
+        "relative_yaw_rad_range": null,
+        "latest_navigation_fields": null,
+        "structural_valid_frames": 0,
+        "longest_consecutive_valid_frames": 0,
+        "format_candidate_exercised": false,
+        "relative_yaw_valid_frames": 0,
+        "observed_completion_receive_hz": null,
+        "max_completion_receive_gap_s": null
+      },
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "diagnostic_8408_ffff",
+        "crc_valid_frames": 539,
+        "relative_yaw_rad_range": [
+          0.01899999938905239,
+          0.01899999938905239
+        ],
+        "latest_navigation_fields": {
+          "nav_valid_flags": 15,
+          "nav_allowed": 0,
+          "nav_allowed_valid": true,
+          "chassis_vx_m_s": 0.0,
+          "chassis_vy_m_s": 0.0,
+          "gimbal_relative_angle_rad": 0.01899999938905239,
+          "relative_yaw_valid": true
+        },
+        "structural_valid_frames": 539,
+        "longest_consecutive_valid_frames": 539,
+        "format_candidate_exercised": true,
+        "relative_yaw_valid_frames": 539,
+        "observed_completion_receive_hz": 221.70097091393535,
+        "max_completion_receive_gap_s": 0.013640384
+      }
+    ],
+    "format_status": "NAV39_CRC8408_OBSERVED",
+    "expected_crc_profile": "0x8408",
+    "receive_profile_matches": true,
+    "selected_for_control": null,
+    "navigation_ready": false,
+    "validity_rule": "At least 3 adjacent CRC+structurally valid frames is a diagnostic format candidate, not link/angle qualification",
+    "limitations": [
+      "No decoder or actuator path is enabled by this inspection",
+      "Only the supplied 39-byte SP navigation feedback layout examined; a non-selected CRC remains diagnostic only",
+      "Multiple candidates remain ambiguous; no fallback selects one silently",
+      "Receive times describe host reads; frames within a batch share completion time, no device measurement timestamp invented",
+      "No generation frequency, publisher-side losslessness or sensor/encoder clock alignment proven",
+      "A valid relative-yaw flag and finite value do not prove direction/zero correctness"
+    ],
+    "capture_complete": false,
+    "writer_health": {
+      "received_bytes": 21021,
+      "received_chunks": 487,
+      "written_bytes": 21021,
+      "written_chunks": 487,
+      "overflow": 0,
+      "error": null,
+      "closed": true
+    },
+    "capture_failure": "LIO/IMU/\u7535\u63a7\u8f93\u5165\u8fc7\u671f\u6216\u65e0\u6548\uff1b\u8bf7\u505c\u6b62\u624b\u63a8",
+    "interrupted": false,
+    "device": "/dev/pts/0",
+    "baud": 460800,
+    "actual_termios": {
+      "baud": 460800,
+      "data_bits": 8,
+      "parity": "none",
+      "stop_bits": 1,
+      "flow_control": "none",
+      "descriptor_access": "O_RDONLY",
+      "exclusive_ioctl": true,
+      "prior_bytes_flushed": false
+    },
+    "original_data_sha256": {
+      "raw.bin": "8ba94c38d6ff6f49bd2ea1fcd9e39a24495b26f53a6b55a8752dd2ca5248b28e",
+      "reads.jsonl": "0a9d62170aef0ceedff06712092ba71a3be1594a3e1d16cf57980ca7fb641aff"
+    },
+    "serial_transmit_payload_bytes": 0,
+    "input_tools_unchanged": true,
+    "modem_line_note": "No DTR/RTS/reset ioctl is issued; actual line transitions not recorded",
+    "crc_profile_source": "recorded capture profile",
+    "capture_meta_sha256": "9d7458fe5139bd483dd28fe6474c5fa07ad241bad182631bffe43096a00d7273",
+    "auditor_sha256": "f71890fe16a8d1ea46097c6da37ea178619e198713962d484bed76cf0e3702ed"
+  },
+  "analysis_error": "Encoder capture/explicit CRC8408 incomplete",
+  "status": "EVIDENCE_INCOMPLETE",
+  "derived_timeline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

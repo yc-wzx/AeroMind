@@ -1,0 +1,19 @@
+{
+  "scope": "SYNTHETIC DDS + VIRTUAL UART TRANSLATION; NOT PHYSICAL ACCEPTANCE",
+  "production_orchestrator_and_recorders_used": true,
+  "test_hooks": "Virtual UART path and scripted operator Enter timing only",
+  "diagnostic_complete": false,
+  "expected_imu_failure": true,
+  "independent_review_identical": true,
+  "no_serial_transmit_payload_observed": true,
+  "health": {
+    "received": 1531,
+    "written": 1531,
+    "actual_lines": 1531,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "statistics": {},
+  "fixture_sha256": "556e8d82e966144e34027d00b0fa06d8200abaacf00e2574073d35803b5acef8"
+}
