@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-18T16:47:27.948782+08:00",
+  "source": "User chat reply after trial",
+  "actual_motion_note": "Hand push may include chassis turning or lateral deviation",
+  "endpoint_reference": "0.50m operator-measured reference; exact endpoint alignment and heading not independently tracked",
+  "not_a_ground_truth_record": true
+}

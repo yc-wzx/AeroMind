@@ -1,0 +1,32 @@
+{
+  "scope": "REAL MEASURED MANUAL A-B-A TRANSLATION REVIEW; NO ACCURACY ACCEPTANCE",
+  "trial": "/home/rm/AeroMind_mid360_translation_checks/push_return_20261018_164408",
+  "independent_report_exact_match": true,
+  "evidence_complete": true,
+  "diagnostic_complete": true,
+  "accuracy_accepted": false,
+  "navigation_ready": false,
+  "guard_interval_faults": [],
+  "reference_distance_m": 0.5,
+  "estimated_forward_m": 0.5265044220754683,
+  "signed_forward_difference_m": 0.026504422075468326,
+  "observed_ratio": 1.0530088441509367,
+  "estimated_return_forward_axis_m": -0.4767292138155318,
+  "return_closure_3d_m": 0.053220388537146085,
+  "far_lateral_displacement_m": 0.049302384523464984,
+  "max_sampled_body_yaw_change_deg": 6.231069663857786,
+  "max_sampled_encoder_change_deg": 0.17578126823177215,
+  "native_rows": 44362,
+  "mission_elapsed_s": 62.006760027,
+  "operator_motion_note": "Operator confirmed possible chassis turn or lateral deviation during hand push",
+  "interpretation": "Forward and return signs correct, no runaway; endpoint/yaw/lateral residuals cannot be attributed entirely to LIO without independent trajectory/heading truth",
+  "no_scale_or_extrinsic_fitted": true,
+  "no_motor_commands": true,
+  "limitations": [
+    "Single physical sample; no repeatability qualification",
+    "Tape reference operator-reported; endpoint alignment and heading not independently tracked",
+    "Mount dimensions provisional",
+    "Encoder paired by host receipt; no device sample-time synchronization",
+    "Guard ledger stores input validations, not full raw point-cloud CDR"
+  ]
+}

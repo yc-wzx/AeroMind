@@ -1,0 +1,508 @@
+{
+  "scope": "REAL SENSOR / ENCODER MANUAL REFERENCE TRANSLATION; DIAGNOSTIC ONLY",
+  "evidence_complete": true,
+  "diagnostic_complete": true,
+  "accuracy_accepted": false,
+  "navigation_ready": false,
+  "published_ros_data": false,
+  "gates": {
+    "writer_health": true,
+    "sources": true,
+    "parameters": true,
+    "sealed_inputs_verified": true,
+    "inputs_unchanged": true,
+    "capture_finished_without_error": true
+  },
+  "capture_failure": null,
+  "health": {
+    "received": 44362,
+    "written": 44362,
+    "actual_lines": 44362,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "original_data_sha256": {
+    "native.jsonl": "9d7e8821ad9db842fdebfba5b6230505bd2ddee53d0a14179814dc7ff7c65d43",
+    "events.jsonl": "0d303557f6b83d527329a5128ef10e6ec7e4f6b4db8604135ff49436e9998922",
+    "reference.json": "bc9da868b1b0cead8a00f62b0dc48f64eb36209f038d56819e7e1974d2debaa5",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "local_inputs.json": "dd37faeeeece3c76cb7617c6d47a6050aa7b7bc99c0245109f46b64d9102a28b",
+    "variant_manifest_snapshot.json": "f46bd28b22d05a7868ec3d29ccdc8faca1c88a34e23ae2960b13f1f560928b9f",
+    "encoder/raw.bin": "b8d86f2eb502e0add395d938942f05d5ffa0f9b0c6098393131d0924a3b91cd1",
+    "encoder/reads.jsonl": "6d64a607cb18fc4350c3d06c6929670f2268f7a45b7e6587965e7e8d8b101273",
+    "encoder/capture_meta.json": "ff5daaa2d9f8e5be625f98513be42e4758fb9551920936d81fda1e6772ad7ae4"
+  },
+  "capture_meta_sha256": "f796b35d811fd5f7a5beaee5f7f172ffcf18eca0d8c7c5b1533d01dd73f3e9fe",
+  "reviewer_sha256": "f4f3a07e393ffce146d3e83b24d2093d64d58a2972fd4b7bc42bc910735a2ed6",
+  "math_sha256": "2ec9e624b26458feef283cd8d6f962df94dcaef82305739e41c4feafc6cc1d88",
+  "limitations": [
+    "Ground distance and same chassis mark alignment are operator reports, without independent endpoint tracking or certified uncertainty",
+    "Initial chassis axes use declared mechanical forward and nominal inverted mount; not official map/gravity alignment",
+    "No dimensions or scale fitted; encoder and LIO paired by host receipt only, not device sampling time",
+    "Rough mount and long vertical lever can couple orientation error into position",
+    "No motor/navigation/TF publication, no reset/set_pose service monitoring, no invented accuracy acceptance threshold"
+  ],
+  "encoder": {
+    "scope": "RECEIVE-ONLY NAVIGATION FEEDBACK INSPECTION; NOT NAVIGATION ACCEPTANCE",
+    "raw_bytes": 542498,
+    "read_chunks": 27820,
+    "header_candidates": 13909,
+    "candidate_reports": [
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "modbus_a001_ffff",
+        "crc_valid_frames": 1,
+        "relative_yaw_rad_range": [
+          -0.006902913562953472,
+          -0.006902913562953472
+        ],
+        "latest_navigation_fields": {
+          "nav_valid_flags": 15,
+          "nav_allowed": 0,
+          "nav_allowed_valid": true,
+          "chassis_vx_m_s": -0.04315796121954918,
+          "chassis_vy_m_s": 0.007156372535973787,
+          "gimbal_relative_angle_rad": -0.006902913562953472,
+          "relative_yaw_valid": true
+        },
+        "structural_valid_frames": 1,
+        "longest_consecutive_valid_frames": 1,
+        "format_candidate_exercised": false,
+        "relative_yaw_valid_frames": 1,
+        "observed_completion_receive_hz": null,
+        "max_completion_receive_gap_s": null
+      },
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "diagnostic_8408_ffff",
+        "crc_valid_frames": 13909,
+        "relative_yaw_rad_range": [
+          -0.008436894975602627,
+          -0.005368933081626892
+        ],
+        "latest_navigation_fields": {
+          "nav_valid_flags": 15,
+          "nav_allowed": 0,
+          "nav_allowed_valid": true,
+          "chassis_vx_m_s": 0.0,
+          "chassis_vy_m_s": 0.0,
+          "gimbal_relative_angle_rad": -0.006135923322290182,
+          "relative_yaw_valid": true
+        },
+        "structural_valid_frames": 13909,
+        "longest_consecutive_valid_frames": 13909,
+        "format_candidate_exercised": true,
+        "relative_yaw_valid_frames": 13909,
+        "observed_completion_receive_hz": 199.9990234991595,
+        "max_completion_receive_gap_s": 0.006141850000000001
+      }
+    ],
+    "format_status": "NAV39_CRC8408_OBSERVED",
+    "expected_crc_profile": "0x8408",
+    "receive_profile_matches": true,
+    "selected_for_control": null,
+    "navigation_ready": false,
+    "validity_rule": "At least 3 adjacent CRC+structurally valid frames is a diagnostic format candidate, not link/angle qualification",
+    "limitations": [
+      "No decoder or actuator path is enabled by this inspection",
+      "Only the supplied 39-byte SP navigation feedback layout examined; a non-selected CRC remains diagnostic only",
+      "Multiple candidates remain ambiguous; no fallback selects one silently",
+      "Receive times describe host reads; frames within a batch share completion time, no device measurement timestamp invented",
+      "No generation frequency, publisher-side losslessness or sensor/encoder clock alignment proven",
+      "A valid relative-yaw flag and finite value do not prove direction/zero correctness"
+    ],
+    "capture_complete": true,
+    "writer_health": {
+      "received_bytes": 542498,
+      "received_chunks": 27820,
+      "written_bytes": 542498,
+      "written_chunks": 27820,
+      "overflow": 0,
+      "error": null,
+      "closed": true
+    },
+    "capture_failure": null,
+    "interrupted": false,
+    "device": "/dev/ttyUSB0",
+    "baud": 460800,
+    "actual_termios": {
+      "baud": 460800,
+      "data_bits": 8,
+      "parity": "none",
+      "stop_bits": 1,
+      "flow_control": "none",
+      "descriptor_access": "O_RDONLY",
+      "exclusive_ioctl": true,
+      "prior_bytes_flushed": false
+    },
+    "original_data_sha256": {
+      "raw.bin": "b8d86f2eb502e0add395d938942f05d5ffa0f9b0c6098393131d0924a3b91cd1",
+      "reads.jsonl": "6d64a607cb18fc4350c3d06c6929670f2268f7a45b7e6587965e7e8d8b101273"
+    },
+    "serial_transmit_payload_bytes": 0,
+    "input_tools_unchanged": true,
+    "modem_line_note": "No DTR/RTS/reset ioctl is issued; actual line transitions not recorded",
+    "crc_profile_source": "recorded capture profile",
+    "capture_meta_sha256": "ff5daaa2d9f8e5be625f98513be42e4758fb9551920936d81fda1e6772ad7ae4",
+    "auditor_sha256": "f71890fe16a8d1ea46097c6da37ea178619e198713962d484bed76cf0e3702ed"
+  },
+  "native": {
+    "evidence_complete": true,
+    "lio_output_audit": {
+      "evidence_complete": true,
+      "streams": {
+        "corrected": {
+          "pass_": true,
+          "count": 704,
+          "valid_rows": 704,
+          "errors": 0,
+          "observed_span_s": 70.306047167,
+          "receive_hz": 9.999139879534738,
+          "sensor_span_s": 70.299898368,
+          "max_receive_gap_s": 0.111515633,
+          "max_sensor_gap_s": 0.10428723200000001,
+          "duplicate_stamps": 0,
+          "regressed_stamps": 0
+        },
+        "predicted": {
+          "pass_": true,
+          "count": 14084,
+          "valid_rows": 14084,
+          "errors": 0,
+          "observed_span_s": 70.41401442600001,
+          "receive_hz": 200.00279936887003,
+          "sensor_span_s": 70.41922833800001,
+          "max_receive_gap_s": 0.016455095,
+          "max_sensor_gap_s": 0.006248273,
+          "duplicate_stamps": 0,
+          "regressed_stamps": 0
+        },
+        "mixed": {
+          "pass_": false,
+          "count": 14787,
+          "valid_rows": 14787,
+          "errors": 0,
+          "observed_span_s": 70.41394421700001,
+          "receive_hz": 209.98681673665175,
+          "sensor_span_s": 70.415309764,
+          "max_receive_gap_s": 0.016469586,
+          "max_sensor_gap_s": 0.014480579,
+          "duplicate_stamps": 0,
+          "regressed_stamps": 704
+        },
+        "tf": {
+          "pass_": true,
+          "count": 704,
+          "valid_rows": 704,
+          "errors": 0,
+          "observed_span_s": 70.30594023,
+          "receive_hz": 9.999155088463283,
+          "sensor_span_s": 70.299898368,
+          "max_receive_gap_s": 0.111485441,
+          "max_sensor_gap_s": 0.10428723200000001,
+          "duplicate_stamps": 0,
+          "regressed_stamps": 0
+        }
+      },
+      "phase_identity": {
+        "pass_": true,
+        "common_sensor_start_ns": 1792313048919257344,
+        "common_sensor_end_ns": 1792313119219155712,
+        "common_sensor_span_s": 70.299898368,
+        "interior_counts": {
+          "corrected": 704,
+          "predicted": 14059,
+          "mixed": 14763,
+          "tf": 704
+        },
+        "boundary_records_retained_but_excluded_from_identity_comparison": {
+          "corrected": 0,
+          "predicted": 25,
+          "mixed": 24,
+          "tf": 0
+        },
+        "missing_from_mixed": 0,
+        "missing_from_split": 0,
+        "tf_matches_corrected_pose": true,
+        "rule": "Exact decoded message identity multisets within common device-time coverage; all boundary messages remain recorded"
+      },
+      "parse_errors": [],
+      "zero_twist_is_not_a_stationarity_measurement": true,
+      "legacy_mixed_order_gate_is_diagnostic_only": true
+    },
+    "imu_stream": {
+      "pass_": true,
+      "count": 14083,
+      "valid_rows": 14083,
+      "errors": 0,
+      "observed_span_s": 70.414431142,
+      "receive_hz": 199.98741410836348,
+      "sensor_span_s": 70.414601425,
+      "max_receive_gap_s": 0.016010928,
+      "max_sensor_gap_s": 0.006248273,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "mission_coverage": {
+      "corrected": {
+        "samples": 620,
+        "receive_gap_limit_s": 0.2,
+        "pass_": true
+      },
+      "predicted": {
+        "samples": 12401,
+        "receive_gap_limit_s": 0.2,
+        "pass_": true
+      },
+      "mixed": {
+        "samples": 13021,
+        "receive_gap_limit_s": 0.2,
+        "pass_": true
+      },
+      "tf": {
+        "samples": 620,
+        "receive_gap_limit_s": 0.2,
+        "pass_": true
+      },
+      "imu_si": {
+        "samples": 12401,
+        "receive_gap_limit_s": 0.1,
+        "pass_": true
+      }
+    }
+  },
+  "reference": {
+    "distance_m": 0.5,
+    "source": "Operator tape-measured ground A-B distance",
+    "reference_point": "Same fixed chassis mark aligned to A and B",
+    "direction": "A to B along initial fixed chassis +X",
+    "uncertainty_m": null,
+    "independently_tracked": false
+  },
+  "statistics": {
+    "reference_distance_m": 0.5,
+    "corrected_mission_samples": 620,
+    "hold_windows": {
+      "baseline": {
+        "samples": 20,
+        "displacement_initial_chassis_m": [
+          -2.2879310585044024e-05,
+          8.550248246498029e-06,
+          4.45154590874895e-05
+        ],
+        "body_yaw_median_deg": 0.011576801823320503,
+        "encoder_change_median_deg": 0.0
+      },
+      "far_hold": {
+        "samples": 20,
+        "displacement_initial_chassis_m": [
+          0.5264815427648832,
+          0.04931093477171148,
+          -0.029846044256332378
+        ],
+        "body_yaw_median_deg": -1.3607896420944114,
+        "encoder_change_median_deg": 0.08789066079631251
+      },
+      "final_hold": {
+        "samples": 20,
+        "displacement_initial_chassis_m": [
+          0.04975232894935147,
+          0.018838965801535316,
+          -0.0004593186556729863
+        ],
+        "body_yaw_median_deg": 5.173270096515756,
+        "encoder_change_median_deg": 0.13183596451404234
+      }
+    },
+    "outward_delta_initial_chassis_m": [
+      0.5265044220754683,
+      0.049302384523464984,
+      -0.029890559715419866
+    ],
+    "return_delta_initial_chassis_m": [
+      -0.4767292138155318,
+      -0.030471968970176164,
+      0.029386725600659393
+    ],
+    "closure_initial_chassis_m": [
+      0.04977520825993652,
+      0.018830415553288817,
+      -0.0005038341147604757
+    ],
+    "estimated_forward_distance_m": 0.5265044220754683,
+    "signed_forward_distance_difference_m": 0.026504422075468326,
+    "forward_scale_ratio": 1.0530088441509367,
+    "far_point_euclidean_reference_difference_m": 0.06345593013545112,
+    "far_lateral_displacement_m": 0.049302384523464984,
+    "far_vertical_displacement_m": -0.029890559715419866,
+    "return_closure_3d_m": 0.053220388537146085,
+    "max_sampled_lateral_displacement_m": 0.09971801936134153,
+    "max_sampled_body_yaw_change_deg": 6.231069663857786,
+    "max_sampled_encoder_change_deg": 0.17578126823177215,
+    "max_absolute_pair_receive_delta_s": 0.0026891370000000003,
+    "mechanical_forward_encoder_candidate_rad": -0.008436894975602627,
+    "R_lio_from_initial_chassis": [
+      [
+        0.9999532574022486,
+        0.0037919922076085095,
+        -0.008894032028821587
+      ],
+      [
+        0.0037554106132035503,
+        -0.9999844357664415,
+        -0.004126150263609327
+      ],
+      [
+        -0.008909539929676843,
+        0.004092556654352085,
+        -0.9999519343839844
+      ]
+    ],
+    "initial_centre_in_lio_m": [
+      -0.028524641728819404,
+      -0.0051529353347263985,
+      0.3347748015045038
+    ],
+    "mount_worksheet": {
+      "scope": "OFFLINE MOUNT WORKSHEET; NOT CALIBRATION OR NAVIGATION ACCEPTANCE",
+      "measurement_data_complete": true,
+      "missing": [],
+      "invalid": [],
+      "yaw_feedback_declared": true,
+      "yaw_feedback_contract_complete": false,
+      "yaw_feedback_unresolved": [
+        "yaw_feedback.timestamp_basis"
+      ],
+      "live_feedback_verified": false,
+      "navigation_ready": false,
+      "ros_publication": false,
+      "production_configuration_changed": false,
+      "geometry_candidate": {
+        "base_to_axis_xy_m": [
+          0.0,
+          0.0
+        ],
+        "axis_ground_to_mount_face_at_zero_m": [
+          0.025,
+          0.0,
+          0.55
+        ],
+        "axis_ground_to_lidar_at_zero_m": [
+          0.025,
+          0.0,
+          0.503
+        ],
+        "axis_ground_to_imu_at_zero_m": [
+          0.036,
+          -0.023289999999999998,
+          0.54712
+        ],
+        "native_x_yaw_at_zero_deg": 0.0,
+        "meaning": "Derived candidate only; yaw-axis point is its ground-plane intersection"
+      },
+      "installation_height_requirement": "MET_BY_DECLARED_MEASUREMENT",
+      "official_constants": {
+        "optical_height_mm": 47.0,
+        "imu_in_lidar_mm": [
+          11.0,
+          23.29,
+          -44.12
+        ]
+      },
+      "limitations": [
+        "Input values/provenance are operator declarations, not independently measured by this tool",
+        "Ideal upside-down/yaw-only orientation model; small roll/pitch errors not calibrated",
+        "Internal LiDAR/IMU nominal dimensions are separate from measured vehicle installation",
+        "No live encoder identity, timestamp, direction or zero validation",
+        "No local-odom gravity/map alignment or chassis-centre odometry qualification"
+      ],
+      "inverted_min_mount_face_height_mm": 500.0
+    },
+    "forward_direction_consistent": true,
+    "accuracy_accepted": false,
+    "navigation_ready": false,
+    "reference_meaning": "Tape distance and fixed-mark endpoint alignment are operator-reported; no independent tracking truth or certified uncertainty"
+  },
+  "phase_intervals": [
+    {
+      "phase": "baseline",
+      "start_monotonic_ns": 12099429486166,
+      "end_monotonic_ns": 12104435640853
+    },
+    {
+      "phase": "outward",
+      "start_monotonic_ns": 12107982205923,
+      "end_monotonic_ns": 12124788678193
+    },
+    {
+      "phase": "far_hold",
+      "start_monotonic_ns": 12124788709896,
+      "end_monotonic_ns": 12129790259934
+    },
+    {
+      "phase": "return",
+      "start_monotonic_ns": 12135696963780,
+      "end_monotonic_ns": 12156416948162
+    },
+    {
+      "phase": "final_hold",
+      "start_monotonic_ns": 12156416973586,
+      "end_monotonic_ns": 12161436246193
+    }
+  ],
+  "localization_sanity": {
+    "pass_": true,
+    "failure": null,
+    "holds": [
+      {
+        "phase": "baseline",
+        "pass_": true,
+        "failure": null,
+        "samples": 50,
+        "span_s": 4.896815086,
+        "max_displacement_from_first_m": 0.03614734387217323,
+        "max_rotation_from_first_deg": 0.991978676783422,
+        "limits": {
+          "position_span_m": 0.1,
+          "angle_deg": 10.0,
+          "gross_motion_speed_m_s": 3.0
+        },
+        "meaning": "Engineering gross-sanity only; operator-declared stationarity; NOT accuracy acceptance"
+      },
+      {
+        "phase": "far_hold",
+        "pass_": true,
+        "failure": null,
+        "samples": 50,
+        "span_s": 4.900024145,
+        "max_displacement_from_first_m": 0.03608418940773981,
+        "max_rotation_from_first_deg": 1.0027367044800937,
+        "limits": {
+          "position_span_m": 0.1,
+          "angle_deg": 10.0,
+          "gross_motion_speed_m_s": 3.0
+        },
+        "meaning": "Engineering gross-sanity only; operator-declared stationarity; NOT accuracy acceptance"
+      },
+      {
+        "phase": "final_hold",
+        "pass_": true,
+        "failure": null,
+        "samples": 50,
+        "span_s": 4.899864876,
+        "max_displacement_from_first_m": 0.04355746775512238,
+        "max_rotation_from_first_deg": 1.7419640739486317,
+        "limits": {
+          "position_span_m": 0.1,
+          "angle_deg": 10.0,
+          "gross_motion_speed_m_s": 3.0
+        },
+        "meaning": "Engineering gross-sanity only; operator-declared stationarity; NOT accuracy acceptance"
+      }
+    ],
+    "accuracy_accepted": false
+  },
+  "status": "REFERENCE_TRANSLATION_DIAGNOSTIC_COMPLETE_NO_ACCURACY_ACCEPTANCE",
+  "derived_timeline_sha256": "0ed5586008c660a6a8f0fbd45afe65f81d83ccf87f9a5eff8cb22ac39cd5bb28"
+}

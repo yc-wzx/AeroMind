@@ -1,0 +1,14 @@
+{
+  "scope": "Exact original ledger-line subset for trial host-receipt interval; not full point cloud CDR",
+  "start_monotonic_ns": 12091831845686,
+  "end_monotonic_ns": 12162249870495,
+  "rows": 14786,
+  "counts": {
+    "imu": 14082,
+    "points": 704
+  },
+  "first_original_sequence": 162827,
+  "last_original_sequence": 177612,
+  "faults": [],
+  "subset_sha256": "9e28beeb85f788326e7bc66420228c2e3cee3b8d349f0ef52024d5abae4cee0d"
+}

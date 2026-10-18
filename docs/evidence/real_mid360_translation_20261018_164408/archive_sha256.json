@@ -1,0 +1,12 @@
+{
+  "raw_archive_sha256": "7a6e085765201b30eb064616da44f68e4038813ff11ce5ed0ba4069d83d5b5e3",
+  "compact_evidence": {
+    "physical_review_v1.json": "bac91328c8cee4804c6f92c07159e703837029d0d82e94e950d255648dde5f2e",
+    "guard_interval_verification.json": "798e620d6eec3922eb58d8599b341711b765a091aae0fecf6d10716b683507e7",
+    "independent_translation_review_v1.json": "60030e21cbd5613a41a0a1a551e26c3c8c73de2484806afdf1642d6fc01992b3",
+    "diagnostic.png": "264cf9a0b656d2b03543c71ec0e4e5a3425e59bb034a63026faac78b3a6b4e68",
+    "cross_machine_comparison_v1.json": "b4879304d0070258293fee3af994d1b6efedbc4ea37e8ca5bfa4f35e5280677b",
+    "input_integrity_v1.json": "de551ea15ef6065d91a8511fbb6789f0c22179a2e70fd14e46d7eff01bd25c70",
+    "operator_motion_note.json": "5bf37f3380b30aefc1cf73508390497bc7e0fb44350fa4f44fc69a683bff82fc"
+  }
+}

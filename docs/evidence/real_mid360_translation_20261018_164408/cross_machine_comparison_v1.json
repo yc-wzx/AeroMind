@@ -1,0 +1,114 @@
+{
+  "remote_captured_report_exact_match": true,
+  "local_independent_exact_match": false,
+  "decision_matches": true,
+  "differences": [
+    {
+      "path": "/derived_timeline_sha256",
+      "remote": "0ed5586008c660a6a8f0fbd45afe65f81d83ccf87f9a5eff8cb22ac39cd5bb28",
+      "local": "6ad940a941e019ee5c1c3d1b34f8d07ff85722bba074fd1fa9694ed5ab66c5e2"
+    },
+    {
+      "path": "/statistics/R_lio_from_initial_chassis/0/1",
+      "remote": 0.0037919922076085095,
+      "local": 0.003791992207608509,
+      "absolute_difference": 4.336808689942018e-19
+    },
+    {
+      "path": "/statistics/R_lio_from_initial_chassis/0/2",
+      "remote": -0.008894032028821587,
+      "local": -0.008894032028821367,
+      "absolute_difference": 2.203098814490545e-16
+    },
+    {
+      "path": "/statistics/R_lio_from_initial_chassis/1/0",
+      "remote": 0.0037554106132035503,
+      "local": 0.0037554106132035507,
+      "absolute_difference": 4.336808689942018e-19
+    },
+    {
+      "path": "/statistics/R_lio_from_initial_chassis/2/0",
+      "remote": -0.008909539929676843,
+      "local": -0.008909539929676623,
+      "absolute_difference": 2.203098814490545e-16
+    },
+    {
+      "path": "/statistics/closure_initial_chassis_m/0",
+      "remote": 0.04977520825993652,
+      "local": 0.04977520825993651,
+      "absolute_difference": 6.938893903907228e-18
+    },
+    {
+      "path": "/statistics/closure_initial_chassis_m/2",
+      "remote": -0.0005038341147604757,
+      "local": -0.0005038341147604655,
+      "absolute_difference": 1.0191500421363742e-17
+    },
+    {
+      "path": "/statistics/far_point_euclidean_reference_difference_m",
+      "remote": 0.06345593013545112,
+      "local": 0.06345593013545106,
+      "absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "path": "/statistics/far_vertical_displacement_m",
+      "remote": -0.029890559715419866,
+      "local": -0.029890559715419752,
+      "absolute_difference": 1.1449174941446927e-16
+    },
+    {
+      "path": "/statistics/hold_windows/baseline/body_yaw_median_deg",
+      "remote": 0.011576801823320503,
+      "local": 0.011576801823320479,
+      "absolute_difference": 2.42861286636753e-17
+    },
+    {
+      "path": "/statistics/hold_windows/baseline/displacement_initial_chassis_m/0",
+      "remote": -2.2879310585044024e-05,
+      "local": -2.2879310585042936e-05,
+      "absolute_difference": 1.0875903042745216e-18
+    },
+    {
+      "path": "/statistics/hold_windows/baseline/displacement_initial_chassis_m/2",
+      "remote": 4.45154590874895e-05,
+      "local": 4.451545908748956e-05,
+      "absolute_difference": 5.421010862427522e-20
+    },
+    {
+      "path": "/statistics/hold_windows/far_hold/displacement_initial_chassis_m/2",
+      "remote": -0.029846044256332378,
+      "local": -0.029846044256332263,
+      "absolute_difference": 1.1449174941446927e-16
+    },
+    {
+      "path": "/statistics/hold_windows/final_hold/displacement_initial_chassis_m/2",
+      "remote": -0.0004593186556729863,
+      "local": -0.000459318655672976,
+      "absolute_difference": 1.0299920638612292e-17
+    },
+    {
+      "path": "/statistics/max_sampled_lateral_displacement_m",
+      "remote": 0.09971801936134153,
+      "local": 0.09971801936134152,
+      "absolute_difference": 1.3877787807814457e-17
+    },
+    {
+      "path": "/statistics/outward_delta_initial_chassis_m/2",
+      "remote": -0.029890559715419866,
+      "local": -0.029890559715419752,
+      "absolute_difference": 1.1449174941446927e-16
+    },
+    {
+      "path": "/statistics/return_closure_3d_m",
+      "remote": 0.053220388537146085,
+      "local": 0.05322038853714608,
+      "absolute_difference": 6.938893903907228e-18
+    },
+    {
+      "path": "/statistics/return_delta_initial_chassis_m/2",
+      "remote": 0.029386725600659393,
+      "local": 0.02938672560065929,
+      "absolute_difference": 1.0408340855860843e-16
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "Independent post-capture integrity checks",
+  "checks": {
+    "raw_hashes_match": true,
+    "individual_snapshots_match": true,
+    "source_paths_and_hashes_currently_match": true
+  },
+  "input_count": 81
+}
