@@ -1,0 +1,21 @@
+{
+  "scope": "Navigation-only raw feedback probe; no real board acceptance",
+  "tests_pass": 12,
+  "production_receiver_virtual_uart_pass": true,
+  "received_fixture_frames": 100,
+  "received_fixture_bytes": 3900,
+  "peer_received_transmit_payload_bytes": 0,
+  "serial_descriptor": "O_RDONLY",
+  "independent_raw_reaudit_identical": true,
+  "existing_output_overwrite_refused": true,
+  "physical_serial_capture": "PENDING USER RUN",
+  "navigation_commands_sent": false,
+  "self_aim_repository_changes": false,
+  "production_navigation_changes": false,
+  "sealed_input_verification": {
+    "mode": "verify",
+    "source": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio",
+    "manifest": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/phase_input_manifest.json",
+    "inputs": 148
+  }
+}

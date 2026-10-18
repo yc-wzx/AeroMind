@@ -1,0 +1,16 @@
+test_existing_serial_owner_refused_without_read (__main__.CaptureTests) ... ok
+test_production_capture_on_virtual_uart_and_no_tx (__main__.CaptureTests) ... 仅接收原始串口数据；不发送指令。请保持底盘和云台静止。
+ok
+test_ambiguous_crc_remains_ambiguous (__main__.WireTests) ... ok
+test_corrupt_and_partial_bytes_not_passed (__main__.WireTests) ... ok
+test_diagnostic_crc_does_not_enable_expected_codec (__main__.WireTests) ... ok
+test_invalid_angle_flag_never_becomes_valid (__main__.WireTests) ... ok
+test_known_crc_vectors (__main__.WireTests) ... ok
+test_missing_or_regressed_receipts_rejected (__main__.WireTests) ... ok
+test_nan_valid_angle_rejected (__main__.WireTests) ... ok
+test_navigation_frame_only (__main__.WireTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.088s
+
+OK

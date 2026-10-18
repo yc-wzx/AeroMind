@@ -1,0 +1,88 @@
+{
+  "scope": "RECEIVE-ONLY NAVIGATION FEEDBACK INSPECTION; NOT NAVIGATION ACCEPTANCE",
+  "raw_bytes": 3900,
+  "read_chunks": 100,
+  "header_candidates": 100,
+  "candidate_reports": [
+    {
+      "frame_bytes": 39,
+      "crc_algorithm": "modbus_a001_ffff",
+      "crc_valid_frames": 100,
+      "relative_yaw_rad_range": [
+        0.25,
+        0.2599000036716461
+      ],
+      "latest_navigation_fields": {
+        "nav_valid_flags": 15,
+        "nav_allowed": 1,
+        "nav_allowed_valid": true,
+        "chassis_vx_m_s": 0.10000000149011612,
+        "chassis_vy_m_s": 0.20000000298023224,
+        "gimbal_relative_angle_rad": 0.2599000036716461,
+        "relative_yaw_valid": true
+      },
+      "structural_valid_frames": 100,
+      "longest_consecutive_valid_frames": 100,
+      "format_candidate_exercised": true,
+      "relative_yaw_valid_frames": 100,
+      "observed_completion_receive_hz": 97.4466963470405,
+      "max_completion_receive_gap_s": 0.01092851
+    },
+    {
+      "frame_bytes": 39,
+      "crc_algorithm": "diagnostic_8408_ffff",
+      "crc_valid_frames": 0,
+      "relative_yaw_rad_range": null,
+      "latest_navigation_fields": null,
+      "structural_valid_frames": 0,
+      "longest_consecutive_valid_frames": 0,
+      "format_candidate_exercised": false,
+      "relative_yaw_valid_frames": 0,
+      "observed_completion_receive_hz": null,
+      "max_completion_receive_gap_s": null
+    }
+  ],
+  "format_status": "NAV39_MODBUS_OBSERVED",
+  "selected_for_control": null,
+  "navigation_ready": false,
+  "validity_rule": "At least 3 adjacent CRC+structurally valid frames is a diagnostic format candidate, not link/angle qualification",
+  "limitations": [
+    "No decoder or actuator path is enabled by this inspection",
+    "Only the supplied 39-byte SP navigation feedback layout examined; the second CRC is diagnostic only",
+    "Multiple candidates remain ambiguous; no fallback selects one silently",
+    "Receive times describe host reads; frames within a batch share completion time, no device measurement timestamp invented",
+    "No generation frequency, publisher-side losslessness or sensor/encoder clock alignment proven",
+    "A valid relative-yaw flag and finite value do not prove direction/zero correctness"
+  ],
+  "capture_complete": true,
+  "writer_health": {
+    "received_bytes": 3900,
+    "received_chunks": 100,
+    "written_bytes": 3900,
+    "written_chunks": 100,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "capture_failure": null,
+  "interrupted": false,
+  "device": "/dev/pts/2",
+  "baud": 460800,
+  "actual_termios": {
+    "baud": 460800,
+    "data_bits": 8,
+    "parity": "none",
+    "stop_bits": 1,
+    "flow_control": "none",
+    "exclusive_ioctl": true,
+    "descriptor_access": "O_RDONLY",
+    "prior_bytes_flushed": false
+  },
+  "original_data_sha256": {
+    "raw.bin": "32dd3793b5c67e426bc281061c9e0c05565890cb9ff75a48a6829ae9e1d8b0bd",
+    "reads.jsonl": "c59f574f3eca4577ab5b25e41aaac72741e16e7693def947ab18aa05de13c4dc"
+  },
+  "serial_transmit_payload_bytes": 0,
+  "input_tools_unchanged": true,
+  "modem_line_note": "No DTR/RTS/reset ioctl is issued; actual line transitions not recorded"
+}
