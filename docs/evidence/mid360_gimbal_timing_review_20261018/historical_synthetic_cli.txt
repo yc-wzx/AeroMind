@@ -1,0 +1,195 @@
+{
+  "original_motion_check_complete": true,
+  "phase_and_gap_windows": [
+    {
+      "phase": "before_baseline",
+      "start_s": -0.299008761,
+      "end_s": 0.0,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "baseline",
+      "start_s": 0.0,
+      "end_s": 5.011287062,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "between_baseline_and_turn",
+      "start_s": 5.011287062,
+      "end_s": 5.011823902000001,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "turn",
+      "start_s": 5.011823902000001,
+      "end_s": 10.323925518000001,
+      "imu_net_deg": 45.00224380349999,
+      "imu_travel_deg": 45.00224380350001,
+      "lio_delta_deg": 45.00000000000001
+    },
+    {
+      "phase": "between_turn_and_turned_hold",
+      "start_s": 10.323925518000001,
+      "end_s": 10.323954235,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "turned_hold",
+      "start_s": 10.323954235,
+      "end_s": 15.337676502,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "between_turned_hold_and_return",
+      "start_s": 15.337676502,
+      "end_s": 15.338042008,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "return",
+      "start_s": 15.338042008,
+      "end_s": 20.649589278,
+      "imu_net_deg": -44.999643640500025,
+      "imu_travel_deg": 44.9996436405,
+      "lio_delta_deg": -45.00000000000001
+    },
+    {
+      "phase": "between_return_and_final_hold",
+      "start_s": 20.649589278,
+      "end_s": 20.649620248,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "final_hold",
+      "start_s": 20.649620248,
+      "end_s": 25.658363920000003,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "after_final_hold",
+      "start_s": 25.658363920000003,
+      "end_s": 25.6731495,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": null
+    }
+  ],
+  "top_gyro_bins": [
+    {
+      "phase": "one_second",
+      "start_s": 16.700991239,
+      "end_s": 17.700991239,
+      "imu_net_deg": -8.957539692000001,
+      "imu_travel_deg": 8.957539692000001,
+      "lio_delta_deg": -8.099427761999957
+    },
+    {
+      "phase": "one_second",
+      "start_s": 8.700991239,
+      "end_s": 9.700991239,
+      "imu_net_deg": 8.957488616999997,
+      "imu_travel_deg": 8.957488617000001,
+      "lio_delta_deg": 8.09920615499994
+    },
+    {
+      "phase": "one_second",
+      "start_s": 7.700991239,
+      "end_s": 8.700991239,
+      "imu_net_deg": 8.957015019,
+      "imu_travel_deg": 8.957015019,
+      "lio_delta_deg": 8.10109558800002
+    },
+    {
+      "phase": "one_second",
+      "start_s": 18.700991239,
+      "end_s": 19.700991239,
+      "imu_net_deg": -8.956727262000001,
+      "imu_travel_deg": 8.956727262000001,
+      "lio_delta_deg": -8.099315838000038
+    },
+    {
+      "phase": "one_second",
+      "start_s": 15.700991239,
+      "end_s": 16.700991239,
+      "imu_net_deg": -8.956362788999996,
+      "imu_travel_deg": 8.956362789,
+      "lio_delta_deg": -8.09695792799993
+    },
+    {
+      "phase": "one_second",
+      "start_s": 5.700991239,
+      "end_s": 6.700991239,
+      "imu_net_deg": 8.955886473000001,
+      "imu_travel_deg": 8.955886473000001,
+      "lio_delta_deg": 8.100646136999956
+    }
+  ],
+  "top_lio_bins": [
+    {
+      "phase": "one_second",
+      "start_s": 7.700991239,
+      "end_s": 8.700991239,
+      "imu_net_deg": 8.957015019,
+      "imu_travel_deg": 8.957015019,
+      "lio_delta_deg": 8.10109558800002
+    },
+    {
+      "phase": "one_second",
+      "start_s": 17.700991239,
+      "end_s": 18.700991239,
+      "imu_net_deg": -8.955668286000003,
+      "imu_travel_deg": 8.955668286000002,
+      "lio_delta_deg": -8.101018269000052
+    },
+    {
+      "phase": "one_second",
+      "start_s": 5.700991239,
+      "end_s": 6.700991239,
+      "imu_net_deg": 8.955886473000001,
+      "imu_travel_deg": 8.955886473000001,
+      "lio_delta_deg": 8.100646136999956
+    },
+    {
+      "phase": "one_second",
+      "start_s": 6.700991239,
+      "end_s": 7.700991239,
+      "imu_net_deg": 8.955614646,
+      "imu_travel_deg": 8.955614646,
+      "lio_delta_deg": 8.100082566000042
+    },
+    {
+      "phase": "one_second",
+      "start_s": 16.700991239,
+      "end_s": 17.700991239,
+      "imu_net_deg": -8.957539692000001,
+      "imu_travel_deg": 8.957539692000001,
+      "lio_delta_deg": -8.099427761999957
+    },
+    {
+      "phase": "one_second",
+      "start_s": 18.700991239,
+      "end_s": 19.700991239,
+      "imu_net_deg": -8.956727262000001,
+      "imu_travel_deg": 8.956727262000001,
+      "lio_delta_deg": -8.099315838000038
+    }
+  ],
+  "root_cause": "NOT YET DETERMINED; review full timing report"
+}
+TIMING REPORT: /home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_114753/timing_review_v1.json

@@ -1,0 +1,19 @@
+{
+  "scope": "Offline observer diagnostic, not new hardware acceptance",
+  "original_motion_failure_preserved": true,
+  "marker_gap_motion_detected": true,
+  "original_files_unchanged": true,
+  "existing_output_overwrite_rejected": true,
+  "diagnostic_and_base_tests_pass": 17,
+  "physical_root_cause": "UNDETERMINED; requires user to run diagnostic on original physical JSONL",
+  "command": [
+    "python3",
+    "-B",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_gimbal_check/diagnose_timing.py",
+    "/home/rmnav/aeromind-transfer-20261016/tools/results/mid360_gimbal_timing_review_20261018/synthetic_misplaced_marker",
+    "--output-name",
+    "timing_review_v1.json"
+  ],
+  "synthetic_marker_gap_degrees": 43.46250000000007,
+  "physical_data_available_locally": false
+}

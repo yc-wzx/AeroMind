@@ -46,3 +46,14 @@ Independent re-read (use a fresh output name):
 The original 399-entry raw build, 148-entry phased build and all old data stay
 unchanged. If inputs are absent, the tool saves an incomplete record and prints
 the exact two prerequisite startup commands; do not move during a failed precheck.
+
+
+If LIO hold-to-hold angles disagree with gyro integrals, diagnose the existing
+capture before repeating motion (no live ROS inputs or motor commands required):
+
+    bash tools/hardware/mid360_lio_phased/env.sh python3 -B tools/hardware/mid360_gimbal_check/diagnose_timing.py /path/to/capture
+
+This adds a new timing_review_v1.json without changing the original verdict.
+It includes marked phases AND unmarked gaps; it never moves markers to force
+agreement. Gyro projections assume nearly yaw-only motion, not arbitrary 3D
+carrying/tilting. See docs/mid360_gimbal_timing_review_20261018.md.

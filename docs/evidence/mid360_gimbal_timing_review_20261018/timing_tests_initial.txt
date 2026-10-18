@@ -1,0 +1,10 @@
+test_aligned_and_complete_partition (__main__.TimingTests) ... ok
+test_bad_markers_rejected (__main__.TimingTests) ... ok
+test_existing_acceptance_and_original_hashes_preserved (__main__.TimingTests) ... ok
+test_movement_before_turn_marker_is_not_hidden (__main__.TimingTests) ... ok
+test_short_gap_has_null_not_zero (__main__.TimingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.391s
+
+OK

@@ -1,0 +1,195 @@
+{
+  "original_motion_check_complete": false,
+  "phase_and_gap_windows": [
+    {
+      "phase": "before_baseline",
+      "start_s": -1.0,
+      "end_s": 0.0,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "baseline",
+      "start_s": 0.0,
+      "end_s": 5.0,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "between_baseline_and_turn",
+      "start_s": 5.0,
+      "end_s": 7.901000000000001,
+      "imu_net_deg": 43.46250000000007,
+      "imu_travel_deg": 43.46249999999999,
+      "lio_delta_deg": 43.485
+    },
+    {
+      "phase": "turn",
+      "start_s": 7.901000000000001,
+      "end_s": 8.001000000000001,
+      "imu_net_deg": 1.4249999999999994,
+      "imu_travel_deg": 1.4249999999999996,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "between_turn_and_turned_hold",
+      "start_s": 8.001000000000001,
+      "end_s": 8.002,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "turned_hold",
+      "start_s": 8.002,
+      "end_s": 13.002,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "between_turned_hold_and_return",
+      "start_s": 13.002,
+      "end_s": 13.003,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "return",
+      "start_s": 13.003,
+      "end_s": 16.003,
+      "imu_net_deg": -44.925000000000104,
+      "imu_travel_deg": 44.925,
+      "lio_delta_deg": -43.50000000000001
+    },
+    {
+      "phase": "between_return_and_final_hold",
+      "start_s": 16.003,
+      "end_s": 16.004,
+      "imu_net_deg": null,
+      "imu_travel_deg": null,
+      "lio_delta_deg": null
+    },
+    {
+      "phase": "final_hold",
+      "start_s": 16.004,
+      "end_s": 21.004,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    },
+    {
+      "phase": "after_final_hold",
+      "start_s": 21.004,
+      "end_s": 22.000005001,
+      "imu_net_deg": 0.0,
+      "imu_travel_deg": 0.0,
+      "lio_delta_deg": 0.0
+    }
+  ],
+  "top_gyro_bins": [
+    {
+      "phase": "one_second",
+      "start_s": 6.0,
+      "end_s": 7.0,
+      "imu_net_deg": 14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": 13.500000000000004
+    },
+    {
+      "phase": "one_second",
+      "start_s": 7.0,
+      "end_s": 8.0,
+      "imu_net_deg": 14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": 13.5
+    },
+    {
+      "phase": "one_second",
+      "start_s": 14.0,
+      "end_s": 15.000000000000002,
+      "imu_net_deg": -14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": -13.500000000000005
+    },
+    {
+      "phase": "one_second",
+      "start_s": 15.000000000000002,
+      "end_s": 16.0,
+      "imu_net_deg": -14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": -13.500000000000007
+    },
+    {
+      "phase": "one_second",
+      "start_s": 5.0,
+      "end_s": 6.0,
+      "imu_net_deg": 14.887500000000006,
+      "imu_travel_deg": 14.8875,
+      "lio_delta_deg": 13.485000000000001
+    },
+    {
+      "phase": "one_second",
+      "start_s": 13.0,
+      "end_s": 14.0,
+      "imu_net_deg": -14.887500000000006,
+      "imu_travel_deg": 14.8875,
+      "lio_delta_deg": -13.455000000000004
+    }
+  ],
+  "top_lio_bins": [
+    {
+      "phase": "one_second",
+      "start_s": 15.000000000000002,
+      "end_s": 16.0,
+      "imu_net_deg": -14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": -13.500000000000007
+    },
+    {
+      "phase": "one_second",
+      "start_s": 14.0,
+      "end_s": 15.000000000000002,
+      "imu_net_deg": -14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": -13.500000000000005
+    },
+    {
+      "phase": "one_second",
+      "start_s": 6.0,
+      "end_s": 7.0,
+      "imu_net_deg": 14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": 13.500000000000004
+    },
+    {
+      "phase": "one_second",
+      "start_s": 7.0,
+      "end_s": 8.0,
+      "imu_net_deg": 14.925000000000004,
+      "imu_travel_deg": 14.924999999999999,
+      "lio_delta_deg": 13.5
+    },
+    {
+      "phase": "one_second",
+      "start_s": 5.0,
+      "end_s": 6.0,
+      "imu_net_deg": 14.887500000000006,
+      "imu_travel_deg": 14.8875,
+      "lio_delta_deg": 13.485000000000001
+    },
+    {
+      "phase": "one_second",
+      "start_s": 13.0,
+      "end_s": 14.0,
+      "imu_net_deg": -14.887500000000006,
+      "imu_travel_deg": 14.8875,
+      "lio_delta_deg": -13.455000000000004
+    }
+  ],
+  "root_cause": "NOT YET DETERMINED; review full timing report"
+}
+TIMING REPORT: /home/rmnav/aeromind-transfer-20261016/tools/results/mid360_gimbal_timing_review_20261018/synthetic_misplaced_marker/timing_review_v1.json
