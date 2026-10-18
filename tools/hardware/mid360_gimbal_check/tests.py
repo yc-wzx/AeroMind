@@ -95,4 +95,36 @@ class GimbalTests(unittest.TestCase):
             (path/'capture_meta.json').write_text(json.dumps(meta))
             self.assertFalse(analyze(path)['evidence_complete'])
 
+class RecorderReadinessTests(unittest.TestCase):
+    def test_actual_subscription_qos_matches_real_adapter(self):
+        from record import subscription_qos
+        from rclpy.qos import qos_profile_sensor_data,qos_check_compatible,QoSCompatibility,ReliabilityPolicy
+        imu=subscription_qos('imu_si')
+        self.assertEqual(imu.reliability,ReliabilityPolicy.BEST_EFFORT)
+        # SYSTEM_DEFAULT liveliness may yield WARNING; actual DDS matching is covered by E2E.
+        self.assertNotEqual(qos_check_compatible(qos_profile_sensor_data,imu)[0],QoSCompatibility.ERROR)
+        for kind in ['corrected','predicted','mixed','tf']:
+            self.assertEqual(subscription_qos(kind).reliability,ReliabilityPolicy.RELIABLE)
+        self.assertEqual(imu.depth,1000)
+    def recorder(self):
+        import threading,time
+        from record import Recorder,STREAMS
+        result=object.__new__(Recorder);result.lock=threading.Lock()
+        result.counts={k:30 for k in STREAMS};result.latest={}
+        rows,_=fixture()
+        for row in rows:
+            result.latest[row['stream']]=(time.monotonic_ns(),base64.b64decode(row['cdr_base64']))
+        return result
+    def test_missing_imu_still_not_ready(self):
+        r=self.recorder();self.assertTrue(r.fresh());r.counts['imu_si']=0
+        self.assertFalse(r.fresh())
+    def test_stale_imu_still_not_ready(self):
+        import time
+        r=self.recorder();_,payload=r.latest['imu_si'];r.latest['imu_si']=(time.monotonic_ns()-200_000_000,payload)
+        self.assertFalse(r.fresh())
+    def test_nonfinite_imu_still_rejected(self):
+        r=self.recorder();receipt,payload=r.latest['imu_si'];msg=deserialize_message(payload,Imu)
+        msg.linear_acceleration.x=float('nan');r.latest['imu_si']=(receipt,serialize_message(msg))
+        with self.assertRaises(ValueError):r.fresh()
+
 if __name__=='__main__':unittest.main(verbosity=2)

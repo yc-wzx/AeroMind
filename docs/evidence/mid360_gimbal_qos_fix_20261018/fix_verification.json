@@ -1,0 +1,21 @@
+{
+  "scope": "Recorder QoS fix; local isolated ROS/DDS regression, not hardware motion acceptance",
+  "production_old_failure_reproduced": true,
+  "unit_tests": 12,
+  "unit_tests_pass": true,
+  "real_best_effort_publisher_and_subscriber_matched": true,
+  "lio_tf_reliable_unchanged": true,
+  "production_capture_and_independent_audit_pass": true,
+  "synthetic_native_messages": 16361,
+  "capture": "/home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_114753",
+  "original_data_hashes_verified": true,
+  "phase_manifest_verification": {
+    "mode": "verify",
+    "source": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio",
+    "manifest": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/phase_input_manifest.json",
+    "inputs": 148
+  },
+  "navigation_or_estimation_changes": false,
+  "hardware_turn_return_validation": "PENDING USER RUN",
+  "note": "Test assertions corrected for Humble tuple return and system-default liveliness WARNING. Initial/intermediate failing test output retained. Actual DDS matching separately verified. E2E recorder code unchanged after its run; tests.py hash subsequently changed."
+}

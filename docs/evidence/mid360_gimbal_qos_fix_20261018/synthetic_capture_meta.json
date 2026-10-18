@@ -1,0 +1,141 @@
+{
+  "health": {
+    "received": 16361,
+    "written": 16361,
+    "actual_lines": 16361,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "subscription_qos": {
+    "corrected": {
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "depth": 1000
+    },
+    "predicted": {
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "depth": 1000
+    },
+    "mixed": {
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "depth": 1000
+    },
+    "tf": {
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "depth": 1000
+    },
+    "imu_si": {
+      "reliability": "BEST_EFFORT",
+      "durability": "VOLATILE",
+      "depth": 1000
+    }
+  },
+  "actual_parameters": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "inputs_unchanged": true,
+  "parameters_unchanged": true,
+  "interrupted": false,
+  "failure": null,
+  "variant_manifest_sha256": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+  "tool_sha256": {
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_gimbal_check/analyze.py": "3b309520ee78858e7a79a9ddd109f41904c7ed69d3f04fbc7c49a4658a5ac1dd",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_gimbal_check/record.py": "7cfb47599345d212642ea3ffb54ae136c0ae4a963538e866321d5e395c9c86fe",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_gimbal_check/README.md": "0f418428a77e2a2ba8af13f22496d1f90628b174a467c51fb919da3bef980a24",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_gimbal_check/run.sh": "db7b8697bb588cbc8373db9c13f221a99ba023d1bcefd6e4fd2b8ccc42371e3d",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_gimbal_check/tests.py": "43b652b9e4fc40f7504b76add6118a60d215ec5fa5460b489d40ba414a45f112"
+  },
+  "data_sha256": {
+    "native.jsonl": "98489ef0b3ebb7509170d14f404cc593ca0919e9fe3b5148f9f5270364fd755b",
+    "events.jsonl": "c08111f95246d7c1e5a6af42f6de246c74bdee38af334b3196f0d5c709646022"
+  },
+  "operator_declarations": "Mounted inverted radar, fixed chassis, CCW outward then CW return; not independently measured"
+}

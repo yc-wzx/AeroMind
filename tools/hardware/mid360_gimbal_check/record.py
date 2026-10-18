@@ -15,6 +15,14 @@ from sensor_msgs.msg import Imu
 from tf2_msgs.msg import TFMessage
 from rcl_interfaces.srv import GetParameters
 
+def subscription_qos(kind):
+    # The real SI adapter uses sensor-data BEST_EFFORT. A RELIABLE reader
+    # cannot match it. Keep the existing LIO/TF reliability and queue depth.
+    return QoSProfile(depth=1000,reliability=ReliabilityPolicy.BEST_EFFORT if kind=='imu_si' else ReliabilityPolicy.RELIABLE)
+
+def qos_metadata(qos):
+    return dict(reliability=qos.reliability.name,durability=qos.durability.name,depth=qos.depth)
+
 class Recorder:
     def __init__(self,path):
         self.writer=Writer(path);self.context=Context();rclpy.init(context=self.context)
@@ -22,9 +30,8 @@ class Recorder:
         self.executor=SingleThreadedExecutor(context=self.context);self.executor.add_node(self.node)
         self.stop=threading.Event();self.latest={};self.counts={k:0 for k in STREAMS};self.sequence=0;self.error=None
         self.accepting=True;self.lock=threading.Lock()
-        qos=QoSProfile(depth=1000,reliability=ReliabilityPolicy.RELIABLE)
         self.subs=[self.node.create_subscription(TFMessage if k=='tf' else Imu if k=='imu_si' else Odometry,
-            topic,lambda data,kind=k:self.receive(kind,data),qos,raw=True) for k,topic in STREAMS.items()]
+            topic,lambda data,kind=k:self.receive(kind,data),subscription_qos(k),raw=True) for k,topic in STREAMS.items()]
         self.thread=threading.Thread(target=self.spin);self.thread.start()
     def spin(self):
         try:
@@ -53,7 +60,7 @@ class Recorder:
             else:stamp_ns(msg);pose_row(msg)
         return True
     def publishers(self):
-        return {k:[dict(name=p.node_name,namespace=p.node_namespace,type=p.topic_type) for p in self.node.get_publishers_info_by_topic(topic)] for k,topic in STREAMS.items()}
+        return {k:[dict(name=p.node_name,namespace=p.node_namespace,type=p.topic_type,qos=qos_metadata(p.qos_profile)) for p in self.node.get_publishers_info_by_topic(topic)] for k,topic in STREAMS.items()}
     def parameters(self):
         client=self.node.create_client(GetParameters,'/hardware/mid360/lio/mid360_real_lio/get_parameters')
         try:
@@ -115,8 +122,9 @@ def main():
             if recorder.error:raise RuntimeError(recorder.error)
             if recorder.fresh():ready=True;break
             time.sleep(.02)
+        sources=recorder.publishers()
         if not ready:raise RuntimeError('输入未就绪：'+json.dumps(recorder.counts))
-        sources=recorder.publishers();before_params=recorder.parameters()
+        before_params=recorder.parameters()
         if not source_ok(sources) or before_params.get('common.odometry_output_contract')!=CONTRACT or before_params.get('use_sim_time') is not False:
             raise RuntimeError('输入来源或LIO版本不匹配')
         deadline=time.monotonic()+180
@@ -139,7 +147,7 @@ def main():
     except Exception:unchanged=False
     end_parameters_received=bool(parameters)
     if not parameters:parameters=before_params
-    meta=dict(health=health,publishers=sources,actual_parameters=parameters,inputs_unchanged=unchanged,parameters_unchanged=bool(end_parameters_received and before_params and parameters==before_params),
+    meta=dict(health=health,publishers=sources,subscription_qos={k:qos_metadata(subscription_qos(k)) for k in STREAMS},actual_parameters=parameters,inputs_unchanged=unchanged,parameters_unchanged=bool(end_parameters_received and before_params and parameters==before_params),
         interrupted=interrupted,failure=failure,variant_manifest_sha256=manifest_sha,tool_sha256=tools,
         data_sha256={name:sha(out/name) for name in ['native.jsonl','events.jsonl']},
         operator_declarations='Mounted inverted radar, fixed chassis, CCW outward then CW return; not independently measured')

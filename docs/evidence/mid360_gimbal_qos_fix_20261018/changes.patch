@@ -1,0 +1,66 @@
+diff --git a/tools/hardware/mid360_gimbal_check/record.py b/tools/hardware/mid360_gimbal_check/record.py
+index 7c52e3c..73f2cdf 100644
+--- a/tools/hardware/mid360_gimbal_check/record.py
++++ b/tools/hardware/mid360_gimbal_check/record.py
+@@ -17,0 +18,8 @@ from rcl_interfaces.srv import GetParameters
++def subscription_qos(kind):
++    # The real SI adapter uses sensor-data BEST_EFFORT. A RELIABLE reader
++    # cannot match it. Keep the existing LIO/TF reliability and queue depth.
++    return QoSProfile(depth=1000,reliability=ReliabilityPolicy.BEST_EFFORT if kind=='imu_si' else ReliabilityPolicy.RELIABLE)
++
++def qos_metadata(qos):
++    return dict(reliability=qos.reliability.name,durability=qos.durability.name,depth=qos.depth)
++
+@@ -25 +32,0 @@ class Recorder:
+-        qos=QoSProfile(depth=1000,reliability=ReliabilityPolicy.RELIABLE)
+@@ -27 +34 @@ class Recorder:
+-            topic,lambda data,kind=k:self.receive(kind,data),qos,raw=True) for k,topic in STREAMS.items()]
++            topic,lambda data,kind=k:self.receive(kind,data),subscription_qos(k),raw=True) for k,topic in STREAMS.items()]
+@@ -56 +63 @@ class Recorder:
+-        return {k:[dict(name=p.node_name,namespace=p.node_namespace,type=p.topic_type) for p in self.node.get_publishers_info_by_topic(topic)] for k,topic in STREAMS.items()}
++        return {k:[dict(name=p.node_name,namespace=p.node_namespace,type=p.topic_type,qos=qos_metadata(p.qos_profile)) for p in self.node.get_publishers_info_by_topic(topic)] for k,topic in STREAMS.items()}
+@@ -117,0 +125 @@ def main():
++        sources=recorder.publishers()
+@@ -119 +127 @@ def main():
+-        sources=recorder.publishers();before_params=recorder.parameters()
++        before_params=recorder.parameters()
+@@ -142 +150 @@ def main():
+-    meta=dict(health=health,publishers=sources,actual_parameters=parameters,inputs_unchanged=unchanged,parameters_unchanged=bool(end_parameters_received and before_params and parameters==before_params),
++    meta=dict(health=health,publishers=sources,subscription_qos={k:qos_metadata(subscription_qos(k)) for k in STREAMS},actual_parameters=parameters,inputs_unchanged=unchanged,parameters_unchanged=bool(end_parameters_received and before_params and parameters==before_params),
+diff --git a/tools/hardware/mid360_gimbal_check/tests.py b/tools/hardware/mid360_gimbal_check/tests.py
+index a7fab7b..0930572 100644
+--- a/tools/hardware/mid360_gimbal_check/tests.py
++++ b/tools/hardware/mid360_gimbal_check/tests.py
+@@ -97,0 +98,32 @@ class GimbalTests(unittest.TestCase):
++class RecorderReadinessTests(unittest.TestCase):
++    def test_actual_subscription_qos_matches_real_adapter(self):
++        from record import subscription_qos
++        from rclpy.qos import qos_profile_sensor_data,qos_check_compatible,QoSCompatibility,ReliabilityPolicy
++        imu=subscription_qos('imu_si')
++        self.assertEqual(imu.reliability,ReliabilityPolicy.BEST_EFFORT)
++        # SYSTEM_DEFAULT liveliness may yield WARNING; actual DDS matching is covered by E2E.
++        self.assertNotEqual(qos_check_compatible(qos_profile_sensor_data,imu)[0],QoSCompatibility.ERROR)
++        for kind in ['corrected','predicted','mixed','tf']:
++            self.assertEqual(subscription_qos(kind).reliability,ReliabilityPolicy.RELIABLE)
++        self.assertEqual(imu.depth,1000)
++    def recorder(self):
++        import threading,time
++        from record import Recorder,STREAMS
++        result=object.__new__(Recorder);result.lock=threading.Lock()
++        result.counts={k:30 for k in STREAMS};result.latest={}
++        rows,_=fixture()
++        for row in rows:
++            result.latest[row['stream']]=(time.monotonic_ns(),base64.b64decode(row['cdr_base64']))
++        return result
++    def test_missing_imu_still_not_ready(self):
++        r=self.recorder();self.assertTrue(r.fresh());r.counts['imu_si']=0
++        self.assertFalse(r.fresh())
++    def test_stale_imu_still_not_ready(self):
++        import time
++        r=self.recorder();_,payload=r.latest['imu_si'];r.latest['imu_si']=(time.monotonic_ns()-200_000_000,payload)
++        self.assertFalse(r.fresh())
++    def test_nonfinite_imu_still_rejected(self):
++        r=self.recorder();receipt,payload=r.latest['imu_si'];msg=deserialize_message(payload,Imu)
++        msg.linear_acceleration.x=float('nan');r.latest['imu_si']=(receipt,serialize_message(msg))
++        with self.assertRaises(ValueError):r.fresh()
++

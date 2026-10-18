@@ -1,0 +1,32 @@
+{
+  "scope": "Synthetic inverted-sensor/pivot-motion fixture, interactive recorder with scripted keyboard and independent reader; NOT REAL LIO ESTIMATION",
+  "domain": 220,
+  "offered_imu_reliability": "BEST_EFFORT",
+  "evidence_complete": true,
+  "motion_check_complete": true,
+  "independent_audit_identical": true,
+  "capture": "/home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_114753/summary.json",
+  "outward_deg": 45.00000000000003,
+  "return_deg": -45.00000000000003,
+  "gyro_outward_deg": 45.00224380349999,
+  "gyro_return_deg": -44.999643640500025,
+  "sensor_outward_displacement_m": 0.07653668647301795,
+  "position_closure_m": 0.0,
+  "health": {
+    "received": 16361,
+    "written": 16361,
+    "actual_lines": 16361,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "gates": {
+    "writer_health": true,
+    "source_identity": true,
+    "parameters": true,
+    "inputs_unchanged": true,
+    "parameters_unchanged": true,
+    "not_interrupted": true,
+    "capture_finished_without_error": true
+  }
+}

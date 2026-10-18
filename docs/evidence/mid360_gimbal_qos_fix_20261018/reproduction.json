@@ -1,0 +1,17 @@
+{
+  "expected_failure_reproduced": true,
+  "offered_imu_reliability": "BEST_EFFORT",
+  "requested_imu_reliability": "RELIABLE",
+  "actual_production_recorder": true,
+  "returncode": 2,
+  "capture": "/home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_114707/summary.json",
+  "failure": "\u8f93\u5165\u672a\u5c31\u7eea\uff1a{\"corrected\": 80, \"predicted\": 1600, \"mixed\": 1680, \"tf\": 80, \"imu_si\": 0}",
+  "health": {
+    "received": 3441,
+    "written": 3441,
+    "actual_lines": 3441,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  }
+}

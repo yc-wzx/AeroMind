@@ -1,0 +1,335 @@
+正在检查真实雷达、新版LIO及IMU输入；本工具不发送运动指令。
+SYNTHETIC OPERATOR: ready
+原位记录：保持底盘、云台和雷达静止5秒。
+SYNTHETIC OPERATOR: start_turn
+SYNTHETIC OPERATOR: finish_turn
+转后记录：保持底盘、云台和雷达静止5秒。
+SYNTHETIC OPERATOR: start_return
+SYNTHETIC OPERATOR: finish_return
+回原位记录：保持底盘、云台和雷达静止5秒。
+{
+  "evidence_complete": true,
+  "lio_output_audit": {
+    "evidence_complete": true,
+    "streams": {
+      "corrected": {
+        "pass_": true,
+        "count": 259,
+        "valid_rows": 259,
+        "errors": 0,
+        "observed_span_s": 25.799754160000003,
+        "receive_hz": 10.000095287729671,
+        "sensor_span_s": 25.799750251000003,
+        "max_receive_gap_s": 0.100995917,
+        "max_sensor_gap_s": 0.100332056,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 0
+      },
+      "predicted": {
+        "pass_": true,
+        "count": 5196,
+        "valid_rows": 5196,
+        "errors": 0,
+        "observed_span_s": 25.97215826,
+        "receive_hz": 200.02188297153862,
+        "sensor_span_s": 25.975103214,
+        "max_receive_gap_s": 0.008381203,
+        "max_sensor_gap_s": 0.00782122,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 0
+      },
+      "mixed": {
+        "pass_": false,
+        "count": 5453,
+        "valid_rows": 5453,
+        "errors": 0,
+        "observed_span_s": 25.965170155000003,
+        "receive_hz": 209.97359029246076,
+        "sensor_span_s": 25.965025848000003,
+        "max_receive_gap_s": 0.008089987,
+        "max_sensor_gap_s": 0.00782122,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 259
+      },
+      "tf": {
+        "pass_": true,
+        "count": 259,
+        "valid_rows": 259,
+        "errors": 0,
+        "observed_span_s": 25.799493592,
+        "receive_hz": 10.000196286023288,
+        "sensor_span_s": 25.799750251000003,
+        "max_receive_gap_s": 0.10085903700000001,
+        "max_sensor_gap_s": 0.100332056,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 0
+      }
+    },
+    "phase_identity": {
+      "pass_": true,
+      "common_sensor_start_ns": 1792295274099540305,
+      "common_sensor_end_ns": 1792295299899290556,
+      "common_sensor_span_s": 25.799750251000003,
+      "interior_counts": {
+        "corrected": 259,
+        "predicted": 5160,
+        "mixed": 5419,
+        "tf": 259
+      },
+      "boundary_records_retained_but_excluded_from_identity_comparison": {
+        "corrected": 0,
+        "predicted": 36,
+        "mixed": 34,
+        "tf": 0
+      },
+      "missing_from_mixed": 0,
+      "missing_from_split": 0,
+      "tf_matches_corrected_pose": true,
+      "rule": "Exact decoded message identity multisets within common device-time coverage; all boundary messages remain recorded"
+    },
+    "parse_errors": [],
+    "zero_twist_is_not_a_stationarity_measurement": true,
+    "legacy_mixed_order_gate_is_diagnostic_only": true
+  },
+  "imu_stream": {
+    "pass_": true,
+    "count": 5194,
+    "valid_rows": 5194,
+    "errors": 0,
+    "observed_span_s": 25.965155695,
+    "receive_hz": 199.99880073894548,
+    "sensor_span_s": 25.965025848000003,
+    "max_receive_gap_s": 0.00805994,
+    "max_sensor_gap_s": 0.00782122,
+    "duplicate_stamps": 0,
+    "regressed_stamps": 0
+  },
+  "hold_windows": {
+    "baseline": {
+      "position_m": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "samples": 20,
+      "first_receive_monotonic_ns": 92113308926,
+      "last_receive_monotonic_ns": 94013007692,
+      "meaning": "Derived median position / quaternion mean; original samples unchanged"
+    },
+    "turned_hold": {
+      "position_m": [
+        0.07071067811865477,
+        -0.07071067811865475,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        -0.38268343236509,
+        0.9238795325112867
+      ],
+      "samples": 20,
+      "first_receive_monotonic_ns": 102412911483,
+      "last_receive_monotonic_ns": 104313261035,
+      "meaning": "Derived median position / quaternion mean; original samples unchanged"
+    },
+    "final_hold": {
+      "position_m": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "samples": 20,
+      "first_receive_monotonic_ns": 112712993770,
+      "last_receive_monotonic_ns": 114613035162,
+      "meaning": "Derived median position / quaternion mean; original samples unchanged"
+    }
+  },
+  "baseline_specific_force_m_s2": [
+    0.0,
+    0.0,
+    -9.806649999999992
+  ],
+  "estimated_up_axis_in_sensor_frame": [
+    0.0,
+    0.0,
+    -1.0
+  ],
+  "outward_rotation_vector_in_initial_sensor_deg": [
+    0.0,
+    0.0,
+    -45.00000000000003
+  ],
+  "return_rotation_vector_in_turned_sensor_deg": [
+    0.0,
+    0.0,
+    45.00000000000003
+  ],
+  "outward_about_estimated_up_deg": 45.00000000000003,
+  "return_about_estimated_up_deg": -45.00000000000003,
+  "imu_outward": {
+    "rotation_vector_integral_deg_xyz": [
+      0.0,
+      0.0,
+      -45.00224380349999
+    ],
+    "about_baseline_up_deg": 45.00224380349999,
+    "samples": 1063,
+    "sensor_span_s": 5.309930643,
+    "max_sensor_gap_s": 0.0054503220000000005,
+    "integration": "Trapezoids between received original IMU samples; no fabricated endpoints or bias subtraction"
+  },
+  "imu_return": {
+    "rotation_vector_integral_deg_xyz": [
+      0.0,
+      0.0,
+      44.999643640500025
+    ],
+    "about_baseline_up_deg": -44.999643640500025,
+    "samples": 1063,
+    "sensor_span_s": 5.310062307,
+    "max_sensor_gap_s": 0.0054288420000000006,
+    "integration": "Trapezoids between received original IMU samples; no fabricated endpoints or bias subtraction"
+  },
+  "rotation_exercised": true,
+  "return_exercised": true,
+  "direction_consistent_with_operator_declared_ccw_then_cw": true,
+  "minimum_exercised_angle_deg": 5.0,
+  "final_orientation_closure_deg": 0.0,
+  "final_sensor_position_closure_m": 0.0,
+  "outward_sensor_displacement_m": 0.07653668647301795,
+  "angle_reference": "NO INDEPENDENT ANGLE TRUTH; approximate target is not measured angle",
+  "position_meaning": "Sensor origin, not chassis centre. Rotation lever-arm motion is not classified as drift",
+  "up_axis_assumption": "Stationary support specific force estimates upward direction; not a mounting calibration",
+  "no_accuracy_acceptance_threshold_invented": true,
+  "scope": "REAL SENSOR-LOCAL MANUAL GIMBAL TURN/RETURN DIAGNOSTIC; NOT NAVIGATION ACCEPTANCE",
+  "gates": {
+    "writer_health": true,
+    "source_identity": true,
+    "parameters": true,
+    "inputs_unchanged": true,
+    "parameters_unchanged": true,
+    "not_interrupted": true,
+    "capture_finished_without_error": true
+  },
+  "health": {
+    "received": 16361,
+    "written": 16361,
+    "actual_lines": 16361,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "actual_parameters": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "original_data_sha256": {
+    "native.jsonl": "98489ef0b3ebb7509170d14f404cc593ca0919e9fe3b5148f9f5270364fd755b",
+    "events.jsonl": "c08111f95246d7c1e5a6af42f6de246c74bdee38af334b3196f0d5c709646022"
+  },
+  "limits": [
+    "Manual direction and fixed chassis are operator declarations, not independent truth",
+    "No angular/position accuracy acceptance",
+    "No motor or navigation command",
+    "No known pivot offset or chassis calibration",
+    "Zero upstream Twist is not a stationarity measurement"
+  ],
+  "motion_check_complete": true
+}
+SUMMARY: /home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_114753/summary.json
