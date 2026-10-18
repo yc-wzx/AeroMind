@@ -1,0 +1,1 @@
+{"mode": "verify", "source": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio", "manifest": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/phase_input_manifest.json", "inputs": 148}

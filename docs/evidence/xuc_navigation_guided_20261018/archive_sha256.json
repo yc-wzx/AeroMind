@@ -1,0 +1,12 @@
+{
+  "e2e_verification.json": "b80a14b6598e6dd8b22b07b1a6b686ff8424e682f545655c3535afa5a77ea4f6",
+  "existing_tests.txt": "ae2e5d5faa024e6cb0114286f020fc723ae5df7b37a81b7e3a4c142318fa6491",
+  "guided_tests_initial.txt": "e8fcdf7c5c4c889f76613a5a78964b0b26968177ed4ab3c5ae4f3d557a5292a4",
+  "independent_guided_cli.txt": "d5cd203192a8a1c0878ef9804e2207f9511450132498da720ee7f3f475464607",
+  "physical_report_as_received.json": "11ffa71d9ddf654cb5c4dfc42053268f57333367d8b2123de5e85e5144f28daa",
+  "sealed_inputs_verification.txt": "acfff07e28f8f63e1026a59d2deafd797327682f799ec515c00f0636a286e779",
+  "virtual_capture_meta.json": "2f758bb135e262e1ac84ada501d9d1cb5358ebb97d6896a426e92a73fb8e5757",
+  "virtual_fixture_runner.py.txt": "1d88f55ea7dfef201a2ff66458ec9d0a3b0156e54004cdf544f261308f1b65fc",
+  "virtual_independent_guided_review_v1.json": "ee0b20d532607f0f103e5a148ce1a2c16669fb2ecfa81070c572e5faa9d3818c",
+  "virtual_summary.json": "6e405ba63917b7ef7f2c441371973d3a41fe3119506c4365ec78d9ae57a828af"
+}

@@ -1,0 +1,49 @@
+import json,math,os,pty,select,subprocess,sys,threading,time
+from pathlib import Path
+from unittest.mock import patch
+W=Path('/home/rmnav/aeromind-transfer-20261016');S=W/'tools/hardware/xuc_feedback_check';sys.path.insert(0,str(S))
+from capture import capture_session
+from guided_yaw import GuidedYaw
+from tests import frame
+OUT=W/'tools/results/xuc_navigation_guided_20261018';root=OUT/'virtual_guided_capture'
+master,slave=pty.openpty();device=os.ttyname(slave);os.close(slave);os.set_blocking(master,False)
+ready=threading.Event();epoch=[];received=[];errors=[]
+original_start=GuidedYaw.start
+def observe_start(self,now):
+    original_start(self,now);epoch.append(now);ready.set()
+def peer():
+    try:
+        if not ready.wait(5):raise RuntimeError('Receiver not ready')
+        while True:
+            elapsed=(time.monotonic_ns()-epoch[0])*1e-9
+            if elapsed>24.98:break
+            angle=.0105+(0 if elapsed<5 else .8*(elapsed-5)/5 if elapsed<10 else .8 if elapsed<15 else .8*(20-elapsed)/5 if elapsed<20 else 0)
+            os.write(master,frame(poly=0x8408,angle=angle))
+            if select.select([master],[],[],0)[0]:
+                try:received.append(os.read(master,4096))
+                except (BlockingIOError,OSError):pass
+            time.sleep(.005)
+    except Exception as error:errors.append(repr(error))
+t=threading.Thread(target=peer);t.start()
+try:
+    with patch.object(GuidedYaw,'start',observe_start):
+        result=capture_session(root,device,460800,25.,allow_test_pty=True,crc_profile='0x8408',guided_turn=True)
+finally:t.join(5);os.close(master)
+assert not errors,errors
+assert not any(received),received[:2]
+assert result['capture_complete'],result
+assert result['receive_profile_matches'] and result['guided_turn_check']['motion_check_complete'],result
+command=['python3','-B',str(S/'inspect_wire.py'),str(root),'--output-name','independent_guided_review_v1.json']
+run=subprocess.run(command,cwd=W,text=True,capture_output=True)
+(OUT/'independent_guided_cli.txt').write_text(run.stdout+run.stderr)
+assert run.returncode==0,run.stderr
+review=json.loads((root/'independent_guided_review_v1.json').read_text())
+assert review['guided_turn_check']==result['guided_turn_check']
+report=dict(scope='Synthetic virtual UART and scripted angle waveform, not physical encoder acceptance',
+    actual_production_receiver_and_guidance=True,complete_25_second_run=True,
+    capture_complete=True,expected_crc_profile='0x8408',motion_check_complete=True,
+    no_serial_transmit_payload_observed=True,independent_guided_audit_identical=True,
+    callback_patch='Observe original GuidedYaw.start to synchronize fixture clock; production start/tick/feed/analysis unmodified',
+    raw_bytes=result['raw_bytes'],writer_health=result['writer_health'],guided=result['guided_turn_check'],capture=str(root))
+(OUT/'e2e_verification.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))

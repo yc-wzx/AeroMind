@@ -1,0 +1,69 @@
+{
+  "scope": "Synthetic virtual UART and scripted angle waveform, not physical encoder acceptance",
+  "actual_production_receiver_and_guidance": true,
+  "complete_25_second_run": true,
+  "capture_complete": true,
+  "expected_crc_profile": "0x8408",
+  "motion_check_complete": true,
+  "no_serial_transmit_payload_observed": true,
+  "independent_guided_audit_identical": true,
+  "callback_patch": "Observe original GuidedYaw.start to synchronize fixture clock; production start/tick/feed/analysis unmodified",
+  "raw_bytes": 186069,
+  "writer_health": {
+    "received_bytes": 186069,
+    "received_chunks": 4771,
+    "written_bytes": 186069,
+    "written_chunks": 4771,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "guided": {
+    "scope": "RECEIVE-ONLY ENCODER DIRECTION/RETURN EXERCISE; NOT BODY HEADING ACCEPTANCE",
+    "evidence_complete": true,
+    "motion_check_complete": true,
+    "left_positive_exercised": true,
+    "return_negative_exercised": true,
+    "hold_to_hold_left_deg": 45.83662509389757,
+    "hold_to_hold_return_deg": -45.83662509389757,
+    "encoder_return_closure_deg": 0.0,
+    "operator_declared_forward_encoder_candidate_rad": 0.010499999858438969,
+    "hold_windows": {
+      "baseline": {
+        "median_unwrapped_rad": 0.010499999858438969,
+        "samples": 384
+      },
+      "turned_hold": {
+        "median_unwrapped_rad": 0.8105000257492065,
+        "samples": 382
+      },
+      "final_hold": {
+        "median_unwrapped_rad": 0.010499999858438969,
+        "samples": 377
+      }
+    },
+    "motion_intervals": {
+      "turn_left": {
+        "net_deg": 45.764664461958134,
+        "travel_deg": 45.764664461958134,
+        "samples": 954
+      },
+      "return": {
+        "net_deg": -45.764170447182074,
+        "travel_deg": 45.764170447182074,
+        "samples": 953
+      }
+    },
+    "minimum_exercised_angle_deg": 5.0,
+    "body_yaw_computed": false,
+    "navigation_ready": false,
+    "limitations": [
+      "Operator must align mechanical forward before starting and declare fixed chassis",
+      "Only direction/exercise checked; approximate 45 degrees is not independent angular truth",
+      "Unwrap assumes less than pi rotation between received samples; no angle samples interpolated",
+      "Host receipt freshness is not a device measurement timestamp or latency guarantee",
+      "Return closure reported without invented accuracy threshold; no encoder zero written to configuration"
+    ]
+  },
+  "capture": "/home/rmnav/aeromind-transfer-20261016/tools/results/xuc_navigation_guided_20261018/virtual_guided_capture"
+}

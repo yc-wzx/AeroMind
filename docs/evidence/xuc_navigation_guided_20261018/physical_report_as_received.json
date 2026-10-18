@@ -1,0 +1,95 @@
+{
+  "evidence_source": "User-pasted physical capture summary, not a local re-audit of physical raw bytes",
+  "attachment": "/mnt/c/Users/Hasumi/.codex/attachments/61e34e78-5932-4766-8e69-7fe99bd8b407/已粘贴的文本.txt",
+  "attachment_sha256": "6e4ea289c1c2334d66d0b676013b2c173a1621d20af20ff6d1d3fd76b4ee76e2",
+  "reported_capture": "/home/rm/AeroMind_xuc_feedback_checks/raw_20261018_130944",
+  "summary": {
+    "scope": "RECEIVE-ONLY NAVIGATION FEEDBACK INSPECTION; NOT NAVIGATION ACCEPTANCE",
+    "raw_bytes": 117055,
+    "read_chunks": 6001,
+    "header_candidates": 3000,
+    "candidate_reports": [
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "modbus_a001_ffff",
+        "crc_valid_frames": 0,
+        "relative_yaw_rad_range": null,
+        "latest_navigation_fields": null,
+        "structural_valid_frames": 0,
+        "longest_consecutive_valid_frames": 0,
+        "format_candidate_exercised": false,
+        "relative_yaw_valid_frames": 0,
+        "observed_completion_receive_hz": null,
+        "max_completion_receive_gap_s": null
+      },
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "diagnostic_8408_ffff",
+        "crc_valid_frames": 2999,
+        "relative_yaw_rad_range": [
+          0.009970875456929207,
+          0.010737866163253784
+        ],
+        "latest_navigation_fields": {
+          "nav_valid_flags": 15,
+          "nav_allowed": 0,
+          "nav_allowed_valid": true,
+          "chassis_vx_m_s": 0.0,
+          "chassis_vy_m_s": 0.0,
+          "gimbal_relative_angle_rad": 0.010737866163253784,
+          "relative_yaw_valid": true
+        },
+        "structural_valid_frames": 2999,
+        "longest_consecutive_valid_frames": 2999,
+        "format_candidate_exercised": true,
+        "relative_yaw_valid_frames": 2999,
+        "observed_completion_receive_hz": 200.01312316923682,
+        "max_completion_receive_gap_s": 0.005283161000000001
+      }
+    ],
+    "format_status": "NAV39_DIAGNOSTIC_CRC_ONLY",
+    "selected_for_control": null,
+    "navigation_ready": false,
+    "validity_rule": "At least 3 adjacent CRC+structurally valid frames is a diagnostic format candidate, not link/angle qualification",
+    "limitations": [
+      "No decoder or actuator path is enabled by this inspection",
+      "Only the supplied 39-byte SP navigation feedback layout examined; the second CRC is diagnostic only",
+      "Multiple candidates remain ambiguous; no fallback selects one silently",
+      "Receive times describe host reads; frames within a batch share completion time, no device measurement timestamp invented",
+      "No generation frequency, publisher-side losslessness or sensor/encoder clock alignment proven",
+      "A valid relative-yaw flag and finite value do not prove direction/zero correctness"
+    ],
+    "capture_complete": true,
+    "writer_health": {
+      "received_bytes": 117055,
+      "received_chunks": 6001,
+      "written_bytes": 117055,
+      "written_chunks": 6001,
+      "overflow": 0,
+      "error": null,
+      "closed": true
+    },
+    "capture_failure": null,
+    "interrupted": false,
+    "device": "/dev/ttyUSB0",
+    "baud": 460800,
+    "actual_termios": {
+      "baud": 460800,
+      "data_bits": 8,
+      "parity": "none",
+      "stop_bits": 1,
+      "flow_control": "none",
+      "exclusive_ioctl": true,
+      "descriptor_access": "O_RDONLY",
+      "prior_bytes_flushed": false
+    },
+    "original_data_sha256": {
+      "raw.bin": "4c7e352942e3649cead1e590085acdfd20efa9016ac406ad519e3864641d8ffa",
+      "reads.jsonl": "1d411d8d34522a194e1f00feb9125277cc849bbb477f49a1adde118a4a1ec7ec"
+    },
+    "serial_transmit_payload_bytes": 0,
+    "input_tools_unchanged": true,
+    "modem_line_note": "No DTR/RTS/reset ioctl is issued; actual line transitions not recorded",
+    "derived_frames_sha256": "cd1a8e2d4c8a1f15cdd010d8b933dbd04199431f5c7ef0ac1115144f73c75ff9"
+  }
+}

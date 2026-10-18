@@ -1,0 +1,78 @@
+{
+  "scope": "RECEIVE-ONLY SERIAL FORMAT PROBE",
+  "device": "/dev/pts/2",
+  "baud": 460800,
+  "expected_crc_profile": "0x8408",
+  "guided_turn": true,
+  "guided_phases": [
+    {
+      "phase": "baseline",
+      "start_monotonic_ns": 32009704760,
+      "end_monotonic_ns": 37012535113
+    },
+    {
+      "phase": "turn_left",
+      "start_monotonic_ns": 37012535113,
+      "end_monotonic_ns": 42012979050
+    },
+    {
+      "phase": "turned_hold",
+      "start_monotonic_ns": 42012979050,
+      "end_monotonic_ns": 47012650005
+    },
+    {
+      "phase": "return",
+      "start_monotonic_ns": 47012650005,
+      "end_monotonic_ns": 52013141583
+    },
+    {
+      "phase": "final_hold",
+      "start_monotonic_ns": 52013141583,
+      "end_monotonic_ns": 57009856967
+    }
+  ],
+  "requested_seconds": 25.0,
+  "elapsed_monotonic_s": 25.026677753,
+  "failure": null,
+  "interrupted": false,
+  "actual_termios": {
+    "baud": 460800,
+    "data_bits": 8,
+    "parity": "none",
+    "stop_bits": 1,
+    "flow_control": "none",
+    "exclusive_ioctl": true,
+    "descriptor_access": "O_RDONLY",
+    "prior_bytes_flushed": false
+  },
+  "prior_termios_restore_succeeded": true,
+  "writer_health": {
+    "received_bytes": 186069,
+    "received_chunks": 4771,
+    "written_bytes": 186069,
+    "written_chunks": 4771,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "serial_transmit_payload_bytes": 0,
+  "tools_before": {
+    "test_guided.py": "0f6bb6b9866f8ba39ba4b25fa92a76ccb47f6f28952c1746a32e033405ccbcb6",
+    "guided_yaw.py": "00bd41280335ee9fe8492e6fcec916148815f6c202aba19bc87be93127b91c9d",
+    "inspect_wire.py": "f71890fe16a8d1ea46097c6da37ea178619e198713962d484bed76cf0e3702ed",
+    "capture.py": "0b047052ac142ebded416d8a18f2dfd765c3fd772a1568075216ba7c19c5e8bb",
+    "tests.py": "33a08d8207550c37cdcf4311b1531fb2f91d46c2c7708c25b581d17932eb36c2"
+  },
+  "tools_after": {
+    "test_guided.py": "0f6bb6b9866f8ba39ba4b25fa92a76ccb47f6f28952c1746a32e033405ccbcb6",
+    "guided_yaw.py": "00bd41280335ee9fe8492e6fcec916148815f6c202aba19bc87be93127b91c9d",
+    "inspect_wire.py": "f71890fe16a8d1ea46097c6da37ea178619e198713962d484bed76cf0e3702ed",
+    "capture.py": "0b047052ac142ebded416d8a18f2dfd765c3fd772a1568075216ba7c19c5e8bb",
+    "tests.py": "33a08d8207550c37cdcf4311b1531fb2f91d46c2c7708c25b581d17932eb36c2"
+  },
+  "input_tools_unchanged": true,
+  "data_sha256": {
+    "raw.bin": "bf034331c930940bf7378d96815c81347fa91c575d07c9d591545a4ef0551fa8",
+    "reads.jsonl": "04fc88984ac30e9a9e39d82518d6d95dbe8514d8e26b22c0afab20712311df9d"
+  }
+}

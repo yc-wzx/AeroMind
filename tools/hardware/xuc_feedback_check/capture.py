@@ -1,7 +1,7 @@
 """Linux receive-only serial byte capture. Serial descriptor is O_RDONLY; no TX codec exists."""
 import argparse,copy,fcntl,json,os,queue,re,select,stat,subprocess,termios,threading,time
 from pathlib import Path
-from inspect_wire import audit,sha
+from inspect_wire import audit,sha,PROFILES
 
 class Writer:
     def __init__(self,root):
@@ -37,7 +37,9 @@ def owners(device):
     if result.returncode not in (0,1):raise RuntimeError('Cannot inspect serial ownership: '+result.stderr.strip())
     return sorted(set(int(v) for v in re.findall(r'\b\d+\b',result.stdout)))
 
-def capture_session(root,device,baud,seconds,allow_test_pty=False):
+def capture_session(root,device,baud,seconds,allow_test_pty=False,crc_profile='0xa001',guided_turn=False):
+    if crc_profile not in PROFILES:raise ValueError('Explicit CRC profile required')
+    if guided_turn and seconds!=25:raise ValueError('Guided turn uses a fixed 25-second receive-only schedule')
     root=Path(root);device=Path(device).resolve(strict=True)
     if not stat.S_ISCHR(device.stat().st_mode):raise ValueError('Device must be a serial character device')
     if not re.fullmatch(r'/dev/tty(?:USB|ACM)\d+',str(device)) and not (allow_test_pty and str(device).startswith('/dev/pts/')):
@@ -45,7 +47,7 @@ def capture_session(root,device,baud,seconds,allow_test_pty=False):
     if baud!=460800:raise ValueError('Only the operator-confirmed 460800 baud is supported in this probe')
     if not 1<=seconds<=30:raise ValueError('Duration must be 1..30 seconds')
     root.mkdir(parents=True,exist_ok=False);tools_before={p.name:sha(p) for p in Path(__file__).parent.glob('*.py')};writer=Writer(root);fd=None;saved=None;exclusive=False
-    failure=None;interrupted=False;actual=None;start=time.monotonic_ns();restore_ok=None
+    failure=None;interrupted=False;actual=None;start=time.monotonic_ns();restore_ok=None;guide=None
     try:
         existing=owners(device)
         if existing:raise RuntimeError('Serial already open by PIDs '+','.join(map(str,existing))+'; no process stopped')
@@ -67,9 +69,13 @@ def capture_session(root,device,baud,seconds,allow_test_pty=False):
         if fcntl.fcntl(fd,fcntl.F_GETFL)&os.O_ACCMODE!=os.O_RDONLY:raise RuntimeError('Serial descriptor is not read-only')
         actual=dict(baud=460800,data_bits=8,parity='none',stop_bits=1,flow_control='none',exclusive_ioctl=True,
                     descriptor_access='O_RDONLY',prior_bytes_flushed=False)
-        print('仅接收原始串口数据；不发送指令。请保持底盘和云台静止。',flush=True)
         start=time.monotonic_ns();deadline=time.monotonic()+seconds
+        if guided_turn:
+            from guided_yaw import GuidedYaw
+            guide=GuidedYaw(crc_profile);guide.start(start)
+        else:print('仅接收原始串口数据；不发送指令。请保持底盘和云台静止。',flush=True)
         while time.monotonic()<deadline:
+            if guide:guide.tick(time.monotonic_ns())
             if writer.error:raise RuntimeError('Writer failed: '+writer.error)
             if not select.select([fd],[],[],min(.1,max(0.,deadline-time.monotonic())))[0]:continue
             enter=time.monotonic_ns()
@@ -78,9 +84,12 @@ def capture_session(root,device,baud,seconds,allow_test_pty=False):
             returned=time.monotonic_ns();wall=time.time_ns()
             if not payload:raise RuntimeError('Serial returned EOF/disconnected')
             writer.put(payload,enter,returned,wall)
+            if guide:guide.feed(payload,returned)
     except KeyboardInterrupt:interrupted=True;failure='Operator interrupted'
     except Exception as error:failure=repr(error)
     finally:
+        if guide:guide.finish(time.monotonic_ns())
+        if guided_turn and failure:print("本次记录异常结束，请停止手动转动。",flush=True)
         if fd is not None:
             try:
                 if saved is not None:termios.tcsetattr(fd,termios.TCSANOW,saved);restore_ok=True
@@ -90,6 +99,7 @@ def capture_session(root,device,baud,seconds,allow_test_pty=False):
             finally:os.close(fd)
         health=writer.finish()
     names=['raw.bin','reads.jsonl'];meta=dict(scope='RECEIVE-ONLY SERIAL FORMAT PROBE',device=str(device),baud=baud,
+        expected_crc_profile=crc_profile,guided_turn=guided_turn,guided_phases=guide.phases if guide else [],
         requested_seconds=seconds,elapsed_monotonic_s=(time.monotonic_ns()-start)*1e-9,
         failure=failure,interrupted=interrupted,actual_termios=actual,prior_termios_restore_succeeded=restore_ok,
         writer_health=health,serial_transmit_payload_bytes=0,
@@ -106,9 +116,10 @@ def capture_session(root,device,baud,seconds,allow_test_pty=False):
     return result
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--device',required=True);p.add_argument('--baud',type=int,required=True);p.add_argument('--seconds',type=float,default=15)
+    p=argparse.ArgumentParser();p.add_argument('--device',required=True);p.add_argument('--baud',type=int,required=True);p.add_argument('--seconds',type=float);p.add_argument('--crc-profile',choices=list(PROFILES),default='0xa001');p.add_argument('--guided-turn',action='store_true')
     p.add_argument('--output-dir');a=p.parse_args();root=Path(a.output_dir) if a.output_dir else Path.home()/'AeroMind_xuc_feedback_checks'/('raw_'+time.strftime('%Y%m%d_%H%M%S'))
-    result=capture_session(root,a.device,a.baud,a.seconds)
+    seconds=a.seconds if a.seconds is not None else 25 if a.guided_turn else 15
+    result=capture_session(root,a.device,a.baud,seconds,crc_profile=a.crc_profile,guided_turn=a.guided_turn)
     print(json.dumps(result,indent=2,allow_nan=False));print('SUMMARY:',root/'summary.json')
-    return 0 if result.get('capture_complete') and result.get('format_status')=='NAV39_MODBUS_OBSERVED' and any(r['relative_yaw_valid_frames']>=3 and r['crc_algorithm']=='modbus_a001_ffff' for r in result.get('candidate_reports',[])) else 2
+    return 0 if result.get('capture_complete') and result.get('receive_profile_matches') and (not a.guided_turn or result.get('guided_turn_check',{}).get('motion_check_complete')) and any(r['relative_yaw_valid_frames']>=3 and r['crc_algorithm']==PROFILES[a.crc_profile] for r in result.get('candidate_reports',[])) else 2
 if __name__=='__main__':raise SystemExit(main())
