@@ -31,6 +31,10 @@ class PureTests(unittest.TestCase):
             self.assertTrue(g.accept('imu',s,t))
             if i%20==0:self.assertTrue(g.accept('points',s,t))
         self.assertTrue(g.ready(t))
+    def test_scan_start_is_not_latest_point_time(self):
+        g=InputHealth();self.assertTrue(g.accept('points',10**18,10**9,10**18+100_000_000))
+        for i in range(22):self.assertTrue(g.accept('imu',10**18+100_000_000+i*5_000_000,10**9+i*5_000_000))
+        self.assertIsNone(g.failure)
     def test_sensor_gap_latches_without_recovery(self):
         g=self.armed();self.assertFalse(g.accept('imu',10**18+1_000_000_000,10**9+5_000_000));self.assertFalse(g.accept('imu',10**18+5_000_000,10**9+6_000_000))
     def test_receive_gap_even_continuous_sensor_time(self):

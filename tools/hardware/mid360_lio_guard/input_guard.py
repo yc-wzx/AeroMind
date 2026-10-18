@@ -1,5 +1,6 @@
 """Validate real inputs before forwarding unchanged messages to a separate LIO."""
 import argparse, json, os, sys, time
+import numpy as np
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent/'mid360'))
@@ -63,6 +64,10 @@ class Guard(Node):
             stamp = stamp_ns(message)
             if kind == 'points':
                 details = inspect_cloud(message)
+                field=next(f for f in message.fields if f.name=='timestamp')
+                times=np.ndarray((message.height,message.width),dtype=('>f8' if message.is_bigendian else '<f8'),buffer=message.data,offset=field.offset,strides=(message.row_step,message.point_step))
+                details['minimum_point_stamp_ns']=int(np.min(times))
+                details['maximum_point_stamp_ns']=int(np.max(times))
                 # MID360 packets can interleave point times; upstream deskew sorts them.
                 # Keep/count this fact without editing payloads. Span and message-time
                 # continuity remain mandatory; interleaving alone is not a bad scan.
@@ -70,7 +75,7 @@ class Guard(Node):
                 details = imu_values(message)
                 if message.header.frame_id != 'mid360_imu':
                     raise ValueError('Wrong physical IMU frame')
-            accepted = self.engine.accept(kind, stamp, receipt)
+            accepted = self.engine.accept(kind, stamp, receipt,details.get('maximum_point_stamp_ns'))
             if accepted and not self.observe_only:
                 self.publishers_[kind].publish(message)
                 self.forwarded[kind] += 1

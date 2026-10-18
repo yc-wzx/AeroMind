@@ -37,3 +37,10 @@ valid 0.10007936s MID360 clouds contained 130 internal time regressions. Upstrea
 imu_processing.hpp sorts points for deskew. The new strict within-cloud ordering
 assumption was removed and a regression test added; counts remain recorded and
 raw payloads unchanged. This does not relax span or input-gap limits.
+
+A second short startup guard fault exposed another invalid added assumption:
+latest IMU vs scan START differed by 0.200556207s, while the most recent cloud
+actually covered 0.100314112s. Cross-stream checks now compare the original IMU
+time against the measured cloud time interval, not its start alone. The 0.2s
+cross-stream, 0.2s cloud and 0.1s IMU gap limits remain unchanged. New tests cover
+this start/end distinction. Both startup records are retained.

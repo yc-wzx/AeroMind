@@ -8,6 +8,7 @@ STATIC_SPAN_M, STATIC_ANGLE_DEG, MOTION_SPEED_M_S = .10, 10., 3.
 class InputHealth:
     def __init__(self):
         self.latest = {}
+        self.cloud_end_ns = None
         self.counts = {'points': 0, 'imu': 0}
         self.failure = None
         self.first_ns = None
@@ -26,7 +27,7 @@ class InputHealth:
                     return self.fail(kind + ': receive gap; fresh LIO session required')
         return True
 
-    def accept(self, kind, stamp_ns, receipt_ns):
+    def accept(self, kind, stamp_ns, receipt_ns, cloud_end_ns=None):
         if kind not in INPUT_LIMIT_NS:
             return self.fail('Unknown stream')
         if not self.tick(receipt_ns):
@@ -39,11 +40,16 @@ class InputHealth:
             if delta <= 0 or delta > INPUT_LIMIT_NS[kind]:
                 return self.fail(kind + ': regressed/duplicate/discontinuous sensor time')
         self.latest[kind] = (stamp_ns, receipt_ns)
+        if kind == 'points':self.cloud_end_ns = stamp_ns if cloud_end_ns is None else cloud_end_ns
         self.counts[kind] += 1
         if self.first_ns is None:
             self.first_ns = receipt_ns
-        if len(self.latest) == 2 and abs(self.latest['points'][0] - self.latest['imu'][0]) > 200_000_000:
-            return self.fail('LiDAR/IMU sensor time mismatch')
+        if len(self.latest) == 2:
+            # Cloud headers mark scan START, not latest measured point time.
+            # Compare IMU time to the actual scan interval, without rewriting stamps.
+            imu_stamp=self.latest['imu'][0];start=self.latest['points'][0]
+            separation=max(start-imu_stamp,imu_stamp-self.cloud_end_ns,0)
+            if separation > 200_000_000:return self.fail('LiDAR/IMU coverage interval mismatch')
         return True
 
     def ready(self, now_ns):
