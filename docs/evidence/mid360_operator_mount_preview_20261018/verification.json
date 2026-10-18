@@ -1,0 +1,21 @@
+{
+  "scope": "Provisional offline mount profile and centre-preview preparation",
+  "tests_pass": 12,
+  "operator_worksheet_complete": true,
+  "rough_values_preserved": true,
+  "unknown_uncertainty_not_invented": true,
+  "original_files_unchanged": true,
+  "derived_count_and_hash_verified": true,
+  "existing_output_overwrite_rejected": true,
+  "no_physical_trial_run": true,
+  "physical_mount_preview": "PENDING OPERATOR COMMAND ON PHYSICAL NATIVE FILES",
+  "live_yaw_capture": "PENDING DEVICE PATH/BAUD AND RECORDING",
+  "sealed_verification": {
+    "mode": "verify",
+    "source": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio",
+    "manifest": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/phase_input_manifest.json",
+    "inputs": 148
+  },
+  "production_navigation_changed": false,
+  "local_fixture_note": "Historical synthetic sensor orbit is not the measured real mount; preview differences are not fitted or treated as hardware calibration"
+}

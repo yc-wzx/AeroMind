@@ -1,0 +1,37 @@
+{
+  "scope": "USER-SUPPLIED XUC V3 REFERENCE; OPERATOR CONFIRMED SAME CONTRACT, LIVE LINK UNVERIFIED",
+  "files": {
+    "xuc.h": "5ec0da7f57c63c4b621e878ebcb81009dc86b153d2830151f952ff96f3bbbf76",
+    "README.md": "fcbb352401d174ef1f4ba531aa386a32b993382c51dda46b9f5395e3da4adb45"
+  },
+  "feedback_frame_bytes": 39,
+  "magic": "SP",
+  "byte_order": "little",
+  "crc": {
+    "kind": "CRC-16/MODBUS",
+    "poly_reflected": "0xA001",
+    "initial": "0xFFFF",
+    "bytes_checked": 37,
+    "stored_offset": 37,
+    "stored_order": "little"
+  },
+  "fields": {
+    "gimbal_relative_angle": {
+      "offset": 33,
+      "bytes": 4,
+      "type": "IEEE754 float32",
+      "unit": "rad",
+      "positive": "left/CCW",
+      "valid_bit": 3,
+      "zero": "encoder power-on angle"
+    },
+    "nav_valid_flags": {
+      "offset": 23,
+      "bytes": 2,
+      "type": "uint16"
+    }
+  },
+  "yaw_measurement_device_timestamp_present": false,
+  "feedback_sequence_present": false,
+  "note": "fire_tick_TJ is shot-event time, not yaw measurement time. No current serial device or baud guessed. No transmit path opened."
+}

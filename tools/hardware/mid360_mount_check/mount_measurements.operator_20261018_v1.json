@@ -1,0 +1,70 @@
+{
+  "schema": "mid360_yaw_mount_measurements_v1",
+  "units": "mm",
+  "scope": "OFFLINE MEASUREMENTS ONLY; NO ROS OUTPUT OR NAVIGATION ACTIVATION",
+  "frame_definition": {
+    "base_origin": "Ground projection of chassis circle centre",
+    "gimbal_zero": "Operator-marked gimbal forward parallel to declared chassis +X",
+    "axes": "+X forward at zero, +Y left, +Z up; yaw CCW viewed from above",
+    "mounting_face": "Centre of the 65x65 mm housing mounting face with M3 holes; exclude cable connector"
+  },
+  "base_to_yaw_axis_mm": {
+    "x": 0.0,
+    "y": 0.0,
+    "source": "Operator 2026-10-18: yaw axis directly above chassis circle centre; declared alignment, not independent metrology"
+  },
+  "yaw_axis_to_mount_face_at_zero_mm": {
+    "x": 25.0,
+    "y": 0.0,
+    "height_above_ground": 550.0,
+    "source": "Operator 2026-10-18 rough measurement: sensor centre directly ahead about 2.5 cm; mounting face above ground about 55 cm; y=0 follows reported directly-ahead alignment"
+  },
+  "native_lidar_x_yaw_from_gimbal_forward_deg": {
+    "value": 0.0,
+    "source": "Operator explicitly confirmed native LiDAR +X and gimbal forward coincide on 2026-10-18"
+  },
+  "mount_declaration": {
+    "inverted": true,
+    "yaw_only": true,
+    "native_z_points_down": true,
+    "source": "Operator confirmed inverted yaw-only mount; stationary specific force approximately -Z in provided captures"
+  },
+  "yaw_feedback": {
+    "available": true,
+    "interface": "TARGET CONTRACT: xuc_host v3 TxPacket_TJ.gimbal_relative_angle; actual AutoAim codec not yet adapted/verified",
+    "unit": "rad",
+    "positive_direction": "Left turn / CCW viewed from above",
+    "zero_reference": "Difference from encoder angle at power-on, NOT proven mechanical-forward zero",
+    "timestamp_basis": null
+  },
+  "official_reference": {
+    "url": "https://terra-1-g.djicdn.com/851d20f7b9f64838a34cd02351370894/Livox/Livox_Mid-360_User_Manual_CHS.pdf",
+    "pdf_sha256": "10dbf12ef5db1d69aba804aaee076e157435a9fbb2881a2e96cfad5ecbb7656e",
+    "printed_pages": [
+      9,
+      12,
+      14,
+      19
+    ],
+    "optical_origin_above_mount_face_mm": 47.0,
+    "imu_position_in_native_point_cloud_mm": [
+      11.0,
+      23.29,
+      -44.12
+    ],
+    "inverted_minimum_mount_face_height_mm": 500.0
+  },
+  "measurement_quality": {
+    "status": "PROVISIONAL / OPERATOR ROUGH MEASUREMENTS",
+    "independently_measured": false,
+    "forward_offset_and_height_require_remeasurement": true,
+    "uncertainty_mm": null,
+    "physical_forward_encoder_zero_rad": null,
+    "feedback_device_path": null,
+    "feedback_baud_rate": 460800,
+    "feedback_note": "Target split is one serial owner, navigation/aim consumers routed internally. No live encoder capture; per-yaw measurement timestamp unknown.",
+    "feedback_source_conflict": "Operator describes target xuc_host v3 (25/39 B), but supplied AutoAim branch commit e8daed7 uses 14/30 B and lacks gimbal_relative_angle; actual flashed wire format unobserved",
+    "reference_autoaim_serial_path": "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0",
+    "reference_autoaim_commit": "e8daed7eb36636394f276295517c38705f1f13ef"
+  }
+}

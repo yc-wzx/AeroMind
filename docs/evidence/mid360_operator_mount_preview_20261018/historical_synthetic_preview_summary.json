@@ -1,0 +1,161 @@
+{
+  "scope": "PROVISIONAL OFFLINE MOUNT LEVER-ARM PREVIEW; NOT CHASSIS ODOMETRY ACCEPTANCE",
+  "original_evidence_complete": true,
+  "original_motion_check_complete": true,
+  "original_data_sha256": {
+    "native.jsonl": "98489ef0b3ebb7509170d14f404cc593ca0919e9fe3b5148f9f5270364fd755b",
+    "events.jsonl": "c08111f95246d7c1e5a6af42f6de246c74bdee38af334b3196f0d5c709646022"
+  },
+  "measurement_path": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_mount_check/mount_measurements.operator_20261018_v1.json",
+  "measurement_sha256": "faec618574198f0e6efa7eda2fa32b68d55f0d8ba6cbfda8bee6d71a78e993f5",
+  "tool_sha256": "86360ed17b41c4b3dc4bacbee1bb8c036c5931cf673eae3dbdcc17805ff0a530",
+  "mount_checker_sha256": "e17f63f779cf11ed0afc3ae46d8e2b43528a71926f0764238156c57961369f30",
+  "analyzer_sha256": "3b309520ee78858e7a79a9ddd109f41904c7ed69d3f04fbc7c49a4658a5ac1dd",
+  "measurement_quality": {
+    "status": "PROVISIONAL / OPERATOR ROUGH MEASUREMENTS",
+    "independently_measured": false,
+    "forward_offset_and_height_require_remeasurement": true,
+    "uncertainty_mm": null,
+    "physical_forward_encoder_zero_rad": null,
+    "feedback_device_path": null,
+    "feedback_baud_rate": null,
+    "feedback_note": "Operator confirms same v3 contract. Per-yaw measurement timestamp, device path and live reception not yet established."
+  },
+  "mount_worksheet": {
+    "scope": "OFFLINE MOUNT WORKSHEET; NOT CALIBRATION OR NAVIGATION ACCEPTANCE",
+    "measurement_data_complete": true,
+    "missing": [],
+    "invalid": [],
+    "yaw_feedback_declared": true,
+    "yaw_feedback_contract_complete": false,
+    "yaw_feedback_unresolved": [
+      "yaw_feedback.timestamp_basis"
+    ],
+    "live_feedback_verified": false,
+    "navigation_ready": false,
+    "ros_publication": false,
+    "production_configuration_changed": false,
+    "geometry_candidate": {
+      "base_to_axis_xy_m": [
+        0.0,
+        0.0
+      ],
+      "axis_ground_to_mount_face_at_zero_m": [
+        0.025,
+        0.0,
+        0.55
+      ],
+      "axis_ground_to_lidar_at_zero_m": [
+        0.025,
+        0.0,
+        0.503
+      ],
+      "axis_ground_to_imu_at_zero_m": [
+        0.036,
+        -0.023289999999999998,
+        0.54712
+      ],
+      "native_x_yaw_at_zero_deg": 0.0,
+      "meaning": "Derived candidate only; yaw-axis point is its ground-plane intersection"
+    },
+    "installation_height_requirement": "MET_BY_DECLARED_MEASUREMENT",
+    "official_constants": {
+      "optical_height_mm": 47.0,
+      "imu_in_lidar_mm": [
+        11.0,
+        23.29,
+        -44.12
+      ]
+    },
+    "limitations": [
+      "Input values/provenance are operator declarations, not independently measured by this tool",
+      "Ideal upside-down/yaw-only orientation model; small roll/pitch errors not calibrated",
+      "Internal LiDAR/IMU nominal dimensions are separate from measured vehicle installation",
+      "No live encoder identity, timestamp, direction or zero validation",
+      "No local-odom gravity/map alignment or chassis-centre odometry qualification"
+    ],
+    "inverted_min_mount_face_height_mm": 500.0
+  },
+  "imu_to_axis_ground_point_in_imu_m": [
+    -0.036,
+    -0.023289999999999998,
+    0.54712
+  ],
+  "statistics": {
+    "corrected_samples": 259,
+    "mission_samples": 256,
+    "original_sensor_turn_hold_displacement_m": 0.07653668647301795,
+    "provisional_centre_turn_hold_displacement_m": 0.05212605806831916,
+    "original_sensor_return_closure_m": 0.0,
+    "provisional_centre_return_closure_m": 0.0,
+    "sensor_max_sample_distance_from_baseline_m": 0.07653668647301795,
+    "provisional_centre_max_sample_distance_from_baseline_m": 0.05212605806831916
+  },
+  "derived_centre_hold_windows": {
+    "baseline": {
+      "position_m": [
+        0.064,
+        -0.023289999999999998,
+        0.54712
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "samples": 20,
+      "first_receive_monotonic_ns": 92113308926,
+      "last_receive_monotonic_ns": 94013007692,
+      "meaning": "Derived median position / quaternion mean; original samples unchanged"
+    },
+    "turned_hold": {
+      "position_m": [
+        0.02878631706210437,
+        -0.061723350929773727,
+        0.54712
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        -0.38268343236509,
+        0.9238795325112867
+      ],
+      "samples": 20,
+      "first_receive_monotonic_ns": 102412911483,
+      "last_receive_monotonic_ns": 104313261035,
+      "meaning": "Derived median position / quaternion mean; original samples unchanged"
+    },
+    "final_hold": {
+      "position_m": [
+        0.064,
+        -0.023289999999999998,
+        0.54712
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "samples": 20,
+      "first_receive_monotonic_ns": 112712993770,
+      "last_receive_monotonic_ns": 114613035162,
+      "meaning": "Derived median position / quaternion mean; original samples unchanged"
+    }
+  },
+  "navigation_ready": false,
+  "body_yaw_computed": false,
+  "live_joint_feedback_used": false,
+  "published_ros_data": false,
+  "limitations": [
+    "User declared fixed chassis and concentric yaw axis; neither independently verified",
+    "Forward offset and height are rough, no uncertainty bound or calibration-accuracy threshold",
+    "Same lever arm applied to each original pose; dimensions never fitted to improve this trial",
+    "Derived axis-ground positions are in original sensor-local LIO frame, not gravity/map-qualified coordinates",
+    "Rotation errors couple the long vertical lever into horizontal error; no error removed or corrected",
+    "Uses nominal internal IMU offset; not this sensor individual calibration",
+    "No body heading, encoder zero, sensor/encoder clock alignment, motor control or navigation acceptance"
+  ],
+  "derived_timeline_sha256": "53a51ba937885c3d4cf637da11a26d2f5db36cef6cc370468e3e6a25bc821fa6"
+}

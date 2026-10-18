@@ -1,0 +1,58 @@
+{
+  "scope": "OFFLINE MOUNT WORKSHEET; NOT CALIBRATION OR NAVIGATION ACCEPTANCE",
+  "measurement_data_complete": true,
+  "missing": [],
+  "invalid": [],
+  "yaw_feedback_declared": true,
+  "yaw_feedback_contract_complete": false,
+  "yaw_feedback_unresolved": [
+    "yaw_feedback.timestamp_basis"
+  ],
+  "live_feedback_verified": false,
+  "navigation_ready": false,
+  "ros_publication": false,
+  "production_configuration_changed": false,
+  "geometry_candidate": {
+    "base_to_axis_xy_m": [
+      0.0,
+      0.0
+    ],
+    "axis_ground_to_mount_face_at_zero_m": [
+      0.025,
+      0.0,
+      0.55
+    ],
+    "axis_ground_to_lidar_at_zero_m": [
+      0.025,
+      0.0,
+      0.503
+    ],
+    "axis_ground_to_imu_at_zero_m": [
+      0.036,
+      -0.023289999999999998,
+      0.54712
+    ],
+    "native_x_yaw_at_zero_deg": 0.0,
+    "meaning": "Derived candidate only; yaw-axis point is its ground-plane intersection"
+  },
+  "installation_height_requirement": "MET_BY_DECLARED_MEASUREMENT",
+  "official_constants": {
+    "optical_height_mm": 47.0,
+    "imu_in_lidar_mm": [
+      11.0,
+      23.29,
+      -44.12
+    ]
+  },
+  "limitations": [
+    "Input values/provenance are operator declarations, not independently measured by this tool",
+    "Ideal upside-down/yaw-only orientation model; small roll/pitch errors not calibrated",
+    "Internal LiDAR/IMU nominal dimensions are separate from measured vehicle installation",
+    "No live encoder identity, timestamp, direction or zero validation",
+    "No local-odom gravity/map alignment or chassis-centre odometry qualification"
+  ],
+  "inverted_min_mount_face_height_mm": 500.0,
+  "input_path": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_mount_check/mount_measurements.operator_20261018_v1.json",
+  "input_sha256": "faec618574198f0e6efa7eda2fa32b68d55f0d8ba6cbfda8bee6d71a78e993f5",
+  "tool_sha256": "e17f63f779cf11ed0afc3ae46d8e2b43528a71926f0764238156c57961369f30"
+}

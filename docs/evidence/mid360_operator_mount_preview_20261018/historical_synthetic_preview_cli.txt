@@ -1,0 +1,26 @@
+{
+  "scope": "PROVISIONAL OFFLINE MOUNT LEVER-ARM PREVIEW; NOT CHASSIS ODOMETRY ACCEPTANCE",
+  "statistics": {
+    "corrected_samples": 259,
+    "mission_samples": 256,
+    "original_sensor_turn_hold_displacement_m": 0.07653668647301795,
+    "provisional_centre_turn_hold_displacement_m": 0.05212605806831916,
+    "original_sensor_return_closure_m": 0.0,
+    "provisional_centre_return_closure_m": 0.0,
+    "sensor_max_sample_distance_from_baseline_m": 0.07653668647301795,
+    "provisional_centre_max_sample_distance_from_baseline_m": 0.05212605806831916
+  },
+  "navigation_ready": false,
+  "body_yaw_computed": false,
+  "measurement_quality": {
+    "status": "PROVISIONAL / OPERATOR ROUGH MEASUREMENTS",
+    "independently_measured": false,
+    "forward_offset_and_height_require_remeasurement": true,
+    "uncertainty_mm": null,
+    "physical_forward_encoder_zero_rad": null,
+    "feedback_device_path": null,
+    "feedback_baud_rate": null,
+    "feedback_note": "Operator confirms same v3 contract. Per-yaw measurement timestamp, device path and live reception not yet established."
+  }
+}
+PREVIEW: /home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_114753/mount_preview_20261018_v1.json

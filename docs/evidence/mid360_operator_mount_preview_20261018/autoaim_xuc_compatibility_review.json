@@ -1,0 +1,18 @@
+{
+  "scope": "Read-only AutoAim/XUC source audit; no external repository modifications or firmware execution",
+  "commit": "e8daed7eb36636394f276295517c38705f1f13ef",
+  "configured_port": "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0",
+  "configured_baud": 460800,
+  "serial_device_on_mini_pc_verified": false,
+  "serial_payload_captured": false,
+  "autoaim_upper_command_bytes": 14,
+  "autoaim_upper_feedback_bytes": 30,
+  "autoaim_upper_has_gimbal_relative_angle": false,
+  "provided_host_v3_command_bytes": 25,
+  "provided_host_v3_feedback_bytes": 39,
+  "bundled_example_firmware_feedback_bytes": 20,
+  "outcome": "PROTOCOL VERSIONS CONFLICT; NO AUTOMATIC FALLBACK OR MIXED PACKET WRITES",
+  "operator_intent": "Use flags so navigation and aiming consume their own data",
+  "proposed_boundary": "One serial owner, one agreed wire format, internal dispatch; nav_valid_flags is field validity, not OS serial routing",
+  "unchanged": "No AutoAim code/aim settings, serial opens, motor commands or production navigation changes"
+}

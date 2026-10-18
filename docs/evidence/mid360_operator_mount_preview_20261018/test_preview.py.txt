@@ -1,0 +1,10 @@
+test_bad_pose_rejected (__main__.PreviewTests) ... ok
+test_fixed_axis_stays_fixed_for_all_yaw_and_wrap_angles (__main__.PreviewTests) ... ok
+test_known_geometry_is_declared_and_not_navigation_ready (__main__.PreviewTests) ... ok
+test_nonconcentric_axis_not_approximated (__main__.PreviewTests) ... ok
+test_translation_is_preserved (__main__.PreviewTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK

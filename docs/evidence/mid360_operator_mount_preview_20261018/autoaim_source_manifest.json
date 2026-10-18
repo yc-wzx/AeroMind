@@ -1,0 +1,84 @@
+{
+  "repository": "Reimuaa/Fujian_AutoAim",
+  "requested_branch": "26.10.18",
+  "commit": "e8daed7eb36636394f276295517c38705f1f13ef",
+  "tree": "1c5ae3d0bcfa6b00211fe25c15a88f026ad637e9",
+  "files": {
+    "io/xuc.hpp": {
+      "sha256": "653ccb6da77ebbd2c006a0ea14552d25b0985be634378922ed1855e0d57146b7",
+      "bytes": 11172,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/io/xuc.hpp"
+    },
+    "io/xuc.cpp": {
+      "sha256": "04ae97663d7754bfac3defe0102f93dabf992562c783ad042b34e5d0f369074d",
+      "bytes": 29119,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/io/xuc.cpp"
+    },
+    "configs/standard.yaml": {
+      "sha256": "5a29dc94237f46dd0c1720e119927d83ae47eed54762d90cd62630d4448e6301",
+      "bytes": 18868,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/configs/standard.yaml"
+    },
+    "configs/calibration.yaml": {
+      "sha256": "ccc501320574d5289f75a7b345899f0785f2b1bc035fbaa89448ea16b8bac42c",
+      "bytes": 3946,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/configs/calibration.yaml"
+    },
+    "io/ros2/publish2nav.cpp": {
+      "sha256": "db07f3f86374b98ad1a265b4f95470816eb9a9db5a5bb7ca6a5f5ea3ddfe366b",
+      "bytes": 1291,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/io/ros2/publish2nav.cpp"
+    },
+    "io/ros2/publish2nav.hpp": {
+      "sha256": "e78caaf5a401b610ae56a004a09f93359ffbc85d6f9cf28ab6bb564c62216a44",
+      "bytes": 1390,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/io/ros2/publish2nav.hpp"
+    },
+    "io/ros2/ros2.cpp": {
+      "sha256": "8b4daf289d6cefe70cc1a2481e2f678c04fcdf6bb825991ee451aee249bab27c",
+      "bytes": 820,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/io/ros2/ros2.cpp"
+    },
+    "io/ros2/ros2.hpp": {
+      "sha256": "48f66cdaf09a5140f5b2053f25d7536cda5265b21ae883cdea8064a9dede55c7",
+      "bytes": 1038,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/io/ros2/ros2.hpp"
+    },
+    "src/standard.cpp": {
+      "sha256": "280ff48a753243626ec1d418dfa8e23fd20be53de9a873f03b7247469224eb45",
+      "bytes": 192050,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/src/standard.cpp"
+    },
+    "src/mt_standard.cpp": {
+      "sha256": "1397b1d6498f4944e194ec3bc34894831d8f37adb6f2c5082936814855255509",
+      "bytes": 3936,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/src/mt_standard.cpp"
+    },
+    "tools/field_start_autoaim.sh": {
+      "sha256": "4fea2e85adb1d499128db42693504a95d695ffc24dfd0419a08ccddb56918b37",
+      "bytes": 9055,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/tools/field_start_autoaim.sh"
+    },
+    "firmware/infantry/STM32F405/xuc.h": {
+      "sha256": "692c242dd3d3581b8bce9c7ceae09ea04e2ce2731d9ae40259206f834da1a6b5",
+      "bytes": 2948,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/firmware/infantry/STM32F405/xuc.h"
+    },
+    "README.md": {
+      "sha256": "70b8715a2b78babf47511111f4833b5fe5a65f16097b7ae2cf95bf43bc77db27",
+      "bytes": 3998,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/README.md"
+    },
+    "CMakeLists.txt": {
+      "sha256": "b5d98dea2f6314345922d4af6d5ff1e03fd6c33ad6b994ea81cd720ee136f2b0",
+      "bytes": 19544,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/CMakeLists.txt"
+    },
+    "tests/xuc_board_probe.cpp": {
+      "sha256": "4f5558b0a12818d576bbc68ff7cdea84dec2ead33476a6bd6cc18b4ef82fceeb",
+      "bytes": 4500,
+      "url": "https://github.com/Reimuaa/Fujian_AutoAim/blob/e8daed7eb36636394f276295517c38705f1f13ef/tests/xuc_board_probe.cpp"
+    }
+  },
+  "scope": "Read-only source inspection, no repository edits or execution"
+}
