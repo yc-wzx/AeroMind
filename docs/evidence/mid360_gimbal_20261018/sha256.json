@@ -1,0 +1,12 @@
+{
+  "missing_inputs_checked.json": "df710d55d3e1009ab83020a8390c6e221bebc7a2571fabbb2eceac0d467aa531",
+  "missing_inputs_checked.txt": "9d899aa3a0796f2c4c9afd2499b69c04df525a4207523b212f4326825006f247",
+  "phase_manifest_preserved.json": "acfff07e28f8f63e1026a59d2deafd797327682f799ec515c00f0636a286e779",
+  "raw_manifest_preserved.json": "ee0c25d1b7fdb3d524930d12ce4993228061b04843a3c6196cb08671c1d9dcd4",
+  "synthetic_e2e.json": "fa98e4843b11ff314e843a911f91b6cc64cb66604cb6e0c9bbe50e4d4828f4bf",
+  "synthetic_e2e_runner.py": "2ecfab4506243057005b32153941e435e8d87f8815234f076b4b8056d6a9c30e",
+  "synthetic_fixture.py": "e13ea436f17abf8c09098cd1a624db0bb9c2e25dcbf35c6b7ae73956512db33d",
+  "tests_initial.txt": "14113f280d4e493723fd22fbb392ddafd3b3fb6cf9ad0b5d4d45f05195efb7de",
+  "user_reported_static_pass_20261017.json": "9be2826c9abdb334f4f2227e19deb89c82bce536326b56b0114224a7d35270a0",
+  "verification.json": "153596c04d4adbd7f47609260eb07cccb7c77f5549870659846cefb1d2af39f5"
+}

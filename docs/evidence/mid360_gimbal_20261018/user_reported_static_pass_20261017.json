@@ -1,0 +1,183 @@
+{
+  "evidence_complete": true,
+  "streams": {
+    "corrected": {
+      "pass_": true,
+      "count": 301,
+      "valid_rows": 301,
+      "errors": 0,
+      "observed_span_s": 29.99983419,
+      "receive_hz": 10.000055270305479,
+      "sensor_span_s": 30.001353216000002,
+      "max_receive_gap_s": 0.10232477200000001,
+      "max_sensor_gap_s": 0.10226099200000001,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "predicted": {
+      "pass_": true,
+      "count": 6008,
+      "valid_rows": 6008,
+      "errors": 0,
+      "observed_span_s": 30.034324568000002,
+      "receive_hz": 200.00449773390753,
+      "sensor_span_s": 30.034280567000003,
+      "max_receive_gap_s": 0.0077262780000000005,
+      "max_sensor_gap_s": 0.006249832,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "mixed": {
+      "pass_": false,
+      "count": 6309,
+      "valid_rows": 6309,
+      "errors": 0,
+      "observed_span_s": 30.036454680000002,
+      "receive_hz": 210.01146996886516,
+      "sensor_span_s": 30.033522010000002,
+      "max_receive_gap_s": 0.007734022,
+      "max_sensor_gap_s": 0.010056834,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 301
+    },
+    "tf": {
+      "pass_": true,
+      "count": 301,
+      "valid_rows": 301,
+      "errors": 0,
+      "observed_span_s": 30.000031491,
+      "receive_hz": 9.999989503011019,
+      "sensor_span_s": 30.001353216000002,
+      "max_receive_gap_s": 0.102446463,
+      "max_sensor_gap_s": 0.10226099200000001,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    }
+  },
+  "phase_identity": {
+    "pass_": true,
+    "common_sensor_start_ns": 1792248405521500160,
+    "common_sensor_end_ns": 1792248435522853376,
+    "common_sensor_span_s": 30.001353216000002,
+    "interior_counts": {
+      "corrected": 301,
+      "predicted": 6000,
+      "mixed": 6301,
+      "tf": 301
+    },
+    "boundary_records_retained_but_excluded_from_identity_comparison": {
+      "corrected": 0,
+      "predicted": 8,
+      "mixed": 8,
+      "tf": 0
+    },
+    "missing_from_mixed": 0,
+    "missing_from_split": 0,
+    "tf_matches_corrected_pose": true,
+    "rule": "Exact decoded message identity multisets within common device-time coverage; all boundary messages remain recorded"
+  },
+  "parse_errors": [],
+  "corrected_drift": {
+    "samples": 301,
+    "first_position_m": [
+      -0.03585926986696104,
+      0.00960457802718595,
+      -0.04484250792885028
+    ],
+    "last_position_m": [
+      -0.044104814106814154,
+      0.0019148145025619985,
+      -0.05031603498868806
+    ],
+    "max_translation_from_first_m": 0.020098567044763573,
+    "end_translation_from_first_m": 0.012533194379358693,
+    "max_rotation_from_first_deg": 0.7358409641999785,
+    "end_rotation_from_first_deg": 0.21393183616288375,
+    "meaning": "Relative estimated sensor drift under operator-declared stationary condition; not true position error"
+  },
+  "zero_twist_is_not_a_stationarity_measurement": true,
+  "legacy_mixed_order_gate_is_diagnostic_only": true,
+  "scope": "REAL SENSOR-LOCAL PHASED LIO STATIC CHECK; NOT NAVIGATION ACCEPTANCE",
+  "original_data_sha256": {
+    "native.jsonl": "21bc2fce870199274e7dc8975154c651d45bd303c0f195d1097c766c36052be6"
+  },
+  "health": {
+    "received": 12919,
+    "written": 12919,
+    "actual_lines": 12919,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry"
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry"
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry"
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage"
+      }
+    ]
+  },
+  "actual_parameters": {
+    "use_sim_time": false,
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "common.odometry_output_contract": "scan_corrected_primary_v1"
+  },
+  "input_manifest_sha256": "f46bd28b22d05a7868ec3d29ccdc8faca1c88a34e23ae2960b13f1f560928b9f",
+  "inputs_unchanged": true,
+  "gates": {
+    "writer_health": true,
+    "source_identity": true,
+    "parameters": true,
+    "inputs_unchanged": true,
+    "not_interrupted": true
+  },
+  "limits": [
+    "Stationarity is operator-declared; no ground truth",
+    "No chassis-centre/gravity alignment qualification",
+    "No invented drift pass threshold",
+    "No motors or navigation output",
+    "No claim of publisher-side losslessness"
+  ]
+}

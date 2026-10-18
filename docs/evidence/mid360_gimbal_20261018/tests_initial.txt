@@ -1,0 +1,13 @@
+test_capture_failure_cannot_be_hidden_on_reaudit (__main__.GimbalTests) ... ok
+test_incomplete_operator_markers_rejected (__main__.GimbalTests) ... ok
+test_independent_file_audit_and_tamper_rejection (__main__.GimbalTests) ... ok
+test_inverted_frame_and_lever_arm_not_false_drift (__main__.GimbalTests) ... ok
+test_missing_imu_phase_rejected (__main__.GimbalTests) ... ok
+test_nan_imu_rejected (__main__.GimbalTests) ... ok
+test_no_motion_cannot_be_called_exercised (__main__.GimbalTests) ... ok
+test_quaternion_sign_and_wrapped_relative_angle (__main__.GimbalTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.624s
+
+OK

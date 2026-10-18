@@ -1,0 +1,6 @@
+{
+  "scope": "Actual CLI rejection with no input publishers; isolated domain 222",
+  "exit_code": 2,
+  "zero_messages": true,
+  "motion_check_complete": false
+}

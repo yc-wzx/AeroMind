@@ -1,0 +1,14 @@
+{
+  "scope": "Manual gimbal test tools ready; physical turn/return PENDING",
+  "user_confirmed": "Radar mounted inverted on gimbal; can yaw independently while chassis remains fixed",
+  "prior_static_result_source": "User-pasted report, not an independently transferred native data file",
+  "targeted_tests": 8,
+  "synthetic_native_interactive_capture_pass": true,
+  "independent_reaudit_identical": true,
+  "missing_inputs_rejected": true,
+  "original_raw_manifest_entries": 399,
+  "phase_manifest_entries": 148,
+  "estimator_or_parameters_changed": false,
+  "navigation_or_motor_commands_sent": false,
+  "hardware_motion_performed": false
+}

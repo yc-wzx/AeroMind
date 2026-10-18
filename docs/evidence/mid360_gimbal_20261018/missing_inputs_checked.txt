@@ -1,0 +1,44 @@
+正在检查真实雷达、新版LIO及IMU输入；本工具不发送运动指令。
+{
+  "evidence_complete": false,
+  "analysis_error": "Incomplete/out-of-order operator phase markers",
+  "rotation_exercised": false,
+  "return_exercised": false,
+  "scope": "REAL SENSOR-LOCAL MANUAL GIMBAL TURN/RETURN DIAGNOSTIC; NOT NAVIGATION ACCEPTANCE",
+  "gates": {
+    "writer_health": true,
+    "source_identity": false,
+    "parameters": false,
+    "inputs_unchanged": true,
+    "parameters_unchanged": false,
+    "not_interrupted": true,
+    "capture_finished_without_error": false
+  },
+  "health": {
+    "received": 0,
+    "written": 0,
+    "actual_lines": 0,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "publishers": {},
+  "actual_parameters": {},
+  "original_data_sha256": {
+    "native.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limits": [
+    "Manual direction and fixed chassis are operator declarations, not independent truth",
+    "No angular/position accuracy acceptance",
+    "No motor or navigation command",
+    "No known pivot offset or chassis calibration",
+    "Zero upstream Twist is not a stationarity measurement"
+  ],
+  "motion_check_complete": false,
+  "capture_failure": "\u8f93\u5165\u672a\u5c31\u7eea\uff1a{\"corrected\": 0, \"predicted\": 0, \"mixed\": 0, \"tf\": 0, \"imu_si\": 0}"
+}
+SUMMARY: /home/rmnav/AeroMind_mid360_gimbal_checks/turn_return_20261018_105906/summary.json
+请保持两个启动终端运行：
+  bash tools/hardware/mid360/run.sh
+  bash tools/hardware/mid360_lio_phased/run.sh /home/rm/AeroMind_mid360_captures/20261017_214624/summary.json
