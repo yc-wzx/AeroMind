@@ -1,0 +1,48 @@
+{
+  "scope": "SIMULTANEOUS REAL LIO / ENCODER RECEIVE-ONLY PROVISIONAL BODY PREVIEW",
+  "evidence_complete": false,
+  "motion_check_complete": false,
+  "compensation_accuracy_accepted": false,
+  "navigation_ready": false,
+  "published_ros_data": false,
+  "body_orientation_meaning": "Change relative to operator-declared initial mechanical-forward frame in original LIO coordinates",
+  "gates": {
+    "writer_health": true,
+    "inputs_unchanged": true,
+    "sealed_inputs_verified": true,
+    "source_identity": false,
+    "parameters": false,
+    "capture_finished_without_error": false,
+    "serial_process_exit": false
+  },
+  "capture_failure": "LIO/IMU\u8f93\u5165\u672a\u5c31\u7eea\uff1a{\"corrected\": 0, \"predicted\": 0, \"mixed\": 0, \"tf\": 0, \"imu_si\": 0}",
+  "health": {
+    "received": 0,
+    "written": 0,
+    "actual_lines": 0,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "original_data_sha256": {
+    "native.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "local_inputs.json": "e2d1dc773466f5627e80d7c22947a829d259f8532399bb3ccc72593450c62705"
+  },
+  "capture_meta_sha256": "538cd1ae2fba6b2e2c0756dffe52a5d7cf3292184e19af57611adfac69143ede",
+  "reviewer_sha256": "497bd78aae08ce4ac19cb742177e1c9c78f4abcd0b9d9633497303b0c4377ff5",
+  "math_sha256": "99443160279429fa8f34dc2406f58b0b8f385be1efade619e6256f230b76690d",
+  "timestamp_association": "Nearest original host monotonic receive times, <=50ms filter; NO device-clock synchronization or delay correction",
+  "limits": [
+    "Fixed chassis and mechanical forward are operator declarations; no independent position/angle truth",
+    "Mount dimensions are rough; no fitting or automatic encoder-zero configuration",
+    "Positions are 3D in sensor-local LIO coordinates, not gravity/map-qualified",
+    "Centre uses concentric fixed lever arm; live encoder is used for orientation, not to force centre stationary",
+    "LIO output/transport delay and encoder measurement time are unknown; motion residual is not isolated calibration error",
+    "No invented accuracy threshold, no motor/navigation/TF publication, no reset service monitoring"
+  ],
+  "analysis_error": "[Errno 2] No such file or directory: '/home/rmnav/aeromind-transfer-20261016/tools/results/mid360_joint_check_20261018/no_inputs_01/encoder/capture_meta.json'",
+  "status": "EVIDENCE_INCOMPLETE",
+  "derived_timeline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

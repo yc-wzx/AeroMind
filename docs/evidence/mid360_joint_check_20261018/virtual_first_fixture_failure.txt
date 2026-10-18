@@ -1,0 +1,29 @@
+ "optical_height_mm": 47.0,
+        "imu_in_lidar_mm": [
+          11.0,
+          23.29,
+          -44.12
+        ]
+      },
+      "limitations": [
+        "Input values/provenance are operator declarations, not independently measured by this tool",
+        "Ideal upside-down/yaw-only orientation model; small roll/pitch errors not calibrated",
+        "Internal LiDAR/IMU nominal dimensions are separate from measured vehicle installation",
+        "No live encoder identity, timestamp, direction or zero validation",
+        "No local-odom gravity/map alignment or chassis-centre odometry qualification"
+      ],
+      "inverted_min_mount_face_height_mm": 500.0
+    }
+  },
+  "lio_left_change_deg": 45.836623610465864,
+  "lio_return_change_deg": -45.836623610465864,
+  "status": "DIAGNOSTIC_COMPLETE_NO_ACCURACY_ACCEPTANCE",
+  "derived_timeline_sha256": "9a7292e7b6df65c5ccfb146d596777601bf484d931186e00c926563d47621fff"
+}
+SUMMARY: /home/rmnav/aeromind-transfer-20261016/tools/results/mid360_joint_check_20261018/virtual_joint_01/summary.json
+Traceback (most recent call last):
+  File "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_joint_check/virtual_e2e.py", line 81, in <module>
+    if __name__=='__main__':main()
+  File "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_joint_check/virtual_e2e.py", line 69, in main
+    assert not any(payload),'Receive-only fixture observed unexpected TX payload'
+AssertionError: Receive-only fixture observed unexpected TX payload

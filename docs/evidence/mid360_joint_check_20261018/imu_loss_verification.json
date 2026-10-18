@@ -1,0 +1,12 @@
+{
+  "scope": "SYNTHETIC DDS IMU INTERRUPTION; NOT PHYSICAL TRIAL",
+  "expected_failure_observed": true,
+  "production_orchestrator_used": true,
+  "actual_ros_recorder_used": true,
+  "actual_serial_child_interrupted": true,
+  "failure": "LIO/IMU输入失去新鲜度，请停止手动转动",
+  "manual_motion_not_prompted": true,
+  "phase_count": 1,
+  "evidence_complete": false,
+  "motion_check_complete": false
+}

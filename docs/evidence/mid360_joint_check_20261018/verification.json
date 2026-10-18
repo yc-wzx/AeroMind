@@ -1,0 +1,15 @@
+{
+  "tool_tests": 18,
+  "legacy_tests": 19,
+  "all_tests_pass": true,
+  "virtual_end_to_end_pass": true,
+  "virtual_raw_rows": 16192,
+  "independent_review_identical": true,
+  "production_files_still_match_successful_virtual_capture": true,
+  "no_input_refusal_before_serial_child_verified": true,
+  "imu_loss_interrupt_verified": true,
+  "physical_joint_trial_complete": false,
+  "navigation_output_modified": false,
+  "synthetic_raw_evidence_local_path": "/home/rmnav/aeromind-transfer-20261016/tools/results/mid360_joint_check_20261018/virtual_joint_02",
+  "physical_encoder_only_result": "5006 valid CRC8408 frames; 200.2426Hz host reception; left+55.5469deg, return-52.3828deg, closure+3.1641deg; no angular truth"
+}

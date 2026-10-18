@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_joint_check/virtual_e2e.py", line 14, in <module>
+    from test_joint import PARAMS,MEASUREMENTS,PROFILE,waveform,frame
+  File "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_joint_check/test_joint.py", line 12, in <module>
+    from tests import frame
+ImportError: cannot import name 'frame' from 'tests' (/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_lio/tests.py)

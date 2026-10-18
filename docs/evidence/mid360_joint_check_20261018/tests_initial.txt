@@ -1,0 +1,23 @@
+test_capture_failure_cannot_pass (__main__.EvidenceTests) ... ok
+test_closed_evidence_independently_recomputes (__main__.EvidenceTests) ... ok
+test_missing_imu_and_missing_phase_rejected (__main__.EvidenceTests) ... ok
+test_native_corrected_predicted_mixed_tf_and_imu (__main__.EvidenceTests) ... ok
+test_original_nan_imu_rejected (__main__.EvidenceTests) ... ok
+test_serial_wrong_crc_or_missing_angle_cannot_pass (__main__.EvidenceTests) ... ok
+test_source_and_parameter_fail_closed (__main__.EvidenceTests) ... ok
+test_tampered_native_rejected_by_hash (__main__.EvidenceTests) ... ok
+test_actual_chassis_motion_is_not_forced_stationary (__main__.MathTests) ... ok
+test_inversion_and_live_encoder_remove_only_declared_yaw_motion (__main__.MathTests) ... ok
+test_missing_encoder_interval_rejected (__main__.MathTests) ... ok
+test_nearest_receipt_pairing_has_no_interpolation (__main__.MathTests) ... ok
+test_nonfinite_pose_or_invalid_angle_rejected (__main__.MathTests) ... ok
+test_nonnormalized_quaternion_and_unknown_mount_rejected (__main__.MathTests) ... ok
+test_nonzero_initial_angle_kept_as_candidate (__main__.MathTests) ... ok
+test_regressed_receipt_rejected (__main__.MathTests) ... ok
+test_wrap_across_pi (__main__.MathTests) ... ok
+test_wrong_encoder_direction_leaves_large_residual (__main__.MathTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 11.681s
+
+OK

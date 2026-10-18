@@ -1,0 +1,146 @@
+{
+  "source": "User-pasted physical summary, NOT local independent re-audit of physical raw bytes",
+  "attachment_sha256": "2e02b6f14c6078e09e56d50a084b5638317f971900b0deef3c04f849b8e1aee8",
+  "physical_capture": "/home/rm/AeroMind_xuc_feedback_checks/raw_20261018_143723",
+  "summary": {
+    "scope": "RECEIVE-ONLY NAVIGATION FEEDBACK INSPECTION; NOT NAVIGATION ACCEPTANCE",
+    "raw_bytes": 195259,
+    "read_chunks": 10000,
+    "header_candidates": 5008,
+    "candidate_reports": [
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "modbus_a001_ffff",
+        "crc_valid_frames": 0,
+        "relative_yaw_rad_range": null,
+        "latest_navigation_fields": null,
+        "structural_valid_frames": 0,
+        "longest_consecutive_valid_frames": 0,
+        "format_candidate_exercised": false,
+        "relative_yaw_valid_frames": 0,
+        "observed_completion_receive_hz": null,
+        "max_completion_receive_gap_s": null
+      },
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "diagnostic_8408_ffff",
+        "crc_valid_frames": 5006,
+        "relative_yaw_rad_range": [
+          0.006902913562953472,
+          1.000922441482544
+        ],
+        "latest_navigation_fields": {
+          "nav_valid_flags": 15,
+          "nav_allowed": 0,
+          "nav_allowed_valid": true,
+          "chassis_vx_m_s": 0.0,
+          "chassis_vy_m_s": 0.0,
+          "gimbal_relative_angle_rad": 0.06366020441055298,
+          "relative_yaw_valid": true
+        },
+        "structural_valid_frames": 5006,
+        "longest_consecutive_valid_frames": 5005,
+        "format_candidate_exercised": true,
+        "relative_yaw_valid_frames": 5006,
+        "observed_completion_receive_hz": 200.24257105798594,
+        "max_completion_receive_gap_s": 0.005444638
+      }
+    ],
+    "format_status": "NAV39_CRC8408_OBSERVED",
+    "expected_crc_profile": "0x8408",
+    "receive_profile_matches": true,
+    "selected_for_control": null,
+    "navigation_ready": false,
+    "validity_rule": "At least 3 adjacent CRC+structurally valid frames is a diagnostic format candidate, not link/angle qualification",
+    "limitations": [
+      "No decoder or actuator path is enabled by this inspection",
+      "Only the supplied 39-byte SP navigation feedback layout examined; a non-selected CRC remains diagnostic only",
+      "Multiple candidates remain ambiguous; no fallback selects one silently",
+      "Receive times describe host reads; frames within a batch share completion time, no device measurement timestamp invented",
+      "No generation frequency, publisher-side losslessness or sensor/encoder clock alignment proven",
+      "A valid relative-yaw flag and finite value do not prove direction/zero correctness"
+    ],
+    "capture_complete": true,
+    "writer_health": {
+      "received_bytes": 195259,
+      "received_chunks": 10000,
+      "written_bytes": 195259,
+      "written_chunks": 10000,
+      "overflow": 0,
+      "error": null,
+      "closed": true
+    },
+    "capture_failure": null,
+    "interrupted": false,
+    "device": "/dev/ttyUSB0",
+    "baud": 460800,
+    "actual_termios": {
+      "baud": 460800,
+      "data_bits": 8,
+      "parity": "none",
+      "stop_bits": 1,
+      "flow_control": "none",
+      "exclusive_ioctl": true,
+      "descriptor_access": "O_RDONLY",
+      "prior_bytes_flushed": false
+    },
+    "original_data_sha256": {
+      "raw.bin": "b4b04495aef4c83efde7e1c91c069bacbcd059fe7c8d784ef600050a6dd1050e",
+      "reads.jsonl": "3cf46f6ebc351215de4d00c0b7007adc118f75aea8ae4bc48f441453a5ee3b08"
+    },
+    "serial_transmit_payload_bytes": 0,
+    "input_tools_unchanged": true,
+    "modem_line_note": "No DTR/RTS/reset ioctl is issued; actual line transitions not recorded",
+    "crc_profile_source": "recorded capture profile",
+    "capture_meta_sha256": "6f2166d422ca3f533f06a6ccda1ce7194916350dec0a95ccfb73cc40a576188f",
+    "auditor_sha256": "f71890fe16a8d1ea46097c6da37ea178619e198713962d484bed76cf0e3702ed",
+    "guided_turn_check": {
+      "scope": "RECEIVE-ONLY ENCODER DIRECTION/RETURN EXERCISE; NOT BODY HEADING ACCEPTANCE",
+      "evidence_complete": true,
+      "motion_check_complete": true,
+      "left_positive_exercised": true,
+      "return_negative_exercised": true,
+      "hold_to_hold_left_deg": 55.54687675917603,
+      "hold_to_hold_return_deg": -52.38281419780839,
+      "encoder_return_closure_deg": 3.164062561367634,
+      "operator_declared_forward_encoder_candidate_rad": 0.008436894975602627,
+      "hold_windows": {
+        "baseline": {
+          "median_unwrapped_rad": 0.008436894975602627,
+          "samples": 400
+        },
+        "turned_hold": {
+          "median_unwrapped_rad": 0.9779127836227417,
+          "samples": 400
+        },
+        "final_hold": {
+          "median_unwrapped_rad": 0.06366020441055298,
+          "samples": 400
+        }
+      },
+      "motion_intervals": {
+        "turn_left": {
+          "net_deg": 38.144531364313146,
+          "travel_deg": 39.28711102188227,
+          "samples": 1000
+        },
+        "return": {
+          "net_deg": -33.26660369218177,
+          "travel_deg": 37.5732223789824,
+          "samples": 1000
+        }
+      },
+      "minimum_exercised_angle_deg": 5.0,
+      "body_yaw_computed": false,
+      "navigation_ready": false,
+      "limitations": [
+        "Operator must align mechanical forward before starting and declare fixed chassis",
+        "Only direction/exercise checked; approximate 45 degrees is not independent angular truth",
+        "Unwrap assumes less than pi rotation between received samples; no angle samples interpolated",
+        "Host receipt freshness is not a device measurement timestamp or latency guarantee",
+        "Return closure reported without invented accuracy threshold; no encoder zero written to configuration"
+      ]
+    },
+    "derived_frames_sha256": "8e5febf9ef0e3dff66a2f85cc0573db10c3aa249792afb58f1e4ddfb234d3c05"
+  }
+}

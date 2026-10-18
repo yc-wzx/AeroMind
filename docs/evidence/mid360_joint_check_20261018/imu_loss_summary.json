@@ -1,0 +1,150 @@
+{
+  "scope": "SIMULTANEOUS REAL LIO / ENCODER RECEIVE-ONLY PROVISIONAL BODY PREVIEW",
+  "evidence_complete": false,
+  "motion_check_complete": false,
+  "compensation_accuracy_accepted": false,
+  "navigation_ready": false,
+  "published_ros_data": false,
+  "body_orientation_meaning": "Change relative to operator-declared initial mechanical-forward frame in original LIO coordinates",
+  "gates": {
+    "writer_health": true,
+    "inputs_unchanged": true,
+    "sealed_inputs_verified": true,
+    "source_identity": false,
+    "parameters": false,
+    "capture_finished_without_error": false,
+    "serial_process_exit": false
+  },
+  "capture_failure": "LIO/IMU\u8f93\u5165\u5931\u53bb\u65b0\u9c9c\u5ea6\uff0c\u8bf7\u505c\u6b62\u624b\u52a8\u8f6c\u52a8",
+  "health": {
+    "received": 1567,
+    "written": 1567,
+    "actual_lines": 1567,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "original_data_sha256": {
+    "native.jsonl": "0ad33174c8522852f60497fb132e4f16072c2f9eed1a7c1761277107d839f0fe",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "local_inputs.json": "e2d1dc773466f5627e80d7c22947a829d259f8532399bb3ccc72593450c62705",
+    "serial_launch.log": "08a0ff55ceaf15e84643b3e9f48bf9865ab1f3adf4ddffaa6f9d3732d92bf4f2",
+    "encoder/raw.bin": "f95ed8b7d84096fba10f2e8e9edaf185df2391bda318dd3bafc95d2c40b2fbc7",
+    "encoder/reads.jsonl": "46f796b3356e71e675a8e626671b4efb9862307b66469a0024edc75833b1d9c1",
+    "encoder/capture_meta.json": "10e0d8d2ae84c333d52c142034f96922de445ffe243924b002be2bc042715442"
+  },
+  "capture_meta_sha256": "6a9cdd1c54f591d237efa9ca6aace65b38ed2f9c734dd425155e2ad3e3275f60",
+  "reviewer_sha256": "497bd78aae08ce4ac19cb742177e1c9c78f4abcd0b9d9633497303b0c4377ff5",
+  "math_sha256": "99443160279429fa8f34dc2406f58b0b8f385be1efade619e6256f230b76690d",
+  "timestamp_association": "Nearest original host monotonic receive times, <=50ms filter; NO device-clock synchronization or delay correction",
+  "limits": [
+    "Fixed chassis and mechanical forward are operator declarations; no independent position/angle truth",
+    "Mount dimensions are rough; no fitting or automatic encoder-zero configuration",
+    "Positions are 3D in sensor-local LIO coordinates, not gravity/map-qualified",
+    "Centre uses concentric fixed lever arm; live encoder is used for orientation, not to force centre stationary",
+    "LIO output/transport delay and encoder measurement time are unknown; motion residual is not isolated calibration error",
+    "No invented accuracy threshold, no motor/navigation/TF publication, no reset service monitoring"
+  ],
+  "encoder": {
+    "scope": "RECEIVE-ONLY NAVIGATION FEEDBACK INSPECTION; NOT NAVIGATION ACCEPTANCE",
+    "raw_bytes": 16536,
+    "read_chunks": 424,
+    "header_candidates": 424,
+    "candidate_reports": [
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "modbus_a001_ffff",
+        "crc_valid_frames": 0,
+        "relative_yaw_rad_range": null,
+        "latest_navigation_fields": null,
+        "structural_valid_frames": 0,
+        "longest_consecutive_valid_frames": 0,
+        "format_candidate_exercised": false,
+        "relative_yaw_valid_frames": 0,
+        "observed_completion_receive_hz": null,
+        "max_completion_receive_gap_s": null
+      },
+      {
+        "frame_bytes": 39,
+        "crc_algorithm": "diagnostic_8408_ffff",
+        "crc_valid_frames": 424,
+        "relative_yaw_rad_range": [
+          0.06366000324487686,
+          0.06366000324487686
+        ],
+        "latest_navigation_fields": {
+          "nav_valid_flags": 15,
+          "nav_allowed": 0,
+          "nav_allowed_valid": true,
+          "chassis_vx_m_s": 0.0,
+          "chassis_vy_m_s": 0.0,
+          "gimbal_relative_angle_rad": 0.06366000324487686,
+          "relative_yaw_valid": true
+        },
+        "structural_valid_frames": 424,
+        "longest_consecutive_valid_frames": 424,
+        "format_candidate_exercised": true,
+        "relative_yaw_valid_frames": 424,
+        "observed_completion_receive_hz": 200.02341654749907,
+        "max_completion_receive_gap_s": 0.007316205
+      }
+    ],
+    "format_status": "NAV39_CRC8408_OBSERVED",
+    "expected_crc_profile": "0x8408",
+    "receive_profile_matches": true,
+    "selected_for_control": null,
+    "navigation_ready": false,
+    "validity_rule": "At least 3 adjacent CRC+structurally valid frames is a diagnostic format candidate, not link/angle qualification",
+    "limitations": [
+      "No decoder or actuator path is enabled by this inspection",
+      "Only the supplied 39-byte SP navigation feedback layout examined; a non-selected CRC remains diagnostic only",
+      "Multiple candidates remain ambiguous; no fallback selects one silently",
+      "Receive times describe host reads; frames within a batch share completion time, no device measurement timestamp invented",
+      "No generation frequency, publisher-side losslessness or sensor/encoder clock alignment proven",
+      "A valid relative-yaw flag and finite value do not prove direction/zero correctness"
+    ],
+    "capture_complete": false,
+    "writer_health": {
+      "received_bytes": 16536,
+      "received_chunks": 424,
+      "written_bytes": 16536,
+      "written_chunks": 424,
+      "overflow": 0,
+      "error": null,
+      "closed": true
+    },
+    "capture_failure": "Operator interrupted",
+    "interrupted": true,
+    "device": "/dev/pts/2",
+    "baud": 460800,
+    "actual_termios": {
+      "baud": 460800,
+      "data_bits": 8,
+      "parity": "none",
+      "stop_bits": 1,
+      "flow_control": "none",
+      "exclusive_ioctl": true,
+      "descriptor_access": "O_RDONLY",
+      "prior_bytes_flushed": false
+    },
+    "original_data_sha256": {
+      "raw.bin": "f95ed8b7d84096fba10f2e8e9edaf185df2391bda318dd3bafc95d2c40b2fbc7",
+      "reads.jsonl": "46f796b3356e71e675a8e626671b4efb9862307b66469a0024edc75833b1d9c1"
+    },
+    "serial_transmit_payload_bytes": 0,
+    "input_tools_unchanged": true,
+    "modem_line_note": "No DTR/RTS/reset ioctl is issued; actual line transitions not recorded",
+    "crc_profile_source": "recorded capture profile",
+    "capture_meta_sha256": "10e0d8d2ae84c333d52c142034f96922de445ffe243924b002be2bc042715442",
+    "auditor_sha256": "f71890fe16a8d1ea46097c6da37ea178619e198713962d484bed76cf0e3702ed",
+    "guided_turn_check": {
+      "evidence_complete": false,
+      "motion_check_complete": false,
+      "analysis_error": "Capture incomplete or expected CRC not observed"
+    }
+  },
+  "analysis_error": "Incomplete phase order",
+  "status": "EVIDENCE_INCOMPLETE",
+  "derived_timeline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

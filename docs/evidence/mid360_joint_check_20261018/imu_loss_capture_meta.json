@@ -1,0 +1,128 @@
+{
+  "health": {
+    "received": 1567,
+    "written": 1567,
+    "actual_lines": 1567,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "inputs_unchanged": true,
+  "sealed_inputs_verified_before": true,
+  "sealed_inputs_verified_after": true,
+  "publishers_before": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "publishers_after": {},
+  "parameters_before": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "parameters_after": {},
+  "serial_returncode": 2,
+  "serial_command": [
+    "/usr/bin/python3",
+    "-B",
+    "-c",
+    "import sys;sys.path.insert(0,sys.argv[1]);from capture import capture_session;r=capture_session(sys.argv[2],sys.argv[3],460800,25,allow_test_pty=True,crc_profile='0x8408',guided_turn=True);raise SystemExit(0 if r.get('guided_turn_check',{}).get('motion_check_complete') else 2)",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/xuc_feedback_check",
+    "/home/rmnav/aeromind-transfer-20261016/tools/results/mid360_joint_check_20261018/imu_loss_01/encoder",
+    "/dev/pts/2"
+  ],
+  "failure": "LIO/IMU\u8f93\u5165\u5931\u53bb\u65b0\u9c9c\u5ea6\uff0c\u8bf7\u505c\u6b62\u624b\u52a8\u8f6c\u52a8",
+  "interrupted": false,
+  "ros_domain_id": "91",
+  "data_sha256": {
+    "native.jsonl": "0ad33174c8522852f60497fb132e4f16072c2f9eed1a7c1761277107d839f0fe",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "local_inputs.json": "e2d1dc773466f5627e80d7c22947a829d259f8532399bb3ccc72593450c62705",
+    "serial_launch.log": "08a0ff55ceaf15e84643b3e9f48bf9865ab1f3adf4ddffaa6f9d3732d92bf4f2",
+    "encoder/raw.bin": "f95ed8b7d84096fba10f2e8e9edaf185df2391bda318dd3bafc95d2c40b2fbc7",
+    "encoder/reads.jsonl": "46f796b3356e71e675a8e626671b4efb9862307b66469a0024edc75833b1d9c1",
+    "encoder/capture_meta.json": "10e0d8d2ae84c333d52c142034f96922de445ffe243924b002be2bc042715442"
+  },
+  "operator_declaration": "Fixed chassis, initial gimbal aligned to mechanical forward, manual single CCW turn then return",
+  "service_scope": "Only ROS GetParameters requested; reset/set_pose service calls not monitored",
+  "dependency_scope": "Local hardware tools copied; sealed raw/phased inputs verified; not a complete OS/runtime image"
+}

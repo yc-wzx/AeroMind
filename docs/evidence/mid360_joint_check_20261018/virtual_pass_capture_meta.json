@@ -1,0 +1,213 @@
+{
+  "health": {
+    "received": 16192,
+    "written": 16192,
+    "actual_lines": 16192,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "inputs_unchanged": true,
+  "sealed_inputs_verified_before": true,
+  "sealed_inputs_verified_after": true,
+  "publishers_before": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "publishers_after": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "parameters_before": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "parameters_after": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "serial_returncode": 0,
+  "serial_command": [
+    "/usr/bin/python3",
+    "-B",
+    "-c",
+    "import sys;sys.path.insert(0,sys.argv[1]);from capture import capture_session;r=capture_session(sys.argv[2],sys.argv[3],460800,25,allow_test_pty=True,crc_profile='0x8408',guided_turn=True);raise SystemExit(0 if r.get('guided_turn_check',{}).get('motion_check_complete') else 2)",
+    "/home/rmnav/aeromind-transfer-20261016/tools/hardware/xuc_feedback_check",
+    "/home/rmnav/aeromind-transfer-20261016/tools/results/mid360_joint_check_20261018/virtual_joint_02/encoder",
+    "/dev/pts/2"
+  ],
+  "failure": null,
+  "interrupted": false,
+  "ros_domain_id": "89",
+  "data_sha256": {
+    "native.jsonl": "659fbbde0b2df70b0f5a12efda433372bc20e83986ba4189a130c358517aac03",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "local_inputs.json": "e2d1dc773466f5627e80d7c22947a829d259f8532399bb3ccc72593450c62705",
+    "serial_launch.log": "fac82e4bcdba185c17c191944c91206aae592361b900d74a39fba82f45fd82ee",
+    "encoder/raw.bin": "41107d77a3d8dac427414e1d8eb8fc1a3e97ff77b08217bd4c8f127a9b3fea90",
+    "encoder/reads.jsonl": "c5f01a4d642d7aaa9c8a53589fab0177e27618b79f72206fd34ff9590c43c4da",
+    "encoder/capture_meta.json": "3ad6f7b59d5fc6ec715879a3ef369890903ed1988224c911236ddd2a251a06e6"
+  },
+  "operator_declaration": "Fixed chassis, initial gimbal aligned to mechanical forward, manual single CCW turn then return",
+  "service_scope": "Only ROS GetParameters requested; reset/set_pose service calls not monitored",
+  "dependency_scope": "Local hardware tools copied; sealed raw/phased inputs verified; not a complete OS/runtime image"
+}

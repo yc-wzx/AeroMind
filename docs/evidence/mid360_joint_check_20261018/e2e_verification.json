@@ -1,0 +1,95 @@
+{
+  "scope": "SYNTHETIC DDS + VIRTUAL UART; NOT PHYSICAL COMPENSATION ACCEPTANCE",
+  "production_recorder_used": true,
+  "production_orchestrator_used": true,
+  "actual_25_second_guidance": true,
+  "virtual_uart_only_hook": "Function-only allow_test_pty hook; same capture_session implementation and judgement",
+  "motion_check_complete": true,
+  "independent_review_identical": true,
+  "no_serial_transmit_payload_observed": true,
+  "writer_health": {
+    "received": 16192,
+    "written": 16192,
+    "actual_lines": 16192,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "statistics": {
+    "corrected_mission_samples": 250,
+    "hold_windows": {
+      "baseline": {
+        "samples": 20,
+        "centre_in_lio_m": [
+          -0.036,
+          -0.023289999999999998,
+          0.54712
+        ],
+        "sensor_in_lio_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "body_yaw_change_median_deg": 0.0,
+        "gimbal_heading_change_median_deg": 0.0,
+        "encoder_change_median_deg": 0.0
+      },
+      "turned_hold": {
+        "samples": 20,
+        "centre_in_lio_m": [
+          -0.036,
+          -0.023289999999999998,
+          0.54712
+        ],
+        "sensor_in_lio_m": [
+          0.005788664893547839,
+          -0.032888520011687336,
+          0.0
+        ],
+        "body_yaw_change_median_deg": 1.4514151979915988e-06,
+        "gimbal_heading_change_median_deg": 45.836623610465864,
+        "encoder_change_median_deg": 45.83662215905066
+      },
+      "final_hold": {
+        "samples": 20,
+        "centre_in_lio_m": [
+          -0.036,
+          -0.023289999999999998,
+          0.54712
+        ],
+        "sensor_in_lio_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "body_yaw_change_median_deg": 0.0,
+        "gimbal_heading_change_median_deg": 0.0,
+        "encoder_change_median_deg": 0.0
+      }
+    },
+    "max_absolute_body_yaw_change_deg": 1.885187556238976e-06,
+    "max_body_rotation_change_deg": 1.7075472925031877e-06,
+    "max_sampled_centre_distance_m": 1.2509268882771003e-17,
+    "max_sampled_sensor_distance_m": 0.033394062193883384,
+    "turn_centre_displacement_m": 0.0,
+    "return_centre_closure_m": 0.0,
+    "max_absolute_pair_receive_delta_s": 0.001138085,
+    "mechanical_forward_encoder_candidate_rad": 0.06366000324487686,
+    "imu_to_axis_ground_point_in_imu_m": [
+      -0.036,
+      -0.023289999999999998,
+      0.54712
+    ]
+  },
+  "original_data_sha256": {
+    "native.jsonl": "659fbbde0b2df70b0f5a12efda433372bc20e83986ba4189a130c358517aac03",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "955327fa1dbdf831a3d960c15eb3f22b4ff1f5b0144d320cfb2d88972f29ac70",
+    "local_inputs.json": "e2d1dc773466f5627e80d7c22947a829d259f8532399bb3ccc72593450c62705",
+    "serial_launch.log": "fac82e4bcdba185c17c191944c91206aae592361b900d74a39fba82f45fd82ee",
+    "encoder/raw.bin": "41107d77a3d8dac427414e1d8eb8fc1a3e97ff77b08217bd4c8f127a9b3fea90",
+    "encoder/reads.jsonl": "c5f01a4d642d7aaa9c8a53589fab0177e27618b79f72206fd34ff9590c43c4da",
+    "encoder/capture_meta.json": "3ad6f7b59d5fc6ec715879a3ef369890903ed1988224c911236ddd2a251a06e6"
+  },
+  "fixture_sha256": "74ec6862a6ffb5d1ccd2462c638ecf3681a45cf9ac0314f2c92446f75ea87b2c"
+}

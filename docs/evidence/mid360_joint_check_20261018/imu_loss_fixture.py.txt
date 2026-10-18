@@ -1,0 +1,38 @@
+"""DDS fixture only: stop publishing SI IMU after two baseline seconds."""
+import json,sys,time
+from pathlib import Path
+root=Path('/home/rmnav/aeromind-transfer-20261016')
+sys.path.insert(0,str(root/'tools/hardware/mid360_joint_check'))
+import virtual_e2e
+from rclpy.node import Node
+target=root/'tools/results/mid360_joint_check_20261018/imu_loss_01'
+original=Node.create_publisher
+class Drop:
+    def __init__(self,pub):self.pub=pub;self.origin=None;self.dropped=0
+    def publish(self,msg):
+        log=target/'serial_launch.log'
+        if self.origin is None and log.exists() and '原位静止' in log.read_text():self.origin=time.monotonic()
+        if self.origin is not None and time.monotonic()-self.origin>=2:self.dropped+=1;return
+        return self.pub.publish(msg)
+def factory(self,msg_type,topic,*args,**kwargs):
+    pub=original(self,msg_type,topic,*args,**kwargs)
+    return Drop(pub) if topic=='/hardware/mid360/imu_si' else pub
+Node.create_publisher=factory
+sys.argv=['virtual_e2e.py','--output-dir',str(target)]
+expected=False
+try:virtual_e2e.main()
+except AssertionError:expected=True
+assert expected,'Missing deliberate failed diagnostic'
+result=json.loads((target/'summary.json').read_text());meta=json.loads((target/'capture_meta.json').read_text())
+serial=json.loads((target/'encoder/capture_meta.json').read_text())
+assert not result['motion_check_complete'] and not result['evidence_complete']
+assert '失去新鲜度' in meta['failure'],meta['failure']
+assert len(serial['guided_phases'])==1,serial['guided_phases']
+assert '现在单向向左' not in (target/'serial_launch.log').read_text()
+assert serial['interrupted']
+report=dict(scope='SYNTHETIC DDS IMU INTERRUPTION; NOT PHYSICAL TRIAL',expected_failure_observed=True,
+    production_orchestrator_used=True,actual_ros_recorder_used=True,actual_serial_child_interrupted=True,
+    failure=meta['failure'],manual_motion_not_prompted=True,phase_count=len(serial['guided_phases']),
+    evidence_complete=result['evidence_complete'],motion_check_complete=result['motion_check_complete'])
+with (target.parent/'imu_loss_verification.json').open('x') as f:json.dump(report,f,indent=2,ensure_ascii=False);f.write('\n')
+print('EXPECTED IMU LOSS REFUSAL VERIFIED')
