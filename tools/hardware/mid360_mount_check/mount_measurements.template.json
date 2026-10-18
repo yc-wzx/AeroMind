@@ -1,0 +1,57 @@
+{
+  "schema": "mid360_yaw_mount_measurements_v1",
+  "units": "mm",
+  "scope": "OFFLINE MEASUREMENTS ONLY; NO ROS OUTPUT OR NAVIGATION ACTIVATION",
+  "frame_definition": {
+    "base_origin": "Ground projection of chassis circle centre",
+    "gimbal_zero": "Operator-marked gimbal forward parallel to declared chassis +X",
+    "axes": "+X forward at zero, +Y left, +Z up; yaw CCW viewed from above",
+    "mounting_face": "Centre of the 65x65 mm housing mounting face with M3 holes; exclude cable connector"
+  },
+  "base_to_yaw_axis_mm": {
+    "x": null,
+    "y": null,
+    "source": null
+  },
+  "yaw_axis_to_mount_face_at_zero_mm": {
+    "x": null,
+    "y": null,
+    "height_above_ground": null,
+    "source": null
+  },
+  "native_lidar_x_yaw_from_gimbal_forward_deg": {
+    "value": null,
+    "source": null
+  },
+  "mount_declaration": {
+    "inverted": true,
+    "yaw_only": true,
+    "native_z_points_down": null,
+    "source": null
+  },
+  "yaw_feedback": {
+    "available": null,
+    "interface": null,
+    "unit": null,
+    "positive_direction": null,
+    "zero_reference": null,
+    "timestamp_basis": null
+  },
+  "official_reference": {
+    "url": "https://terra-1-g.djicdn.com/851d20f7b9f64838a34cd02351370894/Livox/Livox_Mid-360_User_Manual_CHS.pdf",
+    "pdf_sha256": "10dbf12ef5db1d69aba804aaee076e157435a9fbb2881a2e96cfad5ecbb7656e",
+    "printed_pages": [
+      9,
+      12,
+      14,
+      19
+    ],
+    "optical_origin_above_mount_face_mm": 47.0,
+    "imu_position_in_native_point_cloud_mm": [
+      11.0,
+      23.29,
+      -44.12
+    ],
+    "inverted_minimum_mount_face_height_mm": 500.0
+  }
+}

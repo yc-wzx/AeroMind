@@ -1,0 +1,35 @@
+{
+  "scope": "OFFLINE MOUNT MEASUREMENT PREPARATION; NOT LIVE TRANSFORM",
+  "tests": 7,
+  "tests_pass": true,
+  "blank_unknowns_rejected": true,
+  "existing_output_overwrite_rejected": true,
+  "sealed_raw_and_phase_verified": {
+    "mode": "verify",
+    "source": "/home/rmnav/aeromind-transfer-20261016/build_mid360_lio_phased/src/spark_fast_lio",
+    "manifest": "/home/rmnav/aeromind-transfer-20261016/install_mid360_lio_phased/phase_input_manifest.json",
+    "inputs": 148
+  },
+  "current_workspace_source_hashes": {
+    "tools/hardware/mid360_lio/lio_mid360_static.yaml": "3e9189d347958b7abb1ad0dc15eb84924cee7ea379a7178ca242d9cb1e0f7292",
+    "tools/hardware/mid360_lio_phased/readonly_lio.launch.py": "b4c1b90a82caeff477465bf3a3eefa69a4e70464f61a2fbc73587706d08753c0",
+    "src/third_party/spark-fast-lio/spark_fast_lio/src/spark_fast_lio.cpp": "53510556a495e0d7e57939f62331b0e010622387563ad328a568bacfbb11262e",
+    "src/provincial_rule900_scratch_sim/scripts/gimbal_contract.py": "96e62108b716200f5814e130ba42d3d6dfa187292c00d4cd018b3b524820b308"
+  },
+  "official_manual": {
+    "url": "https://terra-1-g.djicdn.com/851d20f7b9f64838a34cd02351370894/Livox/Livox_Mid-360_User_Manual_CHS.pdf",
+    "version": "v1.2 / 2024.04",
+    "sha256": "10dbf12ef5db1d69aba804aaee076e157435a9fbb2881a2e96cfad5ecbb7656e",
+    "printed_pages": [
+      9,
+      12,
+      14,
+      19
+    ],
+    "visual_review": "Rendered and reviewed physical PDF pages 11,14,16,21 (one-based)"
+  },
+  "measured_vehicle_dimensions_available": false,
+  "live_yaw_feedback_verified": false,
+  "state": "MOUNT MEASUREMENT PENDING",
+  "navigation_output_changed": false
+}

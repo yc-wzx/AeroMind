@@ -1,0 +1,12 @@
+test_blank_does_not_default_zero (__main__.Tests) ... ok
+test_feedback_declaration_not_live_qualification (__main__.Tests) ... ok
+test_inverted_nominal_offsets_are_not_double_flipped (__main__.Tests) ... ok
+test_low_inverted_height_is_reported_not_accepted (__main__.Tests) ... ok
+test_nan_bool_and_unit_rejected (__main__.Tests) ... ok
+test_reverse_native_x_preserves_right_handed_rotation (__main__.Tests) ... ok
+test_zero_requires_explicit_provenance (__main__.Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

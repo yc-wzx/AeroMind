@@ -1,0 +1,47 @@
+{
+  "scope": "OFFLINE MOUNT WORKSHEET; NOT CALIBRATION OR NAVIGATION ACCEPTANCE",
+  "measurement_data_complete": false,
+  "missing": [
+    "base_to_yaw_axis_mm.x",
+    "base_to_yaw_axis_mm.y",
+    "base_to_yaw_axis_mm.source (measurement/explicit alignment confirmation)",
+    "yaw_axis_to_mount_face_at_zero_mm.x",
+    "yaw_axis_to_mount_face_at_zero_mm.y",
+    "yaw_axis_to_mount_face_at_zero_mm.height_above_ground",
+    "yaw_axis_to_mount_face_at_zero_mm.source (measurement/explicit alignment confirmation)",
+    "native_lidar_x_yaw_from_gimbal_forward_deg.value",
+    "native_lidar_x_yaw_from_gimbal_forward_deg.source (measurement/explicit alignment confirmation)",
+    "mount_declaration.native_z_points_down",
+    "mount_declaration.source"
+  ],
+  "invalid": [],
+  "yaw_feedback_declared": null,
+  "yaw_feedback_contract_complete": false,
+  "yaw_feedback_unresolved": [
+    "No confirmed dynamic yaw-feedback interface"
+  ],
+  "live_feedback_verified": false,
+  "navigation_ready": false,
+  "ros_publication": false,
+  "production_configuration_changed": false,
+  "geometry_candidate": null,
+  "installation_height_requirement": "UNASSESSED",
+  "official_constants": {
+    "optical_height_mm": 47.0,
+    "imu_in_lidar_mm": [
+      11.0,
+      23.29,
+      -44.12
+    ]
+  },
+  "limitations": [
+    "Input values/provenance are operator declarations, not independently measured by this tool",
+    "Ideal upside-down/yaw-only orientation model; small roll/pitch errors not calibrated",
+    "Internal LiDAR/IMU nominal dimensions are separate from measured vehicle installation",
+    "No live encoder identity, timestamp, direction or zero validation",
+    "No local-odom gravity/map alignment or chassis-centre odometry qualification"
+  ],
+  "input_path": "/home/rmnav/aeromind-transfer-20261016/tools/hardware/mid360_mount_check/mount_measurements.template.json",
+  "input_sha256": "1c1b98ab99f4c48a17dde7498265e33676dedce92828824ce3c8c33809a1d18c",
+  "tool_sha256": "e17f63f779cf11ed0afc3ae46d8e2b43528a71926f0764238156c57961369f30"
+}
