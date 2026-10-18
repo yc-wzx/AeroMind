@@ -5,6 +5,8 @@ HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/'mid360_joint_check'))
 from review import sources_ok,params_ok,sha,STREAMS,pose_row,stamp_ns,imu_values,stream_stats,audit_rows,deserialize_message,Odometry,Imu,serial_audit,PROFILES
 from translation_math import derive_translation,intervals,reference
+sys.path.insert(0,str(HERE.parent/'mid360_lio_guard'))
+from input_health import PoseHealth
 
 def native_audit(records,events):
     phases=intervals(events);start=phases[0]['start_monotonic_ns'];end=phases[-1]['end_monotonic_ns'];groups={k:[] for k in STREAMS}
@@ -62,8 +64,19 @@ def review_translation(root):
         stats,timeline,phases=derive_translation(corrected,frames,events,json.loads((root/'mount_snapshot.json').read_text()),ref)
         result['reference']=ref;result['statistics']=stats;result['phase_intervals']=phases
         result['evidence_complete']=bool(all(gates.values()) and native['evidence_complete'])
-        result['diagnostic_complete']=result['evidence_complete']
-        result['status']='REFERENCE_TRANSLATION_DIAGNOSTIC_COMPLETE_NO_ACCURACY_ACCEPTANCE' if result['diagnostic_complete'] else 'EVIDENCE_INCOMPLETE'
+        pose_health=PoseHealth()
+        for row in corrected:
+            pose_health.accept(row['stamp_ns'],row['receive_monotonic_ns'],row['position'],row['quaternion'])
+        holds=[]
+        for phase in [phases[0],phases[2],phases[4]]:
+            h=PoseHealth()
+            for row in corrected:
+                if phase['start_monotonic_ns']<=row['receive_monotonic_ns']<=phase['end_monotonic_ns']:
+                    h.accept(row['stamp_ns'],row['receive_monotonic_ns'],row['position'],row['quaternion'])
+            holds.append(dict(phase=phase['phase'],**h.static_report(start_ns=phase['start_monotonic_ns'])))
+        result['localization_sanity']=dict(pass_=pose_health.failure is None and all(h['pass_'] for h in holds),failure=pose_health.failure,holds=holds,accuracy_accepted=False)
+        result['diagnostic_complete']=bool(result['evidence_complete'] and result['localization_sanity']['pass_'])
+        result['status']='REFERENCE_TRANSLATION_DIAGNOSTIC_COMPLETE_NO_ACCURACY_ACCEPTANCE' if result['diagnostic_complete'] else 'LOCALIZATION_SANITY_REJECTED' if result['evidence_complete'] else 'EVIDENCE_INCOMPLETE'
     except Exception as error:result['analysis_error']=str(error);result['status']='EVIDENCE_INCOMPLETE'
     return result,timeline
 

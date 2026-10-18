@@ -5,11 +5,16 @@ from translation_review import HERE,sha,sources_ok,params_ok,save_review
 from translation_math import reference,mount
 from serial_reader import FeedbackReader
 from capture_joint import snapshot
-from record import Recorder
+sys.path.insert(0,str(HERE.parent/'mid360_lio_guard'))
+from healthy_recorder import HealthyRecorder as Recorder
 from variant import verify,MANIFEST
 
 def input_snapshot(root):
     files=snapshot(root)
+    for p in sorted((HERE.parent/'mid360_lio_guard').glob('*')):
+        if not p.is_file() or p.suffix not in ['.py','.sh','.md']:continue
+        target=root/'input_snapshot'/'mid360_lio_guard'/p.name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(p.read_bytes())
+        files.append(dict(path=str(p),resolved=str(p.resolve()),sha256=sha(p),snapshot=str(target.relative_to(root))))
     for p in sorted(HERE.glob('*')):
         if not p.is_file() or p.suffix not in ['.py','.sh','.md','.json']:continue
         target=root/'input_snapshot'/HERE.name/p.name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(p.read_bytes())
@@ -19,10 +24,11 @@ def input_snapshot(root):
 
 def run_trial(root,device,measurements,ref,operator=None,allow_test_pty=False):
     reference(ref);root=Path(root).resolve();root.mkdir(parents=True,exist_ok=False)
-    ros=None;uart=None;event_file=None;health={};failure=None;interrupted=False;inputs=[];before={};after={};sources_before={};sources_after={};sealed_before=False;sealed_after=False
+    ros=None;uart=None;event_file=None;health={};failure=None;interrupted=False;inputs=[];static_reports=[];before={};after={};sources_before={};sources_after={};sealed_before=False;sealed_after=False
     def check(deadline):
         if time.monotonic()>deadline:raise TimeoutError('超过180秒，本次结束；请停止手推')
         if ros.error:raise RuntimeError('ROS recorder: '+ros.error)
+        if ros.pose_health.failure:raise RuntimeError('LIO状态异常：'+ros.pose_health.failure)
         if not ros.fresh() or not uart.fresh():raise RuntimeError('LIO/IMU/电控输入过期或无效；请停止手推')
     def wait(label,prompt,deadline):
         print(prompt,flush=True);began=time.monotonic()
@@ -40,9 +46,12 @@ def run_trial(root,device,measurements,ref,operator=None,allow_test_pty=False):
     def mark(phase,edge):
         event_file.write(json.dumps(dict(phase=phase,edge=edge,receive_monotonic_ns=time.monotonic_ns(),receive_wall_ns=time.time_ns()))+'\n');event_file.flush()
     def hold(phase,deadline):
+        hold_start=time.monotonic_ns()
         mark(phase,'start');print('静止记录5秒：请停稳并松手，保持底盘和云台朝向。',flush=True);end=time.monotonic()+5
         while time.monotonic()<end:check(deadline);time.sleep(.02)
         mark(phase,'end')
+        report=ros.static_report(start_ns=hold_start);static_reports.append(dict(phase=phase,**report))
+        if not report['pass_']:raise RuntimeError('静止定位健康检查不通过：'+json.dumps(report))
     try:
         verify();sealed_before=True;(root/'variant_manifest_snapshot.json').write_bytes(MANIFEST.read_bytes())
         (root/'mount_snapshot.json').write_bytes(Path(measurements).read_bytes());mount(json.loads((root/'mount_snapshot.json').read_text()))
@@ -51,6 +60,7 @@ def run_trial(root,device,measurements,ref,operator=None,allow_test_pty=False):
         print('检查真实LIO/IMU/电控输入；本工具不发送电机指令。',flush=True);deadline=time.monotonic()+10
         while time.monotonic()<deadline:
             if ros.error or uart.error:raise RuntimeError(ros.error or uart.error)
+            if ros.pose_health.failure:raise RuntimeError('LIO状态异常：'+ros.pose_health.failure)
             if ros.fresh() and uart.fresh():break
             time.sleep(.02)
         else:raise RuntimeError('输入未就绪，不开始手推')
@@ -86,6 +96,7 @@ def run_trial(root,device,measurements,ref,operator=None,allow_test_pty=False):
     meta=dict(health=health,publishers_before=sources_before,publishers_after=sources_after,parameters_before=before,parameters_after=after,
         inputs_unchanged=unchanged,sealed_inputs_before=sealed_before,sealed_inputs_after=sealed_after,failure=failure,interrupted=interrupted,
         data_sha256={n:sha(root/n) for n in names if (root/n).is_file()},ros_domain_id=os.environ.get('ROS_DOMAIN_ID'),
+        static_sanity_reports=static_reports,
         operator_declaration='Same fixed chassis mark at measured A/B; straight ground push and return without chassis/gimbal yaw change',
         service_scope='Only GetParameters requested; no reset/set_pose calls monitored',dependency_scope='Local tools snapshot plus sealed build verification, not an OS image')
     (root/'capture_meta.json').write_text(json.dumps(meta,indent=2,allow_nan=False)+'\n')
