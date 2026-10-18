@@ -1,0 +1,239 @@
+{
+  "scope": "REAL PHYSICAL JOINT TRIAL; DIAGNOSTIC COMPLETENESS ONLY",
+  "commit": "0501242ccb04e7e2e1a70cb7436fc8c80417f5ca",
+  "physical_trial": "/home/rm/AeroMind_mid360_joint_checks/turn_return_20261018_152844",
+  "physical_startup": "/home/rm/AeroMind_mid360_joint_checks/startup_20261018_152634",
+  "remote_and_local_independent_raw_review_same_verdicts": true,
+  "cross_machine_comparison": {
+    "remote_original_and_ssh_review_exactly_equal": true,
+    "remote_and_local_report_exactly_equal": false,
+    "verdicts_and_nonnumeric_fields_equal": true,
+    "report_float_differences": [
+      {
+        "path": ".statistics.hold_windows.baseline.body_yaw_change_median_deg",
+        "remote": 0.010195940761331079,
+        "local": 0.010195940761331082,
+        "absolute_difference": 3.469446951953614e-18
+      },
+      {
+        "path": ".statistics.hold_windows.baseline.gimbal_heading_change_median_deg",
+        "remote": 0.010195940761331079,
+        "local": 0.010195940761331082,
+        "absolute_difference": 3.469446951953614e-18
+      },
+      {
+        "path": ".statistics.hold_windows.final_hold.body_yaw_change_median_deg",
+        "remote": 0.5713161233029606,
+        "local": 0.5713161233029607,
+        "absolute_difference": 1.1102230246251565e-16
+      },
+      {
+        "path": ".statistics.hold_windows.final_hold.gimbal_heading_change_median_deg",
+        "remote": 3.383832724867303,
+        "local": 3.3838327248673035,
+        "absolute_difference": 4.440892098500626e-16
+      }
+    ],
+    "all_float_differences_including_timeline": 83,
+    "maximum_absolute_difference": 5.103695244201845e-12,
+    "remote_derived_sha256": "32855dd8c8a327b0d0a2d38a93962e36407a01836b0fa391190117e7367ee12f",
+    "local_derived_sha256": "4f561da2a07b5aa4fa2a4e5005f1f37025a88b0fb6ad8cb48d882fcd70d4fddf",
+    "note": "Cross-machine last-digit numerical differences retained; different derived byte hashes expected. No physical acceptance threshold changed."
+  },
+  "all_original_data_hashes_rechecked": true,
+  "evidence_complete": true,
+  "motion_check_complete": true,
+  "compensation_accuracy_accepted": false,
+  "navigation_ready": false,
+  "published_ros_data": false,
+  "capture_health": {
+    "received": 16186,
+    "written": 16186,
+    "actual_lines": 16186,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "statistics": {
+    "corrected_mission_samples": 250,
+    "hold_windows": {
+      "baseline": {
+        "samples": 20,
+        "centre_in_lio_m": [
+          -0.03756237298455289,
+          -0.0014994948052468229,
+          0.5687136991697717
+        ],
+        "sensor_in_lio_m": [
+          -0.008860031401530317,
+          0.02155758696802975,
+          0.02125278665687319
+        ],
+        "body_yaw_change_median_deg": 0.010195940761331082,
+        "gimbal_heading_change_median_deg": 0.010195940761331082,
+        "encoder_change_median_deg": 0.0
+      },
+      "turned_hold": {
+        "samples": 20,
+        "centre_in_lio_m": [
+          -0.026558023507955955,
+          -0.003996995679949038,
+          0.5704279872930147
+        ],
+        "sensor_in_lio_m": [
+          0.0051062347577035365,
+          -0.02001302140611201,
+          0.022745980878217387
+        ],
+        "body_yaw_change_median_deg": -0.577373000294706,
+        "gimbal_heading_change_median_deg": 60.47056563418238,
+        "encoder_change_median_deg": 61.04003766949942
+      },
+      "final_hold": {
+        "samples": 20,
+        "centre_in_lio_m": [
+          -0.02926085678914187,
+          -0.00481683935358092,
+          0.5653970176975993
+        ],
+        "sensor_in_lio_m": [
+          -0.0006580775837011356,
+          0.01715923910960751,
+          0.017776126416653805
+        ],
+        "body_yaw_change_median_deg": 0.5713161233029607,
+        "gimbal_heading_change_median_deg": 3.3838327248673035,
+        "encoder_change_median_deg": 2.812499971543237
+      }
+    },
+    "max_absolute_body_yaw_change_deg": 0.9613991598563002,
+    "max_body_rotation_change_deg": 1.0119739999949755,
+    "max_sampled_centre_distance_m": 0.024477971434278382,
+    "max_sampled_sensor_distance_m": 0.052395782654126484,
+    "turn_centre_displacement_m": 0.01141367608580643,
+    "return_centre_closure_m": 0.00953521483674514,
+    "max_absolute_pair_receive_delta_s": 0.0022054130000000003,
+    "mechanical_forward_encoder_candidate_rad": 0.01917476020753384,
+    "imu_to_axis_ground_point_in_imu_m": [
+      -0.036,
+      -0.023289999999999998,
+      0.54712
+    ]
+  },
+  "native_streams": {
+    "corrected": {
+      "pass_": true,
+      "count": 257,
+      "valid_rows": 257,
+      "errors": 0,
+      "observed_span_s": 25.600309390000003,
+      "receive_hz": 9.999879145991835,
+      "sensor_span_s": 25.599164416,
+      "max_receive_gap_s": 0.101879834,
+      "max_sensor_gap_s": 0.103012608,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "predicted": {
+      "pass_": true,
+      "count": 5140,
+      "valid_rows": 5140,
+      "errors": 0,
+      "observed_span_s": 25.694874275,
+      "receive_hz": 200.00097859984567,
+      "sensor_span_s": 25.696122798,
+      "max_receive_gap_s": 0.006905196000000001,
+      "max_sensor_gap_s": 0.006212065,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "mixed": {
+      "pass_": false,
+      "count": 5396,
+      "valid_rows": 5396,
+      "errors": 0,
+      "observed_span_s": 25.688972559000003,
+      "receive_hz": 210.01229175706712,
+      "sensor_span_s": 25.690201825000003,
+      "max_receive_gap_s": 0.006935821,
+      "max_sensor_gap_s": 0.008927875,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 257
+    },
+    "tf": {
+      "pass_": true,
+      "count": 257,
+      "valid_rows": 257,
+      "errors": 0,
+      "observed_span_s": 25.600260188,
+      "receive_hz": 9.999898365095476,
+      "sensor_span_s": 25.599164416,
+      "max_receive_gap_s": 0.101795588,
+      "max_sensor_gap_s": 0.103012608,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    }
+  },
+  "imu": {
+    "pass_": true,
+    "count": 5136,
+    "valid_rows": 5136,
+    "errors": 0,
+    "observed_span_s": 25.67475543,
+    "receive_hz": 200.00190513986135,
+    "sensor_span_s": 25.674551365000003,
+    "max_receive_gap_s": 0.006641599000000001,
+    "max_sensor_gap_s": 0.006212065,
+    "duplicate_stamps": 0,
+    "regressed_stamps": 0
+  },
+  "encoder_report": {
+    "frame_bytes": 39,
+    "crc_algorithm": "diagnostic_8408_ffff",
+    "crc_valid_frames": 5000,
+    "relative_yaw_rad_range": [
+      0.01840776950120926,
+      1.0860583782196045
+    ],
+    "latest_navigation_fields": {
+      "nav_valid_flags": 15,
+      "nav_allowed": 0,
+      "nav_allowed_valid": true,
+      "chassis_vx_m_s": 0.0,
+      "chassis_vy_m_s": 0.0,
+      "gimbal_relative_angle_rad": 0.06826214492321014,
+      "relative_yaw_valid": true
+    },
+    "structural_valid_frames": 5000,
+    "longest_consecutive_valid_frames": 5000,
+    "format_candidate_exercised": true,
+    "relative_yaw_valid_frames": 5000,
+    "observed_completion_receive_hz": 200.01018233073538,
+    "max_completion_receive_gap_s": 0.005383709
+  },
+  "raw_archive_windows": "artifacts/real_mid360_joint_20261018_152844.tar.gz",
+  "raw_archive_sha256": "fb6e405c367702a29f576f3b3813ac8fd8d3b7b0ec14effe56cecbf847ac8034",
+  "raw_data_sha256": {
+    "native.jsonl": "95ea84dc1c91f720c195c1da00675f4ad4e87b6a368dda1e3b242cfce0a550fd",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "f46bd28b22d05a7868ec3d29ccdc8faca1c88a34e23ae2960b13f1f560928b9f",
+    "local_inputs.json": "12b54669937104b393e263b918203753a26ee2412584eea9d13204b260122c31",
+    "serial_launch.log": "b7262942f9df77e4420f40f023757e33f8a0cd0eff8077f42981c8d458a3cb23",
+    "encoder/raw.bin": "2996198660b43a5066d2a7800031e809deb47e2d18b334d9379fb4a23a988eb2",
+    "encoder/reads.jsonl": "5c06f67e9d3cfab00c50af6ccf1d58746dbe6d26d3475c9e3c3ef1263031b3b6",
+    "encoder/capture_meta.json": "5456e4ac14a2af8693098d2e130b91668e396b33b41609b426e52355c7bc2bbf"
+  },
+  "local_raw_directory": "/home/rmnav/aeromind-transfer-20261016/tools/results/real_mid360_joint_20261018_152844/turn_return_20261018_152844",
+  "original_summary_sha256": "2737736b333e79af0b02305c3b57a1ff46be0aad5a19e21dffba806617c954f3",
+  "independent_ssh_review_sha256": "2737736b333e79af0b02305c3b57a1ff46be0aad5a19e21dffba806617c954f3",
+  "independent_local_review_sha256": "9dae67b1950144dc608afa33c87fd6ede51d984531146d5ea76affd017c499d1",
+  "limits": [
+    "Fixed chassis and mechanical forward are operator declarations; no independent position/angle truth",
+    "Mount dimensions are rough; no fitting or automatic encoder-zero configuration",
+    "Positions are 3D in sensor-local LIO coordinates, not gravity/map-qualified",
+    "Centre uses concentric fixed lever arm; live encoder is used for orientation, not to force centre stationary",
+    "LIO output/transport delay and encoder measurement time are unknown; motion residual is not isolated calibration error",
+    "No invented accuracy threshold, no motor/navigation/TF publication, no reset service monitoring"
+  ],
+  "no_new_trial_or_parameter_change": true
+}

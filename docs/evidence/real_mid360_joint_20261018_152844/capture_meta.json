@@ -1,0 +1,218 @@
+{
+  "health": {
+    "received": 16186,
+    "written": 16186,
+    "actual_lines": 16186,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "inputs_unchanged": true,
+  "sealed_inputs_verified_before": true,
+  "sealed_inputs_verified_after": true,
+  "publishers_before": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "publishers_after": {
+    "corrected": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "predicted": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "mixed": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "nav_msgs/msg/Odometry",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "tf": [
+      {
+        "name": "mid360_real_lio",
+        "namespace": "/hardware/mid360/lio",
+        "type": "tf2_msgs/msg/TFMessage",
+        "qos": {
+          "reliability": "RELIABLE",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ],
+    "imu_si": [
+      {
+        "name": "mid360_imu_unit_adapter",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/Imu",
+        "qos": {
+          "reliability": "BEST_EFFORT",
+          "durability": "VOLATILE",
+          "depth": 0
+        }
+      }
+    ]
+  },
+  "parameters_before": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "parameters_after": {
+    "use_sim_time": false,
+    "common.odometry_output_contract": "scan_corrected_primary_v1",
+    "common.visualization_frame": "imu",
+    "common.imu_frame": "mid360_imu",
+    "common.map_frame": "mid360_local_odom",
+    "common.base_frame": "",
+    "common.time_sync_en": false,
+    "mapping.extrinsic_T": [
+      -0.011,
+      -0.02329,
+      0.04412
+    ],
+    "mapping.extrinsic_R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "serial_returncode": 0,
+  "serial_command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/rm/AeroMind_20261016/tools/hardware/xuc_feedback_check/capture.py",
+    "--device",
+    "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0",
+    "--baud",
+    "460800",
+    "--crc-profile",
+    "0x8408",
+    "--guided-turn",
+    "--output-dir",
+    "/home/rm/AeroMind_mid360_joint_checks/turn_return_20261018_152844/encoder"
+  ],
+  "failure": null,
+  "interrupted": false,
+  "ros_domain_id": "43",
+  "data_sha256": {
+    "native.jsonl": "95ea84dc1c91f720c195c1da00675f4ad4e87b6a368dda1e3b242cfce0a550fd",
+    "mount_snapshot.json": "fa6dd703b5129d21728b26e295e5fabe290dfc5647274e81c9605082540de2e1",
+    "variant_manifest_snapshot.json": "f46bd28b22d05a7868ec3d29ccdc8faca1c88a34e23ae2960b13f1f560928b9f",
+    "local_inputs.json": "12b54669937104b393e263b918203753a26ee2412584eea9d13204b260122c31",
+    "serial_launch.log": "b7262942f9df77e4420f40f023757e33f8a0cd0eff8077f42981c8d458a3cb23",
+    "encoder/raw.bin": "2996198660b43a5066d2a7800031e809deb47e2d18b334d9379fb4a23a988eb2",
+    "encoder/reads.jsonl": "5c06f67e9d3cfab00c50af6ccf1d58746dbe6d26d3475c9e3c3ef1263031b3b6",
+    "encoder/capture_meta.json": "5456e4ac14a2af8693098d2e130b91668e396b33b41609b426e52355c7bc2bbf"
+  },
+  "operator_declaration": "Fixed chassis, initial gimbal aligned to mechanical forward, manual single CCW turn then return",
+  "service_scope": "Only ROS GetParameters requested; reset/set_pose service calls not monitored",
+  "dependency_scope": "Local hardware tools copied; sealed raw/phased inputs verified; not a complete OS/runtime image"
+}

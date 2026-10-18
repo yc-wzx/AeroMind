@@ -1,0 +1,36 @@
+{
+  "remote_original_and_ssh_review_exactly_equal": true,
+  "remote_and_local_report_exactly_equal": false,
+  "verdicts_and_nonnumeric_fields_equal": true,
+  "report_float_differences": [
+    {
+      "path": ".statistics.hold_windows.baseline.body_yaw_change_median_deg",
+      "remote": 0.010195940761331079,
+      "local": 0.010195940761331082,
+      "absolute_difference": 3.469446951953614e-18
+    },
+    {
+      "path": ".statistics.hold_windows.baseline.gimbal_heading_change_median_deg",
+      "remote": 0.010195940761331079,
+      "local": 0.010195940761331082,
+      "absolute_difference": 3.469446951953614e-18
+    },
+    {
+      "path": ".statistics.hold_windows.final_hold.body_yaw_change_median_deg",
+      "remote": 0.5713161233029606,
+      "local": 0.5713161233029607,
+      "absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "path": ".statistics.hold_windows.final_hold.gimbal_heading_change_median_deg",
+      "remote": 3.383832724867303,
+      "local": 3.3838327248673035,
+      "absolute_difference": 4.440892098500626e-16
+    }
+  ],
+  "all_float_differences_including_timeline": 83,
+  "maximum_absolute_difference": 5.103695244201845e-12,
+  "remote_derived_sha256": "32855dd8c8a327b0d0a2d38a93962e36407a01836b0fa391190117e7367ee12f",
+  "local_derived_sha256": "4f561da2a07b5aa4fa2a4e5005f1f37025a88b0fb6ad8cb48d882fcd70d4fddf",
+  "note": "Cross-machine last-digit numerical differences retained; different derived byte hashes expected. No physical acceptance threshold changed."
+}

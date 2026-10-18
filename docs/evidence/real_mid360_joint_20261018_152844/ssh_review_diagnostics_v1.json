@@ -1,0 +1,92 @@
+{
+  "independent_summary_identical": true,
+  "max_yaw_row": {
+    "sequence": 10027,
+    "stamp_ns": 1792308541020175616,
+    "receive_monotonic_ns": 7583959993749,
+    "sensor_position_m": [
+      0.004252690407225448,
+      -0.02418572728649535,
+      0.017679487193359836
+    ],
+    "sensor_quaternion": [
+      -0.0026839306127112252,
+      0.009799365617269573,
+      -0.5028171955386211,
+      0.8643330589654727
+    ],
+    "provisional_centre_in_lio_m": [
+      -0.02303467367474789,
+      -0.007258802111862025,
+      0.5655367655657387
+    ],
+    "encoder_frame_offset": 121526,
+    "encoder_receive_monotonic_ns": 7583960180626,
+    "pair_receive_delta_ns": 186877,
+    "encoder_angle_rad": 1.084524393081665,
+    "encoder_change_deg": 61.04003766949942,
+    "gimbal_forward_heading_change_deg": 60.079399532944755,
+    "provisional_body_yaw_change_deg": -0.9613991598563002,
+    "provisional_body_rotation_change_deg": 1.0119739999949755,
+    "meaning": "Derived nearest-host-receipt pairing, not synchronized measurement times; original samples unchanged",
+    "elapsed_s": 15.579388360000001
+  },
+  "max_position_row": {
+    "sequence": 7382,
+    "stamp_ns": 1792308536819973632,
+    "receive_monotonic_ns": 7579761234328,
+    "sensor_position_m": [
+      0.019713048670738448,
+      -0.018260830619296047,
+      0.021096499225884652
+    ],
+    "sensor_quaternion": [
+      0.0005357225926227398,
+      0.005925419312456909,
+      -0.5007393532638821,
+      0.8655776698252534
+    ],
+    "provisional_centre_in_lio_m": [
+      -0.013101690840829322,
+      -0.0024188262359748254,
+      0.5686829693544907
+    ],
+    "encoder_frame_offset": 88766,
+    "encoder_receive_monotonic_ns": 7579760406237,
+    "pair_receive_delta_ns": -828091,
+    "encoder_angle_rad": 1.06918466091156,
+    "encoder_change_deg": 60.16113575729135,
+    "gimbal_forward_heading_change_deg": 59.7997842793388,
+    "provisional_body_yaw_change_deg": -0.36057626085577726,
+    "provisional_body_rotation_change_deg": 0.5156695360997121,
+    "meaning": "Derived nearest-host-receipt pairing, not synchronized measurement times; original samples unchanged",
+    "elapsed_s": 11.380628939000001
+  },
+  "phase_times": [
+    {
+      "phase": "baseline",
+      "start_s": 0.0,
+      "end_s": 5.000346449
+    },
+    {
+      "phase": "turn_left",
+      "start_s": 5.000346449,
+      "end_s": 10.002749821
+    },
+    {
+      "phase": "turned_hold",
+      "start_s": 10.002749821,
+      "end_s": 15.002482802000001
+    },
+    {
+      "phase": "return",
+      "start_s": 15.002482802000001,
+      "end_s": 20.002256699
+    },
+    {
+      "phase": "final_hold",
+      "start_s": 20.002256699,
+      "end_s": 25.000086815000003
+    }
+  ]
+}
