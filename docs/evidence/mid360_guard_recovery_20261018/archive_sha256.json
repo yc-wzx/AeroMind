@@ -1,0 +1,14 @@
+{
+  "raw_archive_sha256": "2c415d1eae69b142cc1e21adee2d18c0a255e9085826e445c0fa5f622ea201c3",
+  "compact_evidence_sha256": {
+    "failed_physical_health_reaudit_v2.json": "f39f66b35c9a443fc5db07ef74c19f814de9acd231914c3a99f38d990e2403ba",
+    "real_postwarmup_static_review_v2.json": "5df19cb4e6456bc380247cda430e4118eec9e149f2ce41fb76783f2aee12134f",
+    "sealed_verification.txt": "acfff07e28f8f63e1026a59d2deafd797327682f799ec515c00f0636a286e779",
+    "real_startup_static_review_v1.json": "c607a92958fa4def892b93132334f27226b00925467c464cd1e2f66ff12fb455",
+    "post_capture_integrity_v1.json": "e2e3ef6e8772dfd7268d27c81102b455cb3fca1747586caaede74e198c177695",
+    "guard_tests.txt": "9e252b2f0562dfe63fb766b7e7b67015dd5de3b2fde4e9e0cc093790e8cf197e",
+    "real_recovery_result_v1.json": "314ad99c4919a16f21d765fdfe9c00565ae9a1bdf7a6ae7aada201fefe7a86fd",
+    "virtual_e2e_verification.json": "d2afa2f2cdfb702598e4316d709c7ce6a539eb83f2740bb71df7eca2f56d6ce1"
+  },
+  "no_new_physical_translation": true
+}

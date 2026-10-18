@@ -1,0 +1,21 @@
+{
+  "scope": "Post-capture independent hash/snapshot verification; no retroactive runtime hash claim",
+  "checks": {
+    "static_recovery_20261018_1633": {
+      "raw_hashes_match": true,
+      "individual_tool_snapshots_match": true,
+      "current_tool_hashes_match_capture": true
+    },
+    "static_postwarmup_20261018_1635": {
+      "raw_hashes_match": true,
+      "individual_tool_snapshots_match": true,
+      "current_tool_hashes_match_capture": true
+    },
+    "active_binary_config": {
+      "binary_hash": true,
+      "binary_resolved_path": true,
+      "config_hash": true
+    }
+  },
+  "all_checks_pass": true
+}

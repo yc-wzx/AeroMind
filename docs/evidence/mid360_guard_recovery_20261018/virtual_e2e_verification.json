@@ -1,0 +1,107 @@
+{
+  "scope": "SYNTHETIC DDS + VIRTUAL UART TRANSLATION; NOT PHYSICAL ACCEPTANCE",
+  "production_orchestrator_and_recorders_used": true,
+  "test_hooks": "Virtual UART path and scripted operator Enter timing only",
+  "diagnostic_complete": true,
+  "expected_imu_failure": false,
+  "independent_review_identical": true,
+  "no_serial_transmit_payload_observed": true,
+  "health": {
+    "received": 14800,
+    "written": 14800,
+    "actual_lines": 14800,
+    "overflow": 0,
+    "error": null,
+    "closed": true
+  },
+  "statistics": {
+    "reference_distance_m": 0.5,
+    "corrected_mission_samples": 232,
+    "hold_windows": {
+      "baseline": {
+        "samples": 20,
+        "displacement_initial_chassis_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "body_yaw_median_deg": 6.3611093629270335e-15,
+        "encoder_change_median_deg": 0.0
+      },
+      "far_hold": {
+        "samples": 20,
+        "displacement_initial_chassis_m": [
+          0.5,
+          8.326672684688674e-17,
+          0.0
+        ],
+        "body_yaw_median_deg": 6.3611093629270335e-15,
+        "encoder_change_median_deg": 0.0
+      },
+      "final_hold": {
+        "samples": 20,
+        "displacement_initial_chassis_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "body_yaw_median_deg": 6.3611093629270335e-15,
+        "encoder_change_median_deg": 0.0
+      }
+    },
+    "outward_delta_initial_chassis_m": [
+      0.5,
+      8.326672684688674e-17,
+      0.0
+    ],
+    "return_delta_initial_chassis_m": [
+      -0.5,
+      -8.326672684688674e-17,
+      0.0
+    ],
+    "closure_initial_chassis_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "estimated_forward_distance_m": 0.5,
+    "signed_forward_distance_difference_m": 0.0,
+    "forward_scale_ratio": 1.0,
+    "far_point_euclidean_reference_difference_m": 8.326672684688674e-17,
+    "far_lateral_displacement_m": 8.326672684688674e-17,
+    "far_vertical_displacement_m": 0.0,
+    "return_closure_3d_m": 0.0,
+    "max_sampled_lateral_displacement_m": 8.326672684688674e-17,
+    "max_sampled_body_yaw_change_deg": 6.3611093629270335e-15,
+    "max_sampled_encoder_change_deg": 0.0,
+    "max_absolute_pair_receive_delta_s": 0.002502025,
+    "mechanical_forward_encoder_candidate_rad": 0.018999999389052395,
+    "R_lio_from_initial_chassis": [
+      [
+        0.7648421872844884,
+        0.6442176872376911,
+        0.0
+      ],
+      [
+        0.6442176872376911,
+        -0.7648421872844884,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "initial_centre_in_lio_m": [
+      -0.012530488806475757,
+      -0.0410050112824126,
+      0.54712
+    ],
+    "forward_direction_consistent": true,
+    "accuracy_accepted": false,
+    "navigation_ready": false,
+    "reference_meaning": "Tape distance and fixed-mark endpoint alignment are operator-reported; no independent tracking truth or certified uncertainty"
+  },
+  "fixture_sha256": "556e8d82e966144e34027d00b0fa06d8200abaacf00e2574073d35803b5acef8"
+}

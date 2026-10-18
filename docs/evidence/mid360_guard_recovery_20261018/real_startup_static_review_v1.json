@@ -1,0 +1,168 @@
+{
+  "scope": "REAL STATIONARY LIO RECOVERY DIAGNOSTIC; NOT ACCURACY/NAVIGATION ACCEPTANCE",
+  "evidence_complete": true,
+  "static_recovery_check_pass": false,
+  "accuracy_accepted": false,
+  "navigation_ready": false,
+  "gates": {
+    "writer": true,
+    "raw_lio_audit": true,
+    "imu": true,
+    "sources": true,
+    "parameters": true,
+    "inputs": true,
+    "no_capture_failure": true
+  },
+  "capture_failure": null,
+  "native": {
+    "evidence_complete": true,
+    "streams": {
+      "corrected": {
+        "pass_": true,
+        "count": 303,
+        "valid_rows": 303,
+        "errors": 0,
+        "observed_span_s": 30.202400592000004,
+        "receive_hz": 9.999205165168016,
+        "sensor_span_s": 30.201679360000004,
+        "max_receive_gap_s": 0.10379460500000001,
+        "max_sensor_gap_s": 0.10246630400000001,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 0
+      },
+      "predicted": {
+        "pass_": true,
+        "count": 6049,
+        "valid_rows": 6049,
+        "errors": 0,
+        "observed_span_s": 30.239751123,
+        "receive_hz": 200.00164602545163,
+        "sensor_span_s": 30.239422539000003,
+        "max_receive_gap_s": 0.009409216,
+        "max_sensor_gap_s": 0.006172222000000001,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 0
+      },
+      "mixed": {
+        "pass_": false,
+        "count": 6352,
+        "valid_rows": 6352,
+        "errors": 0,
+        "observed_span_s": 30.246247869,
+        "receive_hz": 209.9764581546417,
+        "sensor_span_s": 30.251137247000003,
+        "max_receive_gap_s": 0.009171758,
+        "max_sensor_gap_s": 0.011714708,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 302
+      },
+      "tf": {
+        "pass_": true,
+        "count": 303,
+        "valid_rows": 303,
+        "errors": 0,
+        "observed_span_s": 30.202501439000002,
+        "receive_hz": 9.999171777541322,
+        "sensor_span_s": 30.201679360000004,
+        "max_receive_gap_s": 0.103743892,
+        "max_sensor_gap_s": 0.10246630400000001,
+        "duplicate_stamps": 0,
+        "regressed_stamps": 0
+      }
+    },
+    "phase_identity": {
+      "pass_": true,
+      "common_sensor_start_ns": 1792312275029395604,
+      "common_sensor_end_ns": 1792312305219360256,
+      "common_sensor_span_s": 30.189964652,
+      "interior_counts": {
+        "corrected": 302,
+        "predicted": 6039,
+        "mixed": 6341,
+        "tf": 302
+      },
+      "boundary_records_retained_but_excluded_from_identity_comparison": {
+        "corrected": 1,
+        "predicted": 10,
+        "mixed": 11,
+        "tf": 1
+      },
+      "missing_from_mixed": 0,
+      "missing_from_split": 0,
+      "tf_matches_corrected_pose": true,
+      "rule": "Exact decoded message identity multisets within common device-time coverage; all boundary messages remain recorded"
+    },
+    "parse_errors": [],
+    "corrected_drift": {
+      "samples": 303,
+      "first_position_m": [
+        0.02667201455174419,
+        -0.009114541370901312,
+        -0.013958644899803014
+      ],
+      "last_position_m": [
+        0.035628691405133056,
+        -0.0058715487441361024,
+        -0.1143027738853938
+      ],
+      "max_translation_from_first_m": 0.12185828696579847,
+      "end_translation_from_first_m": 0.10079525426978278,
+      "max_rotation_from_first_deg": 2.3297400447843737,
+      "end_rotation_from_first_deg": 0.6984838643833583,
+      "meaning": "Relative estimated sensor drift under operator-declared stationary condition; not true position error"
+    },
+    "zero_twist_is_not_a_stationarity_measurement": true,
+    "legacy_mixed_order_gate_is_diagnostic_only": true
+  },
+  "imu": {
+    "pass_": true,
+    "count": 6486,
+    "valid_rows": 6486,
+    "errors": 0,
+    "observed_span_s": 32.423824677,
+    "receive_hz": 200.00724974929213,
+    "sensor_span_s": 32.424050015,
+    "max_receive_gap_s": 0.0067163480000000005,
+    "max_sensor_gap_s": 0.006172222000000001,
+    "duplicate_stamps": 0,
+    "regressed_stamps": 0
+  },
+  "pose_sanity_failure": null,
+  "last_five_seconds": {
+    "pass_": true,
+    "failure": null,
+    "samples": 50,
+    "span_s": 4.902913901,
+    "max_displacement_from_first_m": 0.01943453586485611,
+    "max_rotation_from_first_deg": 2.4460219626801347,
+    "limits": {
+      "position_span_m": 0.1,
+      "angle_deg": 10.0,
+      "gross_motion_speed_m_s": 3.0
+    },
+    "meaning": "Engineering gross-sanity only; operator-declared stationarity; NOT accuracy acceptance"
+  },
+  "full_capture_max_displacement_from_first_m": 0.12185828696579847,
+  "full_capture_max_rotation_from_first_deg": 2.3297400447849994,
+  "endpoint_delta_m": [
+    0.008956676853388867,
+    0.0032429926267652093,
+    -0.10034412898559078
+  ],
+  "raw_samples": 19493,
+  "original_data_sha256": {
+    "native.jsonl": "b4e0538efa835388d4698c8e9e667fad0872999b4e5417411dcd9e3c68423e67",
+    "local_inputs.json": "2ffb0387150ecb7c0f9f5793c51703c52ec78e5b7e981bb71f0afd09cf8cd055"
+  },
+  "capture_meta_sha256": "8a16016d4ca413c5da51f297cb5bc73d8040c2d8de4b7a109b2b9dd47925cf37",
+  "reviewer_sha256": "36645e603494894d803fd28c5be7d6da7f93e680407c35f2b21dab0e159df710",
+  "engineering_limits": {
+    "position_span_m": 0.1,
+    "angle_deg": 10.0
+  },
+  "limitations": [
+    "Stationarity operator-declared; no position truth",
+    "Gross-sanity gates are not accuracy thresholds",
+    "No navigation/motor integration or statistical repeatability qualification"
+  ]
+}

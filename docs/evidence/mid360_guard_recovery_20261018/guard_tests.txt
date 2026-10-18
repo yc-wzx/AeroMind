@@ -1,0 +1,20 @@
+test_actual_guard_does_not_forward_malformed_cloud_or_resume (__main__.ProductionTests) ... ok
+test_actual_pose_monitor_latches_runaway (__main__.ProductionTests) ... ok
+test_interleaved_points_with_valid_span_forward_unchanged (__main__.ProductionTests) ... ok
+test_missing_source_does_not_forward (__main__.ProductionTests) ... ok
+test_real_dds_source_identity_and_original_payload (__main__.ProductionTests) ... ok
+test_cloud_stale_with_imu_continuing (__main__.PureTests) ... ok
+test_duplicate_and_regression (__main__.PureTests) ... ok
+test_historical_raw_runaway_rejected_before_push (__main__.PureTests) ... ok
+test_nan_and_time_gap_rejected (__main__.PureTests) ... ok
+test_point_span_counterexample (__main__.PureTests) ... ok
+test_pose_static_and_moving (__main__.PureTests) ... ok
+test_receive_gap_even_continuous_sensor_time (__main__.PureTests) ... ok
+test_scan_start_is_not_latest_point_time (__main__.PureTests) ... ok
+test_sensor_gap_latches_without_recovery (__main__.PureTests) ... ok
+test_valid_inputs (__main__.PureTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.376s
+
+OK

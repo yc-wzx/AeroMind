@@ -1,0 +1,111 @@
+{
+  "startup": {
+    "evidence_complete": true,
+    "static_recovery_check_pass": false,
+    "full_capture_max_displacement_from_first_m": 0.12185828696579847,
+    "full_capture_max_rotation_from_first_deg": 2.3297400447849994,
+    "last_five_seconds": {
+      "pass_": true,
+      "failure": null,
+      "samples": 50,
+      "span_s": 4.902913901,
+      "max_displacement_from_first_m": 0.01943453586485611,
+      "max_rotation_from_first_deg": 2.4460219626801347,
+      "limits": {
+        "position_span_m": 0.1,
+        "angle_deg": 10.0,
+        "gross_motion_speed_m_s": 3.0
+      },
+      "meaning": "Engineering gross-sanity only; operator-declared stationarity; NOT accuracy acceptance"
+    },
+    "endpoint_delta_m": [
+      0.008956676853388867,
+      0.0032429926267652093,
+      -0.10034412898559078
+    ],
+    "raw_samples": 19493,
+    "corrected_stream": {
+      "pass_": true,
+      "count": 303,
+      "valid_rows": 303,
+      "errors": 0,
+      "observed_span_s": 30.202400592000004,
+      "receive_hz": 9.999205165168016,
+      "sensor_span_s": 30.201679360000004,
+      "max_receive_gap_s": 0.10379460500000001,
+      "max_sensor_gap_s": 0.10246630400000001,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "imu_stream": {
+      "pass_": true,
+      "count": 6486,
+      "valid_rows": 6486,
+      "errors": 0,
+      "observed_span_s": 32.423824677,
+      "receive_hz": 200.00724974929213,
+      "sensor_span_s": 32.424050015,
+      "max_receive_gap_s": 0.0067163480000000005,
+      "max_sensor_gap_s": 0.006172222000000001,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    }
+  },
+  "postwarmup": {
+    "evidence_complete": true,
+    "static_recovery_check_pass": true,
+    "full_capture_max_displacement_from_first_m": 0.03983153601460537,
+    "full_capture_max_rotation_from_first_deg": 1.052962152056157,
+    "last_five_seconds": {
+      "pass_": true,
+      "failure": null,
+      "samples": 50,
+      "span_s": 4.899225713,
+      "max_displacement_from_first_m": 0.023587574312474182,
+      "max_rotation_from_first_deg": 0.7747019303259243,
+      "limits": {
+        "position_span_m": 0.1,
+        "angle_deg": 10.0,
+        "gross_motion_speed_m_s": 3.0
+      },
+      "meaning": "Engineering gross-sanity only; operator-declared stationarity; NOT accuracy acceptance"
+    },
+    "endpoint_delta_m": [
+      0.020663154393148187,
+      0.001856871716736824,
+      -0.019405797597672664
+    ],
+    "raw_samples": 19080,
+    "corrected_stream": {
+      "pass_": true,
+      "count": 303,
+      "valid_rows": 303,
+      "errors": 0,
+      "observed_span_s": 30.199059268000003,
+      "receive_hz": 10.000311510365819,
+      "sensor_span_s": 30.199817216000003,
+      "max_receive_gap_s": 0.1025998,
+      "max_sensor_gap_s": 0.10300134400000001,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    },
+    "imu_stream": {
+      "pass_": true,
+      "count": 6057,
+      "valid_rows": 6057,
+      "errors": 0,
+      "observed_span_s": 30.279823585000003,
+      "receive_hz": 200.00116523135944,
+      "sensor_span_s": 30.279799659000002,
+      "max_receive_gap_s": 0.006829541000000001,
+      "max_sensor_gap_s": 0.0061906240000000005,
+      "duplicate_stamps": 0,
+      "regressed_stamps": 0
+    }
+  },
+  "active_session": "/home/rm/AeroMind_mid360_guard_checks/session_recovery_20261018_163111",
+  "no_navigation_motor_commands": true,
+  "git_head": "70cda4d5db4362fdae5ad9f89beaf08fe212dd4e",
+  "independent_audit_v1_v2_exact_match": true,
+  "source_install_scope": "Original sealed raw/phased chain verified; no modified estimator binary, only new guard and input remappings"
+}
