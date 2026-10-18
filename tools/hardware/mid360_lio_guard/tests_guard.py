@@ -75,6 +75,17 @@ class ProductionTests(unittest.TestCase):
                 g.receive('points',cloud(stamp=10**18+200_000_000));self.assertEqual(g.forwarded['points'],1)
                 self.assertEqual(g.status()['state'],'FAULT_LATCHED')
             finally:g.events.close();g.destroy_node()
+    def test_interleaved_points_with_valid_span_forward_unchanged(self):
+        with tempfile.TemporaryDirectory() as d:
+            g=Guard(d);g.sources_verified=True;m=cloud();data=bytearray(m.data)
+            a,b=3*m.point_step,4*m.point_step
+            data[a:a+m.point_step],data[b:b+m.point_step]=data[b:b+m.point_step],data[a:a+m.point_step]
+            m.data=bytes(data);before=bytes(serialize_message(m))
+            try:
+                self.assertGreater(inspect_cloud(m)['within_cloud_regressions'],0)
+                g.receive('points',m);self.assertIsNone(g.engine.failure);self.assertEqual(g.forwarded['points'],1)
+                self.assertEqual(bytes(serialize_message(m)),before)
+            finally:g.events.close();g.destroy_node()
     def test_missing_source_does_not_forward(self):
         with tempfile.TemporaryDirectory() as d:
             g=Guard(d)

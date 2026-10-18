@@ -63,8 +63,9 @@ class Guard(Node):
             stamp = stamp_ns(message)
             if kind == 'points':
                 details = inspect_cloud(message)
-                if details['within_cloud_regressions']:
-                    raise ValueError('Regressed per-point timestamps')
+                # MID360 packets can interleave point times; upstream deskew sorts them.
+                # Keep/count this fact without editing payloads. Span and message-time
+                # continuity remain mandatory; interleaving alone is not a bad scan.
             else:
                 details = imu_values(message)
                 if message.header.frame_id != 'mid360_imu':

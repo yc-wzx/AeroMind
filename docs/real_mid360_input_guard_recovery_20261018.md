@@ -31,3 +31,9 @@ Real static recovery results will be appended after the on-device check.
 
 Read tools/hardware/mid360_lio_guard/README.md for the new optional entry point.
 Old raw/phased folders, builds, input manifests and physical records are kept.
+
+On-device format precheck stopped the first guarded session BEFORE launching LIO:
+valid 0.10007936s MID360 clouds contained 130 internal time regressions. Upstream
+imu_processing.hpp sorts points for deskew. The new strict within-cloud ordering
+assumption was removed and a regression test added; counts remain recorded and
+raw payloads unchanged. This does not relax span or input-gap limits.

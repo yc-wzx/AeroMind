@@ -6,7 +6,7 @@ no edits to payload, timestamps, units, frames or configured publishing rate.
 The existing phased estimator uses checked input remappings.
 
 Checks: cloud schema, finite fields, point time span <=0.2s, per-point time
-monotonicity, usable returns and exact source identity. Receive AND device time
+interleaving diagnostics, usable returns and exact source identity. Receive AND device time
 gap limits: points 0.2s, IMU 0.1s. Faults latch; the supervisor stops only its own
 LIO/guard children. No automatic restart, reset, time repair or gap integration.
 The raw driver keeps running.
